@@ -1,0 +1,37 @@
+<NamingSystem xmlns="http://hl7.org/fhir">
+  <id value="NZMT"/>
+  <name value="New Zealand Medicines Terminology"/> 
+  <status value="active"/> 
+  <kind value="codesystem"/> 
+  <date value="2018-01-01"/> 
+  <publisher value="HL7 New Zealand"/> 
+  <contact> 
+    <name value="HL7 New Zealand"/> 
+    <telecom> 
+      <system value="url"/> 
+      <value value="http://hl7.org.nz"/> 
+    </telecom> 
+  </contact>  
+  <responsible value="Ministry of Health"/> 
+  <description value="New Zealand Medicines Terminology"/> 
+  <jurisdiction> 
+    <coding> 
+      <system value="urn:iso:std:iso:3166"/> 
+      <code value="NZ"/> 
+    </coding> 
+  </jurisdiction> 
+  <usage value="Used in New Zealand for uniquely identifying medications"/> 
+  <uniqueId> 
+    <type value="oid"/> 
+    <value value="2.16.840.1.113883.2.18.21"/> 
+    <comment value="This value is used in New Zealand CDA documents"/> 
+  </uniqueId> 
+  <uniqueId> 
+    <type value="uri"/> 
+    <value value="http://nzmt.org.nz"/> 
+    <preferred value="true"/> 
+    <period> 
+      <start value="2018-01-01"/> 
+    </period> 
+  </uniqueId> 
+</NamingSystem> 

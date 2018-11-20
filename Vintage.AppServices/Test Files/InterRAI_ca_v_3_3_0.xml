@@ -1,0 +1,3327 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040" />
+  <templateId root="2.16.840.1.113883.2.18.7.20.5" />
+  <templateId root="2.16.840.1.113883.2.18.7.5" />
+  <id root="68bc239b-5574-4922-9fac-a893f2014757" />
+  <code code="74197-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC STATIC" displayName="InterRAI Contact Assessment (CA) Document" />
+  <title>InterRAI Contact Assessment (CA) Form Version 9.1</title>
+  <effectiveTime value="20131219174600" />
+  <confidentialityCode code="Y" codeSystem="2.16.840.1.113883.5.25" />
+  <languageCode code="en-NZ" />
+  <versionNumber value="1" />
+  <recordTarget>
+    <patientRole>
+      <templateId root="2.16.840.1.113883.2.18.7.5.2" />
+      <id root="2.16.840.1.113883.2.18.2" extension="PRP1660" />
+      <id root="2.16.840.1.113883.2.18.31" extension="185-2689" />
+      <addr use="H">
+        <streetAddressLine>The Yellow House</streetAddressLine>
+        <streetAddressLine>3 Alconbury Crescent</streetAddressLine>
+        <precinct>Rototuna</precinct>
+        <city>Hamilton</city>
+        <postalCode>3210</postalCode>
+        <country>New Zealand</country>
+      </addr>
+      <telecom use="HP" value="tel:+6478533278" />
+      <telecom use="MC" value="tel:+6421759935" />
+      <telecom use="H" value="mailto:psmith998@xtra.co.nz" />
+      <patient>
+        <templateId root="2.16.840.1.113883.2.18.7.5.1" />
+        <name>
+          <prefix>Mr</prefix>
+          <given>Peter</given>
+          <family>Smith</family>
+        </name>
+        <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.2.18.57" displayName="Male" />
+        <birthTime value="19660930" />
+        <maritalStatusCode code="M" codeSystem="2.16.840.1.113883.5.2" displayName="Married" />
+        <religiousAffiliationCode code="AGN" codeSystem="2.16.840.1.113883.2.18.13" displayName="Agnostic" />
+        <raceCode code="21" codeSystem="2.16.840.1.113883.2.18.11.1" codeSystemName="EthnicityL2" displayName="New Zealand Maori" />
+        <guardian>
+          <templateId root="2.16.840.1.113883.2.18.7.5.3" />
+          <code>
+            <originalText>Mother</originalText>
+          </code>
+          <guardianPerson>
+            <name>
+              <given>Mavis</given>
+              <family>Smith</family>
+            </name>
+          </guardianPerson>
+        </guardian>
+        <guardian>
+          <templateId root="2.16.840.1.113883.2.18.7.5.3" />
+          <code>
+            <originalText>Controller</originalText>
+          </code>
+          <guardianOrganization>
+            <id nullFlavor="NA" />
+            <name>The Organisation</name>
+          </guardianOrganization>
+        </guardian>
+        <birthplace>
+          <templateId root="2.16.840.1.113883.2.18.7.5.4" />
+          <place>
+            <addr use="H">
+              <city>Walsall</city>
+              <country>UK</country>
+            </addr>
+          </place>
+        </birthplace>
+      </patient>
+    </patientRole>
+  </recordTarget>
+  <author>
+    <templateId root="2.16.840.1.113883.2.18.7.5.7" />
+    <time value="20131219174600" />
+    <assignedAuthor>
+      <id root="2.16.840.1.113883.2.18.3.1" extension="44DEFG" />
+      <assignedPerson>
+        <name>
+          <given>Peter</given>
+          <family>Piper</family>
+        </name>
+      </assignedPerson>
+    </assignedAuthor>
+  </author>
+  <author>
+    <time value="20131219173915" />
+    <assignedAuthor>
+      <id root="2.16.840.1.113883.2.18.32" extension="3.3.0.1" />
+      <assignedAuthoringDevice>
+        <manufacturerModelName>Patients First</manufacturerModelName>
+        <softwareName>NZ CDA Toolkit</softwareName>
+      </assignedAuthoringDevice>
+    </assignedAuthor>
+  </author>
+  <custodian>
+    <templateId root="2.16.840.1.113883.2.18.7.5.10" />
+    <assignedCustodian>
+      <representedCustodianOrganization>
+        <templateId root="2.16.840.1.113883.2.18.7.5.19.2" />
+        <id root="2.16.840.1.113883.2.18.3.2" extension="DS3333" />
+        <name>Happy Valley Medical Centre</name>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+  <component>
+    <structuredBody>
+      <component>
+        <!--
+**************************************************
+Ethnicity
+**************************************************
+-->
+        <section>
+          <templateId root="2.16.840.1.113883.2.18.7.86" />
+          <code code="69490-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC STATIC" displayName="Ethnicity" />
+          <title>Ethnicity</title>
+          <text>
+            <table>
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>EthnicityL2</td>
+                  <td>New Zealand Maori</td>
+                </tr>
+                <tr>
+                  <td>EthnicityL2</td>
+                  <td>European</td>
+                </tr>
+                <tr>
+                  <td>Iwi</td>
+                  <td>Tainui</td>
+                </tr>
+                <tr>
+                  <td>Hapu</td>
+                  <td>Pikatu</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.86.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.2.18.7.86.2" />
+              <id root="ca74b928-e81b-4c07-97a8-97715855c541" />
+              <code code="397731000" codeSystem="2.16.840.1.113883.6.96" displayName="ethnicity" />
+              <value xsi:type="CD" code="21" codeSystem="2.16.840.1.113883.2.18.11.1" codeSystemName="EthnicityL2" displayName="New Zealand Maori" />
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.86.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.2.18.7.86.2" />
+              <id root="bb45f561-19d4-4925-86b1-aa5137129a64" />
+              <code code="397731000" codeSystem="2.16.840.1.113883.6.96" displayName="ethnicity" />
+              <value xsi:type="CD" code="11" codeSystem="2.16.840.1.113883.2.18.11.1" codeSystemName="EthnicityL2" displayName="European" />
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.86.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.2.18.7.86.2" />
+              <id root="11f6cd55-6f84-492c-ba0e-f4be92f15355" />
+              <code code="397731000" codeSystem="2.16.840.1.113883.6.96" displayName="ethnicity" />
+              <value xsi:type="CD" codeSystem="2.16.840.1.113883.2.18.11.3" codeSystemName="Iwi" displayName="Tainui" />
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.86.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.2.18.7.86.2" />
+              <id root="f34a9ed8-4e02-47b9-817b-ccd9f06db70c" />
+              <code code="397731000" codeSystem="2.16.840.1.113883.6.96" displayName="ethnicity" />
+              <value xsi:type="CD" codeSystem="2.16.840.1.113883.2.18.11.4" codeSystemName="Hapu" displayName="Pikatu" />
+            </observation>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <!--
+**************************************************
+Language Communication
+**************************************************
+-->
+        <section>
+          <templateId root="2.16.840.1.113883.2.18.7.79" />
+          <code code="54505-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC STATIC" displayName="Language Communication" />
+          <title>Language Communication</title>
+          <text>
+            <table>
+              <thead>
+                <tr>
+                  <th>Language</th>
+                  <th>Ability</th>
+                  <th>Proficiency</th>
+                  <th>Interpreter Required?</th>
+                  <th>Preferred?</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>English</td>
+                  <td>Understand_Sign</td>
+                  <td>Poor</td>
+                  <td>yes</td>
+                  <td>no</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.79.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.2.18.7.79.2" />
+              <id root="33359eaa-88d7-467e-b901-95c28067afa6" />
+              <code code="161139007" codeSystem="2.16.840.1.113883.6.96" displayName="Language" />
+              <value xsi:type="CD" codeSystem="2.16.840.1.113883.2.18.64.1" codeSystemName="Language" displayName="English" />
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.2.18.7.79.3" />
+                  <id root="efd037e0-f48b-47a1-b9ef-d398e6127ad3" />
+                  <code code="288547000" codeSystem="2.16.840.1.113883.6.96" displayName="Communication ability" />
+                  <value xsi:type="CD" code="6" codeSystem="2.16.840.1.113883.2.18.64.2" codeSystemName="LanguageAbility" displayName="Understand Sign" />
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.2.18.7.79.4" />
+                  <id root="bf75c54b-68d2-4a16-a0ae-4fad454f7c60" />
+                  <code code="401049002" codeSystem="2.16.840.1.113883.6.96" displayName="Communication skill" />
+                  <value xsi:type="CD" code="4" codeSystem="2.16.840.1.113883.5.64.3" codeSystemName="LanguageProficiency" displayName="Poor" />
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.2.18.7.79.5" />
+                  <id root="c6b07cf3-2c69-4721-963d-bc39914e40ab" />
+                  <code code="315593009" codeSystem="2.16.840.1.113883.6.96" displayName="Interpreter Required" />
+                  <value xsi:type="BL" value="true" />
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.2.18.7.79.6" />
+                  <id root="de53cddd-603e-4c85-9684-c68a0e122e2b" />
+                  <code code="2695384015" codeSystem="2.16.840.1.113883.6.96" displayName="Language preference" />
+                  <value xsi:type="BL" value="false" />
+                </observation>
+              </entryRelationship>
+            </observation>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <!--
+**************************************************
+Identification information
+**************************************************
+-->
+        <section>
+          <templateId root="2.16.840.1.113883.2.18.7.80" />
+          <code code="iA" codeSystem="2.16.840.1.113883.2.18.63" codeSystemName="interRAI iCODE" displayName="Identification information" />
+          <title>Identification information</title>
+          <text>
+            <table border="1">
+              <col width="10" />
+              <col width="100" />
+              <col width="250" />
+              <col width="250" />
+              <tbody>
+                <tr>
+                  <th>1</th>
+                  <th>NAME</th>
+                  <td>
+                    <content>a. First Name</content>
+                  </td>
+                  <td>
+                    <content>Fred</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>b. Middle Name/Initial</content>
+                  </td>
+                  <td>
+                    <content>K</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>c. Last Name</content>
+                  </td>
+                  <td>
+                    <content>Bloggs</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>d. Jr/Sr</content>
+                  </td>
+                  <td>
+                    <content></content>
+                  </td>
+                </tr>
+                <tr>
+                  <th>2</th>
+                  <th>GENDER</th>
+                  <td>
+                    <content>
+                      <content>
+                        M. Male<br />
+                      </content>
+                      <content>
+                        F. Female<br />
+                      </content>
+                      <content>
+                        U. Unknown<br />
+                      </content>
+                      <content>
+                        I. Indeterminate<br />
+                      </content>
+                      <content>
+                        <br />
+                      </content>
+                    </content>
+                  </td>
+                  <td>
+                    <content>M. Male</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th>3</th>
+                  <th>BIRTH DATE</th>
+                  <td>
+                    <content>Birthdate</content>
+                  </td>
+                  <td>
+                    <content>05 Jul 1955</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th>4</th>
+                  <th>MARITAL STATUS</th>
+                  <td>
+                    <content>
+                      <content>
+                        1. Never married<br />
+                      </content>
+                      <content>
+                        2. Married/Civil union/Defacto<br />
+                      </content>
+                      <content>
+                        3. Widowed<br />
+                      </content>
+                      <content>
+                        4. Separated<br />
+                      </content>
+                      <content>
+                        5. Divorced<br />
+                      </content>
+                      <content>
+                        6. Other<br />
+                      </content>
+                      <content>
+                        <br />
+                      </content>
+                    </content>
+                  </td>
+                  <td>
+                    <content>2. Married/Civil union/Defacto</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th>5</th>
+                  <th>NUMERIC IDENTIFIERS</th>
+                  <td>
+                    <content>a. NHI</content>
+                  </td>
+                  <td>
+                    <content>BBJ0001</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>b. ACC Claim Number</content>
+                  </td>
+                  <td>
+                    <content>ACC2617262</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>
+                      <content>
+                        c. Is the resident a veteran /on a war disability pension?<br />
+                      </content>
+                      <content>
+                        0. No<br />
+                      </content>
+                      <content>
+                        1. Yes<br />
+                      </content>
+                      <content>
+                        <br />
+                      </content>
+                    </content>
+                  </td>
+                  <td>
+                    <content>0. No</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th>6</th>
+                  <th>FACILITY / AGENCY IDENTIFIER</th>
+                  <td>
+                    <content>a. Facility Name</content>
+                  </td>
+                  <td>
+                    <content>NZ-LTC Main Facility</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>b. Facility Number</content>
+                  </td>
+                  <td>
+                    <content>ABCD123</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th>7</th>
+                  <th>ELIGIBILITY FOR PUBLICALLY FUNDED HEALTH SERVICES IN NEW ZEALAND</th>
+                  <td>
+                    <content>
+                      <content>
+                        a. New Zealand resident / citizen<br />
+                      </content>
+                      <content>
+                        0. No <br />
+                      </content>
+                      <content>
+                        1. Yes<br />
+                      </content>
+                      <content>
+                        11. Unknown (First assessment only)<br />
+                      </content>
+                      <content>
+                        <br />
+                      </content>
+                    </content>
+                  </td>
+                  <td>
+                    <content>1. Yes</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>
+                      <content>
+                        b. Work permit holder<br />
+                      </content>
+                      <content>
+                        0. No<br />
+                      </content>
+                      <content>
+                        1. Yes<br />
+                      </content>
+                      <content>
+                        11. Unknown (First assessment only)<br />
+                      </content>
+                      <content>
+                        <br />
+                      </content>
+                    </content>
+                  </td>
+                  <td>
+                    <content>0. No</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>
+                      <content>
+                        c. Australian resident in NZ<br />
+                      </content>
+                      <content>
+                        0. No<br />
+                      </content>
+                      <content>
+                        1. Yes<br />
+                      </content>
+                      <content>
+                        11. Unknown (First assessment only)<br />
+                      </content>
+                      <content>
+                        <br />
+                      </content>
+                    </content>
+                  </td>
+                  <td>
+                    <content>0. No</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>
+                      <content>
+                        d. UK or Australian citizen visiting NZ<br />
+                      </content>
+                      <content>
+                        0. No<br />
+                      </content>
+                      <content>
+                        1. Yes<br />
+                      </content>
+                      <content>
+                        11. Unknown (First assessment only)<br />
+                      </content>
+                      <content>
+                        <br />
+                      </content>
+                    </content>
+                  </td>
+                  <td>
+                    <content>0. No</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>
+                      <content>
+                        e. ACC accepted claims<br />
+                      </content>
+                      <content>
+                        0. No<br />
+                      </content>
+                      <content>
+                        1. Yes<br />
+                      </content>
+                      <content>
+                        11. Unknown (First assessment only)<br />
+                      </content>
+                      <content>
+                        <br />
+                      </content>
+                    </content>
+                  </td>
+                  <td>
+                    <content>0. No</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th>8</th>
+                  <th>REASON FOR ASSESSMENT</th>
+                  <td>
+                    <content>
+                      <content>
+                        Primary reason for assessment<br />
+                      </content>
+                      <content>
+                        1. First assessment<br />
+                      </content>
+                      <content>
+                        2. Routine reassessment<br />
+                      </content>
+                      <content>
+                        3. Return assessment<br />
+                      </content>
+                      <content>
+                        4. Significant change in status reassessment<br />
+                      </content>
+                      <content>
+                        5. Discharge assessment, covers last 3 days of service<br />
+                      </content>
+                      <content>
+                        6. Discharge tracking only<br />
+                      </content>
+                      <content>
+                        7. Other - e.g. research<br />
+                      </content>
+                      <content>
+                        <br />
+                      </content>
+                    </content>
+                  </td>
+                  <td>
+                    <content>2. Routine reassessment</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th>9</th>
+                  <th>ASSESSMENT REFERENCE DATE</th>
+                  <td>
+                    <content>Reference Date</content>
+                  </td>
+                  <td>
+                    <content>15 Apr 2013</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>Are you happy for your assessment information to be used for planning and research? Your name and address and any other identifying information will be removed</content>
+                  </td>
+                  <td>
+                    <content>Client or person entitled to consent on behalf of client agrees</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th>10</th>
+                  <th>PERSON'S EXPRESSED GOALS OF CARE</th>
+                  <td>
+                    <content>(255 characters max)</content>
+                  </td>
+                  <td>
+                    <content>I want to feel better.</content>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="4">
+                    <content>
+                      Comment Title: PERSON'S EXPRESSED GOALS OF CARE<br /><content>Comment: Re-check goals in 3 weeks from date of assessment.</content>
+                    </content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>b. Primary Goal</content>
+                  </td>
+                  <td>
+                    <content>Increase mobility</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th>11</th>
+                  <th>TIME SINCE LAST HOSPITAL STAY</th>
+                  <td>
+                    <content>
+                      <content>
+                        Code for most recent instance in LAST 90 DAYS<br />
+                      </content>
+                      <content>
+                        0. No hospitalisation within 90 days<br />
+                      </content>
+                      <content>
+                        1. 31-90 days ago<br />
+                      </content>
+                      <content>
+                        2. 15-30 days ago<br />
+                      </content>
+                      <content>
+                        3. 8-14 days ago<br />
+                      </content>
+                      <content>
+                        4. In the last 7 days<br />
+                      </content>
+                      <content>
+                        5. Now in hospital<br />
+                      </content>
+                      <content>
+                        <br />
+                      </content>
+                    </content>
+                  </td>
+                  <td>
+                    <content>0. No hospitalisation within 90 days</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th>SECTION A COMPLETE</th>
+                  <td>
+                    <content>Completed by</content>
+                  </td>
+                  <td>
+                    <content>97ASXW</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>Title</content>
+                  </td>
+                  <td>
+                    <content>interRAI Assessor</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>Date</content>
+                  </td>
+                  <td>
+                    <content>15 Apr 2013</content>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="7de056b4-2b72-4b48-ad18-6990903195dc" />
+              <code code="iA1a" codeSystem="2.16.840.1.113883.2.18.63" displayName="Name">
+                <originalText>a. First Name</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">Fred</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="b575c82d-a4d4-4cb7-8940-ee1a86949dad" />
+              <code code="iA1b" codeSystem="2.16.840.1.113883.2.18.63" displayName="Name">
+                <originalText>b. Middle Name/Initial</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">K</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="49bc1e11-93ba-4da3-b779-8576840dac2e" />
+              <code code="iA1c" codeSystem="2.16.840.1.113883.2.18.63" displayName="Name">
+                <originalText>c. Last Name</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">Bloggs</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="74ed2385-3daa-4869-ab5f-e476584dae4d" />
+              <code code="iA1d" codeSystem="2.16.840.1.113883.2.18.63" displayName="Name">
+                <originalText>d. Jr/Sr</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST"></value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="10d984d4-2d65-432f-a214-e9bee256c901" />
+              <code code="iA2" codeSystem="2.16.840.1.113883.2.18.63" displayName="Gender">
+                <originalText>M. Male|F. Female|U. Unknown|I. Indeterminate|</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">M. Male</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="67583b59-bbd1-435a-b78a-290dedf7460f" />
+              <code code="iA3" codeSystem="2.16.840.1.113883.2.18.63" displayName="Birth date">
+                <originalText>Birthdate</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="TS" value="19550705" />
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="5c1a28b6-3d1a-43bb-b063-0e089f307f1c" />
+              <code code="iA4" codeSystem="2.16.840.1.113883.2.18.63" displayName="Marital Status">
+                <originalText>1. Never married|2. Married/Civil union/Defacto|3. Widowed|4. Separated|5. Divorced|6. Other|</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">2. Married/Civil union/Defacto</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="2498c2dd-d06a-48a6-8269-5833350bb7fd" />
+              <code code="iA5a" codeSystem="2.16.840.1.113883.2.18.63" displayName="Numeric Identifiers">
+                <originalText>a. NHI</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="II" root="2.16.840.1.113883.2.18.2" extension="BBJ0001" />
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="728561ab-6d78-4e41-99a1-67c0f36d5f57" />
+              <code code="iA5b" codeSystem="2.16.840.1.113883.2.18.63" displayName="Numeric Identifiers">
+                <originalText>b. ACC Claim Number</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">ACC2617262</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="1c87c7f4-3f9f-40ef-a61e-8106503259e1" />
+              <code code="iA5c" codeSystem="2.16.840.1.113883.2.18.63" displayName="Numeric Identifiers">
+                <originalText>c. Is the resident a veteran /on a war disability pension?|0. No|1. Yes|</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">0. No</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="66531a67-9522-4df4-9724-ac2fab55d211" />
+              <code code="iA6a" codeSystem="2.16.840.1.113883.2.18.63" displayName="Facility / Agency Identifier">
+                <originalText>a. Facility Name</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">NZ-LTC Main Facility</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="c9e55866-4f5c-4551-bb3c-fb50b18f0771" />
+              <code code="iA6b" codeSystem="2.16.840.1.113883.2.18.63" displayName="Facility / Agency Identifier">
+                <originalText>b. Facility Number</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="II" root="2.16.840.1.113883.2.18.3.2" extension="ABCD123" />
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="8bb3be37-f948-42d0-8e3f-9804ceade0a1" />
+              <code code="iA7a" codeSystem="2.16.840.1.113883.2.18.63" displayName="ELIGIBILITY FOR PUBLICALLY FUNDED HEALTH SERVICES IN NEW ZEALAND">
+                <originalText>a. New Zealand resident / citizen|0. No |1. Yes|11. Unknown (First assessment only)|</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">1. Yes</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="c70f0af1-cbf7-4dfa-b5ec-5263caefca85" />
+              <code code="iA7b" codeSystem="2.16.840.1.113883.2.18.63" displayName="ELIGIBILITY FOR PUBLICALLY FUNDED HEALTH SERVICES IN NEW ZEALAND">
+                <originalText>b. Work permit holder|0. No|1. Yes|11. Unknown (First assessment only)|</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">0. No</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="6d2dc6a9-663c-498f-a274-40047d3bbf54" />
+              <code code="iA7c" codeSystem="2.16.840.1.113883.2.18.63" displayName="ELIGIBILITY FOR PUBLICALLY FUNDED HEALTH SERVICES IN NEW ZEALAND">
+                <originalText>c. Australian resident in NZ|0. No|1. Yes|11. Unknown (First assessment only)|</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">0. No</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="73af0332-1724-47b3-84a1-478044a421d9" />
+              <code code="iA7d" codeSystem="2.16.840.1.113883.2.18.63" displayName="ELIGIBILITY FOR PUBLICALLY FUNDED HEALTH SERVICES IN NEW ZEALAND">
+                <originalText>d. UK or Australian citizen visiting NZ|0. No|1. Yes|11. Unknown (First assessment only)|</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">0. No</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="239cf176-f03b-4fe5-8889-372a9f31e7cb" />
+              <code code="iA7e" codeSystem="2.16.840.1.113883.2.18.63" displayName="ELIGIBILITY FOR PUBLICALLY FUNDED HEALTH SERVICES IN NEW ZEALAND">
+                <originalText>e. ACC accepted claims|0. No|1. Yes|11. Unknown (First assessment only)|</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">0. No</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="6604d37a-076a-42ea-9e76-56aafa97d492" />
+              <code code="iA8" codeSystem="2.16.840.1.113883.2.18.63" displayName="REASON FOR ASSESSMENT">
+                <originalText>Primary reason for assessment|1. First assessment|2. Routine reassessment|3. Return assessment|4. Significant change in status reassessment|5. Discharge assessment, covers last 3 days of service|6. Discharge tracking only|7. Other - e.g. research|</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">2. Routine reassessment</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="90aacfb0-62f3-435c-9d58-a4ff8f2c8fd0" />
+              <code code="iA9a" codeSystem="2.16.840.1.113883.2.18.63" displayName="ASSESSMENT REFERENCE DATE">
+                <originalText>Reference Date</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="TS" value="20130415" />
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="d16100bf-1882-4683-a189-62d82cdd4f8a" />
+              <code code="iA9b" codeSystem="2.16.840.1.113883.2.18.63" displayName="ASSESSMENT REFERENCE DATE">
+                <originalText>Are you happy for your assessment information to be used for planning and research? Your name and address and any other identifying information will be removed</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">Client or person entitled to consent on behalf of client agrees</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="14e1fc03-4132-40d7-846b-eb1277b35d66" />
+              <code code="iA10a" codeSystem="2.16.840.1.113883.2.18.63" displayName="PERSON'S EXPRESSED GOALS OF CARE">
+                <originalText>(255 characters max)</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">I want to feel better.</value>
+              <entryRelationship typeCode="SUBJ" inversionInd="true">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="48767-8" codeSystem="2.16.840.1.113883.6.1" displayName="Annotation comment" />
+                  <value xsi:type="ST">Re-check goals in 3 weeks from date of assessment.</value>
+                </observation>
+              </entryRelationship>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="fcc73617-88fa-4363-97bd-55e64348f4d0" />
+              <code code="iA10b" codeSystem="2.16.840.1.113883.2.18.63" displayName="PERSON'S EXPRESSED GOALS OF CARE">
+                <originalText>b. Primary Goal</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">Increase mobility</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="92fedef6-8130-47cb-a219-1834fc658972" />
+              <code code="iA11a" codeSystem="2.16.840.1.113883.2.18.63" displayName="TIME SINCE LAST HOSPITAL STAY">
+                <originalText>Code for most recent instance in LAST 90 DAYS|0. No hospitalisation within 90 days|1. 31-90 days ago|2. 15-30 days ago|3. 8-14 days ago|4. In the last 7 days|5. Now in hospital|</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">0. No hospitalisation within 90 days</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="9c6a31f3-4a99-4dfa-93b7-a8bbd8fa74bb" />
+              <code code="iACompletedBy" codeSystem="2.16.840.1.113883.2.18.63" displayName="SECTION A COMPLETE">
+                <originalText>Completed by</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="II" root="2.16.840.1.113883.2.18.3.1" extension="97ASXW" />
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="49257cc0-ed7b-4ad2-9aed-ca0915f49966" />
+              <code code="iATitle" codeSystem="2.16.840.1.113883.2.18.63" displayName="SECTION A COMPLETE">
+                <originalText>Title</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">interRAI Assessor</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="23a381fa-9da4-4f21-bf36-b98250149119" />
+              <code code="iADate" codeSystem="2.16.840.1.113883.2.18.63" displayName="SECTION A COMPLETE">
+                <originalText>Date</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="TS" value="20130415" />
+            </observation>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <!--
+**************************************************
+Intake and initial history
+**************************************************
+-->
+        <section>
+          <templateId root="2.16.840.1.113883.2.18.7.80" />
+          <code code="iB" codeSystem="2.16.840.1.113883.2.18.63" codeSystemName="interRAI iCODE" displayName="Intake and initial history" />
+          <title>Intake and initial history</title>
+          <text>
+            <table border="1">
+              <col width="10" />
+              <col width="100" />
+              <col width="250" />
+              <col width="250" />
+              <tbody>
+                <tr>
+                  <th>1</th>
+                  <th>LEVEL OF CONTROL PERSON HAD OVER DECISION TO MOVE INTO LTCF</th>
+                  <td>
+                    <content>
+                      <content>
+                        0. Complete<br />
+                      </content>
+                      <content>
+                        1. Some control<br />
+                      </content>
+                      <content>
+                        2. Little or no control<br />
+                      </content>
+                      <content>
+                        3. Could not (would not) respond<br />
+                      </content>
+                      <content>
+                        <br />
+                      </content>
+                    </content>
+                  </td>
+                  <td>
+                    <content>1</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th>2</th>
+                  <th>DATE STAY BEGAN</th>
+                  <td>
+                    <content>Date Opened</content>
+                  </td>
+                  <td>
+                    <content>01 Jul 2012</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th>3</th>
+                  <th>ETHNICITY</th>
+                  <td>
+                    <content>(Check at least one but no more than three options)</content>
+                  </td>
+                  <td>
+                    <content></content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>10 European not further defined</content>
+                  </td>
+                  <td>
+                    <content>No</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>11 New Zealand European</content>
+                  </td>
+                  <td>
+                    <content>Yes</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th>4</th>
+                  <th>LANGUAGE</th>
+                  <td>
+                    <content>a. Primary Language</content>
+                  </td>
+                  <td>
+                    <content>eng</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>
+                      <content>
+                        b. Interpreter Needed<br />
+                      </content>
+                      <content>
+                        0. No<br />
+                      </content>
+                      <content>
+                        1. Yes<br />
+                      </content>
+                      <content>
+                        <br />
+                      </content>
+                    </content>
+                  </td>
+                  <td>
+                    <content>0. No</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th>5</th>
+                  <th>ADMITTED FROM AND USUAL RESIDENCE</th>
+                  <td>
+                    <content>
+                      <content>
+                        a. Admitted From<br />
+                      </content>
+                      <content>
+                        <br />
+                      </content>
+                    </content>
+                  </td>
+                  <td>
+                    <content>3. Assisted living or semi-independent living</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>
+                      <content>
+                        b. Usual residential status<br />
+                      </content>
+                      <content>
+                        <br />
+                      </content>
+                    </content>
+                  </td>
+                  <td>
+                    <content>1. Private home / apartment / rented room</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th>6</th>
+                  <th>PRIOR PRIMARY RESIDENCE DOMICILE CODE</th>
+                  <td>
+                    <content>4 alphanumeric chrs</content>
+                  </td>
+                  <td>
+                    <content>A7S1</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th>7</th>
+                  <th>LIVING ARRANGEMENT PRIOR TO ADMISSION</th>
+                  <td>
+                    <content>
+                      <content>
+                        1. Alone<br />
+                      </content>
+                      <content>
+                        2. With spouse / partner only<br />
+                      </content>
+                      <content>
+                        ...<br />
+                      </content>
+                      <content>
+                        <br />
+                      </content>
+                    </content>
+                  </td>
+                  <td>
+                    <content>1. Alone</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th>8</th>
+                  <th>RESIDENTIAL HISTORY OVER LAST 5 YEARS</th>
+                  <td>
+                    <content>
+                      <content>
+                        a. Long-term care facility<br />
+                      </content>
+                      <content>
+                        0. No<br />
+                      </content>
+                      <content>
+                        1. Yes<br />
+                      </content>
+                      <content>
+                        <br />
+                      </content>
+                    </content>
+                  </td>
+                  <td>
+                    <content>0. No</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>
+                      <content>
+                        b. Board and care home or assisted living<br />
+                      </content>
+                      <content>
+                        0. No<br />
+                      </content>
+                      <content>
+                        1. Yes<br />
+                      </content>
+                      <content>
+                        <br />
+                      </content>
+                    </content>
+                  </td>
+                  <td>
+                    <content>0. No</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>
+                      <content>
+                        c. Mental health residence<br />
+                      </content>
+                      <content>
+                        0. No<br />
+                      </content>
+                      <content>
+                        1. Yes<br />
+                      </content>
+                      <content>
+                        <br />
+                      </content>
+                    </content>
+                  </td>
+                  <td>
+                    <content>1. Yes</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>
+                      <content>
+                        d. Psychiatric hospital or unit<br />
+                      </content>
+                      <content>
+                        0. No<br />
+                      </content>
+                      <content>
+                        1. Yes<br />
+                      </content>
+                      <content>
+                        <br />
+                      </content>
+                    </content>
+                  </td>
+                  <td>
+                    <content>0. No</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>
+                      <content>
+                        e. Setting for persons with intellectual disability<br />
+                      </content>
+                      <content>
+                        0. No<br />
+                      </content>
+                      <content>
+                        1. Yes<br />
+                      </content>
+                      <content>
+                        <br />
+                      </content>
+                    </content>
+                  </td>
+                  <td>
+                    <content>1. Yes</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th>9</th>
+                  <th>MENTAL HEALTH</th>
+                  <td>
+                    <content>Record indicates history of mental illness or intellectual disability</content>
+                  </td>
+                  <td>
+                    <content></content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>
+                      <content>
+                        0. No<br />
+                      </content>
+                      <content>
+                        1. Yes<br />
+                      </content>
+                      <content>
+                        <br />
+                      </content>
+                    </content>
+                  </td>
+                  <td>
+                    <content>0. No</content>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="4">
+                    <content>
+                      Comment Title: MENTAL HEALTH<br /><content>Comment: Confirm with resident's family</content>
+                    </content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th>SECTION B COMPLETE</th>
+                  <td>
+                    <content>Completed By</content>
+                  </td>
+                  <td>
+                    <content>97ASXW</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>Title</content>
+                  </td>
+                  <td>
+                    <content>interRAI Assessor</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>Date</content>
+                  </td>
+                  <td>
+                    <content>15 Apr 2013</content>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="a80c322c-2303-4fe8-9305-d92c425e1e9d" />
+              <code code="iB1" codeSystem="2.16.840.1.113883.2.18.63" displayName="LEVEL OF CONTROL PERSON HAD OVER DECISION TO MOVE INTO LTCF">
+                <originalText>0. Complete|1. Some control|2. Little or no control|3. Could not (would not) respond|</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="INT" value="1" />
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="b877a384-2b8b-49e8-b0e1-55bde501ae8b" />
+              <code code="iB2" codeSystem="2.16.840.1.113883.2.18.63" displayName="DATE STAY BEGAN">
+                <originalText>Date Opened</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="TS" value="20120701" />
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="36bddf5b-9e2e-4a11-922c-37711d70244f" />
+              <code code="iB3" codeSystem="2.16.840.1.113883.2.18.63" displayName="ETHNICITY">
+                <originalText>(Check at least one but no more than three options)</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST"></value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="910a459e-2e9d-4271-8257-8f65b0b69ce2" />
+              <code code="iB3a" codeSystem="2.16.840.1.113883.2.18.63" displayName="ETHNICITY">
+                <originalText>10 European not further defined</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="BL" value="false" />
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="aa6b293f-12c1-418f-806e-33833ed22653" />
+              <code code="iB3b" codeSystem="2.16.840.1.113883.2.18.63" displayName="ETHNICITY">
+                <originalText>11 New Zealand European</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="BL" value="true" />
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="49bc0d17-feb1-4a7a-b01e-8dc4a29bccf9" />
+              <code code="iB4a" codeSystem="2.16.840.1.113883.2.18.63" displayName="LANGUAGE">
+                <originalText>a. Primary Language</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">eng</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="219d0071-3d60-4ffa-9663-652ec7dd2b1f" />
+              <code code="iB4b" codeSystem="2.16.840.1.113883.2.18.63" displayName="LANGUAGE">
+                <originalText>b. Interpreter Needed|0. No|1. Yes|</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">0. No</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="b5c40b92-eefc-4d82-8f84-292133749ed4" />
+              <code code="iB5a" codeSystem="2.16.840.1.113883.2.18.63" displayName="ADMITTED FROM AND USUAL RESIDENCE">
+                <originalText>a. Admitted From|</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">3. Assisted living or semi-independent living</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="e850d040-4548-46eb-b0c9-67c6d34a4d46" />
+              <code code="iB5b" codeSystem="2.16.840.1.113883.2.18.63" displayName="ADMITTED FROM AND USUAL RESIDENCE">
+                <originalText>b. Usual residential status|</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">1. Private home / apartment / rented room</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="27e15a14-1eee-4b20-8460-3a1cfd2ddc07" />
+              <code code="iB6" codeSystem="2.16.840.1.113883.2.18.63" displayName="PRIOR PRIMARY RESIDENCE DOMICILE CODE">
+                <originalText>4 alphanumeric chrs</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">A7S1</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="5056e2b6-90da-463a-892c-daf7a197b90c" />
+              <code code="iB7" codeSystem="2.16.840.1.113883.2.18.63" displayName="LIVING ARRANGEMENT PRIOR TO ADMISSION">
+                <originalText>1. Alone|2. With spouse / partner only|...|</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">1. Alone</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="91b909a4-a554-4af6-9b48-0ee9afdf7cce" />
+              <code code="iB8a" codeSystem="2.16.840.1.113883.2.18.63" displayName="RESIDENTIAL HISTORY OVER LAST 5 YEARS">
+                <originalText>a. Long-term care facility|0. No|1. Yes|</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">0. No</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="3e0077ec-3f4b-4bf4-8881-939577b8f6c0" />
+              <code code="iB8b" codeSystem="2.16.840.1.113883.2.18.63" displayName="RESIDENTIAL HISTORY OVER LAST 5 YEARS">
+                <originalText>b. Board and care home or assisted living|0. No|1. Yes|</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">0. No</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="de1b6302-0318-4641-9abc-f176cad9d2af" />
+              <code code="iB8c" codeSystem="2.16.840.1.113883.2.18.63" displayName="RESIDENTIAL HISTORY OVER LAST 5 YEARS">
+                <originalText>c. Mental health residence|0. No|1. Yes|</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">1. Yes</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="f480dc67-30a0-4177-b4c6-1d9105665349" />
+              <code code="iB8d" codeSystem="2.16.840.1.113883.2.18.63" displayName="RESIDENTIAL HISTORY OVER LAST 5 YEARS">
+                <originalText>d. Psychiatric hospital or unit|0. No|1. Yes|</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">0. No</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="09d3948f-5f56-42c8-bb74-1bb2fbd08f89" />
+              <code code="iB8e" codeSystem="2.16.840.1.113883.2.18.63" displayName="RESIDENTIAL HISTORY OVER LAST 5 YEARS">
+                <originalText>e. Setting for persons with intellectual disability|0. No|1. Yes|</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">1. Yes</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="91c90776-0fb1-401b-9a68-c92e31a0c8e9" />
+              <code code="iB9a" codeSystem="2.16.840.1.113883.2.18.63" displayName="MENTAl HEALTH">
+                <originalText>Record indicates history of mental illness or intellectual disability</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST"></value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="76e6a28c-5807-4794-9d28-160cd8d1ac20" />
+              <code code="iB9b" codeSystem="2.16.840.1.113883.2.18.63" displayName="MENTAL HEALTH">
+                <originalText>0. No|1. Yes|</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">0. No</value>
+              <entryRelationship typeCode="SUBJ" inversionInd="true">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="48767-8" codeSystem="2.16.840.1.113883.6.1" displayName="Annotation comment" />
+                  <value xsi:type="ST">Confirm with resident's family</value>
+                </observation>
+              </entryRelationship>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="44454cd1-4397-41e0-8b6d-89b462fee9d5" />
+              <code code="iBCompletedBy" codeSystem="2.16.840.1.113883.2.18.63" displayName="SECTION B COMPLETE">
+                <originalText>Completed By</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="II" root="2.16.840.1.113883.2.18.3.1" extension="97ASXW" />
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="9d927685-4d8f-43a7-bef0-02ef56b312a7" />
+              <code code="iBTitle" codeSystem="2.16.840.1.113883.2.18.63" displayName="SECTION B COMPLETE">
+                <originalText>Title</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">interRAI Assessor</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="4deaa8fb-97fb-4964-bdb6-16ebcd8e1e04" />
+              <code code="iBDate" codeSystem="2.16.840.1.113883.2.18.63" displayName="SECTION B COMPLETE">
+                <originalText>Date</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="TS" value="20130415" />
+            </observation>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <!--
+**************************************************
+Cognition
+**************************************************
+-->
+        <section>
+          <templateId root="2.16.840.1.113883.2.18.7.80" />
+          <code code="iC" codeSystem="2.16.840.1.113883.2.18.63" codeSystemName="interRAI iCODE" displayName="Cognition" />
+          <title>Cognition</title>
+          <text>
+            <table border="1">
+              <col width="10" />
+              <col width="100" />
+              <col width="250" />
+              <col width="250" />
+              <tbody>
+                <tr>
+                  <th>1</th>
+                  <th>COGNITIVE SKILLS FOR DAILY DECISION MAKING</th>
+                  <td>
+                    <content>Making decisions regarding tasks of daily life.</content>
+                  </td>
+                  <td>
+                    <content></content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th>SECTION C COMPLETE</th>
+                  <td>
+                    <content>Completed By</content>
+                  </td>
+                  <td>
+                    <content>97ASXW</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>Title</content>
+                  </td>
+                  <td>
+                    <content>interRAI Assessor</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>Date</content>
+                  </td>
+                  <td>
+                    <content>15 Apr 2013</content>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="280b5e60-3d19-42a7-977a-0cdbe313350f" />
+              <code code="iC1a" codeSystem="2.16.840.1.113883.2.18.63" displayName="COGNITIVE SKILLS FOR DAILY DECISION MAKING">
+                <originalText>Making decisions regarding tasks of daily life.</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST"></value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="0b35d41e-17d6-406c-add5-a60a4e12d089" />
+              <code code="iCCompletedBy" codeSystem="2.16.840.1.113883.2.18.63" displayName="SECTION C COMPLETE">
+                <originalText>Completed By</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="II" root="2.16.840.1.113883.2.18.3.1" extension="97ASXW" />
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="001e1d35-19fe-4685-b2a3-0fad06252278" />
+              <code code="iCTitle" codeSystem="2.16.840.1.113883.2.18.63" displayName="SECTION C COMPLETE">
+                <originalText>Title</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">interRAI Assessor</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="9c0211cb-6ea6-4ef0-959a-4f41f59bd75e" />
+              <code code="iCDate" codeSystem="2.16.840.1.113883.2.18.63" displayName="SECTION C COMPLETE">
+                <originalText>Date</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="TS" value="20130415" />
+            </observation>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <!--
+**************************************************
+Communication and vision
+**************************************************
+-->
+        <section>
+          <templateId root="2.16.840.1.113883.2.18.7.80" />
+          <code code="iD" codeSystem="2.16.840.1.113883.2.18.63" codeSystemName="interRAI iCODE" displayName="Communication and vision" />
+          <title>Communication and vision</title>
+          <text>
+            <table border="1">
+              <col width="10" />
+              <col width="100" />
+              <col width="250" />
+              <col width="250" />
+              <tbody>
+                <tr>
+                  <th>1</th>
+                  <th>MAKING SELF UNDERSTOOD</th>
+                  <td>
+                    <content>Expressing information content-both verbal and non-verbal</content>
+                  </td>
+                  <td>
+                    <content></content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th>SECTION D COMPLETE</th>
+                  <td>
+                    <content>Completed By</content>
+                  </td>
+                  <td>
+                    <content>97ASXW</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>Title</content>
+                  </td>
+                  <td>
+                    <content>interRAI Assessor</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>Date</content>
+                  </td>
+                  <td>
+                    <content>15 Apr 2013</content>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="ee5b418f-fa73-48eb-bfa7-d3f3bd9aab5e" />
+              <code code="iD1a" codeSystem="2.16.840.1.113883.2.18.63" displayName="MAKING SELF UNDERSTOOD">
+                <originalText>Expressing information content-both verbal and non-verbal</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST"></value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="8e07c30c-395c-49ca-82c7-95a8d0db29d9" />
+              <code code="iDCompletedBy" codeSystem="2.16.840.1.113883.2.18.63" displayName="SECTION D COMPLETE">
+                <originalText>Completed By</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="II" root="2.16.840.1.113883.2.18.3.1" extension="97ASXW" />
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="cf31c284-eb71-4c1a-a1fd-dbfa6d44b573" />
+              <code code="iDTitle" codeSystem="2.16.840.1.113883.2.18.63" displayName="SECTION D COMPLETE">
+                <originalText>Title</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">interRAI Assessor</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="c5503ef5-73ea-42c8-8be2-d2ca89104821" />
+              <code code="iDDate" codeSystem="2.16.840.1.113883.2.18.63" displayName="SECTION D COMPLETE">
+                <originalText>Date</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="TS" value="20130415" />
+            </observation>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <!--
+**************************************************
+Mood and behaviour
+**************************************************
+-->
+        <section>
+          <templateId root="2.16.840.1.113883.2.18.7.80" />
+          <code code="iE" codeSystem="2.16.840.1.113883.2.18.63" codeSystemName="interRAI iCODE" displayName="Mood and behaviour" />
+          <title>Mood and behaviour</title>
+          <text>
+            <table border="1">
+              <col width="10" />
+              <col width="100" />
+              <col width="250" />
+              <col width="250" />
+              <tbody>
+                <tr>
+                  <th>1</th>
+                  <th>INDICATORS OF POSSIBLE DEPRESSED, ANXIOUS OR SAD MOOD</th>
+                  <td>
+                    <content>Code for indicators observed in last 3 days...</content>
+                  </td>
+                  <td>
+                    <content></content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th>SECTION E COMPLETE</th>
+                  <td>
+                    <content>Completed By</content>
+                  </td>
+                  <td>
+                    <content>97ASXW</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>Title</content>
+                  </td>
+                  <td>
+                    <content>interRAI Assessor</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>Date</content>
+                  </td>
+                  <td>
+                    <content>15 Apr 2013</content>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="47e35590-30d7-4278-bd1f-e65a263041e5" />
+              <code code="iE1a" codeSystem="2.16.840.1.113883.2.18.63" displayName="INDICATORS OF POSSIBLE DEPRESSED, ANXIOUS OR SAD MOOD">
+                <originalText>Code for indicators observed in last 3 days...</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST"></value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="6364dffd-c9b8-4e62-b01a-ff4fb069d2f0" />
+              <code code="iECompletedBy" codeSystem="2.16.840.1.113883.2.18.63" displayName="SECTION E COMPLETE">
+                <originalText>Completed By</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="II" root="2.16.840.1.113883.2.18.3.1" extension="97ASXW" />
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="cc1a7370-bda4-45f9-96d9-627db49d908e" />
+              <code code="iETitle" codeSystem="2.16.840.1.113883.2.18.63" displayName="SECTION E COMPLETE">
+                <originalText>Title</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">interRAI Assessor</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="80409c39-cd43-4c35-ae58-72e8d6907d6a" />
+              <code code="iEDate" codeSystem="2.16.840.1.113883.2.18.63" displayName="SECTION E COMPLETE">
+                <originalText>Date</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="TS" value="20130415" />
+            </observation>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <!--
+**************************************************
+Psychosocial wellbeing
+**************************************************
+-->
+        <section>
+          <templateId root="2.16.840.1.113883.2.18.7.80" />
+          <code code="iF" codeSystem="2.16.840.1.113883.2.18.63" codeSystemName="interRAI iCODE" displayName="Psychosocial wellbeing" />
+          <title>Psychosocial wellbeing</title>
+          <text>
+            <table border="1">
+              <col width="10" />
+              <col width="100" />
+              <col width="250" />
+              <col width="250" />
+              <tbody>
+                <tr>
+                  <th>1</th>
+                  <th>SOCIAL RELATIONSHIPS</th>
+                  <td>
+                    <content>[Note: Ask person, direct care staff, and family, if available]</content>
+                  </td>
+                  <td>
+                    <content></content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th>SECTION F COMPLETE</th>
+                  <td>
+                    <content>Completed By</content>
+                  </td>
+                  <td>
+                    <content>97ASXW</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>Title</content>
+                  </td>
+                  <td>
+                    <content>interRAI Assessor</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>Date</content>
+                  </td>
+                  <td>
+                    <content>15 Apr 2013</content>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="e672973b-8586-42e9-818d-b4b38ceb45d5" />
+              <code code="iF1" codeSystem="2.16.840.1.113883.2.18.63" displayName="SOCIAL RELATIONSHIPS">
+                <originalText>[Note: Ask person, direct care staff, and family, if available]</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST"></value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="5fa65e00-dd49-4fc5-9564-3b7696692ac1" />
+              <code code="iFCompletedBy" codeSystem="2.16.840.1.113883.2.18.63" displayName="SECTION F COMPLETE">
+                <originalText>Completed By</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="II" root="2.16.840.1.113883.2.18.3.1" extension="97ASXW" />
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="e972ace8-8f7f-4155-8bd7-1e3c0454bf88" />
+              <code code="iFTitle" codeSystem="2.16.840.1.113883.2.18.63" displayName="SECTION F COMPLETE">
+                <originalText>Title</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">interRAI Assessor</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="a7a81ac1-d8c7-4ff4-bd43-7554ff2766b1" />
+              <code code="iFDate" codeSystem="2.16.840.1.113883.2.18.63" displayName="SECTION F COMPLETE">
+                <originalText>Date</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="TS" value="20130415" />
+            </observation>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <!--
+**************************************************
+Functional status
+**************************************************
+-->
+        <section>
+          <templateId root="2.16.840.1.113883.2.18.7.80" />
+          <code code="iG" codeSystem="2.16.840.1.113883.2.18.63" codeSystemName="interRAI iCODE" displayName="Functional status" />
+          <title>Functional status</title>
+          <text>
+            <table border="1">
+              <col width="10" />
+              <col width="100" />
+              <col width="250" />
+              <col width="250" />
+              <tbody>
+                <tr>
+                  <th>1</th>
+                  <th>ADL SELF-PERFORMANCE</th>
+                  <td>
+                    <content>Consider all episodes over 3-day period...</content>
+                  </td>
+                  <td>
+                    <content></content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th>SECTION G COMPLETE</th>
+                  <td>
+                    <content>Completed By</content>
+                  </td>
+                  <td>
+                    <content>97ASXW</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>Title</content>
+                  </td>
+                  <td>
+                    <content>interRAI Assessor</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>Date</content>
+                  </td>
+                  <td>
+                    <content>15 Apr 2013</content>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="63b58f0d-2555-4474-a91b-bd75dc708b74" />
+              <code code="iG1" codeSystem="2.16.840.1.113883.2.18.63" displayName="ADL SELF-PERFORMANCE">
+                <originalText>Consider all episodes over 3-day period...</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST"></value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="225559ad-3007-491a-a235-f99acca787f2" />
+              <code code="iGCompletedBy" codeSystem="2.16.840.1.113883.2.18.63" displayName="SECTION G COMPLETE">
+                <originalText>Completed By</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="II" root="2.16.840.1.113883.2.18.3.1" extension="97ASXW" />
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="57c8b6d9-5b38-4983-94e4-43810b7ffbc5" />
+              <code code="iGTitle" codeSystem="2.16.840.1.113883.2.18.63" displayName="SECTION G COMPLETE">
+                <originalText>Title</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">interRAI Assessor</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="5bff3d40-9835-41bb-bebb-7f6a23452620" />
+              <code code="iGDate" codeSystem="2.16.840.1.113883.2.18.63" displayName="SECTION G COMPLETE">
+                <originalText>Date</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="TS" value="20130415" />
+            </observation>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <!--
+**************************************************
+Disease diagnoses
+**************************************************
+-->
+        <section>
+          <templateId root="2.16.840.1.113883.2.18.7.80" />
+          <code code="iI" codeSystem="2.16.840.1.113883.2.18.63" codeSystemName="interRAI iCODE" displayName="Disease diagnoses" />
+          <title>Disease diagnoses</title>
+          <text>
+            <table border="1">
+              <col width="10" />
+              <col width="100" />
+              <col width="250" />
+              <col width="250" />
+              <tbody>
+                <tr>
+                  <th>1</th>
+                  <th>DISEASE DIAGNOSIS</th>
+                  <td>
+                    <content>Musculoskeletal</content>
+                  </td>
+                  <td>
+                    <content></content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th>SECTION I COMPLETE</th>
+                  <td>
+                    <content>Completed By</content>
+                  </td>
+                  <td>
+                    <content>97ASXW</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>Title</content>
+                  </td>
+                  <td>
+                    <content>interRAI Assessor</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>Date</content>
+                  </td>
+                  <td>
+                    <content>15 Apr 2013</content>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="60ec03fd-a7f9-40fb-bbcd-1b8594f77707" />
+              <code code="iI1" codeSystem="2.16.840.1.113883.2.18.63" displayName="DISEASE DIAGNOSIS">
+                <originalText>Musculoskeletal</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST"></value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="2f615113-fc77-4d49-ba09-d0e8a3e8ffd3" />
+              <code code="iICompletedBy" codeSystem="2.16.840.1.113883.2.18.63" displayName="SECTION I COMPLETE">
+                <originalText>Completed By</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="II" root="2.16.840.1.113883.2.18.3.1" extension="97ASXW" />
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="035ae9fa-84d3-4563-bf17-22956a3a7255" />
+              <code code="iITitle" codeSystem="2.16.840.1.113883.2.18.63" displayName="SECTION I COMPLETE">
+                <originalText>Title</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">interRAI Assessor</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="d1f254b4-6d2b-4aff-b998-3cbedb1dfc8e" />
+              <code code="iIDate" codeSystem="2.16.840.1.113883.2.18.63" displayName="SECTION I COMPLETE">
+                <originalText>Date</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="TS" value="20130415" />
+            </observation>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <!--
+**************************************************
+Health Conditions
+**************************************************
+-->
+        <section>
+          <templateId root="2.16.840.1.113883.2.18.7.80" />
+          <code code="iJ" codeSystem="2.16.840.1.113883.2.18.63" codeSystemName="interRAI iCODE" displayName="Health Conditions" />
+          <title>Health Conditions</title>
+          <text>
+            <table border="1">
+              <col width="10" />
+              <col width="100" />
+              <col width="250" />
+              <col width="250" />
+              <tbody>
+                <tr>
+                  <th>1</th>
+                  <th>FALLS</th>
+                  <td>
+                    <content>
+                      <content>
+                        0. No fall in last 90 days<br />
+                      </content>
+                      <content>
+                        1. No fall in last 30 days, but fell 31-90 days ago<br />
+                      </content>
+                      <content>
+                        2. One fall in last 30 days<br />
+                      </content>
+                      <content>
+                        3. Two or more falls in last 30 days<br />
+                      </content>
+                      <content>
+                        <br />
+                      </content>
+                    </content>
+                  </td>
+                  <td>
+                    <content>0. No fall in last 90 days</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th>SECTION J COMPLETE</th>
+                  <td>
+                    <content>Completed By</content>
+                  </td>
+                  <td>
+                    <content>97ASXW</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>Title</content>
+                  </td>
+                  <td>
+                    <content>interRAI Assessor</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>Date</content>
+                  </td>
+                  <td>
+                    <content>15 Apr 2013</content>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="6bfddd6f-e667-4239-b297-452facdb044a" />
+              <code code="iJ1" codeSystem="2.16.840.1.113883.2.18.63" displayName="FALLS">
+                <originalText>0. No fall in last 90 days|1. No fall in last 30 days, but fell 31-90 days ago|2. One fall in last 30 days|3. Two or more falls in last 30 days|</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">0. No fall in last 90 days</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="62607ff2-de51-4eea-a008-83c10110e1e0" />
+              <code code="iJCompletedBy" codeSystem="2.16.840.1.113883.2.18.63" displayName="SECTION J COMPLETE">
+                <originalText>Completed By</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="II" root="2.16.840.1.113883.2.18.3.1" extension="97ASXW" />
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="8ef8f574-f6b7-469e-8717-2d84783968f7" />
+              <code code="iJTitle" codeSystem="2.16.840.1.113883.2.18.63" displayName="SECTION J COMPLETE">
+                <originalText>Title</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">interRAI Assessor</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="921ea4d6-8c28-4424-8181-099de0913396" />
+              <code code="iJDate" codeSystem="2.16.840.1.113883.2.18.63" displayName="SECTION J COMPLETE">
+                <originalText>Date</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="TS" value="20130415" />
+            </observation>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <!--
+**************************************************
+Oral nutritional status
+**************************************************
+-->
+        <section>
+          <templateId root="2.16.840.1.113883.2.18.7.80" />
+          <code code="iK" codeSystem="2.16.840.1.113883.2.18.63" codeSystemName="interRAI iCODE" displayName="Oral nutritional status" />
+          <title>Oral nutritional status</title>
+          <text>
+            <table border="1">
+              <col width="10" />
+              <col width="100" />
+              <col width="250" />
+              <col width="250" />
+              <tbody>
+                <tr>
+                  <th>1</th>
+                  <th>HEIGHT AND WEIGHT</th>
+                  <td>
+                    <content>a. Record HEIGHT in centimetres</content>
+                  </td>
+                  <td>
+                    <content>160</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th>SECTION K COMPLETE</th>
+                  <td>
+                    <content>Completed By</content>
+                  </td>
+                  <td>
+                    <content>97ASXW</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>Title</content>
+                  </td>
+                  <td>
+                    <content>interRAI Assessor</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>Date</content>
+                  </td>
+                  <td>
+                    <content>15 Apr 2013</content>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="9958e663-5f81-41a2-acd6-af651d338827" />
+              <code code="iK1a" codeSystem="2.16.840.1.113883.2.18.63" displayName="HEIGHT AND WEIGHT">
+                <originalText>a. Record HEIGHT in centimetres</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="REAL" value="160" />
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="c605c129-2343-4dfc-8a6d-70dbf17f8793" />
+              <code code="iKCompletedBy" codeSystem="2.16.840.1.113883.2.18.63" displayName="SECTION K COMPLETE">
+                <originalText>Completed By</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="II" root="2.16.840.1.113883.2.18.3.1" extension="97ASXW" />
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="97b1afba-9923-4e0e-b381-65d1170ac164" />
+              <code code="iKTitle" codeSystem="2.16.840.1.113883.2.18.63" displayName="SECTION K COMPLETE">
+                <originalText>Title</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">interRAI Assessor</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="2602195e-16fe-4ec1-b30f-555e527aabf4" />
+              <code code="iKDate" codeSystem="2.16.840.1.113883.2.18.63" displayName="SECTION K COMPLETE">
+                <originalText>Date</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="TS" value="20130415" />
+            </observation>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <!--
+**************************************************
+Skin condition
+**************************************************
+-->
+        <section>
+          <templateId root="2.16.840.1.113883.2.18.7.80" />
+          <code code="iL" codeSystem="2.16.840.1.113883.2.18.63" codeSystemName="interRAI iCODE" displayName="Skin condition" />
+          <title>Skin condition</title>
+          <text>
+            <table border="1">
+              <col width="10" />
+              <col width="100" />
+              <col width="250" />
+              <col width="250" />
+              <tbody>
+                <tr>
+                  <th>1</th>
+                  <th>MOST SEVERE PRESSURE ULCER</th>
+                  <td>
+                    <content>
+                      <content>
+                        0. No pressure ulcer<br />
+                      </content>
+                      <content>
+                        1. Any area of persistent skin redness<br />
+                      </content>
+                      <content>
+                        <br />
+                      </content>
+                    </content>
+                  </td>
+                  <td>
+                    <content>1. Any area of persistent skin redness</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th>SECTION L COMPLETE</th>
+                  <td>
+                    <content>Completed By</content>
+                  </td>
+                  <td>
+                    <content>97ASXW</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>Title</content>
+                  </td>
+                  <td>
+                    <content>interRAI Assessor</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>Date</content>
+                  </td>
+                  <td>
+                    <content>15 Apr 2013</content>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="e12620a8-aa7f-4c74-9814-c9102485a090" />
+              <code code="iL1" codeSystem="2.16.840.1.113883.2.18.63" displayName="MOST SEVERE PRESSURE ULCER">
+                <originalText>0. No pressure ulcer|1. Any area of persistent skin redness|</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">1. Any area of persistent skin redness</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="127a2985-b89a-4ed8-a3c8-59a9b3ac6db2" />
+              <code code="iLCompletedBy" codeSystem="2.16.840.1.113883.2.18.63" displayName="SECTION L COMPLETE">
+                <originalText>Completed By</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="II" root="2.16.840.1.113883.2.18.3.1" extension="97ASXW" />
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="e17583fe-aace-4522-b5be-3e4e3dd2dd06" />
+              <code code="iLTitle" codeSystem="2.16.840.1.113883.2.18.63" displayName="SECTION L COMPLETE">
+                <originalText>Title</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">interRAI Assessor</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="1ee3bbc2-5399-4f9f-8e5f-0429f23b63f5" />
+              <code code="iLDate" codeSystem="2.16.840.1.113883.2.18.63" displayName="SECTION L COMPLETE">
+                <originalText>Date</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="TS" value="20130415" />
+            </observation>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <!--
+**************************************************
+Treatments and procedures
+**************************************************
+-->
+        <section>
+          <templateId root="2.16.840.1.113883.2.18.7.80" />
+          <code code="iN" codeSystem="2.16.840.1.113883.2.18.63" codeSystemName="interRAI iCODE" displayName="Treatments and procedures" />
+          <title>Treatments and procedures</title>
+          <text>
+            <table border="1">
+              <col width="10" />
+              <col width="100" />
+              <col width="250" />
+              <col width="250" />
+              <tbody>
+                <tr>
+                  <th>1</th>
+                  <th>PREVENTION</th>
+                  <td>
+                    <content>
+                      <content>
+                        a. Blood pressure measured in LAST YEAR<br />
+                      </content>
+                      <content>
+                        0. No<br />
+                      </content>
+                      <content>
+                        1. Yes<br />
+                      </content>
+                      <content>
+                        <br />
+                      </content>
+                    </content>
+                  </td>
+                  <td>
+                    <content>0. No</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th>SECTION N COMPLETE</th>
+                  <td>
+                    <content>Completed By</content>
+                  </td>
+                  <td>
+                    <content>97ASXW</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>Title</content>
+                  </td>
+                  <td>
+                    <content>interRAI Assessor</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>Date</content>
+                  </td>
+                  <td>
+                    <content>15 Apr 2013</content>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="c28b14b1-ffc1-4a5c-bc95-0091a5a0bb82" />
+              <code code="iN1a" codeSystem="2.16.840.1.113883.2.18.63" displayName="PREVENTION">
+                <originalText>a. Blood pressure measured in LAST YEAR|0. No|1. Yes|</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">0. No</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="ebadf73d-1c2a-451f-a22a-dae026ecc518" />
+              <code code="iNCompletedBy" codeSystem="2.16.840.1.113883.2.18.63" displayName="SECTION N COMPLETE">
+                <originalText>Completed By</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="II" root="2.16.840.1.113883.2.18.3.1" extension="97ASXW" />
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="d484fdb5-d882-4363-9b79-53f6d9676700" />
+              <code code="iNTitle" codeSystem="2.16.840.1.113883.2.18.63" displayName="SECTION N COMPLETE">
+                <originalText>Title</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">interRAI Assessor</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="38226200-9764-4aa1-abc8-1b6619b38bda" />
+              <code code="iNDate" codeSystem="2.16.840.1.113883.2.18.63" displayName="SECTION N COMPLETE">
+                <originalText>Date</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="TS" value="20130415" />
+            </observation>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <!--
+**************************************************
+Social supports
+**************************************************
+-->
+        <section>
+          <templateId root="2.16.840.1.113883.2.18.7.80" />
+          <code code="iP" codeSystem="2.16.840.1.113883.2.18.63" codeSystemName="interRAI iCODE" displayName="Social supports" />
+          <title>Social supports</title>
+          <text>
+            <table border="1">
+              <col width="10" />
+              <col width="100" />
+              <col width="250" />
+              <col width="250" />
+              <tbody>
+                <tr>
+                  <th>1</th>
+                  <th>TEST SUPPORT TYPE 1</th>
+                  <td>
+                    <content>
+                      <content>
+                        a. Test Support Question<br />
+                      </content>
+                      <content>
+                        0. No<br />
+                      </content>
+                      <content>
+                        1. Yes<br />
+                      </content>
+                      <content>
+                        <br />
+                      </content>
+                    </content>
+                  </td>
+                  <td>
+                    <content>0. No</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th>SECTION P COMPLETE</th>
+                  <td>
+                    <content>Completed By</content>
+                  </td>
+                  <td>
+                    <content>97ASXW</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>Title</content>
+                  </td>
+                  <td>
+                    <content>interRAI Assessor</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>Date</content>
+                  </td>
+                  <td>
+                    <content>15 Apr 2013</content>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="f637d122-acbf-472f-8031-1814bcd9ce4a" />
+              <code code="iP1a" codeSystem="2.16.840.1.113883.2.18.63" displayName="TEST SUPPORT TYPE 1">
+                <originalText>a. Test Support Question|0. No|1. Yes|</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">0. No</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="948d0795-2f17-4928-9155-d5143b4eb543" />
+              <code code="iPCompletedBy" codeSystem="2.16.840.1.113883.2.18.63" displayName="SECTION P COMPLETE">
+                <originalText>Completed By</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="II" root="2.16.840.1.113883.2.18.3.1" extension="97ASXW" />
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="ea11b217-38c0-4f1e-bc72-95d3c0189775" />
+              <code code="iPTitle" codeSystem="2.16.840.1.113883.2.18.63" displayName="SECTION P COMPLETE">
+                <originalText>Title</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">interRAI Assessor</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="b96d7094-212b-4dae-bc16-e6d406826b48" />
+              <code code="iPDate" codeSystem="2.16.840.1.113883.2.18.63" displayName="SECTION P COMPLETE">
+                <originalText>Date</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="TS" value="20130415" />
+            </observation>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <!--
+**************************************************
+Assessment information
+**************************************************
+-->
+        <section>
+          <templateId root="2.16.840.1.113883.2.18.7.80" />
+          <code code="iU" codeSystem="2.16.840.1.113883.2.18.63" codeSystemName="interRAI iCODE" displayName="Assessment information" />
+          <title>Assessment information</title>
+          <text>
+            <table border="1">
+              <col width="10" />
+              <col width="100" />
+              <col width="250" />
+              <col width="250" />
+              <tbody>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>Person Coordinating / completing the assessment</content>
+                  </td>
+                  <td>
+                    <content>interRAI Assessor</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>Date assessment signed as complete</content>
+                  </td>
+                  <td>
+                    <content>20 Apr 2013</content>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="643ab330-c8e4-4e2e-af1f-c7097a6c73e4" />
+              <code code="iU1" codeSystem="2.16.840.1.113883.2.18.63">
+                <originalText>Person Coordinating / completing the assessment</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">interRAI Assessor</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="1fbd2863-fc0d-4de1-adaa-f2328d5ddfdd" />
+              <code code="iU2" codeSystem="2.16.840.1.113883.2.18.63">
+                <originalText>Date assessment signed as complete</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="TS" value="20130420" />
+            </observation>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <!--
+**************************************************
+Contact assessment summary
+**************************************************
+-->
+        <section>
+          <templateId root="2.16.840.1.113883.2.18.7.80" />
+          <code code="iNN" codeSystem="2.16.840.1.113883.2.18.63" codeSystemName="interRAI iCODE" displayName="Contact assessment summary" />
+          <title>Contact assessment summary</title>
+          <text>
+            <table border="1">
+              <col width="10" />
+              <col width="100" />
+              <col width="250" />
+              <col width="250" />
+              <tbody>
+                <tr>
+                  <th>1</th>
+                  <th>PREVENTION</th>
+                  <td>
+                    <content>
+                      <content>
+                        a. Test Contact Summary Question<br />
+                      </content>
+                      <content>
+                        0. No<br />
+                      </content>
+                      <content>
+                        1. Yes<br />
+                      </content>
+                      <content>
+                        <br />
+                      </content>
+                    </content>
+                  </td>
+                  <td>
+                    <content>0. No</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th>SECTION NN COMPLETE</th>
+                  <td>
+                    <content>Completed By</content>
+                  </td>
+                  <td>
+                    <content>97ASXW</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>Title</content>
+                  </td>
+                  <td>
+                    <content>interRAI Assessor</content>
+                  </td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <td>
+                    <content>Date</content>
+                  </td>
+                  <td>
+                    <content>15 Apr 2013</content>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="bfebedac-9a3c-4ded-a18d-5e91f99731ae" />
+              <code code="iNN1a" codeSystem="2.16.840.1.113883.2.18.63" displayName="PREVENTION">
+                <originalText>a. Test Contact Summary Question|0. No|1. Yes|</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">0. No</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="5a291527-7b77-4f05-ae5c-270351a1bc30" />
+              <code code="iNNCompletedBy" codeSystem="2.16.840.1.113883.2.18.63" displayName="SECTION NN COMPLETE">
+                <originalText>Completed By</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="II" root="2.16.840.1.113883.2.18.3.1" extension="97ASXW" />
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="212b9101-38e9-42f7-b7bc-4dfa4b6d3adc" />
+              <code code="iNNTitle" codeSystem="2.16.840.1.113883.2.18.63" displayName="SECTION NN COMPLETE">
+                <originalText>Title</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="ST">interRAI Assessor</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.80.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <id root="334438ca-5a6c-4018-b0cf-8b1de5115784" />
+              <code code="iNNDate" codeSystem="2.16.840.1.113883.2.18.63" displayName="SECTION NN COMPLETE">
+                <originalText>Date</originalText>
+              </code>
+              <statusCode code="completed" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130415" />
+              </effectiveTime>
+              <value xsi:type="TS" value="20130415" />
+            </observation>
+          </entry>
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>

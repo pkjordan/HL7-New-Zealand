@@ -1,0 +1,59 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "bundle-type-german",
+  "meta": {
+    "versionId": "2",
+    "lastUpdated": "2017-12-28T06:53:07Z"
+  },
+  "language": "de",
+  "url": "http://hl7.org/fhir/bundle-type-de",
+  "version": "3.3.0",
+  "name": "BundleTypeGerman",
+  "status": "draft",
+  "experimental": false,
+  "date": "2017-12-21T16:40:38+11:00",
+  "publisher": "HL7 (FHIR Project)",
+  "copyright": "Creative Commons 0",
+  "description": "German Translations for Bundle Type",
+  "caseSensitive": true,
+  "content": "supplement",
+  "supplements": "http://hl7.org/fhir/bundle-type",
+  "concept": [
+    {
+      "code": "document",
+      "display": "Dokument"
+    },
+    {
+      "code": "message",
+      "display": "Nachricht"
+    },
+    {
+      "code": "transaction",
+      "display": "Transaktion"
+    },
+    {
+      "code": "transaction-response",
+      "display": "Transaktionsantwort"
+    },
+    {
+      "code": "batch",
+      "display": "Stapel"
+    },
+    {
+      "code": "batch-response",
+      "display": "Batch-Antwort"
+    },
+    {
+      "code": "history",
+      "display": "Verlaufsliste"
+    },
+    {
+      "code": "searchset",
+      "display": "Suchergebnisse"
+    },
+    {
+      "code": "collection",
+      "display": "Sammlung"
+    }
+  ]
+}

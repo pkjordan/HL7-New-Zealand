@@ -1,0 +1,45 @@
+<NamingSystem xmlns="http://hl7.org/fhir">
+  <id value="NHI"/>
+  <name value="National Health Index Number"/> 
+  <status value="active"/> 
+  <kind value="identifier"/> 
+  <date value="2018-07-01"/> 
+  <publisher value="HL7 New Zealand"/> 
+  <contact> 
+    <name value="HL7 New Zealand"/> 
+    <telecom> 
+      <system value="url"/> 
+      <value value="http://hl7.org.nz"/> 
+    </telecom> 
+  </contact>  
+  <responsible value="Ministry of Health"/> 
+  <type>  
+    <coding>  
+      <system value="http://hl7.org/fhir/v2/0203"/> 
+      <code value="NI"/> 
+      <display value="National unique individual identifier"/> 
+    </coding> 
+    <text value="NHI"/>  
+  </type>   
+  <description value="New Zealand National Health Index Identifier - unique for each individual"/> 
+  <jurisdiction> 
+    <coding> 
+      <system value="urn:iso:std:iso:3166"/> 
+      <code value="NZ"/> 
+    </coding> 
+  </jurisdiction> 
+  <usage value="Used in New Zealand for identifying patients"/> 
+  <uniqueId> 
+    <type value="oid"/> 
+    <value value="2.16.840.1.113883.2.18.2"/> 
+    <comment value="This value is used in New Zealand CDA documents"/> 
+  </uniqueId> 
+  <uniqueId> 
+    <type value="uri"/> 
+    <value value="https://standards.digital.health.nz/id/nhi"/> 
+    <preferred value="true"/> 
+    <period> 
+      <start value="2018-07-01"/> 
+    </period> 
+  </uniqueId> 
+</NamingSystem> 

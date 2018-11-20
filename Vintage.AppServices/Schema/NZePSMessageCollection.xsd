@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="NZePSMessageCollection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="token" nillable="true" minOccurs="0" type="xs:string"/>
+        <xs:element name="total" nillable="true" minOccurs="0" type="xs:int"/>
+        <xs:element name="batchNumber" nillable="true" minOccurs="0" type="xs:string"/>
+        <xs:element name="operationResult" nillable="true" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="status" type="xs:string"/>
+              <xs:element name="errors" nillable="true" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence minOccurs="0">
+                    <xs:element name="error" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="code" use="required" type="xs:string"/>
+                        <xs:attribute name="value" use="required" type="xs:string"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="NZePSMessage">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="WFScript">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="SCID" type="xs:string"/>
+                    <xs:element name="GUID" type="xs:string" nillable="true" minOccurs="0"/>
+                    <xs:element name="createdDate" type="xs:long" nillable="true" minOccurs="0"/>
+                    <xs:element name="originalSCID" type="xs:string" nillable="true" minOccurs="0"/>
+                    <xs:element name="notificationConsent" type="xs:string" nillable="true" minOccurs="0"/>
+                    <xs:element name="status" type="xs:string" nillable="true" minOccurs="0"/>
+                    <xs:element name="prescriberToNotify" type="xs:string" nillable="true" minOccurs="0"/>
+                    <xs:element name="sourceType" type="xs:string" nillable="true" minOccurs="0"/>
+                    <xs:element name="consolidatedSCIDS" nillable="true" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                          <xs:element name="SCID" type="xs:string"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="batchNumber" type="xs:string" nillable="true" minOccurs="0"/>
+                    <xs:element name="operationResult" nillable="true" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="status" type="xs:string"/>
+                          <xs:element name="errors"  minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence  minOccurs="0">
+                                <xs:element name="error" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:attribute name="value" use="required" type="xs:string"/>
+                                    <xs:attribute name="code" use="required" type="xs:string"/>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="WFItems">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="WFItem" maxOccurs="unbounded">
+                      <xs:complexType mixed="true">
+                        <xs:sequence>
+                          <xs:element name="sequence" type="xs:int"/>
+                          <xs:element name="originalSequence" type="xs:int" nillable="true" minOccurs="0"/>
+                          <xs:element name="state" type="xs:string"/>
+                          <xs:element name="tags" nillable="true" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                                <xs:element name="tag">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="code" type="xs:string"/>
+                                      <xs:element name="value" type="xs:string"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

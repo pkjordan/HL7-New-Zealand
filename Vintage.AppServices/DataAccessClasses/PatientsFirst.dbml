@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PatientsFirst" Class="PatientsFirstDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-6S6HG3J;Initial Catalog=PatientsFirst;Integrated Security=True" SettingsObjectName="Vintage.AppServices.Properties.Settings" SettingsPropertyName="PatientsFirstConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.ValidationResult_Insert" Method="ValidationResult_Insert">
+    <Parameter Name="ApplicationName" Parameter="applicationName" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="ApplicationVersion" Parameter="applicationVersion" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="Specification" Parameter="specification" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="PassedTransport" Parameter="passedTransport" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="PassedFormat" Parameter="passedFormat" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="PassedData" Parameter="passedData" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="ReportTransport" Parameter="reportTransport" Type="System.String" DbType="NVarChar(1000)" />
+    <Parameter Name="ReportFormat" Parameter="reportFormat" Type="System.String" DbType="NVarChar(1000)" />
+    <Parameter Name="ReportData" Parameter="reportData" Type="System.String" DbType="NVarChar(1000)" />
+    <Parameter Name="CreatedBy" Parameter="createdBy" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetHpiListing" Method="GetHpiListing" IsComposable="true">
+    <ElementType Name="GetHpiListingResult">
+      <Column Name="HPI" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="EDI" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="HPI_OnLine" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.HpiOnLine_UpdateStatus" Method="HpiOnLine_UpdateStatus">
+    <Parameter Name="HpiFacilityId" Parameter="hpiFacilityId" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="HpiOnLineStatus" Parameter="hpiOnLineStatus" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetPractices_ByNamePho" Method="GetPractices_ByNamePho" IsComposable="true">
+    <Parameter Name="PracticeName" Parameter="practiceName" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="PracticeAddress" Parameter="practiceAddress" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="PhoName" Parameter="phoName" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="DhbName" Parameter="dhbName" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="VendorName" Parameter="vendorName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="EDI" Parameter="eDI" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="Active" Parameter="active" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="GetPractices_ByNamePhoResult">
+      <Column Name="PracticeName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PracticeId" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PracticeAddress" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PhoName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="DHB" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Region" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="EDI" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="PmsVendor" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Gp2GpAdopter" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Closed" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Pkey" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Rural" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Gp2GpTransfers_Insert" Method="Gp2GpTransfers_Insert">
+    <Parameter Name="SenderEDI" Parameter="senderEDI" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="ReceiverEDI" Parameter="receiverEDI" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="MessageId" Parameter="messageId" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="MessageYear" Parameter="messageYear" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="MessageMonth" Parameter="messageMonth" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="MessageDay" Parameter="messageDay" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="ApplicationType" Parameter="applicationType" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="FileSize" Parameter="fileSize" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="SendingApplication" Parameter="sendingApplication" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="ResponseMessageIndicator" Parameter="responseMessageIndicator" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="ReplyToMessageId" Parameter="replyToMessageId" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="MessageFileName" Parameter="messageFileName" Type="System.String" DbType="NVarChar(250)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Gp2GpTransfers_UpdateCollected" Method="Gp2GpTransfers_UpdateCollected">
+    <Parameter Name="Gp2GpTransferId" Parameter="gp2GpTransferId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetUncollectedGp2GpTransfers" Method="GetUncollectedGp2GpTransfers" IsComposable="true">
+    <Parameter Name="HpiFacilityId" Parameter="hpiFacilityId" Type="System.String" DbType="NVarChar(255)" />
+    <ElementType Name="GetUncollectedGp2GpTransfersResult">
+      <Column Name="Gp2GpTransferId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MessageId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MessageFileName" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetGp2GpMessageFileName" Method="GetGp2GpMessageFileName" IsComposable="true">
+    <Parameter Name="Gp2GpTransferId" Parameter="gp2GpTransferId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.HimUserAuthenticate" Method="HimUserAuthenticate" IsComposable="true">
+    <Parameter Name="userID" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="password" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Boolean" />
+  </Function>
+  <Function Name="dbo.HpiOnLine_UpdateVersion" Method="HpiOnLine_UpdateVersion">
+    <Parameter Name="HpiFacilityId" Parameter="hpiFacilityId" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="HimVersion" Parameter="himVersion" Type="System.String" DbType="NVarChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

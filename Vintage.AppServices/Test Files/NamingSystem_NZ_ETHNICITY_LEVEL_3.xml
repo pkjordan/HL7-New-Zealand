@@ -1,0 +1,37 @@
+<NamingSystem xmlns="http://hl7.org/fhir">
+  <id value="NZ_ETHNICITY_LEVEL_3"/>
+  <name value="NZ Ethnicity Level 3"/> 
+  <status value="active"/> 
+  <kind value="codesystem"/> 
+  <date value="2018-07-01"/> 
+  <publisher value="HL7 New Zealand"/> 
+  <contact> 
+    <name value="HL7 New Zealand"/> 
+    <telecom> 
+      <system value="url"/> 
+      <value value="http://hl7.org.nz"/> 
+    </telecom> 
+  </contact>  
+  <responsible value="Ministry of Health"/> 
+  <description value="New Zealand Ethnicity Codes - Level 3 (3 digits)"/> 
+  <jurisdiction> 
+    <coding> 
+      <system value="urn:iso:std:iso:3166"/> 
+      <code value="NZ"/> 
+    </coding> 
+  </jurisdiction> 
+  <usage value="Used in New Zealand for patient ethnicity coding"/> 
+  <uniqueId> 
+    <type value="oid"/> 
+    <value value="2.16.840.1.113883.2.18.11.2"/> 
+    <comment value="This value is used in New Zealand CDA documents"/> 
+  </uniqueId> 
+  <uniqueId> 
+    <type value="uri"/> 
+    <value value="https://standards.digital.health.nz/codesystem/ethnic-group-level-3"/> 
+    <preferred value="true"/> 
+    <period> 
+      <start value="2018-07-01"/> 
+    </period> 
+  </uniqueId> 
+</NamingSystem> 

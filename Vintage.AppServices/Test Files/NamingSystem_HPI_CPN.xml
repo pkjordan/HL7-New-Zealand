@@ -1,0 +1,45 @@
+<NamingSystem xmlns="http://hl7.org/fhir">
+  <id value="HPI-CPN"/>
+  <name value="Health Provider Index Number"/> 
+  <status value="active"/> 
+  <kind value="identifier"/> 
+  <date value="2018-07-01"/> 
+  <publisher value="HL7 New Zealand"/> 
+  <contact> 
+    <name value="HL7 New Zealand"/> 
+    <telecom> 
+      <system value="url"/> 
+      <value value="http://hl7.org.nz"/> 
+    </telecom> 
+  </contact>  
+  <responsible value="Ministry of Health"/> 
+  <type>  
+    <coding>  
+      <system value="http://hl7.org/fhir/v2/0203"/> 
+      <code value="NPI"/> 
+      <display value="National provider identifier"/> 
+    </coding> 
+    <text value="HPI-CPN"/>  
+  </type>   
+  <description value="New Zealand National Health Provider Index - Common Provider Number."/> 
+  <jurisdiction> 
+    <coding> 
+      <system value="urn:iso:std:iso:3166"/> 
+      <code value="NZ"/> 
+    </coding> 
+  </jurisdiction> 
+  <usage value="Used in New Zealand for identifying healthcare providers"/> 
+  <uniqueId> 
+    <type value="oid"/> 
+    <value value="2.16.840.1.113883.2.18.3.1"/> 
+    <comment value="This value is used in New Zealand CDA documents"/> 
+  </uniqueId> 
+  <uniqueId> 
+    <type value="uri"/> 
+    <value value="https://standards.digital.health.nz/id/hpi-person"/> 
+    <preferred value="true"/> 
+    <period> 
+      <start value="2018-07-01"/> 
+    </period> 
+  </uniqueId> 
+</NamingSystem>

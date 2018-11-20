@@ -1,0 +1,1911 @@
+﻿<?xml version="1.0"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 CDA.xsd">
+  <typeId root="2.16.840.1.113883.1.3" extension="POCD_H000040"/>
+  <id root="2.16.840.1.113883.2.18.7.11" extension="12345"/>
+  <code codeSystem="2.16.840.1.113883.6.1" code="55188-7" displayName="Maternity care summary"/>
+  <title>Maternity care summary</title>
+  <effectiveTime value="20140221000000"/>
+  <confidentialityCode code="N"/>
+  <languageCode code="en-NZ"/>
+  <recordTarget>
+    <patientRole>
+      <templateId root="2.16.840.1.113883.2.18.7.5.2"/>
+      <id root="2.16.840.1.113883.2.18.2" extension="AAA1234"/>
+      <addr use="H">
+        <streetAddressLine>2 Park Ave</streetAddressLine>
+        <precinct>Grafton</precinct>
+        <city>Auckland</city>
+        <postalCode>1023</postalCode>
+        <country>New Zealand</country>
+      </addr>
+      <telecom value="tel:+6448163685" use="H"/>
+      <patient>
+        <templateId root="2.16.840.1.113883.2.18.7.5.1"/>
+        <name>
+          <prefix>Ms</prefix>
+          <given>Melanie</given>
+          <family>Parker</family>
+        </name>
+        <administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.2.18.57"/>
+        <birthTime value="19840602"/>
+        <maritalStatusCode code="M" codeSystem="2.16.840.1.113883.2.18.5.2"/>
+      </patient>
+    </patientRole>
+  </recordTarget>
+  <author>
+    <templateId root="2.16.840.1.113883.2.18.7.5.7"/>
+    <time value="20140221000000"/>
+    <assignedAuthor>
+      <templateId root="2.16.840.1.113883.2.18.7.5.19"/>
+      <id extension="JK4562" root="2.16.840.1.113883.2.18.3.1"/>
+      <addr use="WP">
+        <streetAddressLine>45 Zoo Road</streetAddressLine>
+        <precinct>Grafton</precinct>
+        <city>Auckland</city>
+        <postalCode>1023</postalCode>
+        <country>New Zealand</country>
+      </addr>
+      <telecom value="tel:+6448163685" use="WP"/>
+      <assignedPerson>
+        <name use="L">
+          <given>Sarah</given>
+          <family>Jones</family>
+        </name>
+      </assignedPerson>
+      <representedOrganization>
+        <templateId root="2.16.840.1.113883.2.18.7.5.19.2"/>
+        <id extension="12ABCD" root="2.16.840.1.113883.2.18.3.1"/>
+        <name>Wellchild Clinic</name>
+        <telecom value="tel:+6448163685" use="WP"/>
+        <addr use="WP">
+          <streetAddressLine>45 Zoo Road</streetAddressLine>
+          <precinct>Grafton</precinct>
+          <city>Auckland</city>
+          <postalCode>1023</postalCode>
+          <country>New Zealand</country>
+        </addr>
+      </representedOrganization>
+    </assignedAuthor>
+  </author>
+  <custodian>
+    <templateId root="2.16.840.1.113883.2.18.7.5.10"/>
+    <assignedCustodian>
+      <representedCustodianOrganization>
+        <templateId root="2.16.840.1.113883.2.18.7.5.19.2"/>
+        <id extension="12ABCD" root="2.16.840.1.113883.2.18.3.1"/>
+        <name>Wellchild Clinic</name>
+        <telecom value="tel:+6448163685" use="WP"/>
+        <addr use="WP">
+          <streetAddressLine>45 Zoo Road</streetAddressLine>
+          <precinct>Grafton</precinct>
+          <city>Auckland</city>
+          <postalCode>1023</postalCode>
+          <country>New Zealand</country>
+        </addr>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+  <participant typeCode="IND">
+    <templateId root="2.16.840.1.113883.2.18.7.5.14"/>
+    <functionCode code="LMC" displayName="Lead maternity carer" codeSystem="2.16.840.1.113883.5.88"/>
+    <associatedEntity classCode="PROV">
+      <id extension="12ABCD" root="2.16.840.1.113883.2.18.3.1"/>
+      <addr use="WP">
+        <streetAddressLine>45 Zoo Road</streetAddressLine>
+        <precinct>Grafton</precinct>
+        <city>Auckland</city>
+        <postalCode>1023</postalCode>
+        <country>New Zealand</country>
+      </addr>
+      <telecom value="tel:+6448163685" use="WP"/>
+      <associatedPerson>
+        <name use="L">
+          <given>Sarah</given>
+          <family>Jones</family>
+        </name>
+      </associatedPerson>
+      <scopingOrganization>
+        <templateId root="2.16.840.1.113883.2.18.7.5.19.2"/>
+        <id extension="GCV123H" root="2.16.840.1.113883.2.18.3.3"/>
+        <name>Wellchild Clinic</name>
+        <telecom value="tel:+6448163685" use="WP"/>
+        <addr use="WP">
+          <streetAddressLine>45 Zoo Road</streetAddressLine>
+          <precinct>Grafton</precinct>
+          <city>Auckland</city>
+          <postalCode>1023</postalCode>
+          <country>New Zealand</country>
+        </addr>
+      </scopingOrganization>
+    </associatedEntity>
+  </participant>
+  <participant typeCode="IND">
+    <templateId root="2.16.840.1.113883.2.18.7.5.14"/>
+    <functionCode code="PCP" displayName="General practitioner" codeSystem="2.16.840.1.113883.5.88"/>
+    <associatedEntity classCode="PROV">
+      <id extension="13ABCE" root="2.16.840.1.113883.2.18.3.1"/>
+      <addr use="WP">
+        <streetAddressLine>13 Stanley Drive</streetAddressLine>
+        <precinct>Grafton</precinct>
+        <city>Auckland</city>
+        <postalCode>1023</postalCode>
+        <country>New Zealand</country>
+      </addr>
+      <telecom value="tel:+6454363685" use="WP"/>
+      <associatedPerson>
+        <name use="L">
+          <given>Elizabeth</given>
+          <family>Lake</family>
+        </name>
+      </associatedPerson>
+      <scopingOrganization>
+        <templateId root="2.16.840.1.113883.2.18.7.5.19.2"/>
+        <id extension="GCV543H" root="2.16.840.1.113883.2.18.3.3"/>
+        <name>Grafton Health Centre</name>
+        <telecom value="tel:+6448693685" use="WP"/>
+        <addr use="WP">
+          <streetAddressLine>13 Stanley Drive</streetAddressLine>
+          <precinct>Grafton</precinct>
+          <city>Auckland</city>
+          <postalCode>1023</postalCode>
+          <country>New Zealand</country>
+        </addr>
+      </scopingOrganization>
+    </associatedEntity>
+  </participant>
+  <participant typeCode="IND">
+    <templateId root="2.16.840.1.113883.2.18.7.5.14"/>
+    <associatedEntity classCode="ECON">
+      <id extension="13ABCE" root="2.16.840.1.113883.2.18.3.1"/>
+      <code code="SPS" displayName="Spouse" codeSystem="2.16.840.1.113883.5.111"/>
+      <addr use="H">
+        <streetAddressLine>16 Bassett Rd</streetAddressLine>
+        <precinct>Remuera</precinct>
+        <city>Auckland</city>
+        <postalCode>1025</postalCode>
+        <country>New Zealand</country>
+      </addr>
+      <telecom value="tel:+6454388985" use="H"/>
+      <associatedPerson>
+        <name use="L">
+          <given>Tui</given>
+          <family>Harakeke</family>
+        </name>
+      </associatedPerson>
+    </associatedEntity>
+  </participant>
+  <component>
+    <structuredBody>
+      <component>
+        <section>
+          <templateId root="2.16.840.1.113883.2.18.7.97"/>
+          <code code="184047000" codeSystem="2.16.840.1.113883.6.96" displayName="Booking"/>
+          <title>Booking</title>
+          <text>
+            <table>
+              <tbody>
+                <tr>
+                  <th>Gestation at booking</th>
+                  <td>12.4</td>
+                </tr>
+                <tr>
+                  <th>Last menstrual period</th>
+                  <td>02/12/2013</td>
+                </tr>
+                <tr>
+                  <th>Date of booking</th>
+                  <td>16/01/2014</td>
+                </tr>
+                <tr>
+                  <th>Lead maternity carer type</th>
+                  <td>Self employed midwife</td>
+                </tr>
+                <tr>
+                  <th>Gravida</th>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <th>Parity</th>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <th>EDD by dates</th>
+                  <td>08/08/2014</td>
+                </tr>
+                <tr>
+                  <th>EDD by scan</th>
+                  <td>08/08/2014</td>
+                </tr>
+                <tr>
+                  <th>Agreed EDD</th>
+                  <td>08/08/2014</td>
+                </tr>
+                <tr>
+                  <th>Body height</th>
+                  <td>167 cm</td>
+                </tr>
+                <tr>
+                  <th>Body weight</th>
+                  <td>63 kg</td>
+                </tr>
+                <tr>
+                  <th>Body mass index</th>
+                  <td>22.6</td>
+                </tr>
+                <tr>
+                  <th>Eligibility</th>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <th>DHB of residence</th>
+                  <td>Auckland DHB</td>
+                </tr>
+                <tr>
+                  <th>Birth facility</th>
+                  <td>Auckland Hospital</td>
+                </tr>
+                <tr>
+                  <th>Patient portal</th>
+                  <td>Yes</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="53665-6" codeSystem="2.16.840.1.113883.6.1" displayName="Gestation at booking"/>
+              <value xsi:type="REAL" value="12.4"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="8665-2" codeSystem="2.16.840.1.113883.6.1" displayName="Last menstrual period"/>
+              <value xsi:type="TS" value="20131202"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="52455-3" codeSystem="2.16.840.1.113883.6.1" displayName="Date of booking"/>
+              <value xsi:type="TS" value="20140116"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="169613008" codeSystem="2.16.840.1.113883.6.96" displayName="Lead maternity carer type"/>
+              <value xsi:type="ST">Self employed midwife</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="11996-6" codeSystem="2.16.840.1.113883.6.1" displayName="Gravida"/>
+              <value xsi:type="INT" value="2"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="11977-6" codeSystem="2.16.840.1.113883.6.1" displayName="Parity"/>
+              <value xsi:type="INT" value="1"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="11779-6" codeSystem="2.16.840.1.113883.6.1" displayName="EDD by dates"/>
+              <value xsi:type="TS" value="20140808"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="11781-2" codeSystem="2.16.840.1.113883.6.1" displayName="EDD by scan"/>
+              <value xsi:type="TS" value="20140808"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="11778-8" codeSystem="2.16.840.1.113883.6.1" displayName="Agreed EDD"/>
+              <value xsi:type="TS" value="20140808"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="8302-2" codeSystem="2.16.840.1.113883.6.1" displayName="Body height"/>
+              <value xsi:type="INT" value="167"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="29463-7" codeSystem="2.16.840.1.113883.6.1" displayName="Body weight"/>
+              <value xsi:type="INT" value="63"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="59574-4" codeSystem="2.16.840.1.113883.6.1" displayName="Body mass index"/>
+              <value xsi:type="REAL" value="22.6"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="53247-3" codeSystem="2.16.840.1.113883.6.1" displayName="Eligibility"/>
+              <value xsi:type="BL" value="true"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="394747008" codeSystem="2.16.840.1.113883.6.96" displayName="DHB of residence"/>
+              <value xsi:type="II" extension="GA1234" root="2.16.840.1.113883.2.18.3.3"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="62330-6" codeSystem="2.16.840.1.113883.6.1" displayName="Birth facility"/>
+              <value xsi:type="II" extension="FLK312" root="2.16.840.1.113883.2.18.3.2"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="307892003" codeSystem="2.16.840.1.113883.6.96" displayName="Patient portal"/>
+              <value xsi:type="BL" value="true"/>
+            </observation>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <section>
+          <templateId root="TBA"/>
+          <code code="10163-4" codeSystem="2.16.840.1.113883.6.1" displayName="Previous pregnancies"/>
+          <title>Previous pregnancies</title>
+          <text>
+            <table>
+              <thead>
+                <tr>
+                  <th>Maternal problems</th>
+                  <th>Onset of labour previous pregnancy</th>
+                  <th>Maternal problems labour</th>
+                  <th>Maternal problems puerperium</th>
+                  <th>Previous labour anaesthetic</th>
+                  <th>Type of caesarean section</th>
+                  <th>Reason for emergency caesarean section</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pre eclampsia and UTI</td>
+                  <td>Spontaneous</td>
+                  <td>Hypertension</td>
+                  <td>Caesarean wound infection</td>
+                  <td>Epidural</td>
+                  <td>Emergency lower section</td>
+                  <td>Fetal distress</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry>
+            <templateId root="TBA"/>
+            <observation classCode="OBS" moodCode="EVN">
+              <templateId root="TBA"/>
+              <code code="10163-4" codeSystem="2.16.840.1.113883.6.1" displayName="Previous pregnancies"/>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="288249001" codeSystem="2.16.840.1.113883.6.96" displayName="Maternal problems"/>
+                  <value xsi:type="ST">Pre eclampsia and UTI</value>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="73774-2" codeSystem="2.16.840.1.113883.6.1" displayName="Onset of labour previous pregnancy"/>
+                  <value xsi:type="ST">Spontaneous</value>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="362972006" codeSystem="2.16.840.1.113883.6.96" displayName="Maternal problems labour"/>
+                  <value xsi:type="ST">Hypertension</value>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="362973001" codeSystem="2.16.840.1.113883.6.96" displayName="Maternal problems puerperium"/>
+                  <value xsi:type="ST">Caesarean wound infection</value>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="373266007" codeSystem="2.16.840.1.113883.6.96" displayName="Previous labour anaesthetic"/>
+                  <value xsi:type="ST">Epidural</value>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="68497-7" codeSystem="2.16.840.1.113883.6.1" displayName="Type of caesarean section"/>
+                  <value xsi:type="ST">Emergency lower section</value>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="236974004" codeSystem="2.16.840.1.113883.6.96" displayName="Reason for emergency caesarean section"/>
+                  <value xsi:type="ST">Fetal distress</value>
+                </observation>
+              </entryRelationship>
+            </observation>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <section>
+          <templateId root="TBA"/>
+          <code code="64726-3" codeSystem="2.16.840.1.113883.6.1" displayName="Previous babies"/>
+          <title>Previous babies</title>
+          <text>
+            <table>
+              <thead>
+                <tr>
+                  <th>Outcome of baby</th>
+                  <th>Birth weight</th>
+                  <th>Gestation previous pregnancy</th>
+                  <th>Previous baby sex</th>
+                  <th>Mode of birth</th>
+                  <th>Fetal problems pregnancy</th>
+                  <th>Fetal problems labour</th>
+                  <th>Neonatal unit admissions</th>
+                  <th>Reason for neonatal unit admission</th>
+                  <th>Feeding method</th>
+                  <th>Breast milk for</th>
+                  <th>Fetal problems labour</th>
+                  <th>Problems previous child</th>
+                  <th>Current status</th>
+                  <th>Cause of death</th>
+                  <th>Stillbirth cause</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Live birth</td>
+                  <td>3850 g</td>
+                  <td>38.6</td>
+                  <td>Male</td>
+                  <td>Lower segment caesarean section</td>
+                  <td>Unstable lie</td>
+                  <td>Fetal distress</td>
+                  <td>Yes</td>
+                  <td>Respiratory distress</td>
+                  <td>24 days</td>
+                  <td>Fetal distress</td>
+                  <td>24</td>
+                  <td>Asthma and eczema</td>
+                  <td>Deceased</td>
+                  <td>Motor vehicle accident</td>
+                  <td>Intrauterine infection</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry>
+            <templateId root="TBA"/>
+            <observation classCode="OBS" moodCode="EVN">
+              <templateId root="TBA"/>
+              <code code="64726-3" codeSystem="2.16.840.1.113883.6.1" displayName="Previous babies"/>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="64726-3" codeSystem="2.16.840.1.113883.6.1" displayName="Outcome of baby"/>
+                  <value xsi:type="ST">Live birth</value>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="64726-3" codeSystem="2.16.840.1.113883.6.1" displayName="Birth weight"/>
+                  <value xsi:type="INT" value="3850"/>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="64711-5" codeSystem="2.16.840.1.113883.6.1" displayName="Gestation previous pregnancy"/>
+                  <value xsi:type="REAL" value="38.6"/>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="46098-0" codeSystem="2.16.840.1.113883.6.1" displayName="Previous baby sex"/>
+                  <value xsi:type="ST">M</value>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="57071-3" codeSystem="2.16.840.1.113883.6.1" displayName="Mode of birth"/>
+                  <value xsi:type="ST">Lower segment caesarean section</value>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="41168002" codeSystem="2.16.840.1.113883.6.96" displayName="Fetal problems pregnancy"/>
+                  <value xsi:type="ST">Unstable lie</value>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="289449008" codeSystem="2.16.840.1.113883.6.96" displayName="Fetal problems labour"/>
+                  <value xsi:type="ST">Fetal distress</value>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="305353001" codeSystem="2.16.840.1.113883.6.96" displayName="Neonatal unit admissions"/>
+                  <value xsi:type="BL" value="true"/>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="289449008" codeSystem="2.16.840.1.113883.6.96" displayName="Reason for neonatal unit admission"/>
+                  <value xsi:type="ST">Respiratory distress</value>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="11320-9" codeSystem="2.16.840.1.113883.6.1" displayName="Feeding method"/>
+                  <value xsi:type="INT" value="24"/>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="169746009" codeSystem="2.16.840.1.113883.6.96" displayName="Breast milk for"/>
+                  <value xsi:type="ST">Fetal distress</value>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="289449008" codeSystem="2.16.840.1.113883.6.96" displayName="Fetal problems labour"/>
+                  <value xsi:type="INT" value="24"/>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="64792-5" codeSystem="2.16.840.1.113883.6.1" displayName="Problems previous child"/>
+                  <value xsi:type="ST">Asthma and eczema</value>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="365479002" codeSystem="2.16.840.1.113883.6.96" displayName="Current status"/>
+                  <value xsi:type="ST">Deceased</value>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="21984-0" codeSystem="2.16.840.1.113883.6.1" displayName="Cause of death"/>
+                  <value xsi:type="ST">Motor vehicle accident</value>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="161743003" codeSystem="2.16.840.1.113883.6.96" displayName="Stillbirth cause"/>
+                  <value xsi:type="ST">Intrauterine infection</value>
+                </observation>
+              </entryRelationship>
+            </observation>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <section>
+          <templateId root="2.16.840.1.113883.2.18.7.46"/>
+          <code code="48765-2" displayName="Allergies and adverse reactions" codeSystem="2.16.840.1.113883.6.1"/>
+          <title>Allergies and adverse reactions</title>
+          <text>
+            <table>
+              <tbody>
+                <tr>
+                  <td>No known allergies</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+              <value xsi:type="CV" code="160244002" displayName="No known allergies" codeSystem="2.16.840.1.113883.6.96"/>
+            </observation>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <section>
+          <templateId root="2.16.840.1.113883.2.18.7.54"/>
+          <code code="66480-5" displayName="Medical history" codeSystem="2.16.840.1.113883.6.1"/>
+          <title>Medical history</title>
+          <text>History of high blood pressure and urinary tract infections.</text>
+        </section>
+      </component>
+      <component>
+        <section>
+          <templateId root="2.16.840.1.113883.2.18.7.89"/>
+          <code code="10167-5" displayName="Surgical history" codeSystem="2.16.840.1.113883.6.1"/>
+          <title>Surgical history</title>
+          <text>
+            <table>
+              <tbody>
+                <tr>
+                  <th>Operations</th>
+                  <td>Appendectomy</td>
+                </tr>
+                <tr>
+                  <th>Previous anaesthetic</th>
+                  <td>General anaesthetic</td>
+                </tr>
+                <tr>
+                  <th>Anaesthetic problems</th>
+                  <td>Sore throat and laryngeal damage</td>
+                </tr>
+                <tr>
+                  <th>Additional surgical notes</th>
+                  <td>Patient had pain and a raspy voice for a week after the operation</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="10223-6" codeSystem="2.16.840.1.113883.6.1" displayName="Operations"/>
+              <value xsi:type="ST">Appendectomy</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="11485-0" codeSystem="2.16.840.1.113883.6.1" displayName="Previous anaesthetic"/>
+              <value xsi:type="ST">General anaesthetic</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="57081-2" codeSystem="2.16.840.1.113883.6.1" displayName="Anaesthetic problems"/>
+              <value xsi:type="ST">Sore throat and laryngeal damage</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="8722-1" codeSystem="2.16.840.1.113883.6.1" displayName="Additional surgical notes"/>
+              <value xsi:type="ST">Patient had pain and a raspy voice for a week after the operation</value>
+            </observation>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <section>
+          <templateId root="2.16.840.1.113883.2.18.7.88"/>
+          <code code="45420-7" displayName="Mental health" codeSystem="2.16.840.1.113883.6.1"/>
+          <title>Mental health</title>
+          <text>
+            <table>
+              <tbody>
+                <tr>
+                  <th>Mental health risks</th>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <th>Serious mental illness treatment</th>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <th>Mental illness treatment</th>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <th>Family mental health history</th>
+                  <td>Yes</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="34786-4" codeSystem="2.16.840.1.113883.6.1" displayName="Mental health risks"/>
+              <value xsi:type="BL" value="false"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="34785-6" codeSystem="2.16.840.1.113883.6.1" displayName="Serious mental illness treatment"/>
+              <value xsi:type="BL" value="false"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="52319-1" codeSystem="2.16.840.1.113883.6.1" displayName="Mental illness treatment"/>
+              <value xsi:type="BL" value="false"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="67689" codeSystem="2.16.840.1.113883.6.1" displayName="Family mental health history"/>
+              <value xsi:type="BL" value="false"/>
+            </observation>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <section>
+          <templateId root="2.16.840.1.113883.2.18.7.54"/>
+          <code code="18605-6" displayName="Medication list" codeSystem="2.16.840.1.113883.6.1"/>
+          <title>Medication list</title>
+          <text>
+            <table>
+              <thead>
+                <tr>
+                  <th>Medicine</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>prednisolone</td>
+                </tr>
+                <tr>
+                  <td>salbutamol</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <substanceAdministration classCode="SBADM" moodCode="INT">
+              <templateId root="2.16.840.1.113883.2.18.7.54.1"/>
+              <consumable>
+                <manufacturedProduct classCode="MANU">
+                  <templateId root="2.16.840.1.113883.2.18.7.54.2"/>
+                  <manufacturedMaterial>
+                    <code code="1234567812345678" displayName="prednisolone" codeSystem="2.16.840.1.113883.6.96"/>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+          <entry typeCode="DRIV">
+            <substanceAdministration classCode="SBADM" moodCode="INT">
+              <templateId root="2.16.840.1.113883.2.18.7.54.1"/>
+              <consumable>
+                <manufacturedProduct classCode="MANU">
+                  <templateId root="2.16.840.1.113883.2.18.7.54.2"/>
+                  <manufacturedMaterial>
+                    <code code="1234567812345679" displayName="salbutamol" codeSystem="2.16.840.1.113883.6.96"/>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+            </substanceAdministration>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <section>
+          <templateId root="2.16.840.1.113883.2.18.7.92"/>
+          <code code="72166-2" displayName="Smoking status" codeSystem="2.16.840.1.113883.6.1"/>
+          <title>Smoking status</title>
+          <text>
+            <table>
+              <tbody>
+                <tr>
+                  <th>Current smoker</th>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <th>Ever smoked</th>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <th>Stop date</th>
+                  <td>03 May 2012</td>
+                </tr>
+                <tr>
+                  <th>Number of cigarettes</th>
+                  <td>30</td>
+                </tr>
+                <tr>
+                  <th>Referred to smoke free services</th>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <th>Brief smoking advice</th>
+                  <td>Yes</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="64234-8" codeSystem="2.16.840.1.113883.6.1" displayName="Current smoker"/>
+              <value xsi:type="BL" value="false"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="70483-3" codeSystem="2.16.840.1.113883.6.1" displayName="Ever smoked"/>
+              <value xsi:type="BL" value="true"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="74010-0" codeSystem="2.16.840.1.113883.6.1" displayName="Stop date"/>
+              <value xsi:type="TS" value="20120305"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="266918002" codeSystem="2.16.840.1.113883.6.96" displayName="Number of cigarettes"/>
+              <value xsi:type="INT" value="10"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="68540-4" codeSystem="2.16.840.1.113883.6.1" displayName="Referred to smoke free services"/>
+              <value xsi:type="BL" value="false"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="70005-4" codeSystem="2.16.840.1.113883.6.1" displayName="Brief smoking advice"/>
+              <value xsi:type="BL" value="false"/>
+            </observation>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <section>
+          <templateId root="2.16.840.1.113883.2.18.7.93"/>
+          <code code="54114-4" displayName="Family health" codeSystem="2.16.840.1.113883.6.1"/>
+          <title>Family health</title>
+          <text>Maternal grandmother has diabetes, father of baby has hypertension, uncle has a congenital heart problem.</text>
+        </section>
+      </component>
+      <component>
+        <section>
+          <templateId root="TBA"/>
+          <code code="39208-4" displayName="Tuberculosis risk assessment" codeSystem="2.16.840.1.113883.6.1"/>
+          <title>Tuberculosis risk assessment</title>
+          <text>
+            <table>
+              <tbody>
+                <tr>
+                  <th>Lives with person with TB</th>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <th>Lives in country with TB</th>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <th>Lived in country with TB</th>
+                  <td>Yes</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="160280002" codeSystem="2.16.840.1.113883.6.96" displayName="Lives with person with TB"/>
+              <value xsi:type="BL" value="false"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="224779005" codeSystem="2.16.840.1.113883.6.96" displayName="Lives in country with TB"/>
+              <value xsi:type="BL" value="false"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="405144000" codeSystem="2.16.840.1.113883.6.96" displayName="Lived in country with TB"/>
+              <value xsi:type="BL" value="true"/>
+            </observation>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <section>
+          <templateId root="2.16.840.1.113883.2.18.7.94"/>
+          <code code="11525-3" displayName="Antenatal ultrasound" codeSystem="2.16.840.1.113883.6.1"/>
+          <title>Antenatal ultrasound</title>
+          <text>
+            <table>
+              <thead>
+                <tr>
+                  <th>Ultrasound date</th>
+                  <th>Gestation at ultrasound</th>
+                  <th>Ultrasound notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>01/02/2014</td>
+                  <td>12.3</td>
+                  <td>Nuchal translucency 1.8 mm, fetal and maternal anatomy appear normal.</td>
+                </tr>
+                <tr>
+                  <td>12/01/2014</td>
+                  <td>37.2</td>
+                  <td>Growth scan, estimated fetal weight 2.5kg, AC close to 90th centile, normal lie and dopppler.</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry>
+            <templateId root="2.16.840.1.113883.2.18.7.94.1"/>
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="11525-3" codeSystem="2.16.840.1.113883.6.1" displayName="Antenatal ultrasound"/>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="34970-4" codeSystem="2.16.840.1.113883.6.1" displayName="Date ultrasound"/>
+                  <value xsi:type="TS" value="20130805"/>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="57036006" codeSystem="2.16.840.1.113883.6.96" displayName="Gestation at ultrasound"/>
+                  <value xsi:type="REAL" value="12.3"/>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="304602002" codeSystem="2.16.840.1.113883.6.96" displayName="Ultrasound notes"/>
+                  <value xsi:type="ST">Nuchal translucency 1.8 mm, fetal and maternal anatomy appear normal</value>
+                </observation>
+              </entryRelationship>
+            </observation>
+          </entry>
+          <entry>
+            <templateId root="2.16.840.1.113883.2.18.7.94.1"/>
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="11525-3" codeSystem="2.16.840.1.113883.6.1" displayName="Antenatal ultrasound"/>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="34970-4" codeSystem="2.16.840.1.113883.6.1" displayName="Date ultrasound"/>
+                  <value xsi:type="TS" value="20140201"/>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="57036006" codeSystem="2.16.840.1.113883.6.96" displayName="Gestation at ultrasound"/>
+                  <value xsi:type="REAL" value="37.2"/>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="304602002" codeSystem="2.16.840.1.113883.6.96" displayName="Ultrasound notes"/>
+                  <value xsi:type="ST">Growth scan, estimated fetal weight 2.5kg, AC close to 90th centile, normal lie and dopppler</value>
+                </observation>
+              </entryRelationship>
+            </observation>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <section>
+          <templateId root="2.16.840.1.113883.2.18.7.95"/>
+          <code code="57075-4" displayName="Blood tests" codeSystem="2.16.840.1.113883.6.1"/>
+          <title>Blood test</title>
+          <text>
+            <table>
+              <thead>
+                <tr>
+                  <th>Date blood taken</th>
+                  <th>Gestation at blood test</th>
+                  <th>Blood test notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>31/07/2013</td>
+                  <td>11.3</td>
+                  <td>Syphilis and hepatitis B screen negative, rubella immune. FBC normal, HIV screen negative.</td>
+                </tr>
+                <tr>
+                  <td>15/08/2013</td>
+                  <td>13.4</td>
+                  <td>Ferritin low 19 given iron supplements.</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry>
+            <templateId root="2.16.840.1.113883.2.18.7.95.1"/>
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="396550006" codeSystem="2.16.840.1.113883.6.96" displayName="Blood test"/>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="49548-1" codeSystem="2.16.840.1.113883.6.1" displayName="Date blood taken"/>
+                  <value xsi:type="TS" value="20130713"/>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="57036006" codeSystem="2.16.840.1.113883.6.96" displayName="Gestation at blood test"/>
+                  <value xsi:type="REAL" value="11.3"/>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="118246004" codeSystem="2.16.840.1.113883.6.96" displayName="Blood test notes"/>
+                  <value xsi:type="ST">Syphilis and hepatitis B screen negative, rubella immune. FBC normal, HIV screen negative.</value>
+                </observation>
+              </entryRelationship>
+            </observation>
+          </entry>
+          <entry>
+            <templateId root="2.16.840.1.113883.2.18.7.95.1"/>
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="396550006" codeSystem="2.16.840.1.113883.6.96" displayName="Blood test"/>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="49548-1" codeSystem="2.16.840.1.113883.6.1" displayName="Date blood taken"/>
+                  <value xsi:type="TS" value="20130815"/>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="57036006" codeSystem="2.16.840.1.113883.6.96" displayName="Gestation at blood test"/>
+                  <value xsi:type="REAL" value="13.4"/>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="118246004" codeSystem="2.16.840.1.113883.6.96" displayName="Blood test notes"/>
+                  <value xsi:type="ST">Ferritin low 19 given iron supplements.</value>
+                </observation>
+              </entryRelationship>
+            </observation>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <section>
+          <templateId root="2.16.840.1.113883.2.18.7.96"/>
+          <code code="24537-3" displayName="Amniocenteses" codeSystem="2.16.840.1.113883.6.1"/>
+          <title>Amniocenteses</title>
+          <text>
+            <table>
+              <thead>
+                <tr>
+                  <th>Date amniocentesis performed</th>
+                  <th>Gestation at amniocentesis</th>
+                  <th>Amniocentesis notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>10/10/2013</td>
+                  <td>19.3</td>
+                  <td>Normal karyotype 46 XY, woman informed at clinic.</td>
+                </tr>
+                <tr>
+                  <td>17/10/2013</td>
+                  <td>20.3</td>
+                  <td>Anatomy scan to be performed at maternal fetal medicine clinic.</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry>
+            <templateId root="2.16.840.1.113883.2.18.7.96.1"/>
+            <observation classCode="OBS" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.2.18.7.96.1"/>
+              <code code="24537-3" codeSystem="2.16.840.1.113883.6.1" displayName="Amniocentesis"/>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="443005005" codeSystem="2.16.840.1.113883.6.96" displayName="Date amniocentesis performed"/>
+                  <value xsi:type="TS" value="20131010"/>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="57036006" codeSystem="2.16.840.1.113883.6.96" displayName="Gestation at amniocentesis"/>
+                  <value xsi:type="REAL" value="19.3"/>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="33773-3" codeSystem="2.16.840.1.113883.6.1" displayName="Amniocentesis notes"/>
+                  <value xsi:type="ST">Normal karyotype 46 XY, woman informed at clinic.</value>
+                </observation>
+              </entryRelationship>
+            </observation>
+          </entry>
+          <entry>
+            <templateId root="2.16.840.1.113883.2.18.7.96.1"/>
+            <observation classCode="OBS" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.2.18.7.96.1"/>
+              <code code="24537-3" codeSystem="2.16.840.1.113883.6.1" displayName="Amniocentesis"/>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="443005005" codeSystem="2.16.840.1.113883.6.96" displayName="Date amniocentesis performed"/>
+                  <value xsi:type="TS" value="20131017"/>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="57036006" codeSystem="2.16.840.1.113883.6.96" displayName="Gestation at amniocentesis"/>
+                  <value xsi:type="REAL" value="20.3"/>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="33773-3" codeSystem="2.16.840.1.113883.6.1" displayName="Amniocentesis notes"/>
+                  <value xsi:type="ST">Anatomy scan to be performed at maternal fetal medicine clinic.</value>
+                </observation>
+              </entryRelationship>
+            </observation>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <section>
+          <templateId root="2.16.840.1.113883.2.18.7.98"/>
+          <code code="57079-6" displayName="Birth plan" codeSystem="2.16.840.1.113883.6.1"/>
+          <title>Birth plan</title>
+          <text>Breathing for as long as possible; then gas and epidural, if needed. Delivery position leaning over back of bed.</text>
+        </section>
+      </component>
+      <component>
+        <section>
+          <templateId root="2.16.840.1.113883.2.18.7.99"/>
+          <code code="57083-8" displayName="Labour and birth" codeSystem="2.16.840.1.113883.6.1"/>
+          <title>Labour and birth</title>
+          <text>
+            <table>
+              <tbody>
+                <tr>
+                  <th>Onset of labour</th>
+                  <td>Spontaneous</td>
+                </tr>
+                <tr>
+                  <th>Date and time membranes ruptured</th>
+                  <td>31/02/2014 13:21</td>
+                </tr>
+                <tr>
+                  <th>Date and time labour established</th>
+                  <td>13/02/2014 15:34</td>
+                </tr>
+                <tr>
+                  <th>Labour augmented first stage</th>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <th>Maternal problems first stage</th>
+                  <td>Precipitate labour</td>
+                </tr>
+                <tr>
+                  <th>First stage notes</th>
+                  <td>Labour progressed normally</td>
+                </tr>
+                <tr>
+                  <th>Date and time cervix fully dilated</th>
+                  <td>13/02/2014 21:42</td>
+                </tr>
+                <tr>
+                  <th>Date and time active pushing commenced</th>
+                  <td>13/02/2014 21:58</td>
+                </tr>
+                <tr>
+                  <th>Maternal problems second stage</th>
+                  <td>Prolonged labour</td>
+                </tr>
+                <tr>
+                  <th>Second stage notes</th>
+                  <td>Labour progressed normally</td>
+                </tr>
+                <tr>
+                  <th>Labour augmentation second stage</th>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <th>Reason labour augmented</th>
+                  <td>Difficulty progressing</td>
+                </tr>
+                <tr>
+                  <th>Date and time of ARM</th>
+                  <td>13/02/2014 13:21</td>
+                </tr>
+                <tr>
+                  <th>Meconium present</th>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <th>Complementary therapies used</th>
+                  <td>Hypnotherapy was trialed during early labour</td>
+                </tr>
+                <tr>
+                  <th>Analgesia and anaesthesia labour</th>
+                  <td>Gas and air, epidural</td>
+                </tr>
+                <tr>
+                  <th>Number of babies born</th>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <th>Birth position of mother</th>
+                  <td>Leaning over back of the bed</td>
+                </tr>
+                <tr>
+                  <th>Waterbirth</th>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <th>Vaginal birth after caesarean</th>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <th>Gestation 20 weeks or over</th>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <th>Analgesia and anaesthesia birth</th>
+                  <td>Epidural</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="73774-2" codeSystem="2.16.840.1.113883.6.1" displayName="Onset of labour"/>
+              <value xsi:type="ST">Spontaneous</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="56829-5" codeSystem="2.16.840.1.113883.6.1" displayName="Date and time membranes ruptured"/>
+              <value xsi:type="TS" value="201402131321"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="32396-4" codeSystem="2.16.840.1.113883.6.1" displayName="Date and time labour established"/>
+              <value xsi:type="ST">2014-02-13T15:34</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="237001001" codeSystem="2.16.840.1.113883.6.96" displayName="Labour augmented first stage"/>
+              <value xsi:type="BL" value="false"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="288249001" codeSystem="2.16.840.1.113883.6.96" displayName="Maternal problems first stage"/>
+              <value xsi:type="ST">Precipitate labour</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="6893006" codeSystem="2.16.840.1.113883.6.96" displayName="First stage notes"/>
+              <value xsi:type="ST">labour progressed normally</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="11784-6" codeSystem="2.16.840.1.113883.6.1" displayName="Date and time cervix fully dilated"/>
+              <value xsi:type="ST">2014-02-13T21:42</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="249163006" codeSystem="2.16.840.1.113883.6.96" displayName="Date and time active pushing commenced"/>
+              <value xsi:type="TS" value="201402132158"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="288249001" codeSystem="2.16.840.1.113883.6.96" displayName="Maternal problems second stage"/>
+              <value xsi:type="ST">prolonged labour</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="42857002" codeSystem="2.16.840.1.113883.6.96" displayName="Second stage notes"/>
+              <value xsi:type="ST">labour progressed normally</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="237000000" codeSystem="2.16.840.1.113883.6.96" displayName="Labour augmentation second stage"/>
+              <value xsi:type="BL" value="true"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="57198-4" codeSystem="2.16.840.1.113883.6.1" displayName="Reason labour augmented"/>
+              <value xsi:type="ST">Difficulty progressing</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="408816000" codeSystem="2.16.840.1.113883.6.96" displayName="Date and time of ARM"/>
+              <value xsi:type="TS" value="201402131321"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="1887-9" codeSystem="2.16.840.1.113883.6.1" displayName="Meconium present"/>
+              <value xsi:type="BL" value="false"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="225423004" codeSystem="2.16.840.1.113883.6.96" displayName="Complementary therapies used"/>
+              <value xsi:type="ST">Hypnotherapy was trialed during early labour</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="11485-0" codeSystem="2.16.840.1.113883.6.1" displayName="Analgesia and anaesthesia labour"/>
+              <value xsi:type="ST">Gas and air, epidural</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="246435002" codeSystem="2.16.840.1.113883.6.96" displayName="Number of babies born"/>
+              <value xsi:type="INT" value="1"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="169811007" codeSystem="2.16.840.1.113883.6.96" displayName="Birth position of mother"/>
+              <value xsi:type="ST">Leaning over back of the bed</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="177185001" codeSystem="2.16.840.1.113883.6.96" displayName="Waterbirth"/>
+              <value xsi:type="BL" value="false"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="68497-7" codeSystem="2.16.840.1.113883.6.1" displayName="Vaginal birth after caesarean"/>
+              <value xsi:type="BL" value="false"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="49051-6" codeSystem="2.16.840.1.113883.6.1" displayName="Gestation 20 weeks or over"/>
+              <value xsi:type="BL" value="true"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="11485-0" codeSystem="2.16.840.1.113883.6.1" displayName="Analgesia and anaesthesia birth"/>
+              <value xsi:type="ST">Epidural</value>
+            </observation>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <section>
+          <templateId root="TBA"/>
+          <code code="200144004" displayName="Caesarean section" codeSystem="2.16.840.1.113883.6.96"/>
+          <title>Caesarean section</title>
+          <text>
+            <table>
+              <tbody>
+                <tr>
+                  <th>Dilation before caesarean</th>
+                  <td>7 cm</td>
+                </tr>
+                <tr>
+                  <th>Main indication</th>
+                  <td>Fetal distress</td>
+                </tr>
+                <tr>
+                  <th>Caesarean complications</th>
+                  <td>Adhesions</td>
+                </tr>
+                <tr>
+                  <th>Caesarean section notes</th>
+                  <td>LSCS, adhesions on uterus and bladder noted</td>
+                </tr>
+                <tr>
+                  <th>Caesarean section grade</th>
+                  <td>3</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="11786-1" codeSystem="2.16.840.1.113883.6.1" displayName="Dilation before caesarean"/>
+              <value xsi:type="INT" value="7"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="410665000" codeSystem="2.16.840.1.113883.6.96" displayName="Main indication"/>
+              <value xsi:type="ST">Fetal distress</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="10831-6" codeSystem="2.16.840.1.113883.6.1" displayName="Caesarean complications"/>
+              <value xsi:type="ST">Adhesions</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="11466000" codeSystem="2.16.840.1.113883.6.96" displayName="Caesarean section notes"/>
+              <value xsi:type="ST">LSCS, adhesions on uterus and bladder noted</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="274130007" codeSystem="2.16.840.1.113883.6.96" displayName="Caesarean section grade"/>
+              <value xsi:type="INT" value="3"/>
+            </observation>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <section>
+          <templateId root="2.16.840.1.113883.2.18.7.100"/>
+          <code code="15898009" displayName="Post delivery" codeSystem="2.16.840.1.113883.6.96"/>
+          <title>Post delivery</title>
+          <text>
+            <table>
+              <tbody>
+                <tr>
+                  <th>Oxytocic drug</th>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <th>Third stage notes</th>
+                  <td>Oxytocin given, placenta delivered within 15 minutes</td>
+                </tr>
+                <tr>
+                  <th>Date and time placenta delivered</th>
+                  <td>13/02/2014 22:35</td>
+                </tr>
+                <tr>
+                  <th>Placenta mode of delivery</th>
+                  <td>Controlled traction</td>
+                </tr>
+                <tr>
+                  <th>Manual removal notes</th>
+                  <td>Used controlled cord traction and oxytocin</td>
+                </tr>
+                <tr>
+                  <th>Episiotomy required</th>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <th>Episiotomy type</th>
+                  <td>Midline</td>
+                </tr>
+                <tr>
+                  <th>Episiotomy reason</th>
+                  <td>Fetal distress</td>
+                </tr>
+                <tr>
+                  <th>Tear</th>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <th>Genital trauma type</th>
+                  <td>Labial graze</td>
+                </tr>
+                <tr>
+                  <th>Repair required</th>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <th>Placenta completeness</th>
+                  <td>Placenta appears complete</td>
+                </tr>
+                <tr>
+                  <th>Placenta appearance</th>
+                  <td>Normal appearance</td>
+                </tr>
+                <tr>
+                  <th>Membranes completeness</th>
+                  <td>Membranes appear complete</td>
+                </tr>
+                <tr>
+                  <th>Placenta, cord or membranes sent for pathology</th>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <th>Placenta kept by family</th>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <th>Blood loss total</th>
+                  <td>650</td>
+                </tr>
+                <tr>
+                  <th>Sutured</th>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <th>Suture material</th>
+                  <td>Vicryl</td>
+                </tr>
+                <tr>
+                  <th>Maternal problems post delivery</th>
+                  <td>Wound infection</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="410937004" codeSystem="2.16.840.1.113883.6.96" displayName="Oxytocic drug"/>
+              <value xsi:type="BL" value="true"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="258224005" codeSystem="2.16.840.1.113883.6.96" displayName="Third stage notes"/>
+              <value xsi:type="ST">Oxytocin given, placenta delivered within 15 minutes</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="289232004" codeSystem="2.16.840.1.113883.6.96" displayName="Date and time placenta delivered"/>
+              <value xsi:type="TS" value="201402132235"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="236994008" codeSystem="2.16.840.1.113883.6.96" displayName="Placenta mode of delivery"/>
+              <value xsi:type="ST">Controlled traction</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="177204008" codeSystem="2.16.840.1.113883.6.96" displayName="Manual removal notes"/>
+              <value xsi:type="ST">Used controlled cord traction and oxytocin</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="288194000" codeSystem="2.16.840.1.113883.6.96" displayName="Episiotomy required"/>
+              <value xsi:type="BL" value="true"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="246422006" codeSystem="2.16.840.1.113883.6.96" displayName="Episiotomy type"/>
+              <value xsi:type="ST">Midline</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="85548006" codeSystem="2.16.840.1.113883.6.96" displayName="Episiotomy reason"/>
+              <value xsi:type="ST">Fetal distress</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="72145-6" codeSystem="2.16.840.1.113883.6.1" displayName="Tear"/>
+              <value xsi:type="BL" value="true"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="263767004" codeSystem="2.16.840.1.113883.6.96" displayName="Genital trauma type"/>
+              <value xsi:type="ST">Labial graze</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="263767004" codeSystem="2.16.840.1.113883.6.96" displayName="Repair required"/>
+              <value xsi:type="BL" value="false"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="364343000" codeSystem="2.16.840.1.113883.6.96" displayName="Placenta completeness"/>
+              <value xsi:type="ST">Placenta appears complete</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="78067005" codeSystem="2.16.840.1.113883.6.96" displayName="Placenta appearance"/>
+              <value xsi:type="ST">Normal appearance</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="249181009" codeSystem="2.16.840.1.113883.6.96" displayName="Membranes completeness"/>
+              <value xsi:type="ST">Membranes appears complete</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="394595002" codeSystem="2.16.840.1.113883.6.96" displayName="Placenta, cord or membranes sent for pathology"/>
+              <value xsi:type="BL" value="false"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="169952004" codeSystem="2.16.840.1.113883.6.96" displayName="Placenta kept by family"/>
+              <value xsi:type="BL" value="false"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="59770-8" codeSystem="2.16.840.1.113883.6.1" displayName="Blood loss total"/>
+              <value xsi:type="INT" value="650"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="29684008" codeSystem="2.16.840.1.113883.6.96" displayName="Sutured"/>
+              <value xsi:type="BL" value="true"/>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="27065002" codeSystem="2.16.840.1.113883.6.96" displayName="Suture material"/>
+              <value xsi:type="ST">Vicryl</value>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="72144-9" codeSystem="2.16.840.1.113883.6.1" displayName="Maternal problems post delivery"/>
+              <value xsi:type="ST">Wound infection</value>
+            </observation>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <section>
+          <templateId root="2.16.840.1.113883.2.18.7.101"/>
+          <code code="57075-4" displayName="Newborn babies" codeSystem="2.16.840.1.113883.6.1"/>
+          <title>Newborn baby/babies</title>
+          <text>
+            <table>
+              <thead>
+                <tr>
+                  <th>Baby NHI number</th>
+                  <th>Baby sex</th>
+                  <th>Date and time of birth</th>
+                  <th>Gestation at birth</th>
+                  <th>Presentation of baby</th>
+                  <th>Type of breech delivery</th>
+                  <th>Resuscitation</th>
+                  <th>Shoulder dystocia</th>
+                  <th>Birth outcome</th>
+                  <th>Place of birth</th>
+                  <th>Type of delivery</th>
+                  <th>Placenta weight</th>
+                  <th>Number of blood vessels in umbilical cord</th>
+                  <th>Apgar 1 minute</th>
+                  <th>Apgar 5 minutes</th>
+                  <th>Apgar 10 minutes</th>
+                  <th>Vitamin K given</th>
+                  <th>Vitamin K route</th>
+                  <th>Vitamin K dose</th>
+                  <th>Birthweight of baby</th>
+                  <th>Metabolic result</th>
+                  <th>Diagnosis</th>
+                  <th>Date hearing screening completed</th>
+                  <th>Right ear</th>
+                  <th>Left ear</th>
+                  <th>Date and time of feeding assessment</th>
+                  <th>Feeding type</th>
+                  <th>Feeding method</th>
+                  <th>Feeding plan</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>FDS1234</td>
+                  <td>Male</td>
+                  <td>13/02/2014 22:30</td>
+                  <td>38.5</td>
+                  <td>Vertex OP</td>
+                  <td>Footling</td>
+                  <td>5 inflation breaths and CPAP</td>
+                  <td>No</td>
+                  <td>Livebirth</td>
+                  <td>Hospital level 2</td>
+                  <td>Forceps</td>
+                  <td>385 g</td>
+                  <td>3</td>
+                  <td>7</td>
+                  <td>7</td>
+                  <td>9</td>
+                  <td>Yes</td>
+                  <td>IM</td>
+                  <td>1</td>
+                  <td>3854 g</td>
+                  <td>Inconclusive</td>
+                  <td>Baby referred to paediatrician</td>
+                  <td>14/02/2014</td>
+                  <td>Pass</td>
+                  <td>Fail</td>
+                  <td>15/02/2014 14:33</td>
+                  <td>Expressed breastmilk</td>
+                  <td>Bottle</td>
+                  <td>Breastfeed for 6 months, bottle as reqd</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry>
+            <templateId root="2.16.840.1.113883.2.18.7.101.1"/>
+            <observation classCode="OBS" moodCode="EVN">
+              <code code="57075-4" displayName="Newborn baby" codeSystem="2.16.840.1.113883.6.1"/>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="46496-6" codeSystem="2.16.840.1.113883.6.1" displayName="Baby NHI number"/>
+                  <value xsi:type="II" extension="FDS1234" root="2.1.840.1.113883.2.18.2"/>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="46098-0" codeSystem="2.16.840.1.113883.6.1" displayName="Baby sex"/>
+                  <value xsi:type="ST">M</value>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="21112-8" codeSystem="2.16.840.1.113883.6.1" displayName="Date and time of birth"/>
+                  <value xsi:type="TS" value="201402132230"/>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="72147-2" codeSystem="2.16.840.1.113883.6.1" displayName="Gestation at birth"/>
+                  <value xsi:type="REAL" value="38.5"/>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="73761-9" codeSystem="2.16.840.1.113883.6.1" displayName="Presentation of baby"/>
+                  <value xsi:type="ST">Vertex OP</value>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="6096002" codeSystem="2.16.840.1.113883.6.96" displayName="Type of breech delivery"/>
+                  <value xsi:type="ST">Footling</value>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="72115-9" codeSystem="2.16.840.1.113883.6.1" displayName="Resuscitation"/>
+                  <value xsi:type="ST">5 inflation breaths and CPAP</value>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="199783004" codeSystem="2.16.840.1.113883.6.96" displayName="Shoulder dystocia"/>
+                  <value xsi:type="BL" value="false"/>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="365479002" codeSystem="2.16.840.1.113883.6.96" displayName="Birth outcome"/>
+                  <value xsi:type="ST">Livebirth</value>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="73766-8" codeSystem="2.16.840.1.113883.6.1" displayName="Place of birth"/>
+                  <value xsi:type="ST">Hospital level 2</value>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="73762-7" codeSystem="2.16.840.1.113883.6.1" displayName="Type of delivery"/>
+                  <value xsi:type="ST">Forceps</value>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="169953009" codeSystem="2.16.840.1.113883.6.96" displayName="Placenta weight"/>
+                  <value xsi:type="INT" value="385"/>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="249191003" codeSystem="2.16.840.1.113883.6.96" displayName="Number of blood vessels in umbilical cord"/>
+                  <value xsi:type="INT" value="3"/>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="48334-7" codeSystem="2.16.840.1.113883.6.1" displayName="Apgar 1 minute"/>
+                  <value xsi:type="INT" value="7"/>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="48333-9" codeSystem="2.16.840.1.113883.6.1" displayName="Apgar 5 minutes"/>
+                  <value xsi:type="INT" value="7"/>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="48332-1" codeSystem="2.16.840.1.113883.6.1" displayName="Apgar 10 minutes"/>
+                  <value xsi:type="INT" value="9"/>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="65183007" codeSystem="2.16.840.1.113883.6.96" displayName="Vitamin K given"/>
+                  <value xsi:type="BL" value="true"/>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="45373-8" codeSystem="2.16.840.1.113883.6.1" displayName="Vitamin K route"/>
+                  <value xsi:type="ST">IM</value>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="18817-7" codeSystem="2.16.840.1.113883.6.1" displayName="Vitamin K dose"/>
+                  <value xsi:type="INT" value="1"/>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="56092-0" codeSystem="2.16.840.1.113883.6.1" displayName="Birthweight of baby"/>
+                  <value xsi:type="INT" value="3854"/>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="54537-6" codeSystem="2.16.840.1.113883.6.1" displayName="Metabolic result"/>
+                  <value xsi:type="ST">Inconclusive</value>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="54537-6" codeSystem="2.16.840.1.113883.6.1" displayName="Diagnosis"/>
+                  <value xsi:type="ST">Baby referred to paediatrician</value>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="57700-7" codeSystem="2.16.840.1.113883.6.1" displayName="Date hearing screening completed"/>
+                  <value xsi:type="TS" value="20140214"/>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="54109-4" codeSystem="2.16.840.1.113883.6.1" displayName="Right ear"/>
+                  <value xsi:type="ST">Pass</value>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="54108-6" codeSystem="2.16.840.1.113883.6.1" displayName="Left ear"/>
+                  <value xsi:type="ST">Fail</value>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="46484-2" codeSystem="2.16.840.1.113883.6.1" displayName="Date and time of feeding assessment"/>
+                  <value xsi:type="TS" value="201402151433"/>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="67704-7" codeSystem="2.16.840.1.113883.6.1" displayName="Feeding type"/>
+                  <value xsi:type="ST">Expressed breastmilk</value>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="11320-9" codeSystem="2.16.840.1.113883.6.1" displayName="Feeding method"/>
+                  <value xsi:type="ST">Bottle</value>
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="63896-5" codeSystem="2.16.840.1.113883.6.1" displayName="Feeding plan"/>
+                  <value xsi:type="ST">To breastfeed for 6 months using breast and bottle as required</value>
+                </observation>
+              </entryRelationship>
+            </observation>
+          </entry>
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>

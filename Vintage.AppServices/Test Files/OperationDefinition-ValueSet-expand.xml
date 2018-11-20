@@ -1,0 +1,82 @@
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="ValueSet-expand"/>
+  <url value="http://its.patientsfirst.org.nz/RestService.svc/Terminz/OperationDefinition/ValueSet-expand"/>
+  <name value="Value Set Expansion"/>
+  <status value="draft"/>
+  <kind value="operation"/>
+  <date value="2018-04-23"/>
+  <publisher value="HL7 New Zealand"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://hl7.org.nz"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="pkjordan@xtra.co.nz"/>
+    </telecom>
+  </contact>
+  <description value="The definition of a value set is used to create a simple collection of codes suitable for use for data entry or validation. &#xA;&#xA;If the operation is not called at the instance level, the in parameter url must be provided.  An expanded value set will be returned, or an OperationOutcome with an error message."/>
+  <code value="expand"/>
+  <comment value="The value set expansion returned by this query should be treated as a transient result that will change over time (whether it does or not depends on how the value set is specified), so applications should repeat the operation each time the value set is used.  &#xA;&#xA;If the expansion is too large (> 9,999 items), the server will return an error (OperationOutcome with code too-costly)."/>
+  <resource value="ValueSet"/>
+  <system value="false"/>
+  <type value="true"/>
+  <instance value="true"/>
+  <parameter>
+    <name value="url"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="A canonical url for a value set. The server must know the value set (e.g. it is defined explicitly in the server&#39;s value sets, or it is defined implicitly by some code system known to the server"/>
+    <type value="uri"/>
+  </parameter>
+  <parameter>
+    <name value="valueSetVersion"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="The identifier that is used to identify a specific version of the value set to be used when generating the expansion. This is an arbitrary value managed by the value set author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available."/>
+    <type value="string"/>
+  </parameter>
+  <parameter>
+    <name value="filter"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="A text filter that is applied to restrict the codes that are returned (this is useful in a UI context). The interpretation of this is delegated to the server in order to allow to determine the most optimal search approach for the context"/>
+    <type value="string"/>
+  </parameter>
+  <parameter>
+    <name value="offset"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Paging support - where to start if a subset is desired (default = 0). Offset is number of records (not number of pages)"/>
+    <type value="integer"/>
+  </parameter>
+  <parameter>
+    <name value="count"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Paging support - how many codes should be provided in a partial page view. Paging only applies to flat expansions - servers ignore paging if the expansion is not flat.  If count = 0, the client is asking how large the expansion is. Servers SHOULD honor this request for hierarchical expansions as well, and simply return the overall count"/>
+    <type value="integer"/>
+  </parameter>
+  <parameter>
+    <name value="displayLanguage"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Specifies the language to be used for description in the expansions i.e. the language to be used for ValueSet.expansion.contains.display. Overrides the value in the expansion profile if there is one"/>
+    <type value="code"/>
+  </parameter>
+  <parameter>
+    <name value="return"/>
+    <use value="out"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="The result of the expansion"/>
+    <type value="ValueSet"/>
+  </parameter>
+</OperationDefinition>

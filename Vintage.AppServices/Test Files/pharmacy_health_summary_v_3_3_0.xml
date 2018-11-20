@@ -1,0 +1,1265 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040" />
+  <templateId root="2.16.840.1.113883.2.18.7.18.1" />
+  <templateId root="2.16.840.1.113883.2.18.7.5" />
+  <id root="354327e4-961a-4130-95cb-328eb8ed1170" />
+  <code code="54556-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC STATIC" displayName="Health conditions" />
+  <title>Pharmacy Shared Health Summary</title>
+  <effectiveTime value="20131219153321" />
+  <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" />
+  <languageCode code="en-NZ" />
+  <versionNumber value="1" />
+  <recordTarget>
+    <patientRole>
+      <templateId root="2.16.840.1.113883.2.18.7.5.2" />
+      <id root="2.16.840.1.113883.2.18.2" extension="PRP1660" />
+      <id root="2.16.840.1.113883.2.18.31" extension="185-2689" />
+      <addr use="H">
+        <streetAddressLine>The Yellow House</streetAddressLine>
+        <streetAddressLine>3 Alconbury Crescent</streetAddressLine>
+        <precinct>Rototuna</precinct>
+        <city>Hamilton</city>
+        <postalCode>3210</postalCode>
+        <country>New Zealand</country>
+      </addr>
+      <telecom use="HP" value="tel:+6478533278" />
+      <telecom use="MC" value="tel:+6421759935" />
+      <telecom use="H" value="mailto:psmith998@xtra.co.nz" />
+      <patient>
+        <templateId root="2.16.840.1.113883.2.18.7.5.1" />
+        <name>
+          <prefix>Mr</prefix>
+          <given>Peter</given>
+          <family>Smith</family>
+        </name>
+        <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.2.18.57" displayName="Male" />
+        <birthTime value="19660930" />
+        <maritalStatusCode code="M" codeSystem="2.16.840.1.113883.5.2" displayName="Married" />
+        <religiousAffiliationCode code="AGN" codeSystem="2.16.840.1.113883.2.18.13" displayName="Agnostic" />
+        <raceCode code="21" codeSystem="2.16.840.1.113883.2.18.11.1" codeSystemName="EthnicityL2" displayName="New Zealand Maori" />
+        <guardian>
+          <templateId root="2.16.840.1.113883.2.18.7.5.3" />
+          <code>
+            <originalText>Mother</originalText>
+          </code>
+          <guardianPerson>
+            <name>
+              <given>Mavis</given>
+              <family>Smith</family>
+            </name>
+          </guardianPerson>
+        </guardian>
+        <guardian>
+          <templateId root="2.16.840.1.113883.2.18.7.5.3" />
+          <code>
+            <originalText>Controller</originalText>
+          </code>
+          <guardianOrganization>
+            <id nullFlavor="NA" />
+            <name>The Organisation</name>
+          </guardianOrganization>
+        </guardian>
+        <birthplace>
+          <templateId root="2.16.840.1.113883.2.18.7.5.4" />
+          <place>
+            <addr use="H">
+              <city>Walsall</city>
+              <country>UK</country>
+            </addr>
+          </place>
+        </birthplace>
+      </patient>
+    </patientRole>
+  </recordTarget>
+  <author>
+    <templateId root="2.16.840.1.113883.2.18.7.5.7" />
+    <time value="20131219153321" />
+    <assignedAuthor>
+      <id root="2.16.840.1.113883.2.18.3.2" extension="DS3333" />
+      <assignedPerson>
+        <name>
+          <given>Peter</given>
+          <family>Piper</family>
+        </name>
+      </assignedPerson>
+      <representedOrganization>
+        <templateId root="2.16.840.1.113883.2.18.7.5.19.2" />
+        <id nullFlavor="NA" />
+        <name>Test Organisation</name>
+      </representedOrganization>
+    </assignedAuthor>
+  </author>
+  <author>
+    <time value="20131219151112" />
+    <assignedAuthor>
+      <id root="2.16.840.1.113883.2.18.32" extension="3.3.0.1" />
+      <assignedAuthoringDevice>
+        <manufacturerModelName>Patients First</manufacturerModelName>
+        <softwareName>NZ CDA Toolkit</softwareName>
+      </assignedAuthoringDevice>
+    </assignedAuthor>
+  </author>
+  <informant>
+    <templateId root="2.16.840.1.113883.2.18.7.5.9" />
+    <assignedEntity>
+      <templateId root="2.16.840.1.113883.2.18.7.5.19" />
+      <id root="2.16.840.1.113883.2.18.3.1" extension="97FFY" />
+      <code nullFlavor="NA" />
+      <assignedPerson>
+        <name>
+          <given>Frank</given>
+          <family>Finlay</family>
+        </name>
+      </assignedPerson>
+      <representedOrganization>
+        <templateId root="2.16.840.1.113883.2.18.7.5.19.2" />
+        <id root="2.16.840.1.113883.2.18.3.2" extension="DS3333" />
+        <name>Happy Valley Medical Centre</name>
+      </representedOrganization>
+    </assignedEntity>
+  </informant>
+  <custodian>
+    <templateId root="2.16.840.1.113883.2.18.7.5.10" />
+    <assignedCustodian>
+      <representedCustodianOrganization>
+        <templateId root="2.16.840.1.113883.2.18.7.5.19.2" />
+        <id root="2.16.840.1.113883.2.18.3.2" extension="DS3333" />
+        <name>Happy Valley Medical Centre</name>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+  <informationRecipient>
+    <templateId root="2.16.840.1.113883.2.18.7.5.11.2" />
+    <intendedRecipient>
+      <id root="2.16.840.1.113883.2.18.3.1" extension="CPN007" />
+      <addr use="H">
+        <streetAddressLine>The Yellow House</streetAddressLine>
+        <streetAddressLine>3 Alconbury Crescent</streetAddressLine>
+        <precinct>Rototuna</precinct>
+        <city>Hamilton</city>
+        <postalCode>3210</postalCode>
+        <country>New Zealand</country>
+      </addr>
+      <telecom use="HP" value="tel:+6478533278" />
+      <informationRecipient>
+        <name>
+          <prefix>Dr</prefix>
+          <given>Peter</given>
+          <family>New</family>
+        </name>
+      </informationRecipient>
+      <receivedOrganization>
+        <templateId root="2.16.840.1.113883.2.18.7.5.19.2" />
+        <id root="2.16.840.1.113883.2.18.3.2" extension="FAC008" />
+        <name>Happy Valley Medical Centre</name>
+      </receivedOrganization>
+    </intendedRecipient>
+  </informationRecipient>
+  <legalAuthenticator>
+    <templateId root="2.16.840.1.113883.2.18.7.5.12" />
+    <time value="20131219153321" />
+    <signatureCode code="S" />
+    <assignedEntity>
+      <templateId root="2.16.840.1.113883.2.18.7.5.19" />
+      <id root="2.16.840.1.113883.2.18.3.1" extension="24FUD" />
+      <code nullFlavor="NA" />
+      <assignedPerson>
+        <name>
+          <given>Justin</given>
+          <family>Case</family>
+        </name>
+      </assignedPerson>
+    </assignedEntity>
+  </legalAuthenticator>
+  <authenticator>
+    <templateId root="2.16.840.1.113883.2.18.7.5.13" />
+    <time value="20131219153321" />
+    <signatureCode code="S" />
+    <assignedEntity>
+      <templateId root="2.16.840.1.113883.2.18.7.5.19" />
+      <id root="2.16.840.1.113883.2.18.3.1" extension="67IOU" />
+      <code nullFlavor="NA" />
+      <assignedPerson>
+        <name>
+          <given>Roberto</given>
+          <family>Stamp</family>
+        </name>
+      </assignedPerson>
+    </assignedEntity>
+  </authenticator>
+  <participant typeCode="IND">
+    <templateId root="2.16.840.1.113883.2.18.7.5.14" />
+    <functionCode code="PCP" codeSystem="2.16.840.1.113883.5.88" displayName="primary care physician" />
+    <associatedEntity classCode="PROV">
+      <id root="2.16.840.1.113883.2.18.3.1" extension="11DOCR" />
+      <id root="2.16.840.1.113883.2.18.3.1" extension="12ABCD" />
+      <code nullFlavor="NA" />
+      <addr use="H">
+        <streetAddressLine>12 Thomas Rd</streetAddressLine>
+        <precinct>Huntingdon</precinct>
+        <city>Hamilton</city>
+        <postalCode>3211</postalCode>
+        <country>New Zealand</country>
+      </addr>
+      <telecom use="WP" value="tel:+6478539191" />
+      <associatedPerson>
+        <name>
+          <prefix>Dr</prefix>
+          <given>Richard</given>
+          <given qualifier="IN">TV</given>
+          <family>Kildare</family>
+          <suffix>MD</suffix>
+        </name>
+      </associatedPerson>
+      <scopingOrganization>
+        <templateId root="2.16.840.1.113883.2.18.7.5.19.2" />
+        <id root="2.16.840.1.113883.2.18.3.2" extension="DS4444" />
+        <name>Happy Valley Medical Centre</name>
+      </scopingOrganization>
+    </associatedEntity>
+  </participant>
+  <participant typeCode="IND">
+    <templateId root="2.16.840.1.113883.2.18.7.5.14" />
+    <associatedEntity classCode="NOK">
+      <id nullFlavor="NA" />
+      <code code="SPO" codeSystem="2.16.840.1.113883.5.111" displayName="Spouse" />
+      <addr use="H">
+        <streetAddressLine>The Yellow House</streetAddressLine>
+        <streetAddressLine>3 Alconbury Crescent</streetAddressLine>
+        <precinct>Rototuna</precinct>
+        <city>Hamilton</city>
+        <postalCode>3210</postalCode>
+        <country>New Zealand</country>
+      </addr>
+      <telecom use="HP" value="tel:+6478533278" />
+      <associatedPerson>
+        <name>
+          <prefix>Mrs</prefix>
+          <given>Edna</given>
+          <family>Smith</family>
+        </name>
+      </associatedPerson>
+    </associatedEntity>
+  </participant>
+  <participant typeCode="IND">
+    <templateId root="2.16.840.1.113883.2.18.7.5.14" />
+    <associatedEntity classCode="ECON">
+      <id nullFlavor="NA" />
+      <code code="MTH" codeSystem="2.16.840.1.113883.5.111" displayName="Mother" />
+      <addr use="H">
+        <streetAddressLine>12 Coronation Street</streetAddressLine>
+        <precinct>Rototuna</precinct>
+        <city>Hamilton</city>
+        <postalCode>3210</postalCode>
+        <country>New Zealand</country>
+      </addr>
+      <telecom use="HP" value="tel:+6478533289" />
+      <associatedPerson>
+        <name>
+          <prefix>Mrs</prefix>
+          <given>Beatrice</given>
+          <family>Smith</family>
+        </name>
+      </associatedPerson>
+    </associatedEntity>
+  </participant>
+  <participant typeCode="IND">
+    <templateId root="2.16.840.1.113883.2.18.7.5.14" />
+    <associatedEntity classCode="CAREGIVER">
+      <id nullFlavor="NA" />
+      <code code="CGV" codeSystem="2.16.840.1.113883.5.111" displayName="Care giver" />
+      <addr use="H">
+        <streetAddressLine>44 Nightingale Avenue</streetAddressLine>
+        <precinct>Rototuna</precinct>
+        <city>Hamilton</city>
+        <postalCode>3210</postalCode>
+        <country>New Zealand</country>
+      </addr>
+      <telecom use="HP" value="tel:+6478533653" />
+      <associatedPerson>
+        <name>
+          <prefix>Nurse</prefix>
+          <given>Lyn</given>
+          <family>Maud</family>
+        </name>
+      </associatedPerson>
+    </associatedEntity>
+  </participant>
+  <component>
+    <structuredBody>
+      <component>
+        <!--
+**************************************************
+Annotation Comment
+**************************************************
+-->
+        <section>
+          <templateId root="2.16.840.1.113883.2.18.7.2.25" />
+          <code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC STATIC" displayName="Annotation Comment" />
+          <title>Annotation Comment</title>
+          <text>...supporting information for LTC Clinical Assessments made by Pharmacists</text>
+        </section>
+      </component>
+      <component>
+        <!--
+**************************************************
+Ethnicity
+**************************************************
+-->
+        <section>
+          <templateId root="2.16.840.1.113883.2.18.7.86" />
+          <code code="69490-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC STATIC" displayName="Ethnicity" />
+          <title>Ethnicity</title>
+          <text>
+            <table>
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>EthnicityL2</td>
+                  <td>New Zealand Maori</td>
+                </tr>
+                <tr>
+                  <td>EthnicityL2</td>
+                  <td>European</td>
+                </tr>
+                <tr>
+                  <td>Iwi</td>
+                  <td>Tainui</td>
+                </tr>
+                <tr>
+                  <td>Hapu</td>
+                  <td>Pikatu</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.86.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.2.18.7.86.2" />
+              <id root="6610d8fb-5236-4fa6-a323-db0797d368a5" />
+              <code code="397731000" codeSystem="2.16.840.1.113883.6.96" displayName="ethnicity" />
+              <value xsi:type="CD" code="21" codeSystem="2.16.840.1.113883.2.18.11.1" codeSystemName="EthnicityL2" displayName="New Zealand Maori" />
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.86.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.2.18.7.86.2" />
+              <id root="96ae1927-6f11-4edc-832d-6d2a4a367520" />
+              <code code="397731000" codeSystem="2.16.840.1.113883.6.96" displayName="ethnicity" />
+              <value xsi:type="CD" code="11" codeSystem="2.16.840.1.113883.2.18.11.1" codeSystemName="EthnicityL2" displayName="European" />
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.86.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.2.18.7.86.2" />
+              <id root="3aab5f97-78b1-4400-801e-aa1f658cc4cb" />
+              <code code="397731000" codeSystem="2.16.840.1.113883.6.96" displayName="ethnicity" />
+              <value xsi:type="CD" codeSystem="2.16.840.1.113883.2.18.11.3" codeSystemName="Iwi" displayName="Tainui" />
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.86.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.2.18.7.86.2" />
+              <id root="2055d54e-13c0-4cc2-9eed-b858d590f0c2" />
+              <code code="397731000" codeSystem="2.16.840.1.113883.6.96" displayName="ethnicity" />
+              <value xsi:type="CD" codeSystem="2.16.840.1.113883.2.18.11.4" codeSystemName="Hapu" displayName="Pikatu" />
+            </observation>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <!--
+**************************************************
+Language Communication
+**************************************************
+-->
+        <section>
+          <templateId root="2.16.840.1.113883.2.18.7.79" />
+          <code code="54505-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC STATIC" displayName="Language Communication" />
+          <title>Language Communication</title>
+          <text>
+            <table>
+              <thead>
+                <tr>
+                  <th>Language</th>
+                  <th>Ability</th>
+                  <th>Proficiency</th>
+                  <th>Interpreter Required?</th>
+                  <th>Preferred?</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>English</td>
+                  <td>Understand_Sign</td>
+                  <td>Poor</td>
+                  <td>yes</td>
+                  <td>no</td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.79.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.2.18.7.79.2" />
+              <id root="72550946-075f-44f2-a5c0-0d490494dd46" />
+              <code code="161139007" codeSystem="2.16.840.1.113883.6.96" displayName="Language" />
+              <value xsi:type="CD" codeSystem="2.16.840.1.113883.2.18.64.1" codeSystemName="Language" displayName="English" />
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.2.18.7.79.3" />
+                  <id root="d0d3a2c0-2244-40aa-bf7d-5cdabc901528" />
+                  <code code="288547000" codeSystem="2.16.840.1.113883.6.96" displayName="Communication ability" />
+                  <value xsi:type="CD" code="6" codeSystem="2.16.840.1.113883.2.18.64.2" codeSystemName="LanguageAbility" displayName="Understand Sign" />
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.2.18.7.79.4" />
+                  <id root="4ea259f1-2630-43bd-94f9-5091b911d751" />
+                  <code code="401049002" codeSystem="2.16.840.1.113883.6.96" displayName="Communication skill" />
+                  <value xsi:type="CD" code="4" codeSystem="2.16.840.1.113883.5.64.3" codeSystemName="LanguageProficiency" displayName="Poor" />
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.2.18.7.79.5" />
+                  <id root="173eaa1d-cbd7-492e-b87a-68f69b77da48" />
+                  <code code="315593009" codeSystem="2.16.840.1.113883.6.96" displayName="Interpreter Required" />
+                  <value xsi:type="BL" value="true" />
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.2.18.7.79.6" />
+                  <id root="2eaed057-e4c9-471b-89af-3fd09fb85ce3" />
+                  <code code="2695384015" codeSystem="2.16.840.1.113883.6.96" displayName="Language preference" />
+                  <value xsi:type="BL" value="false" />
+                </observation>
+              </entryRelationship>
+            </observation>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <!--
+**************************************************
+Allergies and Adverse Reactions
+**************************************************
+-->
+        <section>
+          <templateId root="2.16.840.1.113883.2.18.7.46" />
+          <code code="48765-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC STATIC" displayName="Allergies and Adverse Reactions" />
+          <title>Allergies and Adverse Reactions</title>
+          <text>
+            <table>
+              <thead>
+                <tr>
+                  <th>Allergy Type</th>
+                  <th>Allergen</th>
+                  <th>Effective Date(s)</th>
+                  <th>Reaction</th>
+                  <th>Severity</th>
+                  <th>Status</th>
+                  <th>Recorded By</th>
+                  <th>Comments</th>
+                  <th>+</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Drug Allergy</td>
+                  <td>Penicillin</td>
+                  <td>1960</td>
+                  <td>Hives</td>
+                  <td>Moderate</td>
+                  <td>Inactive</td>
+                  <td>Dr Peter Piper on 01 Apr 2001</td>
+                  <td>test notes</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.46.1" />
+            <act classCode="ACT" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.2.18.7.46.2" />
+              <id root="ee36d2ee-2f40-476f-a8fc-9dcb9ab48bba" />
+              <code code="48765-2" codeSystem="2.16.840.1.113883.6.1" displayName="Allergies and Adverse Reactions" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="1960" />
+              </effectiveTime>
+              <author>
+                <templateId root="2.16.840.1.113883.2.18.7.5.7" />
+                <time value="20010401000000" />
+                <assignedAuthor>
+                  <id root="2.16.840.1.113883.2.18.3.1" extension="44DEFG" />
+                  <assignedPerson>
+                    <name>
+                      <prefix>Dr</prefix>
+                      <given>Peter</given>
+                      <family>Piper</family>
+                    </name>
+                  </assignedPerson>
+                </assignedAuthor>
+              </author>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.2.18.7.46.3" />
+                  <id root="f86fad0a-1726-4537-be30-0c86f8c2fbaf" />
+                  <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4" />
+                  <statusCode code="completed" />
+                  <effectiveTime xsi:type="IVL_TS">
+                    <low value="1960" />
+                  </effectiveTime>
+                  <value xsi:type="CD" code="416098002" codeSystem="2.16.840.1.113883.6.96" displayName="Drug Allergy" />
+                  <participant typeCode="CSM">
+                    <participantRole classCode="MANU">
+                      <playingEntity classCode="MMAT">
+                        <code code="373270003" codeSystem="2.16.840.1.113883.6.96" displayName="Penicillin" />
+                      </playingEntity>
+                    </participantRole>
+                  </participant>
+                  <entryRelationship typeCode="MFST" inversionInd="true">
+                    <observation classCode="OBS" moodCode="EVN">
+                      <templateId root="2.16.840.1.113883.2.18.7.47" />
+                      <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4" />
+                      <value xsi:type="CD" code="247472004" codeSystem="2.16.840.1.113883.6.96" displayName="Hives" />
+                    </observation>
+                  </entryRelationship>
+                  <entryRelationship typeCode="SUBJ" inversionInd="true">
+                    <observation classCode="OBS" moodCode="EVN">
+                      <templateId root="2.16.840.1.113883.2.18.7.53" />
+                      <code code="SEV" codeSystem="2.16.840.1.113883.5.4" displayName="Severity Observation" />
+                      <value xsi:type="CD" code="6736007" codeSystem="2.16.840.1.113883.6.96" displayName="Moderate" />
+                    </observation>
+                  </entryRelationship>
+                  <entryRelationship typeCode="SUBJ" inversionInd="true">
+                    <observation classCode="OBS" moodCode="EVN">
+                      <templateId root="2.16.840.1.113883.2.18.7.46.4" />
+                      <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status" />
+                      <value xsi:type="CD" code="73425007" codeSystem="2.16.840.1.113883.6.96" displayName="Inactive" />
+                    </observation>
+                  </entryRelationship>
+                  <entryRelationship typeCode="REFR">
+                    <act classCode="ACT" moodCode="EVN">
+                      <code code="288790002" codeSystem="2.16.840.1.113883.6.96" displayName="Comments">
+                        <originalText>comment</originalText>
+                      </code>
+                      <text>test notes</text>
+                    </act>
+                  </entryRelationship>
+                </observation>
+              </entryRelationship>
+            </act>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <!--
+**************************************************
+Medication Profile
+**************************************************
+-->
+        <section>
+          <templateId root="2.16.840.1.113883.2.18.7.54" />
+          <code code="18605-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC STATIC" displayName="Medication Profile" />
+          <title>Medication Profile</title>
+          <text>
+            <table>
+              <thead>
+                <tr>
+                  <th>Drug</th>
+                  <th>Qty/Freq</th>
+                  <th>Date(s)</th>
+                  <th>Status</th>
+                  <th>Route</th>
+                  <th>Instructions</th>
+                  <th>Prescriber</th>
+                  <th>Indications</th>
+                  <th>Supply/Admin</th>
+                  <th>Long Term?</th>
+                  <th>Endorsements</th>
+                  <th>Comments</th>
+                  <th>+</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>diclofenac sodium 100 mg tablet: modified release</td>
+                  <td>1...3 times a day</td>
+                  <td>21 Jan 2013 to 01 Feb 2013</td>
+                  <td>Changed (strength inc.)</td>
+                  <td>Swallow, oral</td>
+                  <td>take with meals</td>
+                  <td>Dr Harry Doolittle MD</td>
+                  <td />
+                  <td>30 tbl : Tablet (repeats=1)</td>
+                  <td>yes</td>
+                  <td>
+                    <list>
+                      <item>Type: Named Patient Pharmaceutical Assessment : Identifier: yes : Expires: 30/06/2012</item>
+                      <item>Type: Other Endorsement : Identifier: testing : Expires: 28/06/2012</item>
+                    </list>
+                  </td>
+                  <td>reduce inflammation</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.54.1" />
+            <substanceAdministration classCode="SBADM" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.2.18.7.54.2" />
+              <id root="2491a952-b418-4301-be2f-265b5498161b" />
+              <text>take with meals</text>
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130121" />
+                <high value="20130201" />
+              </effectiveTime>
+              <effectiveTime xsi:type="PIVL_TS">
+                <period value="3" unit="d" />
+              </effectiveTime>
+              <repeatNumber value="1" />
+              <routeCode code="PO" codeSystem="2.16.840.1.113883.5.112" displayName="Swallow, oral" />
+              <doseQuantity value="1" unit="u" />
+              <administrationUnitCode code="428673006" codeSystem="2.16.840.1.113883.6.96" displayName="Tablet" />
+              <consumable>
+                <templateId root="2.16.840.1.113883.2.18.7.24" />
+                <manufacturedProduct>
+                  <templateId root="2.16.840.1.113883.2.18.7.25" />
+                  <manufacturedMaterial>
+                    <templateId root="2.16.840.1.113883.2.18.7.26" />
+                    <code code="10054031000116100" codeSystem="2.16.840.1.113883.2.18.26" displayName="diclofenac sodium 100 mg tablet: modified release" />
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+              <performer typeCode="PRF">
+                <assignedEntity>
+                  <templateId root="2.16.840.1.113883.2.18.7.5.19" />
+                  <id root="2.16.840.1.113883.2.18.3.1" extension="11DOCR" />
+                  <code nullFlavor="NA" />
+                  <assignedPerson>
+                    <name>
+                      <prefix>Dr</prefix>
+                      <given>Harry</given>
+                      <family>Doolittle</family>
+                      <suffix>MD</suffix>
+                    </name>
+                  </assignedPerson>
+                  <representedOrganization>
+                    <templateId root="2.16.840.1.113883.2.18.7.5.19.2" />
+                    <id root="2.16.840.1.113883.2.18.3.2" extension="DS4444" />
+                    <name>Happy Valley Medical Centre</name>
+                    <telecom use="WP" value="tel:+6478539191" />
+                    <addr use="WP">
+                      <streetAddressLine>12 Thomas Rd</streetAddressLine>
+                      <streetAddressLine>Huntingdon</streetAddressLine>
+                      <city>Hamilton</city>
+                      <postalCode>3211</postalCode>
+                      <country>New Zealand</country>
+                    </addr>
+                  </representedOrganization>
+                </assignedEntity>
+              </performer>
+              <author>
+                <templateId root="2.16.840.1.113883.2.18.7.5.7" />
+                <time value="20131219153321" />
+                <assignedAuthor>
+                  <id root="2.16.840.1.113883.2.18.3.1" extension="44DEFG" />
+                  <assignedPerson>
+                    <name>
+                      <given>Peter</given>
+                      <family>Piper</family>
+                    </name>
+                  </assignedPerson>
+                </assignedAuthor>
+              </author>
+              <entryRelationship typeCode="COMP">
+                <supply classCode="SPLY" moodCode="RQO">
+                  <quantity value="30" unit="tbl" />
+                </supply>
+              </entryRelationship>
+              <entryRelationship typeCode="COMP">
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.2.18.7.5.30" />
+                  <code code="26349005" codeSystem="2.16.840.1.113883.6.96" displayName="status" />
+                  <value xsi:type="CD" code="182838006" codeSystem="2.16.840.1.113883.6.96" displayName="Changed" />
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="COMP">
+                <organizer classCode="CLUSTER" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.2.18.7.54.3" />
+                  <code code="255203001" codeSystem="2.16.840.1.113883.6.96" displayName="additional values" />
+                  <statusCode code="active" />
+                  <component>
+                    <act classCode="ACT" moodCode="EVN">
+                      <code code="CHGRSON" codeSystem="2.16.840.1.113883.2.18.38" displayName="Reason Stopped or Changed" />
+                      <text>strength inc.</text>
+                    </act>
+                  </component>
+                  <component>
+                    <act classCode="ACT" moodCode="EVN">
+                      <code code="288790002" codeSystem="2.16.840.1.113883.6.96" displayName="comment" />
+                      <text>reduce inflammation</text>
+                    </act>
+                  </component>
+                  <component>
+                    <act classCode="ACT" moodCode="EVN">
+                      <code code="272163001" codeSystem="2.16.840.1.113883.6.96" displayName="Mixture" />
+                      <text>test mix</text>
+                    </act>
+                  </component>
+                  <component>
+                    <act classCode="ACT" moodCode="EVN">
+                      <code code="416239002" codeSystem="2.16.840.1.113883.6.96" displayName="Long term indicator" />
+                      <text>True</text>
+                    </act>
+                  </component>
+                  <component>
+                    <act classCode="ACT" moodCode="EVN">
+                      <id root="2.16.840.1.113883.2.18.38" extension="DRUGENDORSE" />
+                      <code code="NPPA" codeSystem="2.16.840.1.113883.2.18.22" displayName="Named Patient Pharmaceutical Assessment" />
+                      <text>yes</text>
+                      <effectiveTime value="20120630000000" />
+                    </act>
+                  </component>
+                  <component>
+                    <act classCode="ACT" moodCode="EVN">
+                      <id root="2.16.840.1.113883.2.18.38" extension="DRUGENDORSE" />
+                      <code code="MEDENDORSE" codeSystem="2.16.840.1.113883.2.18.22" displayName="Other Endorsement" />
+                      <text>testing</text>
+                      <effectiveTime value="20120628000000" />
+                    </act>
+                  </component>
+                </organizer>
+              </entryRelationship>
+            </substanceAdministration>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <!--
+**************************************************
+Problem List
+**************************************************
+-->
+        <section>
+          <templateId root="2.16.840.1.113883.2.18.7.65" />
+          <code code="11450-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC STATIC" displayName="Problem List" />
+          <title>Problem List</title>
+          <text>
+            <table>
+              <thead>
+                <tr>
+                  <th>Problem Type</th>
+                  <th>Problem</th>
+                  <th>Effective Date(s)</th>
+                  <th>Age at Onset</th>
+                  <th>Status</th>
+                  <th>Confidence</th>
+                  <th>Severity</th>
+                  <th>Sequelae</th>
+                  <th>Recorded By</th>
+                  <th>Comments</th>
+                  <th>+</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Diagnosis</td>
+                  <td>Asthma</td>
+                  <td>1999 to 2012</td>
+                  <td>10y</td>
+                  <td>Resolved</td>
+                  <td> [certain]</td>
+                  <td>Moderate [average impact]</td>
+                  <td> [wheezing]</td>
+                  <td>Peter Piper on 13 Dec 2010</td>
+                  <td>solved problem notes</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.65.1" />
+            <act classCode="ACT" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.2.18.7.65.2" />
+              <id root="c46d3610-3a11-4d81-9bf8-ca4f65da4d9f" />
+              <id root="2.16.840.1.113883.2.18.32" extension="b7675a15-7350-44f7-8751-5e14d9c99b4c" />
+              <code code="CONC" codeSystem="2.16.840.1.113883.5.6" displayName="Concern" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="1999" />
+                <high value="2012" />
+              </effectiveTime>
+              <author>
+                <templateId root="2.16.840.1.113883.2.18.7.5.7" />
+                <time value="20101213000000" />
+                <assignedAuthor>
+                  <id root="2.16.840.1.113883.2.18.3.1" extension="44DEFG" />
+                  <assignedPerson>
+                    <name>
+                      <given>Peter</given>
+                      <family>Piper</family>
+                    </name>
+                  </assignedPerson>
+                </assignedAuthor>
+              </author>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.2.18.7.35" />
+                  <id root="66a37e24-ee4d-427f-96a5-228c6a69880d" />
+                  <code code="282291009" codeSystem="2.16.840.1.113883.6.96" displayName="Diagnosis" />
+                  <statusCode code="completed" />
+                  <effectiveTime xsi:type="IVL_TS">
+                    <low value="1999" />
+                    <high value="2012" />
+                  </effectiveTime>
+                  <value xsi:type="CD" code="195967001" codeSystem="2.16.840.1.113883.6.96" displayName="Asthma" />
+                  <entryRelationship typeCode="SUBJ" inversionInd="true">
+                    <observation classCode="OBS" moodCode="EVN">
+                      <templateId root="2.16.840.1.113883.2.18.7.53" />
+                      <code code="246112005" codeSystem="2.16.840.1.113883.6.96" displayName="Severity" />
+                      <value xsi:type="CD" code="6736007" codeSystem="2.16.840.1.113883.6.96" displayName="Moderate">
+                        <originalText>average impact</originalText>
+                      </value>
+                    </observation>
+                  </entryRelationship>
+                  <entryRelationship typeCode="SUBJ" inversionInd="true">
+                    <observation classCode="OBS" moodCode="EVN">
+                      <templateId root="2.16.840.1.113883.2.18.7.35.4" />
+                      <code code="17162000" codeSystem="2.16.840.1.113883.6.96" displayName="Certainty" />
+                      <value xsi:type="CD">
+                        <originalText>certain</originalText>
+                      </value>
+                    </observation>
+                  </entryRelationship>
+                  <entryRelationship typeCode="SUBJ" inversionInd="true">
+                    <observation classCode="OBS" moodCode="EVN">
+                      <templateId root="2.16.840.1.113883.2.18.7.35.5" />
+                      <code code="362977000" codeSystem="2.16.840.1.113883.6.96" displayName="Sequelae" />
+                      <value xsi:type="CD">
+                        <originalText>wheezing</originalText>
+                      </value>
+                    </observation>
+                  </entryRelationship>
+                  <entryRelationship typeCode="SUBJ" inversionInd="true">
+                    <observation classCode="OBS" moodCode="EVN">
+                      <templateId root="2.16.840.1.113883.2.18.7.35.3" />
+                      <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status" />
+                      <value xsi:type="CD" code="413322009" codeSystem="2.16.840.1.113883.6.96" displayName="Resolved" />
+                    </observation>
+                  </entryRelationship>
+                  <entryRelationship typeCode="REFR">
+                    <observation classCode="OBS" moodCode="EVN">
+                      <templateId root="2.16.840.1.113883.2.18.7.37" />
+                      <code code="445518008" codeSystem="2.16.840.1.113883.6.96" displayName="Age at onset of clinical finding" />
+                      <value xsi:type="ST">10y</value>
+                    </observation>
+                  </entryRelationship>
+                  <entryRelationship typeCode="REFR">
+                    <act classCode="ACT" moodCode="EVN">
+                      <code code="288790002" codeSystem="2.16.840.1.113883.6.96" displayName="Comments">
+                        <originalText>comment</originalText>
+                      </code>
+                      <text>solved problem notes</text>
+                    </act>
+                  </entryRelationship>
+                </observation>
+              </entryRelationship>
+            </act>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <!--
+**************************************************
+Hospital Discharges
+**************************************************
+-->
+        <section>
+          <templateId root="2.16.840.1.113883.2.18.7.48" />
+          <code code="52524-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC STATIC" displayName="Hospital Discharges" />
+          <title>Hospital Discharges</title>
+          <text>
+            <table>
+              <thead>
+                <tr>
+                  <th>Problem</th>
+                  <th>Effective Date(s)</th>
+                  <th>Discharged By</th>
+                  <th>Comments</th>
+                  <th>+</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Asthma</td>
+                  <td>02 Aug 2012 to 201208217</td>
+                  <td>Dr Seth O'Scope, Waikato Hospital</td>
+                  <td>achieved significant improvement</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.48.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.2.18.7.55" />
+              <id root="24dc2744-7505-4c67-8b2f-68b302d0461b" />
+              <code code="409586006" codeSystem="2.16.840.1.113883.6.96" displayName="Complaint" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20120802" />
+                <high value="201208217" />
+              </effectiveTime>
+              <value xsi:type="CD" code="195967001" codeSystem="2.16.840.1.113883.6.96" displayName="Asthma" />
+              <performer typeCode="PRF">
+                <assignedEntity>
+                  <templateId root="2.16.840.1.113883.2.18.7.5.19" />
+                  <id root="2.16.840.1.113883.2.18.3.1" extension="44DEFG" />
+                  <code nullFlavor="NA" />
+                  <assignedPerson>
+                    <name>
+                      <prefix>Dr</prefix>
+                      <given>Seth</given>
+                      <family>O'Scope</family>
+                    </name>
+                  </assignedPerson>
+                  <representedOrganization>
+                    <templateId root="2.16.840.1.113883.2.18.7.5.19.2" />
+                    <id root="2.16.840.1.113883.2.18.3.2" extension="F2R032" />
+                    <name>Waikato Hospital</name>
+                  </representedOrganization>
+                </assignedEntity>
+              </performer>
+              <entryRelationship typeCode="REFR">
+                <act classCode="ACT" moodCode="EVN">
+                  <code code="288790002" codeSystem="2.16.840.1.113883.6.96" displayName="Comments">
+                    <originalText>comment</originalText>
+                  </code>
+                  <text>achieved significant improvement</text>
+                </act>
+              </entryRelationship>
+            </observation>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <!--
+**************************************************
+Health Status
+**************************************************
+-->
+        <section>
+          <templateId root="2.16.840.1.113883.2.18.7.36" />
+          <code code="11323-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC STATIC" displayName="Health Status" />
+          <title>Health Status</title>
+          <text>
+            <table>
+              <thead>
+                <tr>
+                  <th>Health Status</th>
+                  <th>Effective Date(s)</th>
+                  <th>Related Problem(s)</th>
+                  <th>Comments</th>
+                  <th>+</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Alive and well</td>
+                  <td>30 Apr 2013</td>
+                  <td>
+                    <list>
+                      <item>Asthma</item>
+                    </list>
+                  </td>
+                  <td>all good</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Alive and well</td>
+                  <td>30 Apr 2013</td>
+                  <td>
+                    <list>
+                      <item>Asthma</item>
+                    </list>
+                  </td>
+                  <td>all good</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.36.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.2.18.7.36.2" />
+              <id root="5de915fd-fee4-4d0e-b02e-a20da73bea7d" />
+              <code code="406221003" codeSystem="2.16.840.1.113883.6.96" displayName="Health Status" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130430" />
+              </effectiveTime>
+              <value xsi:type="CD" code="81323004" codeSystem="2.16.840.1.113883.6.96" displayName="Alive and well" />
+              <entryRelationship typeCode="COMP" inversionInd="true">
+                <act classCode="ACT" moodCode="EVN">
+                  <id root="c46d3610-3a11-4d81-9bf8-ca4f65da4d9f" />
+                  <code code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem" />
+                </act>
+              </entryRelationship>
+              <entryRelationship typeCode="REFR">
+                <act classCode="ACT" moodCode="EVN">
+                  <code code="288790002" codeSystem="2.16.840.1.113883.6.96" displayName="Comments">
+                    <originalText>comment</originalText>
+                  </code>
+                  <text>all good</text>
+                </act>
+              </entryRelationship>
+            </observation>
+          </entry>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.36.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.2.18.7.36.2" />
+              <id root="5de915fd-fee4-4d0e-b02e-a20da73bea7d" />
+              <code code="406221003" codeSystem="2.16.840.1.113883.6.96" displayName="Health Status" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="20130430" />
+              </effectiveTime>
+              <value xsi:type="CD" code="81323004" codeSystem="2.16.840.1.113883.6.96" displayName="Alive and well" />
+              <entryRelationship typeCode="COMP" inversionInd="true">
+                <act classCode="ACT" moodCode="EVN">
+                  <id root="c46d3610-3a11-4d81-9bf8-ca4f65da4d9f" />
+                  <code code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem" />
+                </act>
+              </entryRelationship>
+              <entryRelationship typeCode="REFR">
+                <act classCode="ACT" moodCode="EVN">
+                  <code code="288790002" codeSystem="2.16.840.1.113883.6.96" displayName="Comments">
+                    <originalText>comment</originalText>
+                  </code>
+                  <text>all good</text>
+                </act>
+              </entryRelationship>
+            </observation>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <!--
+**************************************************
+Functional Status
+**************************************************
+-->
+        <section>
+          <templateId root="2.16.840.1.113883.2.18.7.39" />
+          <code code="47420-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC STATIC" displayName="Functional Status" />
+          <title>Functional Status</title>
+          <text>
+            <table>
+              <thead>
+                <tr>
+                  <th>Functional Condition</th>
+                  <th>Effective Date(s)</th>
+                  <th>Condition Status</th>
+                  <th>Comments</th>
+                  <th>+</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Memory Impairment</td>
+                  <td>2008 to 2012</td>
+                  <td>Resolved</td>
+                  <td>restored by blow on head</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.39.1" />
+            <observation classCode="OBS" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.2.18.7.35" />
+              <id root="5cf22750-5d11-41b4-9271-313f155a19a8" />
+              <code code="24853606" codeSystem="2.16.840.1.113883.6.96" displayName="Functional Limitation" />
+              <effectiveTime xsi:type="IVL_TS">
+                <low value="2008" />
+                <high value="2012" />
+              </effectiveTime>
+              <value xsi:type="CD" code="24853606" codeSystem="2.16.840.1.113883.6.96" displayName="Memory Impairment" />
+              <author>
+                <templateId root="2.16.840.1.113883.2.18.7.5.7" />
+                <time value="20131219153321" />
+                <assignedAuthor>
+                  <id root="2.16.840.1.113883.2.18.3.1" extension="44DEFG" />
+                  <assignedPerson>
+                    <name>
+                      <given>Peter</given>
+                      <family>Piper</family>
+                    </name>
+                  </assignedPerson>
+                </assignedAuthor>
+              </author>
+              <entryRelationship typeCode="REFR" inversionInd="true">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status" />
+                  <value xsi:type="CD" code="413322009" codeSystem="2.16.840.1.113883.6.96" displayName="Resolved" />
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="REFR">
+                <act classCode="ACT" moodCode="EVN">
+                  <code code="288790002" codeSystem="2.16.840.1.113883.6.96" displayName="Comments">
+                    <originalText>comment</originalText>
+                  </code>
+                  <text>restored by blow on head</text>
+                </act>
+              </entryRelationship>
+            </observation>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <!--
+**************************************************
+Payers
+**************************************************
+-->
+        <section>
+          <templateId root="2.16.840.1.113883.2.18.7.5.21" />
+          <code code="48768-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC STATIC" displayName="Payers" />
+          <title>Payers</title>
+          <text>
+            <table>
+              <thead>
+                <tr>
+                  <th>Payer</th>
+                  <th>Comments</th>
+                  <th>Policy Type</th>
+                  <th>Policy Number</th>
+                  <th>Coverage</th>
+                  <th>Effective Date(s)</th>
+                  <th>Extends</th>
+                  <th>+</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Ministry of Social Development</td>
+                  <td>CSC issued by MSD</td>
+                  <td>
+                    <list>
+                      <item>CSC</item>
+                    </list>
+                  </td>
+                  <td>
+                    <list>
+                      <item>02129035057</item>
+                    </list>
+                  </td>
+                  <td>
+                    <list>
+                      <item>2 years of subsidised visits</item>
+                    </list>
+                  </td>
+                  <td>
+                    <list>
+                      <item>Sep 2010 to Aug 2012</item>
+                    </list>
+                  </td>
+                  <td>
+                    <list>
+                      <item>000111222333</item>
+                    </list>
+                  </td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          <entry typeCode="DRIV">
+            <templateId root="2.16.840.1.113883.2.18.7.5.21.1" />
+            <act classCode="ACT" moodCode="DEF">
+              <templateId root="2.16.840.1.113883.2.18.7.5.21.2" />
+              <id root="6154d3b0-cfd7-4910-a765-6c5841f81889" />
+              <code code="48768-6" codeSystem="2.16.840.1.113883.6.1" displayName="Payment sources" />
+              <performer typeCode="PRF">
+                <assignedEntity>
+                  <id root="5538d149-fd09-4de4-b512-c3772b234fd4" />
+                  <representedOrganization>
+                    <templateId root="2.16.840.1.113883.2.18.7.5.19.2" />
+                    <id nullFlavor="NA" />
+                    <name>Ministry of Social Development</name>
+                  </representedOrganization>
+                </assignedEntity>
+              </performer>
+              <author>
+                <templateId root="2.16.840.1.113883.2.18.7.5.7" />
+                <time value="20131219153321" />
+                <assignedAuthor>
+                  <id root="2.16.840.1.113883.2.18.3.1" extension="44DEFG" />
+                  <assignedPerson>
+                    <name>
+                      <given>Peter</given>
+                      <family>Piper</family>
+                    </name>
+                  </assignedPerson>
+                </assignedAuthor>
+              </author>
+              <entryRelationship typeCode="REFR">
+                <act classCode="ACT" moodCode="EVN">
+                  <code code="288790002" codeSystem="2.16.840.1.113883.6.96" displayName="Comments">
+                    <originalText>comment</originalText>
+                  </code>
+                  <text>CSC issued by MSD</text>
+                </act>
+              </entryRelationship>
+              <entryRelationship typeCode="COMP">
+                <act classCode="ACT" moodCode="DEF">
+                  <templateId root="2.16.840.1.113883.2.18.7.5.21.3" />
+                  <id root="2.16.840.1.113883.2.18.14" extension="02129035057" />
+                  <code code="CSC" codeSystem="2.16.840.1.113883.2.18.33" />
+                  <effectiveTime xsi:type="IVL_TS">
+                    <low value="201009" />
+                    <high value="201208" />
+                  </effectiveTime>
+                  <entryRelationship typeCode="COMP">
+                    <act classCode="ACT" moodCode="EVN">
+                      <code code="288790002" codeSystem="2.16.840.1.113883.6.96" displayName="Comments">
+                        <originalText>policy coverage</originalText>
+                      </code>
+                      <text>2 years of subsidised visits</text>
+                    </act>
+                  </entryRelationship>
+                  <entryRelationship typeCode="COMP">
+                    <act classCode="ACT" moodCode="EVN">
+                      <code code="261666007" codeSystem="2.16.840.1.113883.6.96" displayName="Master">
+                        <originalText>parent policy number</originalText>
+                      </code>
+                      <text>000111222333</text>
+                    </act>
+                  </entryRelationship>
+                </act>
+              </entryRelationship>
+            </act>
+          </entry>
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>

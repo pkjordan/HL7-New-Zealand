@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<configuration>
+  <appSettings>
+    <add key="ApplicationName" value="Integration Platform"/>
+    <add key="LogFileName" value="Vintage.Log"/>
+    <!-- one of Detailed, ExceptionOnly, Normal-->
+    <add key="LogLevel" value="Detailed"/>
+    <add key="HiMessageFolder" value="D:\HiMessages\"/>
+    <add key="HimAppFolder" value="D:\HimApp\"/>
+    <add key="HimLogFolder" value="D:\HimLogs\"/>
+  </appSettings>
+  <connectionStrings>
+    <!--<add name="Vintage.AppServices.Properties.Settings.PatientsFirstConnectionString"
+      connectionString="Data Source=44HJ7JRE8TV3K;Initial Catalog=PatientsFirst;Integrated Security=True"
+      providerName="System.Data.SqlClient"/>-->
+    <add name="Vintage.AppServices.Properties.Settings.PatientsFirstConnectionString" 
+         connectionString="Server=HAS147-01\I147_01;Database=PatientsFirst;User ID=ITP_User;Password=Tot3Ars1"
+		 providerName="System.Data.SqlClient"/>
+  </connectionStrings>
+  <system.web>
+    <httpRuntime maxRequestLength="2048000" executionTimeout="3600"/>
+    <!-- compilation debug="true" targetFramework="4.0"/> -->
+    <!--
+        The <authentication> section enables configuration 
+        of the security authentication mode used by 
+        ASP.NET to identify an incoming user. 
+    -->
+    <!-- authentication mode="Windows"/> -->
+    <!--
+        The <customErrors> section enables configuration 
+        of what to do if/when an unhandled error occurs 
+        during the execution of a request. Specifically, 
+        it enables developers to configure html error pages 
+        to be displayed in place of a error stack trace.
+
+        <customErrors mode="RemoteOnly" defaultRedirect="GenericErrorPage.htm">
+         <error statusCode="403" redirect="NoAccess.htm"/>
+         <error statusCode="404" redirect="FileNotFound.htm"/>
+        </customErrors>
+    -->
+    <pages controlRenderingCompatibilityVersion="3.5" clientIDMode="AutoID"/>
+  </system.web>
+  <!-- 
+      The system.webServer section is required for running ASP.NET AJAX under Internet
+      Information Services 7.0.  It is not necessary for previous version of IIS.
+  -->
+  <system.serviceModel>
+    <services>
+      <service behaviorConfiguration="Vintage.WebServices.RestServiceBehavior" name="Vintage.WebServices.RestService">
+        <endpoint address="http://its.patientsfirst.org.nz/RestService.svc" binding="webHttpBinding" bindingConfiguration="webBinding" contract="Vintage.WebServices.IRestService" behaviorConfiguration="webHttp">
+        </endpoint>
+        <endpoint address="https://its.patientsfirst.org.nz/RestService.svc" binding="webHttpBinding" bindingConfiguration="secureHttpBinding" contract="Vintage.WebServices.IRestService" behaviorConfiguration="webHttp">
+        </endpoint>
+
+        <endpoint address="mex" binding="mexHttpBinding" contract="IMetadataExchange"/>
+
+      </service>
+    </services>
+    <bindings>
+      <webHttpBinding>
+        <binding name="webBinding" transferMode="Streamed" maxBufferSize="2147483647" maxReceivedMessageSize="2147483647" openTimeout="00:25:00" closeTimeout="00:25:00" sendTimeout="00:25:00" receiveTimeout="00:25:00"/>
+        <binding name="secureHttpBinding" transferMode="Streamed" maxBufferSize="2147483647" maxReceivedMessageSize="2147483647" openTimeout="00:25:00" closeTimeout="00:25:00" sendTimeout="00:25:00" receiveTimeout="00:25:00">
+          <security mode="Transport">
+            <transport clientCredentialType="None"/>
+          </security>
+        </binding>
+      </webHttpBinding>
+    </bindings>
+    <behaviors>
+      <serviceBehaviors>
+        <behavior name="Vintage.WebServices.RestServiceBehavior">
+          <serviceMetadata httpGetEnabled="true" httpsGetEnabled="true"/>
+          <serviceDebug includeExceptionDetailInFaults="false"/>
+        </behavior>
+      </serviceBehaviors>
+      <endpointBehaviors>
+        <behavior name="webHttp">
+          <webHttp/>
+        </behavior>
+      </endpointBehaviors>
+    </behaviors>
+  </system.serviceModel>
+</configuration>

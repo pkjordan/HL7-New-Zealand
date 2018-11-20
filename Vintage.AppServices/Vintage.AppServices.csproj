@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D978B030-F0E5-44E9-B71B-9C049C660BC7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Vintage.AppServices</RootNamespace>
+    <AssemblyName>Vintage.AppServices</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GotDotNet.Exslt">
+      <HintPath>..\..\Schematron\lib\GotDotNet.Exslt.dll</HintPath>
+    </Reference>
+    <Reference Include="GP2GP, Version=2.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\NzCdaToolkit\NzCdaToolkit\bin\Debug\GP2GP.dll</HintPath>
+    </Reference>
+    <Reference Include="Hl7.Fhir.R4.Core, Version=0.95.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\fhir-net-api-develop-r4-Sept2018\src\Hl7.Fhir.Core\bin\Debug\net45\Hl7.Fhir.R4.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Hl7.Fhir.Support, Version=0.95.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\fhir-net-api-develop-r4-Sept2018\src\Hl7.Fhir.Core\bin\Debug\net45\Hl7.Fhir.Support.dll</HintPath>
+    </Reference>
+    <Reference Include="Hl7.FhirPath, Version=0.95.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\fhir-net-api-develop-r4-Sept2018\src\Hl7.Fhir.Core\bin\Debug\net45\Hl7.FhirPath.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\fhir-net-api-develop-r4-Sept2018\src\Hl7.Fhir.Core\bin\Debug\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NMatrix.Schematron">
+      <HintPath>..\..\Schematron\src\obj\Debug\NMatrix.Schematron.dll</HintPath>
+    </Reference>
+    <Reference Include="NZeHR">
+      <HintPath>..\..\NzCdaToolkit\NzEhrToolkit\bin\Debug\NZeHR.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.ValueTuple, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.3.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Business Classes\FHIR\AdministrationLocation.cs" />
+    <Compile Include="Business Classes\FHIR\AdministrationOrganisation.cs" />
+    <Compile Include="Business Classes\FHIR\CodeSystems\NzEthnicityL1.cs" />
+    <Compile Include="Business Classes\FHIR\CodeSystems\NzEthnicityL2.cs" />
+    <Compile Include="Business Classes\FHIR\CodeSystems\NzEthnicityL3.cs" />
+    <Compile Include="Business Classes\FHIR\CodeSystems\NzEthnicityL4.cs" />
+    <Compile Include="Business Classes\FHIR\CodeSystems\NzMt.cs" />
+    <Compile Include="Business Classes\FHIR\ConceptMaps\AddressUseV3Fhir.cs" />
+    <Compile Include="Business Classes\FHIR\ConceptMaps\NZEthnicityLevels.cs" />
+    <Compile Include="Business Classes\FHIR\ConceptMaps\NzmpToSCT.cs" />
+    <Compile Include="Business Classes\FHIR\ConceptMaps\NZReadToSCT.cs" />
+    <Compile Include="Business Classes\FHIR\ConceptMaps\SctToNZRead.cs" />
+    <Compile Include="Business Classes\FHIR\ConformanceOperationDefinition.cs" />
+    <Compile Include="Business Classes\FHIR\ConformanceStatement.cs" />
+    <Compile Include="Business Classes\FHIR\TerminologyCapabilityStatement.cs" />
+    <Compile Include="Business Classes\FHIR\TerminologyCodeSystem.cs" />
+    <Compile Include="Business Classes\FHIR\TerminologyConceptMap.cs" />
+    <Compile Include="Business Classes\FHIR\TerminologyNamingSystem.cs" />
+    <Compile Include="Business Classes\FHIR\TerminologyValueSet.cs" />
+    <Compile Include="Business Classes\FHIR\Utilities.cs" />
+    <Compile Include="Business Classes\FHIR\ValueSets\ConnectathonExtensional_2.cs" />
+    <Compile Include="Business Classes\FHIR\ValueSets\ConnectathonExtensional_3.cs" />
+    <Compile Include="Business Classes\FHIR\ValueSets\ConnectathonExtensional_4.cs" />
+    <Compile Include="Business Classes\FHIR\ValueSets\ConnectathonIntensional_1.cs" />
+    <Compile Include="Business Classes\FHIR\ValueSets\ConnectathonIntensional_2.cs" />
+    <Compile Include="Business Classes\FHIR\CodeSystems\FhirLoinc.cs" />
+    <Compile Include="Business Classes\FHIR\CodeSystems\FhirSnomed.cs" />
+    <Compile Include="Business Classes\FHIR\CodeSystems\NzRegion.cs" />
+    <Compile Include="Business Classes\FHIR\ValueSets\ConnectathonExtensional_1.cs" />
+    <Compile Include="Business Classes\FHIR\ValueSets\SctIntensionalExpressionTest.cs" />
+    <Compile Include="Business Classes\GeneralPractice.cs" />
+    <Compile Include="Business Classes\HimLogFile.cs" />
+    <Compile Include="Business Classes\HpiAppFile.cs" />
+    <Compile Include="Business Classes\HpiDirectory.cs" />
+    <Compile Include="Business Classes\IValidationTest.cs" />
+    <Compile Include="Business Classes\HpiMessageFile.cs" />
+    <Compile Include="Business Classes\Specification.cs" />
+    <Compile Include="Business Classes\Specifications\CdaTemplates.cs" />
+    <Compile Include="Business Classes\Specifications\eDischargeSummary.cs" />
+    <Compile Include="Business Classes\Specifications\ePrescribing.cs" />
+    <Compile Include="Business Classes\Specifications\GP2GP.cs" />
+    <Compile Include="Business Classes\Specifications\GP2GPv2.cs" />
+    <Compile Include="Business Classes\Specifications\InterRaiCommunityHealth.cs" />
+    <Compile Include="Business Classes\Specifications\InterRaiContact.cs" />
+    <Compile Include="Business Classes\Specifications\InterRaiHomeCare.cs" />
+    <Compile Include="Business Classes\Specifications\InterRaiLongTermCareFacility.cs" />
+    <Compile Include="Business Classes\Specifications\PharmacyHealthSummary.cs" />
+    <Compile Include="Business Classes\ValidationTestFactory.cs" />
+    <Compile Include="Business Workflows\WorkflowHandler.cs" />
+    <Compile Include="DataAccessClasses\Closure.cs" />
+    <Compile Include="DataAccessClasses\Gp2GpTransfer.cs" />
+    <Compile Include="DataAccessClasses\HpiOnLine.cs" />
+    <Compile Include="DataAccessClasses\HpiSearch.cs" />
+    <Compile Include="DataAccessClasses\LoincSearch.cs" />
+    <Compile Include="DataAccessClasses\NzUlm1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NzUlm.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessClasses\NzUlmSearch.cs" />
+    <Compile Include="DataAccessClasses\PatientsFirst.cs">
+      <DependentUpon>PatientsFirst.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessClasses\PatientsFirst.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PatientsFirst.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessClasses\PracticeSearch.cs" />
+    <Compile Include="DataAccessClasses\PracticeUser.cs" />
+    <Compile Include="DataAccessClasses\SnomedCt.cs">
+      <DependentUpon>SnomedCt.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessClasses\SnomedCt.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SnomedCt.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessClasses\SnomedCtSearch.cs" />
+    <Compile Include="DataAccessClasses\ValidationResult.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceInterface.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\Logger.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="External Service Interfaces\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Test Files\BundleTypeSupplemented.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Test Files\NamingSystem_HPI_CPN.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Test Files\NamingSystem_HPI_FAC.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Test Files\NamingSystem_HPI_ORG.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Test Files\NamingSystem_NHI.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Test Files\NamingSystem_NZMT.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Test Files\NamingSystem_NZ_ETHNICITY_LEVEL_1.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Test Files\NamingSystem_NZ_ETHNICITY_LEVEL_2.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Test Files\NamingSystem_NZ_ETHNICITY_LEVEL_3.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Test Files\NamingSystem_NZ_ETHNICITY_LEVEL_4.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Test Files\OperationDefinition-CodeSystem-lookup.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Test Files\OperationDefinition-CodeSystem-subsumes.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Test Files\OperationDefinition-CodeSystem-validate-code.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Test Files\OperationDefinition-ConceptMap-translate.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Test Files\OperationDefinition-ValueSet-expand.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Test Files\OperationDefinition-ValueSet-validate-code.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Test Files\SpecimenType_v2_SCT_Map.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Test Files\TestScript-ValueSet-expand-extensional1-version-notok.xml" />
+    <Content Include="Test Files\TestScript-ValueSet-expand-extensional1-version.xml" />
+    <Content Include="Test Files\UCUM-common.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataAccessClasses\NzUlm.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>NzUlm1.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataAccessClasses\PatientsFirst.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>PatientsFirst.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataAccessClasses\SnomedCt.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>SnomedCt.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Allergy_Section_48765_2.sch">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\Annotation_Comments_Section_48767_8.sch">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Schema\CDA.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Schema\datatypes-base.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Schema\datatypes.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Schema\NarrativeBlock.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Schema\NZePS.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Schema\NZePSMessageCollection.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Schema\POCD_MT000040.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Schema\voc.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Include="Test Files\Delphic_LOINC_Map.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Test Files\eDischargeSummary_v_2_3_1.hl7">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Test Files\GP2GP_v_1_7_0.hl7">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Test Files\BundleType.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Test Files\BundleTypeGerman.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Test Files\HISO_CDA_Template_Standard_Draft.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataAccessClasses\PatientsFirst.dbml.layout">
+      <DependentUpon>PatientsFirst.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Test Files\ePrescribing_v_3_9_0.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Test Files\GP2GPV2_v_3_3_0.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Test Files\InterRAI_ca_v_3_3_0.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Test Files\interRAI_cha_v_3_3_0.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Test Files\InterRAI_hc_v_3_3_0.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Test Files\InterRAI_ltcf_v_3_3_0.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Test Files\pharmacy_health_summary_v_3_3_0.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataAccessClasses\SnomedCt.dbml.layout">
+      <DependentUpon>SnomedCt.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataAccessClasses\NzUlm.dbml.layout">
+      <DependentUpon>NzUlm.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

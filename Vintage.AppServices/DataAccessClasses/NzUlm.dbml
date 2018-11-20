@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="NZULM" Class="NzUlmDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-6S6HG3J;Initial Catalog=NZULM;Integrated Security=True" SettingsObjectName="Vintage.AppServices.Properties.Settings" SettingsPropertyName="NZULMConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.GetNZULM_PrescribingTerm" Method="GetNZULM_PrescribingTerm" IsComposable="true">
+    <Parameter Name="Term" Parameter="term" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="TermType" Parameter="termType" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="GetNZULM_PrescribingTermResult">
+      <Column Name="concept_id" Type="System.String" DbType="VarChar(19) NOT NULL" CanBeNull="false" />
+      <Column Name="prescribing_term" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="term_type" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetMedicinalProduct_Substance_ByProductCode" Method="GetMedicinalProduct_Substance_ByProductCode" IsComposable="true">
+    <Parameter Name="Code" Parameter="code" Type="System.String" DbType="VarChar(19)" />
+    <ElementType Name="GetMedicinalProduct_Substance_ByProductCodeResult">
+      <Column Name="[Product Code]" Member="Product_Code" Type="System.String" DbType="VarChar(19) NOT NULL" CanBeNull="false" />
+      <Column Name="PreferredTerm" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="FullySpecifiedName" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="[BaseSubstance?]" Member="BaseSubstance_" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Ingredient" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="LessModifiedIngredient" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetMedicinalProduct_ByTerm" Method="GetMedicinalProduct_ByTerm" IsComposable="true">
+    <Parameter Name="Term" Parameter="term" Type="System.String" DbType="VarChar(MAX)" />
+    <ElementType Name="GetMedicinalProduct_ByTermResult">
+      <Column Name="[Product Code]" Member="Product_Code" Type="System.String" DbType="VarChar(19) NOT NULL" CanBeNull="false" />
+      <Column Name="[Preferred Term]" Member="Preferred_Term" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="[Base Substance?]" Member="Base_Substance_" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetTradeProduct_ByTerm" Method="GetTradeProduct_ByTerm" IsComposable="true">
+    <Parameter Name="Term" Parameter="term" Type="System.String" DbType="VarChar(MAX)" />
+    <ElementType Name="GetTradeProduct_ByTermResult">
+      <Column Name="[Product Code]" Member="Product_Code" Type="System.String" DbType="VarChar(19) NOT NULL" CanBeNull="false" />
+      <Column Name="[Preferred Term]" Member="Preferred_Term" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetContaineredTradeProductPack_ByTerm" Method="GetContaineredTradeProductPack_ByTerm" IsComposable="true">
+    <Parameter Name="Term" Parameter="term" Type="System.String" DbType="VarChar(MAX)" />
+    <ElementType Name="GetContaineredTradeProductPack_ByTermResult">
+      <Column Name="[Containered Pack Code]" Member="Containered_Pack_Code" Type="System.String" DbType="VarChar(19) NOT NULL" CanBeNull="false" />
+      <Column Name="[Preferred Term]" Member="Preferred_Term" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetMedicinalProductPack_ByTerm" Method="GetMedicinalProductPack_ByTerm" IsComposable="true">
+    <Parameter Name="Term" Parameter="term" Type="System.String" DbType="VarChar(MAX)" />
+    <ElementType Name="GetMedicinalProductPack_ByTermResult">
+      <Column Name="[Pack Code]" Member="Pack_Code" Type="System.String" DbType="VarChar(19) NOT NULL" CanBeNull="false" />
+      <Column Name="[Preferred Term]" Member="Preferred_Term" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetMedicinalProductUnitOfUse_ByTerm" Method="GetMedicinalProductUnitOfUse_ByTerm" IsComposable="true">
+    <Parameter Name="Term" Parameter="term" Type="System.String" DbType="VarChar(MAX)" />
+    <ElementType Name="GetMedicinalProductUnitOfUse_ByTermResult">
+      <Column Name="[Unit of Use Code]" Member="Unit_of_Use_Code" Type="System.String" DbType="VarChar(19) NOT NULL" CanBeNull="false" />
+      <Column Name="[Preferred Term]" Member="Preferred_Term" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetTradeProductPack_ByTerm" Method="GetTradeProductPack_ByTerm" IsComposable="true">
+    <Parameter Name="Term" Parameter="term" Type="System.String" DbType="VarChar(MAX)" />
+    <ElementType Name="GetTradeProductPack_ByTermResult">
+      <Column Name="[Product Pack Code]" Member="Product_Pack_Code" Type="System.String" DbType="VarChar(19) NOT NULL" CanBeNull="false" />
+      <Column Name="[Preferred Term]" Member="Preferred_Term" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetTradeProductUnitOfUse_ByTerm" Method="GetTradeProductUnitOfUse_ByTerm" IsComposable="true">
+    <Parameter Name="Term" Parameter="term" Type="System.String" DbType="VarChar(MAX)" />
+    <ElementType Name="GetTradeProductUnitOfUse_ByTermResult">
+      <Column Name="[Unit of Use Code]" Member="Unit_of_Use_Code" Type="System.String" DbType="VarChar(19) NOT NULL" CanBeNull="false" />
+      <Column Name="[Preferred Term]" Member="Preferred_Term" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetCttp_Related_IDs_ByCode" Method="GetCttp_Related_IDs_ByCode" IsComposable="true">
+    <Parameter Name="Code" Parameter="code" Type="System.String" DbType="VarChar(19)" />
+    <ElementType Name="GetCttp_Related_IDs_ByCodeResult">
+      <Column Name="cttp_id" Type="System.String" DbType="VarChar(19) NOT NULL" CanBeNull="false" />
+      <Column Name="cttp_pt" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="tpp_id" Type="System.String" DbType="VarChar(19)" CanBeNull="true" />
+      <Column Name="tpp_pt" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="tpuu_id" Type="System.String" DbType="VarChar(19)" CanBeNull="true" />
+      <Column Name="tpuu_pt" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="tp_id" Type="System.String" DbType="VarChar(19)" CanBeNull="true" />
+      <Column Name="tp_pt" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="mpp_id" Type="System.String" DbType="VarChar(19)" CanBeNull="true" />
+      <Column Name="mpp_pt" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="mpuu_id" Type="System.String" DbType="VarChar(19)" CanBeNull="true" />
+      <Column Name="mpuu_pt" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="mp_id" Type="System.String" DbType="VarChar(19)" CanBeNull="true" />
+      <Column Name="mp_pt" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

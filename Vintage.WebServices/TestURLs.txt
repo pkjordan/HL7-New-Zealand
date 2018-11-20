@@ -1,0 +1,636 @@
+﻿-- NZ Refset
+http://localhost:4254/RestService.svc/Terminz/ValueSet/$expand?identifier=http://snomed.info/sct?fhir_vs=refset
+http://localhost:4254/RestService.svc/Terminz/ValueSet/$expand?identifier=http://snomed.info/sct?fhir_vs=refset/321000210102
+http://localhost:4254/RestService.svc/Terminz/ValueSet/$expand?identifier=http://snomed.info/sct?fhir_vs=refset/391000210104
+
+-- ECL query checks
+http://localhost:4254/RestService.svc/Terminz/ValueSet/$expand?identifier=http://snomed.info/sct?fhir_vs=ecl/11687002
+http://localhost:4254/RestService.svc/Terminz/ValueSet/$expand?identifier=http://snomed.info/sct?fhir_vs=ecl/Any
+http://localhost:4254/RestService.svc/Terminz/ValueSet/$expand?identifier=http://snomed.info/sct?fhir_vs=ecl/*
+http://localhost:4254/RestService.svc/Terminz/ValueSet/$expand?identifier=http://snomed.info/sct?fhir_vs=ecl/MemberOf%20450970008
+http://localhost:4254/RestService.svc/Terminz/ValueSet/$expand?identifier=http://snomed.info/sct?fhir_vs=ecl/MemberOf%20450970008%20|GP%20RefSet%20|
+http://localhost:4254/RestService.svc/Terminz/ValueSet/$expand?identifier=http://snomed.info/sct?fhir_vs=ecl/MemberOf%20450970008%20|GP%20RefSet%20|%20OR%20MemberOf%20450970099%20|Test%20RefSet%20|
+http://localhost:4254/RestService.svc/Terminz/ValueSet/$expand?identifier=http://snomed.info/sct?fhir_vs=ecl/^%20450970008
+http://localhost:4254/RestService.svc/Terminz/ValueSet/$expand?identifier=http://snomed.info/sct?fhir_vs=ecl/ANY : 246075003 = 387517004
+
+// <! 11687002 AND 11687002 
+http://localhost:4254/RestService.svc/Terminz/ValueSet/$expand?identifier=http://snomed.info/sct?fhir_vs=ecl/
+<%2019829001%20|Disorder%20of%20lung|%20:%20116676008%20|Associated%20morphology|%20=%2079654002%20|Edema|
+
+// < 125605004 |Fracture of bone| . 363698007 |Finding site|
+
+-- ontoserver reality checks
+
+https://ontoserver.csiro.au/stu3-latest/CodeSystem/$lookup?_format=json&code=85151006&system=http://snomed.info/sct&property=normalForm
+
+// discuss with Michael Lawley
+// ANY : >> 246075003 = << 267038008
+// why does this return 39244004	Pericarditis secondary to myxoedema
+// that doesn't appear to have an attribute that's an ancestor or self of 246075003 |Causative Agent|
+
+// Conformance
+
+http://localhost:4254/RestService.svc/Terminz
+http://its.patientsfirst.org.nz/RestService.svc/Terminz
+
+http://localhost:4254/RestService.svc/Terminz/metadata
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/metadata
+
+// Resource Definitions
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet?_format=json
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet?_format=json
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet?_summary=false
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet?_summary=false
+
+http://localhost:4254/RestService.svc/Terminz/CodeSystem
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/CodeSystem
+
+http://localhost:4254/RestService.svc/Terminz/ConceptMap
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ConceptMap
+
+
+// Locations
+http://localhost:4254/RestService.svc/Terminz/Location?identifier=F3L156-C
+http://localhost:4254/RestService.svc/Terminz/Location?address-city=Hamilton&address-postalcode=3210
+
+// Organizations
+http://localhost:4254/RestService.svc/Terminz/Organization?identifier=G05727-A
+http://localhost:4254/RestService.svc/Terminz/Organization?address-city=Hamilton&address-postalcode=3210
+
+
+// Test Value Sets
+
+// identified by ID/Identifier
+http://localhost:4254/RestService.svc/Terminz/ValueSet/NzRegion
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/NzRegion
+
+// identified by Value Set URL
+http://localhost:4254/RestService.svc/Terminz/ValueSet/?url=http://itp.patientsfirst.org.nz/ValueSet/NzRegion
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/?url=http://itp.patientsfirst.org.nz/ValueSet/NzRegion
+
+// these should fail as no Value Set id, identifier or URL (Code System URL not sufficient)
+http://localhost:4254/RestService.svc/Terminz/ValueSet/?system=http://itp.patientsfirst.org.nz/NzRegion
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/?system=http://itp.patientsfirst.org.nz/NzRegion
+
+// JSON format
+http://localhost:4254/RestService.svc/Terminz/ValueSet/NzRegion/?_format=json
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/NzRegion/?_format=json
+
+// summary types
+http://localhost:4254/RestService.svc/Terminz/ValueSet/NzRegion/?_summary=true
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/NzRegion/?_summary=true
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/NzRegion/?_summary=count
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/NzRegion/?_summary=count
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/NzRegion/?_summary=data
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/NzRegion/?_summary=data
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/NzRegion/?_summary=text
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/NzRegion/?_summary=text
+
+
+// Connectathon Test Value Sets
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/extensional-case-1
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/extensional-case-1
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/extensional-case-2
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/extensional-case-2
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/extensional-case-3
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/extensional-case-3
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/extensional-case-4
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/extensional-case-4
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/intensional-case-1
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/intensional-case-1
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/intensional-case-2
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/intensional-case-2
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/intensional-case-3
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/intensional-case-3
+
+
+// SCT, UCUM and NZULM based value sets
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/NZULM_Prescribing_Terms
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/NZULM_Prescribing_Terms
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/UCUM-COMMON/?_summary=data
+http://localhost:4254/RestService.svc/Terminz/ValueSet/UCUM-COMMON/?_format=json
+http://localhost:4254/RestService.svc/Terminz/ValueSet/UCUM-COMMON
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/UCUM-COMMON
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/SCT-GENERAL-PRACTICE
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/SCT-GENERAL-PRACTICE
+
+
+-- expand operations
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/NzRegion/$expand
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/NzRegion/$expand?count=2&offset=1
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/NzRegion/$expand?filter=th
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/$expand?identifier=http://itp.patientsfirst.org.nz/ValueSet/NzRegion
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/$expand?identifier=http://www.healthintersections.com.au/fhir/ValueSet/extensional-case-1
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/$expand?identifier=http://www.healthintersections.com.au/fhir/ValueSet/extensional-case-2
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/$expand?identifier=http://www.healthintersections.com.au/fhir/ValueSet/extensional-case-3
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/$expand?identifier=http://www.healthintersections.com.au/fhir/ValueSet/extensional-case-4
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/$expand?identifier=http://www.healthintersections.com.au/fhir/ValueSet/intensional-case-1
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/intensional-case-1/$expand?filter=24
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/$expand?identifier=http://www.healthintersections.com.au/fhir/ValueSet/intensional-case-2
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/intensional-case-2/$expand?filter=pregnancy
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/$expand?identifier=http://www.healthintersections.com.au/fhir/ValueSet/intensional-case-3
+
+
+
+
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/intensional-case-2
+
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/intensional-case-2/?_summary=true
+
+
+
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/$expand?identifier=http://www.healthintersections.com.au/fhir/ValueSet/extensional-case-4
+
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/$expand?identifier=http://www.healthintersections.com.au/fhir/ValueSet/intensional-case-3
+
+
+
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/$expand?count=10&identifier=http://snomed.info/sct?fhir_vs
+
+
+
+-- SNOMED CT expand - codes subsumed by (i.e. is a) 38341003
+
+
+-- someone runs this every day!!
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/$expand?_format=json&count=10&identifier=http://snomed.info/sct?fhir_vs
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/$expand?count=10&identifier=http://snomed.info/sct?fhir_vs
+
+
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/$expand?count=10&identifier=http://snomed.info/sct?fhir_vs
+
+
+http://ontoserver.csiro.au/stu3/ValueSet/$expand?_format=xml&count=10&identifier=http://snomed.info/sct?fhir_vs
+
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/$expand?identifier=http://snomed.info/sct?fhir_vs=isa/38341003
+
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/$expand?identifier=http://snomed.info/sct?fhir_vs=isa/38341003
+
+
+-- Condition/Diagnosis Certainty Codes
+
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/$expand?identifier=http://snomed.info/sct?fhir_vs=isa/36692007
+
+
+
+-- SNOMED CT expand - reference set 51000210100
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/$expand?identifier=http://snomed.info/sct?fhir_vs=refset/51000210100
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/$expand?identifier=http://snomed.info/sct?fhir_vs=refset/51000210100&count=10
+
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/$expand?identifier=http://snomed.info/sct?fhir_vs=refset/51000210100
+
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/$expand?identifier=http://snomed.info/sct?fhir_vs=refset/51000210100&count=10
+
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/$expand?identifier=http://snomed.info/sct?fhir_vs=refset/51000210100&filter=smoker
+
+
+//http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/SCT-GENERAL-PRACTICE/$expand?filter=smoker
+
+
+
+-- SNOMED CT expand - filter by description
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/$expand?identifier=http://snomed.info/sct?fhir_vs&filter=GOK
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/$expand?identifier=http://snomed.info/sct?fhir_vs&filter=MIDLIFE
+
+
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/$expand?identifier=http://snomed.info/sct?fhir_vs&filter=GOK
+
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/$expand?identifier=http://snomed.info/sct?fhir_vs&filter=midlife
+
+
+-- SNOMED CT - Root Concept ValueSets - expand - filter by description
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/SCT-CLINICAL-FINDING/$expand?filter=asthma
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/SCT-SUBSTANCE/$expand?filter=penicillin
+
+
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/SCT-CLINICAL-FINDING/$expand?filter=asthma
+
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/SCT-SUBSTANCE/$expand?filter=penicillin
+
+
+-- LOINC expand by Description
+
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/$expand?identifier=http://loinc.org/vs&filter=diastolic
+
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/$expand?identifier=http://loinc.org/vs&filter=diastolic
+
+
+-- LOINC expand by property filters
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/$expand?identifier=http://loinc.org/vs/COMPONENT=Medications
+http://localhost:4254/RestService.svc/Terminz/ValueSet/$expand?identifier=http://loinc.org/vs/PROPERTY=Dosage
+http://localhost:4254/RestService.svc/Terminz/ValueSet/$expand?identifier=http://loinc.org/vs/TIME_ASPCT=Lifetime
+http://localhost:4254/RestService.svc/Terminz/ValueSet/$expand?identifier=http://loinc.org/vs/SYSTEM=Arterial system
+http://localhost:4254/RestService.svc/Terminz/ValueSet/$expand?identifier=http://loinc.org/vs/SCALE_TYP=Multi
+http://localhost:4254/RestService.svc/Terminz/ValueSet/$expand?identifier=http://loinc.org/vs/METHOD_TYP=Cytology
+
+
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/$expand?identifier=http://loinc.org/vs/COMPONENT=Medications
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/$expand?identifier=http://loinc.org/vs/PROPERTY=Dosage
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/$expand?identifier=http://loinc.org/vs/TIME_ASPCT=Lifetime
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/$expand?identifier=http://loinc.org/vs/SYSTEM=Arterial system
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/$expand?identifier=http://loinc.org/vs/SCALE_TYP=Multi
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/$expand?identifier=http://loinc.org/vs/METHOD_TYP=Cytology
+
+
+-- NZMT
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/NZULM_Prescribing_Terms/$expand?filter=diclofenac sodium 100
+
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/NZULM_Prescribing_Terms/$expand?filter=diclofenac sodium 100
+
+-- NZULM Expansions
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/NZULM_Prescribing_Terms/$expand?filter=diclofenac sodium 100
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/NZULM_Prescribing_Terms/$expand?filter=diclofenac sodium 100
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/NZULM_Prescribing_Terms/$expand?filter=cilazapril 500 microgram tablet
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/NZULM_Prescribing_Terms/$expand?filter=cilazapril 500 microgram tablet
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/NZULM_Containered_Trade_Product_Pack/$expand?filter=cilazapril
+http://localhost:4254/RestService.svc/Terminz/ValueSet/NZULM_Medicinal_Product/$expand?filter=cilazapril
+http://localhost:4254/RestService.svc/Terminz/ValueSet/NZULM_Medicinal_Product_Pack/$expand?filter=cilazapril
+http://localhost:4254/RestService.svc/Terminz/ValueSet/NZULM_Medicinal_Product_Unit_Of_Use/$expand?filter=cilazapril
+http://localhost:4254/RestService.svc/Terminz/ValueSet/NZULM_Trade_Product/$expand?filter=zapril
+http://localhost:4254/RestService.svc/Terminz/ValueSet/NZULM_Trade_Product_Pack/$expand?filter=zapril
+http://localhost:4254/RestService.svc/Terminz/ValueSet/NZULM_Trade_Product_UnitOfUse/$expand?filter=zapril
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------
+-- lookup operations
+
+http://localhost:4254/RestService.svc/Terminz/CodeSystem/$lookup?code=NORTH&system=http://itp.patientsfirst.org.nz/NzRegion&version=1.0.1
+
+http://localhost:4254/RestService.svc/Terminz/CodeSystem/$lookup?code=301327002&system=http://snomed.info/sct
+
+http://localhost:4254/RestService.svc/Terminz/CodeSystem/$lookup?code=8762007&system=http://snomed.info/sct&properties=code,display,version,system,parent,child
+
+
+http://localhost:4254/RestService.svc/Terminz/CodeSystem/$lookup?code=8762007&system=http://snomed.info/sct&property=code&property=parent&property=child
+
+http://localhost:4254/RestService.svc/Terminz/CodeSystem/$lookup?code=8762007&system=http://snomed.info/sct&property=code&property=designation
+
+
+http://localhost:4254/RestService.svc/Terminz/CodeSystem/$lookup?system=http://snomed.info/sct&code=22298006&property=inactive&property=moduleId&property=sufficientlyDefined
+
+// fully defined concept (fracture of femur)
+
+http://localhost:4254/RestService.svc/Terminz/CodeSystem/$lookup?system=http://snomed.info/sct&code=71620000&property=normalForm
+http://localhost:4254/RestService.svc/Terminz/CodeSystem/$lookup?system=http://snomed.info/sct&code=71620000&property=normalFormTerse
+
+http://localhost:4254/RestService.svc/Terminz/CodeSystem/$lookup?system=http://snomed.info/sct&code=384821006&property=normalForm
+
+// attribute groups - worst case example: Tetralogy of Fallot (5 relationship groups!)
+http://localhost:4254/RestService.svc/Terminz/CodeSystem/$lookup?system=http://snomed.info/sct&code=86299006&property=normalFormTerse
+
+// Michael's eg where an attribute value is a fully-defined concept that must be expanded in NF
+http://localhost:4254/RestService.svc/Terminz/CodeSystem/$lookup?system=http://snomed.info/sct&code=139461000119109&property=normalForm
+
+// primitive
+http://localhost:4254/RestService.svc/Terminz/CodeSystem/$lookup?system=http://snomed.info/sct&code=195967001&property=normalForm
+
+
+http://localhost:4254/RestService.svc/Terminz/CodeSystem/$lookup?code=301327002&system=http://snomed.info/sct/version/20160131
+
+http://localhost:4254/RestService.svc/Terminz/CodeSystem/$lookup?code=8480-6&system=http://loinc.org&properties=code,display,version,system
+
+
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/CodeSystem/$lookup?system=http://snomed.info/sct&code=404684003&property=parent&property=child
+
+
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/CodeSystem/$lookup?system=http://snomed.info/sct&code=36692007
+
+
+-- Ontoserver lookup
+
+http://ontoserver.csiro.au/stu3/CodeSystem/$lookup?system=http://snomed.info/sct&code=404684003
+
+http://ontoserver.csiro.au/stu3/CodeSystem/$lookup?system=http://snomed.info/sct&code=139461000119109&property=normalForm
+
+
+
+-- Code System Requests
+
+http://localhost:4254/RestService.svc/Terminz/CodeSystem/?system=http://itp.patientsfirst.org.nz/NzRegion
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/CodeSystem/?system=http://itp.patientsfirst.org.nz/NzRegion
+
+http://localhost:4254/RestService.svc/Terminz/CodeSystem/?system=http://loinc.org
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/CodeSystem/?system=http://loinc.org
+
+http://localhost:4254/RestService.svc/Terminz/CodeSystem/?system=http://snomed.info/sct
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/CodeSystem/?system=http://snomed.info/sct
+
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Touchstone Code System Tests...
+
+-- lookup
+
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/CodeSystem/$lookup?system=http://snomed.info/sct&code=6064005
+http://fhir3.healthintersections.com.au/open/CodeSystem/$lookup?system=http://snomed.info/sct&code=6064005
+
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/CodeSystem/$lookup?system=http://loinc.org&code=1963-8
+http://fhir3.healthintersections.com.au/open/CodeSystem/$lookup?system=http://loinc.org&code=1963-8
+
+
+-- subsumes(1st example in spec)
+-- (subtype) viral hepatitis is subsumed by (supertype) disease of the liver
+
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/CodeSystem/$subsumes?system=http://snomed.info/sct&codeA=3738000&codeB=235856003
+
+<Parameters xmlns="http://hl7.org/fhir">
+    <parameter>
+        <name value="outcome" />
+        <valueCode value="subsumed-by" />
+    </parameter>
+</Parameters>
+
+http://fhir3.healthintersections.com.au/open/CodeSystem/$subsumes?system=http://snomed.info/sct&codeA=3738000&codeB=235856003
+
+&_format=xml
+
+
+-- (subtype) Myocardial infarction is not subsumbed by (supertype) history of myocardial infarction
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/CodeSystem/$subsumes?system=http://snomed.info/sct&codeA=22298006&codeB=399211009
+
+<Parameters xmlns="http://hl7.org/fhir">
+<parameter>
+<name value="name" />
+<valueString value="outcome" />
+</parameter>
+<parameter>
+<name value="valueCode" />
+<valueString value="not-subsumed" />
+</parameter>
+</Parameters>
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Code System $subsumes
+
+
+
+-- subsumed by ... is  viral hepatitis (3738000) a disorder of the liver (235856003)
+
+http://localhost:4254/RestService.svc/Terminz/CodeSystem/$subsumes?system=http://snomed.info/sct&codeA=3738000&codeB=235856003
+
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/CodeSystem/$subsumes?system=http://snomed.info/sct&codeA=3738000&codeB=235856003
+
+
+-- subsumes ... does disorder of the liver (235856003) subsume viral hepatitis (3738000) 
+
+http://localhost:4254/RestService.svc/Terminz/CodeSystem/$subsumes?system=http://snomed.info/sct&codeA235856003&codeB=3738000
+
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/CodeSystem/$subsumes?system=http://snomed.info/sct&codeA=235856003&codeB=3738000
+
+-- not subsumed ...test whether a SNOMED CT Concept 399211009 (History of myocardial infarction) is subsumed by 22298006 (Myocardial infarction): 
+
+
+http://localhost:4254/RestService.svc/Terminz/CodeSystem/$subsumes?system=http://snomed.info/sct&codeA=22298006&codeB=399211009
+
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/CodeSystem/$subsumes?system=http://snomed.info/sct&codeA=22298006&codeB=399211009
+
+
+-- no relationship - not subsumed
+
+http://localhost:4254/RestService.svc/Terminz/CodeSystem/$subsumes?system=http://snomed.info/sct&codeA=399211009&codeB=22298006
+
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/CodeSystem/$subsumes?system=http://snomed.info/sct&codeA=399211009&codeB=22298006
+
+
+-- same (equivalent)
+
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/CodeSystem/$subsumes?system=http://snomed.info/sct&codeA=399211009&codeB=399211009
+
+-- more to test closure
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/CodeSystem/$subsumes?system=http://snomed.info/sct&codeA=22298006&codeB=233835003
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+-- validate operations
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/NzRegion/$validate-code?code=NORTH&system=http://itp.patientsfirst.org.nz/NzRegion
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/extensional-case-1/$validate-code?system=http://hl7.org/fhir/patient-contact-relationship&code=emergency
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/fhir_vs/$validate-code?code=301327002&system=http://snomed.info/sct
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/fhir_vs/$validate-code?code=102261002&system=http://snomed.info/sct/version/20160131
+
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/fhir_vs/$validate-code?system=http://snomed.info/sct&code=8762007&display=Chronic%20hypertension%20in%20obstetric%20context%20(disorder)
+
+
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/fhir_vs/$validate-code?code=8480-6&system=http://loinc.org
+
+
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/fhir_vs/$validate-code?code=301327002&system=http://snomed.info/sct
+
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/extensional-case-3/$validate-code?system=http://snomed.info/sct&code=371037005&display=Systolic%20dysfunction
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/extensional-case-4/$validate-code?system=http://hl7.org/fhir/v3/RoleCode&code=CHILD&display=child
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/intensional-case-1/$validate-code?system=http://loinc.org&code=11377-9
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/intensional-case-2/$validate-code?system=http://snomed.info/sct&code=8762007&display=Chronic%20hypertension%20in%20obstetric%20context%20(disorder)
+
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/intensional-case-3/$validate-code?system=http://snomed.info/sct&code=8762007&display=Chronic%20hypertension%20in%20obstetric%20context%20(disorder)
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/intensional-case-3/$validate-code?system=http://snomed.info/sct&code=102261002
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/intensional-case-3/$validate-code?system=http://snomed.info/sctX&code=102261002
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/intensional-case-3/$validate-code?system=http://snomed.info/sct&code=102261002X
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/SCT-CLINICAL-FINDING/$validate-code?system=http://snomed.info/sct&code=102261002
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/intensional-case-3/$validate-code?system=http://snomed.info/sct&code=8762007X
+
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/intensional-case-3/$validate-code?system=http://snomed.info/sct&code=8762007X
+
+//Chronic hypertension in obstetric context (disorder)
+
+-- SNOMED CT Subsumption validate (is code 399211009 subsumed by (i.e. is a) 22298006 - should be false
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/$validate-code?system=http://snomed.info/sct&code=399211009&identifier=http://snomed.info/sct?fhir_vs=isa/22298006
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/$validate-code?system=http://snomed.info/sct&code=399211009&identifier=http://snomed.info/sct?fhir_vs=isa/22298006
+
+-- (is code 22298006 subsumed by (i.e. is a) 128599005 should be true
+
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/fhir_vs/$validate-code?system=http://snomed.info/sct&code=22298006&identifier=http://snomed.info/sct?fhir_vs=isa/128599005
+http://localhost:4254/RestService.svc/Terminz/ValueSet/fhir_vs/$validate-code?system=http://snomed.info/sct&code=22298006&identifier=http://snomed.info/sct?fhir_vs=isa/128599005
+
+// subCode 3738000
+
+// superCode 235856003
+
+
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/fhir_vs/$validate-code?system=http://snomed.info/sct&code=3738000&identifier=http://snomed.info/sct?fhir_vs=isa/235856003
+
+
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/fhir_vs/$validate-code?system=http://snomed.info/sct&code=160377001&identifier=http://snomed.info/sct?fhir_vs=isa/195967001
+
+
+-- is code 1201005 subsumed by 38341003 (Hypertensive disorder, systemic arterial)
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ValueSet/fhir_vs/$validate-code?system=http://snomed.info/sct&code=1201005&identifier=http://snomed.info/sct?fhir_vs=isa/38341003
+
+
+-- validate code where underlying test value set is a subsumption query based on a root concept (clinical finding)
+
+http://localhost:4254/RestService.svc/Terminz/ValueSet/intensional-case-3/$validate-code?system=http://snomed.info/sct&code=102261002
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Code System Compose  POST
+
+<Parameters xmlns="http://hl7.org/fhir">
+  <parameter>
+    <name value="system"/>
+    <valueUri value="http://snomed.info/sct"/>
+  </parameter>
+  <parameter>
+    <name value="exact"/>
+    <valueBoolean value="true"/>
+  </parameter>
+  <parameter>
+    <name value="property"/>
+    <part>
+      <name value="code"/>
+      <valueCode value="focus"/>
+    </part>
+    <part>
+      <name value="value"/>
+      <valueCode value="162572001"/>
+    </part>
+  </parameter>
+  <parameter>
+    <name value="property"/>
+    <part>
+      <name value="code"/>
+      <valueCode value="246090004"/>
+    </part>
+    <part>
+      <name value="value"/>
+      <valueCode value="363358000"/>
+    </part>
+  </parameter>
+</Parameters>
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+// Concept Maps - no operation
+
+http://localhost:4254/RestService.svc/Terminz/ConceptMap/101
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ConceptMap/101
+
+http://localhost:4254/RestService.svc/Terminz/ConceptMap/102
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ConceptMap/102
+
+http://localhost:4254/RestService.svc/Terminz/ConceptMap/DELPHIC_LOINC/?_summary=data
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ConceptMap/DELPHIC_LOINC/?_summary=data
+
+http://localhost:4254/RestService.svc/Terminz/ConceptMap/NZREAD_SCT
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ConceptMap/NZREAD_SCT
+
+http://localhost:4254/RestService.svc/Terminz/ConceptMap/SCT_NZREAD
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ConceptMap/SCT_NZREAD
+
+http://localhost:4254/RestService.svc/Terminz/ConceptMap/NZ_ETHNICITY
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ConceptMap/NZ_ETHNICITY
+
+// Concept Map translate operations
+
+http://localhost:4254/RestService.svc/Terminz/ConceptMap/101/$translate?source=http://hl7.org/fhir/ValueSet/address-use&code=old&target=http://hl7.org/fhir/ValueSet/v3-AddressUse
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ConceptMap/101/$translate?source=http://hl7.org/fhir/ValueSet/address-use&code=old&target=http://hl7.org/fhir/ValueSet/v3-AddressUse
+
+http://localhost:4254/RestService.svc/Terminz/ConceptMap/102/$translate?source=http://hl7.org/fhir/ValueSet/v2-0487&code=PND&target=http://snomed.info/id?fhir_vs
+
+// Touchstone version (with source & System parameters)
+
+http://localhost:4254/RestService.svc/Terminz/ConceptMap/$translate?system=http://hl7.org/fhir/address-use&code=home&source=http://hl7.org/fhir/ValueSet/address-use&target=http://hl7.org/fhir/ValueSet/v3-AddressUse
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ConceptMap/$translate?system=http://hl7.org/fhir/address-use&code=home&source=http://hl7.org/fhir/ValueSet/address-use&target=http://hl7.org/fhir/ValueSet/v3-AddressUse
+
+
+// SYSMEX --> LOINC Test
+
+http://localhost:4254/RestService.svc/Terminz/ConceptMap/DELPHIC_LOINC/$translate?system=http://sysmex.co.nz/LIS/Observations&code=6435&targetSystem=http://loinc.org
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ConceptMap/DELPHIC_LOINC/$translate?system=http://sysmex.co.nz/LIS/Observations&code=6435&targetSystem=http://loinc.org
+
+// NZ READ TO SCT Mappings
+
+http://localhost:4254/RestService.svc/Terminz/ConceptMap/NZREAD_SCT/$translate?system=http://health.govt.nz/read-codes&code=7H40A00&targetSystem=http://snomed.info/sct
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ConceptMap/NZREAD_SCT/$translate?system=http://health.govt.nz/read-codes&code=7H40A00&targetSystem=http://snomed.info/sct
+
+http://localhost:4254/RestService.svc/Terminz/ConceptMap/NZREAD_SCT/$translate?system=http://http://health.govt.nz/read-codes&code=XUauZ&targetSystem=http://snomed.info/sct
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ConceptMap/NZREAD_SCT/$translate?system=http://http://health.govt.nz/read-codes&code=XUauZ&targetSystem=http://snomed.info/sct
+
+// SCT To NZ READ Mappings
+
+http://localhost:4254/RestService.svc/Terminz/ConceptMap/SCT_NZREAD/$translate?system=http://snomed.info/sct&code=22298006&targetSystem=http://health.govt.nz/read-codes
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ConceptMap/SCT_NZREAD/$translate?system=http://snomed.info/sct&code=22298006&targetSystem=http://health.govt.nz/read-codes
+
+// NZ MP TO SCT Mappings
+
+http://localhost:4254/RestService.svc/Terminz/ConceptMap/NZMP_SCT/$translate?system=http://nzmt.org.nz&code=10348571000116100&targetSystem=http://snomed.info/sct
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ConceptMap/NZMP_SCT/$translate?system=http://nzmt.org.nz&code=10348571000116100&targetSystem=http://snomed.info/sct
+
+http://localhost:4254/RestService.svc/Terminz/ConceptMap/NZREAD_SCT/$translate?system=http://http://health.govt.nz/read-codes&code=XUauZ&targetSystem=http://snomed.info/sct
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ConceptMap/NZREAD_SCT/$translate?system=http://http://health.govt.nz/read-codes&code=XUauZ&targetSystem=http://snomed.info/sct
+
+// NZ Ethnicity Mappings
+
+http://localhost:4254/RestService.svc/Terminz/ConceptMap/NZ_ETHNICITY/$translate?system=http://health.govt.nz/ethnicity-codes-level-2&code=11&targetSystem=http://health.govt.nz/ethnicity-codes-level-4
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ConceptMap/NZ_ETHNICITY/$translate?system=http://health.govt.nz/ethnicity-codes-level-2&code=11&targetSystem=http://health.govt.nz/ethnicity-codes-level-4
+
+http://localhost:4254/RestService.svc/Terminz/ConceptMap/NZ_ETHNICITY/$translate?system=http://health.govt.nz/ethnicity-codes-level-4&code=61118&targetSystem=http://health.govt.nz/ethnicity-codes-level-2
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ConceptMap/NZ_ETHNICITY/$translate?system=http://health.govt.nz/ethnicity-codes-level-4&code=61118&targetSystem=http://health.govt.nz/ethnicity-codes-level-2
+
+http://localhost:4254/RestService.svc/Terminz/ConceptMap/NZ_ETHNICITY/$translate?system=http://health.govt.nz/ethnicity-codes-level-5&code=61118&targetSystem=http://health.govt.nz/ethnicity-codes-level-5
+http://its.patientsfirst.org.nz/RestService.svc/Terminz/ConceptMap/NZ_ETHNICITY/$translate?system=http://health.govt.nz/ethnicity-codes-level-5&code=61118&targetSystem=http://health.govt.nz/ethnicity-codes-level-5

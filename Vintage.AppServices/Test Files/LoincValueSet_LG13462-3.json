@@ -1,0 +1,320 @@
+{
+    "resourceType" : "ValueSet",
+    "id": "LG13462-3",
+    "url" : "http://loinc.org/vs/LG13462-3",
+    "identifier" : [
+      {
+        "system": "http://loinc.org",
+        "value": "LG13462-3"
+      }
+    ],
+    "version" : "0.1",
+    "name" : "Amitriptyline|MCnc|Pt|ANYBldSerPl",
+    "title" : "Amitriptyline|MCnc|Pt|ANYBldSerPl",
+    "status" : "active",
+    "publisher" : "Regenstrief Institute, Inc.",
+    "contact" : [
+      {
+        "name": "Regenstrief Institute, Inc.",
+        "telecom": [
+          {
+            "system": "url",
+            "value": "https://loinc.org"
+          }
+        ]
+      }
+    ],
+    "description" : "This value set contains LOINC terms of the pattern 'Amitriptyline|MCnc|Pt|ANYBldSerPl'.",
+    "useContext" : [
+      {
+        "code": {
+          "system" : "http://hl7.org/fhir/usage-context-type",
+          "code" : "focus"
+        },
+        "valueCodeableConcept": {
+          "text" : "Flowsheet"
+        }
+      }
+    ],
+    "copyright" : "This content from LOINC® is copyright © 1995 Regenstrief Institute, Inc. and the LOINC Committee, and available at no cost under the license at https://loinc.org/license/",
+    "compose" : {
+      "inactive" : false,
+      "include" : [
+        {
+          "system" : "http://loinc.org",
+          "version" : "2.64",
+          "filter" : [
+            {
+              "property" : "COMPONENT",
+              "op" : "=",
+              "value" : "LP14983-8"
+            },
+            {
+              "property" : "PROPERTY",
+              "op" : "=",
+              "value" : "LP6827-2"
+            },
+            {
+              "property" : "TIME_ASPCT",
+              "op" : "=",
+              "value" : "LP6960-1"
+            },
+            {
+              "property" : "SYSTEM",
+              "op" : "regex",
+              "value" : "^LP7057-5$|^LP7067-4$|^LP7073-2$|^LP7068-2$|^LP7071-6$|^LP7575-6$|^LP7579-8$|^LP185760-8$|^LP7072-4$|^LP7576-4$|^LP7567-3$|^LP7479-1$"
+            },
+            {
+              "property" : "CLASS",
+              "op" : "regex",
+              "value" : "^SERO$|^DRUG\/TOX$|^CHAL$|^ALLERGY$|^CHEM$"
+            }
+          ]
+        }
+      ],
+      "exclude" : [
+        {
+          "system" : "http://loinc.org",
+          "version" : "2.64",
+          "filter" : [
+            {
+              "property" : "METHOD_TYP",
+              "op" : "=",
+              "value" : "LP6165-7"
+            }
+          ]
+        },
+        {
+          "system" : "http://loinc.org",
+          "version" : "2.64",
+          "filter" : [
+            {
+              "property" : "METHOD_TYP",
+              "op" : "=",
+              "value" : "LP33284-8"
+            }
+          ]
+        },
+        {
+          "system" : "http://loinc.org",
+          "version" : "2.64",
+          "filter" : [
+            {
+              "property" : "METHOD_TYP",
+              "op" : "=",
+              "value" : "LP6197-0"
+            }
+          ]
+        },
+        {
+          "system" : "http://loinc.org",
+          "version" : "2.64",
+          "filter" : [
+            {
+              "property" : "METHOD_TYP",
+              "op" : "=",
+              "value" : "LP105134-3"
+            }
+          ]
+        },
+        {
+          "system" : "http://loinc.org",
+          "version" : "2.64",
+          "filter" : [
+            {
+              "property" : "METHOD_TYP",
+              "op" : "=",
+              "value" : "LP36715-8"
+            }
+          ]
+        },
+        {
+          "system" : "http://loinc.org",
+          "version" : "2.64",
+          "filter" : [
+            {
+              "property" : "METHOD_TYP",
+              "op" : "=",
+              "value" : "LP65370-6"
+            }
+          ]
+        },
+        {
+          "system" : "http://loinc.org",
+          "version" : "2.64",
+          "filter" : [
+            {
+              "property" : "METHOD_TYP",
+              "op" : "=",
+              "value" : "LP65278-1"
+            }
+          ]
+        },
+        {
+          "system" : "http://loinc.org",
+          "version" : "2.64",
+          "filter" : [
+            {
+              "property" : "METHOD_TYP",
+              "op" : "=",
+              "value" : "LP6223-4"
+            }
+          ]
+        },
+        {
+          "system" : "http://loinc.org",
+          "version" : "2.64",
+          "filter" : [
+            {
+              "property" : "METHOD_TYP",
+              "op" : "=",
+              "value" : "LP33340-8"
+            }
+          ]
+        },
+        {
+          "system" : "http://loinc.org",
+          "version" : "2.64",
+          "filter" : [
+            {
+              "property" : "METHOD_TYP",
+              "op" : "=",
+              "value" : "LP6224-2"
+            }
+          ]
+        },
+        {
+          "system" : "http://loinc.org",
+          "version" : "2.64",
+          "filter" : [
+            {
+              "property" : "METHOD_TYP",
+              "op" : "=",
+              "value" : "LP70454-1"
+            }
+          ]
+        },
+        {
+          "system" : "http://loinc.org",
+          "version" : "2.64",
+          "filter" : [
+            {
+              "property" : "METHOD_TYP",
+              "op" : "=",
+              "value" : "LP63621-4"
+            }
+          ]
+        },
+        {
+          "system" : "http://loinc.org",
+          "version" : "2.64",
+          "filter" : [
+            {
+              "property" : "METHOD_TYP",
+              "op" : "=",
+              "value" : "LP6222-6"
+            }
+          ]
+        },
+        {
+          "system" : "http://loinc.org",
+          "version" : "2.64",
+          "filter" : [
+            {
+              "property" : "METHOD_TYP",
+              "op" : "=",
+              "value" : "LP145955-3"
+            }
+          ]
+        },
+        {
+          "system" : "http://loinc.org",
+          "version" : "2.64",
+          "filter" : [
+            {
+              "property" : "METHOD_TYP",
+              "op" : "=",
+              "value" : "LP135711-2"
+            }
+          ]
+        },
+        {
+          "system" : "http://loinc.org",
+          "version" : "2.64",
+          "filter" : [
+            {
+              "property" : "METHOD_TYP",
+              "op" : "=",
+              "value" : "LP6260-6"
+            }
+          ]
+        },
+        {
+          "system" : "http://loinc.org",
+          "version" : "2.64",
+          "filter" : [
+            {
+              "property" : "METHOD_TYP",
+              "op" : "=",
+              "value" : "LP6264-8"
+            }
+          ]
+        },
+        {
+          "system" : "http://loinc.org",
+          "version" : "2.64",
+          "filter" : [
+            {
+              "property" : "METHOD_TYP",
+              "op" : "=",
+              "value" : "LP29325-5"
+            }
+          ]
+        },
+        {
+          "system" : "http://loinc.org",
+          "version" : "2.64",
+          "filter" : [
+            {
+              "property" : "METHOD_TYP",
+              "op" : "=",
+              "value" : "LP6479-2"
+            }
+          ]
+        },
+        {
+          "system" : "http://loinc.org",
+          "version" : "2.64",
+          "filter" : [
+            {
+              "property" : "METHOD_TYP",
+              "op" : "=",
+              "value" : "LP6480-0"
+            }
+          ]
+        },
+        {
+          "system" : "http://loinc.org",
+          "version" : "2.64",
+          "filter" : [
+            {
+              "property" : "METHOD_TYP",
+              "op" : "=",
+              "value" : "LP6503-9"
+            }
+          ]
+        },
+        {
+          "system" : "http://loinc.org",
+          "version" : "2.64",
+          "filter" : [
+            {
+              "property" : "METHOD_TYP",
+              "op" : "=",
+              "value" : "LP100835-0"
+            }
+          ]
+        }
+      ]
+    }
+  }

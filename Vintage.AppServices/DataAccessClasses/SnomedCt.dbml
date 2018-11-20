@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SNOMED_CT" Class="SnomedCtDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-6S6HG3J;Initial Catalog=SNOMED_CT;Integrated Security=True" SettingsObjectName="Vintage.AppServices.Properties.Settings" SettingsPropertyName="SNOMED_CTConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.GetAllSubsumedConcepts" Method="GetAllSubsumedConcepts" IsComposable="true">
+    <Parameter Name="ConceptCode" Parameter="conceptCode" Type="System.String" DbType="Char(20)" />
+    <ElementType Name="GetAllSubsumedConceptsResult">
+      <Column Name="ConceptID" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="Term" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetAllSubTypeConcepts" Method="GetAllSubTypeConcepts" IsComposable="true">
+    <Parameter Name="SuperTypeCode" Parameter="superTypeCode" Type="System.String" DbType="Char(20)" />
+    <ElementType Name="GetAllSubTypeConceptsResult">
+      <Column Name="subType" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Term" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetDescriptionByLoincCode" Method="GetDescriptionByLoincCode" IsComposable="true">
+    <Parameter Name="LoincCode" Parameter="loincCode" Type="System.String" DbType="Char(20)" />
+    <ElementType Name="GetDescriptionByLoincCodeResult">
+      <Column Name="id" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="long_common_name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetDescriptionsByLoincTerm" Method="GetDescriptionsByLoincTerm" IsComposable="true">
+    <Parameter Name="Term" Parameter="term" Type="System.String" DbType="VarChar(255)" />
+    <ElementType Name="GetDescriptionsByLoincTermResult">
+      <Column Name="id" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="long_common_name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetDescriptionByLoincProperty" Method="GetDescriptionByLoincProperty" IsComposable="true">
+    <Parameter Name="LoincProperty" Parameter="loincProperty" Type="System.String" DbType="Char(10)" />
+    <Parameter Name="LoincValue" Parameter="loincValue" Type="System.String" DbType="NVarChar(100)" />
+    <ElementType Name="GetDescriptionByLoincPropertyResult">
+      <Column Name="id" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="long_common_name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetChildConcepts" Method="GetChildConcepts" IsComposable="true">
+    <Parameter Name="ConceptCode" Parameter="conceptCode" Type="System.String" DbType="Char(20)" />
+    <ElementType Name="GetChildConceptsResult">
+      <Column Name="Term" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ConceptID" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetParentConcepts" Method="GetParentConcepts" IsComposable="true">
+    <Parameter Name="ConceptCode" Parameter="conceptCode" Type="System.String" DbType="Char(20)" />
+    <ElementType Name="GetParentConceptsResult">
+      <Column Name="Term" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ConceptID" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetConceptByCode" Method="GetConceptByCode" IsComposable="true">
+    <Parameter Name="ConceptCode" Parameter="conceptCode" Type="System.String" DbType="Char(20)" />
+    <ElementType Name="GetConceptByCodeResult">
+      <Column Name="[Concept ID]" Member="Concept_ID" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Term" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetPropertiesByLoincCode" Method="GetPropertiesByLoincCode" IsComposable="true">
+    <Parameter Name="LoincCode" Parameter="loincCode" Type="System.String" DbType="Char(20)" />
+    <ElementType Name="GetPropertiesByLoincCodeResult">
+      <Column Name="id" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="component" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="property" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="time_aspct" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="system" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="scale_typ" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="method_typ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetProximalPrimitives" Method="GetProximalPrimitives" IsComposable="true">
+    <Parameter Name="ConceptCode" Parameter="conceptCode" Type="System.String" DbType="Char(20)" />
+    <ElementType Name="GetProximalPrimitivesResult">
+      <Column Name="conceptId" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
+      <Column Name="term" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="definitionStatusId" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetConceptPropertiesByCode" Method="GetConceptPropertiesByCode" IsComposable="true">
+    <Parameter Name="ConceptCode" Parameter="conceptCode" Type="System.String" DbType="Char(20)" />
+    <ElementType Name="GetConceptPropertiesByCodeResult">
+      <Column Name="ConceptId" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
+      <Column Name="effectiveTime" Type="System.String" DbType="Char(8) NOT NULL" CanBeNull="false" />
+      <Column Name="active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="moduleId" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Primitive" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetCompositionMatch" Method="GetCompositionMatch" IsComposable="true">
+    <Parameter Name="attType1" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="attValue1" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="attType2" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="attValue2" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="attType3" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="attValue3" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="attType4" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="attValue4" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="attType5" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="attValue5" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="attType6" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="attValue6" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="attType7" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="attValue7" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="attType8" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="attValue8" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="attType9" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="attValue9" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="attType10" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="attValue10" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="attType11" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="attValue11" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="attType12" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="attValue12" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="attType13" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="attValue13" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="attType14" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="attValue14" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="attType15" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="attValue15" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="attType16" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="attValue16" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="attType17" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="attValue17" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="attType18" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="attValue18" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="attType19" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="attValue19" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="attType20" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="attValue20" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="attType21" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="attValue21" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="pp1" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="pp2" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="pp3" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="pp4" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="pp5" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="attCount" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetCompositionMatchResult">
+      <Column Name="ConceptID" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
+      <Column Name="PreferredTerm" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ClientClosure_Insert" Method="ClientClosure_Insert">
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="CodeSystemId" Parameter="codeSystemId" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="CodeSystemVersion" Parameter="codeSystemVersion" Type="System.String" DbType="Char(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ClientClosure_Update" Method="ClientClosure_Update">
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Concepts" Parameter="concepts" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="CodeSystemId" Parameter="codeSystemId" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="CodeSystemVersion" Parameter="codeSystemVersion" Type="System.String" DbType="Char(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetAllSuperTypeConcepts" Method="GetAllSuperTypeConcepts" IsComposable="true">
+    <Parameter Name="SubTypeCode" Parameter="subTypeCode" Type="System.String" DbType="Char(20)" />
+    <ElementType Name="GetAllSuperTypeConceptsResult">
+      <Column Name="superType" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Term" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetAllAttributesByCode" Method="GetAllAttributesByCode" IsComposable="true">
+    <Parameter Name="Code" Parameter="code" Type="System.String" DbType="Char(20)" />
+    <ElementType Name="GetAllAttributesByCodeResult">
+      <Column Name="relationshipGroup" Type="System.String" DbType="Char(4) NOT NULL" CanBeNull="false" />
+      <Column Name="AttributeTypeID" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
+      <Column Name="AttributeTypeTerm" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="AttributeValueID" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
+      <Column Name="AttributeValueTerm" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DefinitionStatus" Type="System.String" DbType="VarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="AttributeValueDefinitionStatus" Type="System.String" DbType="VarChar(13) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetClientClosures" Method="GetClientClosures" IsComposable="true">
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Version" Parameter="version" Type="System.Int16" DbType="SmallInt" />
+    <ElementType Name="GetClientClosuresResult">
+      <Column Name="Version" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="Concepts" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.IsSubsumedBy" Method="IsSubsumedBy" IsComposable="true">
+    <Parameter Name="SubTypeCode" Parameter="subTypeCode" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="SuperTypeCode" Parameter="superTypeCode" Type="System.String" DbType="Char(20)" />
+    <Return Type="System.Boolean" />
+  </Function>
+  <Function Name="dbo.GetHealthcareOrganisations" Method="GetHealthcareOrganisations" IsComposable="true">
+    <Parameter Name="OrganisationHPI" Parameter="organisationHPI" Type="System.String" DbType="Char(10)" />
+    <Parameter Name="OrganisationName" Parameter="organisationName" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="OrganisationAddress" Parameter="organisationAddress" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="OrganisationType" Parameter="organisationType" Type="System.String" DbType="Char(20)" />
+    <ElementType Name="GetHealthcareOrganisationsResult">
+      <Column Name="OrganisationHPI" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="OrganisationName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="OrganisationAddress" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="OrganisationType" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetHealthcareFacilities" Method="GetHealthcareFacilities" IsComposable="true">
+    <Parameter Name="FacilityHPI" Parameter="facilityHPI" Type="System.String" DbType="Char(10)" />
+    <Parameter Name="FacilityName" Parameter="facilityName" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="FacilityAddress" Parameter="facilityAddress" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="FacilityTypeName" Parameter="facilityTypeName" Type="System.String" DbType="NVarChar(100)" />
+    <ElementType Name="GetHealthcareFacilitiesResult">
+      <Column Name="FacilityHPI" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="FacilityName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="FacilityAddress" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="FacilityType" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="FacilityType_Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="OrganisationHPI" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetConceptsByAttributeValuePair" Method="GetConceptsByAttributeValuePair" IsComposable="true">
+    <Parameter Name="AttributeTypeID" Parameter="attributeTypeID" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="AttributeValueID" Parameter="attributeValueID" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="AttributeTypeAncestors" Parameter="attributeTypeAncestors" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="AttributeTypeDescendants" Parameter="attributeTypeDescendants" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="AttributeValueAncestors" Parameter="attributeValueAncestors" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="AttributeValueDescendants" Parameter="attributeValueDescendants" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="GetConceptsByAttributeValuePairResult">
+      <Column Name="[Concept ID]" Member="Concept_ID" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Term" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetConceptsByAttributeValuePairReverse" Method="GetConceptsByAttributeValuePairReverse" IsComposable="true">
+    <Parameter Name="AttributeTypeID" Parameter="attributeTypeID" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="AttributeValueID" Parameter="attributeValueID" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="AttributeTypeAncestors" Parameter="attributeTypeAncestors" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="AttributeTypeDescendants" Parameter="attributeTypeDescendants" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="AttributeValueAncestors" Parameter="attributeValueAncestors" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="AttributeValueDescendants" Parameter="attributeValueDescendants" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="GetConceptsByAttributeValuePairReverseResult">
+      <Column Name="[Concept ID]" Member="Concept_ID" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="Term" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetRefSet_NZ" Method="GetRefSet_NZ" IsComposable="true">
+    <Parameter Name="RefSetCode" Parameter="refSetCode" Type="System.String" DbType="Char(20)" />
+    <ElementType Name="GetRefSet_NZResult">
+      <Column Name="conceptId" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="term" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetAttributesByFocusTypeValue" Method="GetAttributesByFocusTypeValue" IsComposable="true">
+    <Parameter Name="FocusConceptCode" Parameter="focusConceptCode" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="FocusTypeDescendants" Parameter="focusTypeDescendants" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="AttributeTypeCode" Parameter="attributeTypeCode" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="AttributeTypeDescendants" Parameter="attributeTypeDescendants" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="AttributeValueCode" Parameter="attributeValueCode" Type="System.String" DbType="Char(20)" />
+    <ElementType Name="GetAttributesByFocusTypeValueResult">
+      <Column Name="AssocAttributeValueID" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
+      <Column Name="AssocAttributeValueTerm" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetNzReferenceSets" Method="GetNzReferenceSets" IsComposable="true">
+    <ElementType Name="GetNzReferenceSetsResult">
+      <Column Name="Term" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ConceptID" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetConceptMap_NZ" Method="GetConceptMap_NZ" IsComposable="true">
+    <Parameter Name="RefSetId" Parameter="refSetId" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="ConceptId" Parameter="conceptId" Type="System.String" DbType="Char(20)" />
+    <ElementType Name="GetConceptMap_NZResult">
+      <Column Name="SourceCode" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="SourceTerm" Type="System.String" DbType="NVarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="TargetCode" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TargetTerm" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetConceptDesignationsByCode" Method="GetConceptDesignationsByCode" IsComposable="true">
+    <Parameter Name="ConceptCode" Parameter="conceptCode" Type="System.String" DbType="Char(20)" />
+    <ElementType Name="GetConceptDesignationsByCodeResult">
+      <Column Name="[Concept ID]" Member="Concept_ID" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Term" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Designation" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CSI" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetDescriptionsFromHierarchyByTerm" Method="GetDescriptionsFromHierarchyByTerm" IsComposable="true">
+    <Parameter Name="SuperTypeCode" Parameter="superTypeCode" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="Term" Parameter="term" Type="System.String" DbType="NVarChar(4000)" />
+    <ElementType Name="GetDescriptionsFromHierarchyByTermResult">
+      <Column Name="Term" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(14) NOT NULL" CanBeNull="false" />
+      <Column Name="ConceptID" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Rank" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetDescriptionsByTerm" Method="GetDescriptionsByTerm" IsComposable="true">
+    <Parameter Name="Term" Parameter="term" Type="System.String" DbType="NVarChar(4000)" />
+    <ElementType Name="GetDescriptionsByTermResult">
+      <Column Name="Term" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(14) NOT NULL" CanBeNull="false" />
+      <Column Name="ConceptID" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Rank" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

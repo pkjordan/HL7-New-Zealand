@@ -1,0 +1,113 @@
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="ValueSet-validate-code"/>
+  <url value="http://its.patientsfirst.org.nz/RestService.svc/Terminz/OperationDefinition/ValueSet-validate-code"/>
+  <name value="Value Set based Validation"/>
+  <status value="draft"/>
+  <kind value="operation"/>
+  <date value="2018-04-26"/>
+  <publisher value="HL7 New Zealand"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://hl7.org.nz"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="pkjordan@xtra.co.nz"/>
+    </telecom>
+  </contact>
+  <description value="Validate that a coded value is in the set of codes allowed by a value set.&#xA;&#xA;If the operation is not called at the instance level, one of the in parameters url, context or  valueSet must be provided.  One (and only one) of the in parameters code, coding, or codeableConcept must be provided.  The operation returns a result (true / false), an error message, and the recommended display for the code"/>
+  <code value="validate-code"/>
+  <resource value="ValueSet"/>
+  <system value="false"/>
+  <type value="true"/>
+  <instance value="true"/>
+  <parameter>
+    <name value="url"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Value set Canonical URL. The server must know the value set (e.g. it is defined explicitly in the server&#39;s value sets, or it is defined implicitly by some code system known to the server"/>
+    <type value="uri"/>
+  </parameter>
+  <parameter>
+    <name value="valueSetVersion"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="The identifier that is used to identify a specific version of the value set to be used when validating the code. This is an arbitrary value managed by the value set author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available."/>
+    <type value="string"/>
+  </parameter>
+  <parameter>
+    <name value="code"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="The code that is to be validated. If a code is provided, a system or a context must be provided (if a context is provided, then the server SHALL ensure that the code is not ambiguous without a system)"/>
+    <type value="code"/>
+  </parameter>
+  <parameter>
+    <name value="system"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="The system for the code that is to be validated"/>
+    <type value="uri"/>
+  </parameter>
+  <parameter>
+    <name value="display"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="The display associated with the code, if provided. If a display is provided a code must be provided. If no display is provided, the server cannot validate the display value, but may choose to return a recommended display name in an extension in the outcome. Whether displays are case sensitive is code system dependent"/>
+    <type value="string"/>
+  </parameter>
+  <parameter>
+    <name value="coding"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="A coding to validate"/>
+    <type value="Coding"/>
+  </parameter>
+  <parameter>
+    <name value="codeableConcept"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="A full codeableConcept to validate. The server returns true if one of the coding values is in the value set, and may also validate that the codings are not in conflict with each other if more than one is present"/>
+    <type value="CodeableConcept"/>
+  </parameter>
+  <parameter>
+    <name value="displayLanguage"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Specifies the language to be used for description when validating the display property"/>
+    <type value="code"/>
+  </parameter>
+  <parameter>
+    <name value="result"/>
+    <use value="out"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="True if the concept details supplied are valid"/>
+    <type value="boolean"/>
+  </parameter>
+  <parameter>
+    <name value="message"/>
+    <use value="out"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Error details, if result = false. If this is provided when result = true, the message carries hints and warnings"/>
+    <type value="string"/>
+  </parameter>
+  <parameter>
+    <name value="display"/>
+    <use value="out"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="A valid display for the concept if the system wishes to display this to a user"/>
+    <type value="string"/>
+  </parameter>
+</OperationDefinition>

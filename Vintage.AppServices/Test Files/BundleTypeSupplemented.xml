@@ -1,0 +1,101 @@
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="bundle-type-supplemented"/>
+  <meta>
+    <versionId value="1"/>
+    <lastUpdated value="2018-04-13T05:03:16Z"/>
+  </meta>
+  <url value="http://hl7.org/fhir/bundle-type-supplemented"/>
+  <version value="1"/>
+  <name value="FHIR Bundle Types including german terms defined in a code system supplement"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <date value="2018-04-13"/>
+  <publisher value="HL7 International"/>
+  <contact>
+    <name value="FHIR project team"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://hl7.org/fhir"/>
+    </telecom>
+  </contact>
+  <description value="Example value set of FHIR Bundle Types including german terms contained in a code system supplement"/>
+  <compose>
+    <include>
+      <system value="http://hl7.org/fhir/bundle-type"/>
+      <concept>
+        <code value="document" />
+        <display value="Document" />
+        <designation>
+          <language value ="de" />
+          <value value = "Dokument" />
+        </designation>
+      </concept>
+      <concept>
+        <code value="message" />
+        <display value="Message" />
+        <designation>
+          <language value ="de" />
+          <value value = "Nachricht" />
+        </designation>
+      </concept>
+      <concept>
+        <code value="transaction" />
+        <display value="Transaction" />
+        <designation>
+          <language value ="de" />
+          <value value = "Transaktion" />
+        </designation>
+      </concept>
+      <concept>
+        <code value="transaction-response" />
+        <display value="Transaction Response" />
+        <designation>
+          <language value ="de" />
+          <value value = "Transaktionsantwort" />
+        </designation>
+      </concept>
+      <concept>
+        <code value="batch" />
+        <display value="Batch" />
+        <designation>
+          <language value ="de" />
+          <value value = "Stapel" />
+        </designation>
+      </concept>
+      <concept>
+        <code value="batch-response" />
+        <display value="Batch Response" />
+        <designation>
+          <language value ="de" />
+          <value value = "Batch-Antwort" />
+        </designation>
+      </concept>
+      <concept>
+        <code value="history" />
+        <display value="History List" />
+        <designation>
+          <language value ="de" />
+          <value value = "Verlaufsliste" />
+        </designation>
+      </concept>
+      <concept>
+        <code value="searchset" />
+        <display value="Search Results" />
+        <designation>
+          <language value ="de" />
+          <value value = "Suchergebnisse" />
+        </designation>
+       </concept>
+      <concept>
+        <code value="collection" />
+        <display value="Collection" />
+        <designation>
+          <language value ="de" />
+          <value value = "Sammlung" />
+        </designation>
+      </concept>
+    </include>
+  </compose>
+</ValueSet>
+
+
