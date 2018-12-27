@@ -15,7 +15,7 @@
         public const string NAME = "NZMT";
         public const string DESCRIPTION = "New Zealand Medicines Terminology";
         public const string URI = "http://nzmt.org.nz";
-        public const string CURRENT_VERSION = "3.4.6.2";
+        public const string CURRENT_VERSION = "3.4.7.3";
 
         public CodeSystem codeSystem { get; set; }
         public ValueSet valueSet { get; set; }

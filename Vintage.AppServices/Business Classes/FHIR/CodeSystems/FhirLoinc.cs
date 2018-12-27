@@ -16,7 +16,7 @@
         public const string NAME = "LOINC";
         public const string DESCRIPTION = "Logical Observation Identifiers Names and Codes";
         public const string URI = "http://loinc.org";
-        public const string CURRENT_VERSION = "2.61";
+        public const string CURRENT_VERSION = "2.65";
 
         public CodeSystem codeSystem { get; set; }
         public ValueSet valueSet { get; set; }
@@ -45,6 +45,11 @@
             int system_Filter = identifier.IndexOf("/SYSTEM=");
             int scale_typ_Filter = identifier.IndexOf("/SCALE_TYP=");
             int method_typ_Filter = identifier.IndexOf("/METHOD_TYP=");
+
+            //int consumer_name_Filter = identifier.IndexOf("/CONSUMER_NAME=");
+            int class_Filter = identifier.IndexOf("/CLASS=");
+            int classType_Filter = identifier.IndexOf("/CLASSTYPE=");
+            int order_obs_Filter = identifier.IndexOf("/ORDER_OBS=");
 
             if (component_Filter > 0)
             {
@@ -76,6 +81,26 @@
                 loincProperty = "METHOD_TYP";
                 loincValue = identifier.Substring(method_typ_Filter + 12);
             }
+            else if (order_obs_Filter > 0)
+            {
+                loincProperty = "ORDER_OBS";
+                loincValue = identifier.Substring(order_obs_Filter + 11);
+            }
+            else if (classType_Filter > 0)
+            {
+                loincProperty = "CLASSTYPE";
+                loincValue = identifier.Substring(classType_Filter + 11);
+            }
+            else if (class_Filter > 0)
+            {
+                loincProperty = "CLASS";
+                loincValue = identifier.Substring(class_Filter + 7);
+            }
+            //else if (consumer_name_Filter > 0)
+            //{
+            //    loincProperty = "CONSUMER_NAME";
+            //    loincValue = identifier.Substring(consumer_name_Filter + 15);
+            //}
 
             string description = "All LOINC Codes Filtered By: " + filter;
             string name = "LOINC";
@@ -246,7 +271,11 @@
             vc.PropertyElement.Add(new Code("SYSTEM"));
             vc.PropertyElement.Add(new Code("SCALE_TYP"));
             vc.PropertyElement.Add(new Code("METHOD_TYP"));
-            
+            vc.PropertyElement.Add(new Code("CLASS"));
+            //vc.PropertyElement.Add(new Code("CONSUMER_NAME"));
+            vc.PropertyElement.Add(new Code("CLASSTYPE"));
+            vc.PropertyElement.Add(new Code("ORDER_OBS"));
+
             csc.Version.Add(vc);
 
             return csc;

@@ -60,18 +60,6 @@
       <Column Name="Term" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.GetPropertiesByLoincCode" Method="GetPropertiesByLoincCode" IsComposable="true">
-    <Parameter Name="LoincCode" Parameter="loincCode" Type="System.String" DbType="Char(20)" />
-    <ElementType Name="GetPropertiesByLoincCodeResult">
-      <Column Name="id" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
-      <Column Name="component" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="property" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="time_aspct" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
-      <Column Name="system" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="scale_typ" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="method_typ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.GetProximalPrimitives" Method="GetProximalPrimitives" IsComposable="true">
     <Parameter Name="ConceptCode" Parameter="conceptCode" Type="System.String" DbType="Char(20)" />
     <ElementType Name="GetProximalPrimitivesResult">
@@ -299,6 +287,23 @@
       <Column Name="Type" Type="System.String" DbType="VarChar(14) NOT NULL" CanBeNull="false" />
       <Column Name="ConceptID" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
       <Column Name="Rank" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetPropertiesByLoincCode" Method="GetPropertiesByLoincCode" IsComposable="true">
+    <Parameter Name="LoincCode" Parameter="loincCode" Type="System.String" DbType="Char(20)" />
+    <ElementType Name="GetPropertiesByLoincCodeResult">
+      <Column Name="id" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="component" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="property" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="time_aspct" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="system" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="scale_typ" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="method_typ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="class" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="classtype" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="order_obs" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="consumer_name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

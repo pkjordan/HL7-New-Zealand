@@ -396,7 +396,7 @@
                 displayInactive = (pvl.Contains("inactive"));
                 displaySufficientlyDefined = (pvl.Contains("sufficientlydefined"));
                 displayModuleId = (pvl.Contains("moduleid"));
-                //displayNfTerse = (pvl.Contains("normalformterse"));
+                displayNfTerse = (pvl.Contains("normalformterse"));
                 displayNf = (pvl.Contains("normalform") && !displayNfTerse);
                 displayAllAttributes = (pvl.Contains(FhirSnomed.SCT_ATTRIBUTE_CONCEPT));
                 if (!displayAllAttributes)
@@ -405,8 +405,9 @@
                 } 
             }
        
-            List<Coding> designationCodeVals = new List<Coding>();
+            List<Coding> loincPropertyVals = new List<Coding>();
             List<Coding> substanceCodeVals = new List<Coding>();
+            List<Coding> designationCodeVals = new List<Coding>();
             List<Coding> childCodeVals = new List<Coding>();
             List<Coding> parentCodeVals = new List<Coding>();
             List<Coding> propertyCodeVals = new List<Coding>();
@@ -417,14 +418,19 @@
             
             if (systemURL == NzMt.URI)
             {
-                if (codeSys.Concept.Count > 0)
+                string nzulmType = codeSys.Concept[0].Definition;
+                string mp_id = codeSys.Concept[0].ElementId;
+                if (displaySubstance)
                 {
-                    string nzulmType = codeSys.Concept[0].Definition;
-                    string mp_id = codeSys.Concept[0].ElementId;
-                    if (displaySubstance)
-                    {
-                        substanceCodeVals = NzUlmSearch.GetConceptSubstanceDataByCode(mp_id, nzulmType);
-                    }
+                    substanceCodeVals = NzUlmSearch.GetConceptSubstanceDataByCode(mp_id, nzulmType);
+                }
+            }
+
+            if (systemURL == FhirLoinc.URI)
+            {
+                if (!string.IsNullOrEmpty(propertyVal))
+                {
+                    loincPropertyVals = LoincSearch.GetPropertiesByCode(codeVal);
                 }
             }
 
@@ -493,11 +499,24 @@
                     if (displayDisplay) { param.Add("display", comp.DisplayElement); }
                 }
 
+                foreach (Coding prop in loincPropertyVals)
+                {
+                    // return all of them
+                    List<Tuple<string, Base>> tuples = new List<Tuple<string, Base>>
+                    {
+                        new Tuple<string, Base>("code", new FhirString(prop.Code)),
+                        new Tuple<string, Base>("value", new FhirString(prop.Display))
+                    };
+                    param.Add("property", tuples);
+                }
+
                 foreach (Coding desig in designationCodeVals)
                 {
-                    List<Tuple<string, Base>> tuples = new List<Tuple<string, Base>>();
-                    tuples.Add(new Tuple<string, Base>("use", new Coding { Display = desig.System, System = FhirSnomed.URI, Code = FhirSnomed.GetDesignationTypeId(desig.System) }));
-                    tuples.Add(new Tuple<string, Base>("value", new FhirString(desig.Display)));                    
+                    List<Tuple<string, Base>> tuples = new List<Tuple<string, Base>>
+                    {
+                        new Tuple<string, Base>("use", new Coding { Display = desig.System, System = FhirSnomed.URI, Code = FhirSnomed.GetDesignationTypeId(desig.System) }),
+                        new Tuple<string, Base>("value", new FhirString(desig.Display))
+                    };
                     param.Add("designation", tuples);
                 }
 
@@ -507,9 +526,11 @@
                          (prop.Code == "sufficientlyDefined" && displaySufficientlyDefined) ||
                          (prop.Code == "moduleId" && displayModuleId) )
                     {
-                        List<Tuple<string, Base>> tuples = new List<Tuple<string, Base>>();
-                        tuples.Add(new Tuple<string, Base>("code", new FhirString(prop.Code)));
-                        tuples.Add(new Tuple<string, Base>("value", new FhirString(prop.Display)));
+                        List<Tuple<string, Base>> tuples = new List<Tuple<string, Base>>
+                        {
+                            new Tuple<string, Base>("code", new FhirString(prop.Code)),
+                            new Tuple<string, Base>("value", new FhirString(prop.Display))
+                        };
                         param.Add("property", tuples);
                     }
                 }
@@ -517,16 +538,20 @@
                 if (displayNf || displayNfTerse)
                 {
                     string nf = FhirSnomed.GetNormalFormDisplay(codeVal, displayNf);
-                    List<Tuple<string, Base>> tuples = new List<Tuple<string, Base>>();
-                    tuples.Add(new Tuple<string, Base>("code", new FhirString(displayNf ? "normalForm" : "normalFormTerse")));
-                    tuples.Add(new Tuple<string, Base>("value", new FhirString(nf)));
+                    List<Tuple<string, Base>> tuples = new List<Tuple<string, Base>>
+                    {
+                        new Tuple<string, Base>("code", new FhirString(displayNf ? "normalForm" : "normalFormTerse")),
+                        new Tuple<string, Base>("value", new FhirString(nf))
+                    };
                     param.Add("property", tuples);
                 }
 
                 foreach (Coding subst in substanceCodeVals)
                 {
-                    List<Tuple<string, Base>> tuples = new List<Tuple<string, Base>>();
-                    tuples.Add(new Tuple<string, Base>("use", new Coding { Display = subst.System }));
+                    List<Tuple<string, Base>> tuples = new List<Tuple<string, Base>>
+                    {
+                        new Tuple<string, Base>("use", new Coding { Display = subst.System })
+                    };
                     if (!string.IsNullOrEmpty(subst.Code))
                     {
                         tuples.Add(new Tuple<string, Base>("code", new FhirString(subst.Code)));
@@ -537,27 +562,33 @@
 
                 foreach (Coding parent in parentCodeVals)
                 {
-                    List<Tuple<string, Base>> tuples = new List<Tuple<string, Base>>();
-                    tuples.Add(new Tuple<string, Base>("code", new FhirString("Parent")));
-                    tuples.Add(new Tuple<string, Base>("value", new FhirString(parent.Code)));
-                    tuples.Add(new Tuple<string, Base>("description", new FhirString(parent.Display)));
+                    List<Tuple<string, Base>> tuples = new List<Tuple<string, Base>>
+                    {
+                        new Tuple<string, Base>("code", new FhirString("Parent")),
+                        new Tuple<string, Base>("value", new FhirString(parent.Code)),
+                        new Tuple<string, Base>("description", new FhirString(parent.Display))
+                    };
                     param.Add("property", tuples);
                 }
 
                 foreach (Coding child in childCodeVals)
                 {
-                    List<Tuple<string, Base>> tuples = new List<Tuple<string, Base>>();
-                    tuples.Add(new Tuple<string, Base>("code", new FhirString("Child")));
-                    tuples.Add(new Tuple<string, Base>("value", new FhirString(child.Code)));
-                    tuples.Add(new Tuple<string, Base>("description", new FhirString(child.Display)));
+                    List<Tuple<string, Base>> tuples = new List<Tuple<string, Base>>
+                    {
+                        new Tuple<string, Base>("code", new FhirString("Child")),
+                        new Tuple<string, Base>("value", new FhirString(child.Code)),
+                        new Tuple<string, Base>("description", new FhirString(child.Display))
+                    };
                     param.Add("property", tuples);
                 }
 
                 foreach (Coding attrib in attributeCodeVals)
                 {
-                    List<Tuple<string, Base>> tuples = new List<Tuple<string, Base>>();
-                    tuples.Add(new Tuple<string, Base>("code", new Code { Value=attrib.Code}));
-                    tuples.Add(new Tuple<string, Base>("valueCode", new Code { Value= attrib.Display }));
+                    List<Tuple<string, Base>> tuples = new List<Tuple<string, Base>>
+                    {
+                        new Tuple<string, Base>("code", new Code { Value = attrib.Code }),
+                        new Tuple<string, Base>("valueCode", new Code { Value = attrib.Display })
+                    };
                     param.Add("property", tuples);
                 }
             }

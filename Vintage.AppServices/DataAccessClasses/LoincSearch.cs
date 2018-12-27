@@ -59,12 +59,17 @@
 
             foreach (GetPropertiesByLoincCodeResult result in concepts)
             {
+                codeVals.Add(new Coding { Code = "STATUS", Display = result.status.Trim() });
                 codeVals.Add(new Coding { Code = "COMPONENT", Display = result.component});
                 codeVals.Add(new Coding { Code = "PROPERTY", Display = result.property});
                 codeVals.Add(new Coding { Code = "TIME_ASPCT", Display = result.time_aspct});
                 codeVals.Add(new Coding { Code = "SYSTEM", Display = result.system});
                 codeVals.Add(new Coding { Code = "SCALE_TYP", Display = result.scale_typ});
-                codeVals.Add(new Coding { Code = "METHOD_TYP", Display = result.method_typ});
+                codeVals.Add(new Coding { Code = "METHOD_TYP", Display = result.method_typ });
+                codeVals.Add(new Coding { Code = "CLASS", Display = result.@class });
+                codeVals.Add(new Coding { Code = "CLASSTYPE", Display = result.classtype.ToString() });
+                codeVals.Add(new Coding { Code = "ORDER_OBS", Display = result.order_obs });
+                codeVals.Add(new Coding { Code = "CONSUMER_NAME", Display = result.consumer_name });
             }
 
             return codeVals;
