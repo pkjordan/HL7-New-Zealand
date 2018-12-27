@@ -29,9 +29,9 @@
             this.valueSet.Id = "extensional-case-4";
             this.valueSet.Url = "http://www.healthintersections.com.au/fhir/ValueSet/extensional-case-4";
             this.valueSet.Identifier.Add( new Identifier { Value = this.valueSet.Id});
-            this.valueSet.Name = "Terminology Services FHIR Connectathon #19: Extensional case #4";
+            this.valueSet.Name = "Terminology Services FHIR Connectathon #20: Extensional case #4";
             this.valueSet.Description = new Markdown("A mixed enumeration of codes from FHIR, and from V2 administrative gender code");
-            this.valueSet.Version = "C19";
+            this.valueSet.Version = "C20";
             this.valueSet.Status = PublicationStatus.Active;
             this.valueSet.Experimental = true;
             this.valueSet.Date = Hl7.Fhir.Model.Date.Today().Value;

@@ -32,9 +32,9 @@
             this.valueSet.Id = "intensional-case-2";
             this.valueSet.Url = "http://www.healthintersections.com.au/fhir/ValueSet/intensional-case-2";
             this.valueSet.Identifier.Add(new Identifier { Value = this.valueSet.Id });
-            this.valueSet.Name = "Terminology Services FHIR Connectathon #19: Intensional case #2";
+            this.valueSet.Name = "Terminology Services FHIR Connectathon #20: Intensional case #2";
             this.valueSet.Description = new Markdown("All Snomed codes that are subsumed by 38341003 (Hypertensive disorder, systemic arterial)");
-            this.valueSet.Version = "C19";
+            this.valueSet.Version = "C20";
             this.valueSet.Status = PublicationStatus.Active;
             this.valueSet.Experimental = true;
             this.valueSet.Date = Hl7.Fhir.Model.Date.Today().Value;

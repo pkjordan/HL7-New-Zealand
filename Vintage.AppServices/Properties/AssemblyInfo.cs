@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Patients First Ltd")]
 [assembly: AssemblyProduct("Integration Platform")]
-[assembly: AssemblyCopyright("Copyright © Patients First Ltd 2012-18")]
+[assembly: AssemblyCopyright("Copyright © Patients First Ltd 2012-19")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("6.4.4.0")]
-[assembly: AssemblyFileVersion("6.4.4.0")]
+[assembly: AssemblyVersion("6.5.1.0")]
+[assembly: AssemblyFileVersion("6.5.1.0")]

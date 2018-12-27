@@ -576,10 +576,10 @@
                         throw new Exception(TerminologyValueSet.MAX_VALUES_EXCEEDED);
                     }
                 }
-                valSet.Name = "Terminology Services Connectation #19 Intensional case #3";
+                valSet.Name = "Terminology Services Connectation #20 Intensional case #3";
                 valSet.Id = "intensional-case-3";
                 valSet.Identifier.Add(new Identifier { Value = "intensional-case-3" });
-                valSet.Version = "C19";
+                valSet.Version = "C20";
                 valSet.Url = "http://www.healthintersections.com.au/fhir/ValueSet/intensional-case-3";
                 valSet.Status = PublicationStatus.Active;
             }

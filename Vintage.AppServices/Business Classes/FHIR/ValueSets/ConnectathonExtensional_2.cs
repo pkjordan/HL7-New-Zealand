@@ -30,9 +30,9 @@
             this.valueSet.Id = "extensional-case-2";
             this.valueSet.Url = "http://www.healthintersections.com.au/fhir/ValueSet/extensional-case-2";
             this.valueSet.Identifier.Add( new Identifier { Value = this.valueSet.Id});
-            this.valueSet.Name = "Terminology Services FHIR Connectathon #19: Extensional case #2";
+            this.valueSet.Name = "Terminology Services FHIR Connectathon #20: Extensional case #2";
             this.valueSet.Description = new Markdown("an enumeration of codes defined by LOINC");
-            this.valueSet.Version = "C19";
+            this.valueSet.Version = "C20";
             this.valueSet.Status = PublicationStatus.Active;
             this.valueSet.Experimental = true;
             this.valueSet.Date = Hl7.Fhir.Model.Date.Today().Value;
