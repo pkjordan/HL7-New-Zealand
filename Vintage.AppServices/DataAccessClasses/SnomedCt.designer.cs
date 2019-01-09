@@ -74,24 +74,6 @@ namespace Vintage.AppServices.DataAccessClasses
 			return this.CreateMethodCallQuery<GetAllSubTypeConceptsResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), superTypeCode);
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetDescriptionByLoincCode", IsComposable=true)]
-		public IQueryable<GetDescriptionByLoincCodeResult> GetDescriptionByLoincCode([global::System.Data.Linq.Mapping.ParameterAttribute(Name="LoincCode", DbType="Char(20)")] string loincCode)
-		{
-			return this.CreateMethodCallQuery<GetDescriptionByLoincCodeResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), loincCode);
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetDescriptionsByLoincTerm", IsComposable=true)]
-		public IQueryable<GetDescriptionsByLoincTermResult> GetDescriptionsByLoincTerm([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Term", DbType="VarChar(255)")] string term)
-		{
-			return this.CreateMethodCallQuery<GetDescriptionsByLoincTermResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), term);
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetDescriptionByLoincProperty", IsComposable=true)]
-		public IQueryable<GetDescriptionByLoincPropertyResult> GetDescriptionByLoincProperty([global::System.Data.Linq.Mapping.ParameterAttribute(Name="LoincProperty", DbType="Char(10)")] string loincProperty, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="LoincValue", DbType="NVarChar(100)")] string loincValue)
-		{
-			return this.CreateMethodCallQuery<GetDescriptionByLoincPropertyResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), loincProperty, loincValue);
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetChildConcepts", IsComposable=true)]
 		public IQueryable<GetChildConceptsResult> GetChildConcepts([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ConceptCode", DbType="Char(20)")] string conceptCode)
 		{
@@ -285,6 +267,30 @@ namespace Vintage.AppServices.DataAccessClasses
 		{
 			return this.CreateMethodCallQuery<GetPropertiesByLoincCodeResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), loincCode);
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetNzEnPatientFriendlyTerms", IsComposable=true)]
+		public IQueryable<GetNzEnPatientFriendlyTermsResult> GetNzEnPatientFriendlyTerms()
+		{
+			return this.CreateMethodCallQuery<GetNzEnPatientFriendlyTermsResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetDescriptionByLoincCode", IsComposable=true)]
+		public IQueryable<GetDescriptionByLoincCodeResult> GetDescriptionByLoincCode([global::System.Data.Linq.Mapping.ParameterAttribute(Name="LoincCode", DbType="Char(20)")] string loincCode)
+		{
+			return this.CreateMethodCallQuery<GetDescriptionByLoincCodeResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), loincCode);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetDescriptionByLoincProperty", IsComposable=true)]
+		public IQueryable<GetDescriptionByLoincPropertyResult> GetDescriptionByLoincProperty([global::System.Data.Linq.Mapping.ParameterAttribute(Name="LoincProperty", DbType="Char(10)")] string loincProperty, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="LoincValue", DbType="NVarChar(100)")] string loincValue)
+		{
+			return this.CreateMethodCallQuery<GetDescriptionByLoincPropertyResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), loincProperty, loincValue);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetDescriptionsByLoincTerm", IsComposable=true)]
+		public IQueryable<GetDescriptionsByLoincTermResult> GetDescriptionsByLoincTerm([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Term", DbType="VarChar(255)")] string term)
+		{
+			return this.CreateMethodCallQuery<GetDescriptionsByLoincTermResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), term);
+		}
 	}
 	
 	public partial class GetAllSubsumedConceptsResult
@@ -370,192 +376,6 @@ namespace Vintage.AppServices.DataAccessClasses
 				if ((this._Term != value))
 				{
 					this._Term = value;
-				}
-			}
-		}
-	}
-	
-	public partial class GetDescriptionByLoincCodeResult
-	{
-		
-		private string _id;
-		
-		private string _long_common_name;
-		
-		private string _status;
-		
-		public GetDescriptionByLoincCodeResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Char(10) NOT NULL", CanBeNull=false)]
-		public string id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this._id = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_long_common_name", DbType="NVarChar(255)")]
-		public string long_common_name
-		{
-			get
-			{
-				return this._long_common_name;
-			}
-			set
-			{
-				if ((this._long_common_name != value))
-				{
-					this._long_common_name = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="Char(20)")]
-		public string status
-		{
-			get
-			{
-				return this._status;
-			}
-			set
-			{
-				if ((this._status != value))
-				{
-					this._status = value;
-				}
-			}
-		}
-	}
-	
-	public partial class GetDescriptionsByLoincTermResult
-	{
-		
-		private string _id;
-		
-		private string _long_common_name;
-		
-		private string _status;
-		
-		public GetDescriptionsByLoincTermResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Char(10) NOT NULL", CanBeNull=false)]
-		public string id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this._id = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_long_common_name", DbType="NVarChar(255)")]
-		public string long_common_name
-		{
-			get
-			{
-				return this._long_common_name;
-			}
-			set
-			{
-				if ((this._long_common_name != value))
-				{
-					this._long_common_name = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="Char(20)")]
-		public string status
-		{
-			get
-			{
-				return this._status;
-			}
-			set
-			{
-				if ((this._status != value))
-				{
-					this._status = value;
-				}
-			}
-		}
-	}
-	
-	public partial class GetDescriptionByLoincPropertyResult
-	{
-		
-		private string _id;
-		
-		private string _long_common_name;
-		
-		private string _status;
-		
-		public GetDescriptionByLoincPropertyResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Char(10) NOT NULL", CanBeNull=false)]
-		public string id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this._id = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_long_common_name", DbType="NVarChar(255)")]
-		public string long_common_name
-		{
-			get
-			{
-				return this._long_common_name;
-			}
-			set
-			{
-				if ((this._long_common_name != value))
-				{
-					this._long_common_name = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="Char(20)")]
-		public string status
-		{
-			get
-			{
-				return this._status;
-			}
-			set
-			{
-				if ((this._status != value))
-				{
-					this._status = value;
 				}
 			}
 		}
@@ -2058,6 +1878,326 @@ namespace Vintage.AppServices.DataAccessClasses
 				if ((this._order_obs != value))
 				{
 					this._order_obs = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_consumer_name", DbType="NVarChar(255)")]
+		public string consumer_name
+		{
+			get
+			{
+				return this._consumer_name;
+			}
+			set
+			{
+				if ((this._consumer_name != value))
+				{
+					this._consumer_name = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GetNzEnPatientFriendlyTermsResult
+	{
+		
+		private string _conceptId;
+		
+		private string _term;
+		
+		private string _acceptabilityId;
+		
+		private string _languageCode;
+		
+		public GetNzEnPatientFriendlyTermsResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_conceptId", DbType="Char(20) NOT NULL", CanBeNull=false)]
+		public string conceptId
+		{
+			get
+			{
+				return this._conceptId;
+			}
+			set
+			{
+				if ((this._conceptId != value))
+				{
+					this._conceptId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_term", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string term
+		{
+			get
+			{
+				return this._term;
+			}
+			set
+			{
+				if ((this._term != value))
+				{
+					this._term = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_acceptabilityId", DbType="Char(20) NOT NULL", CanBeNull=false)]
+		public string acceptabilityId
+		{
+			get
+			{
+				return this._acceptabilityId;
+			}
+			set
+			{
+				if ((this._acceptabilityId != value))
+				{
+					this._acceptabilityId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_languageCode", DbType="Char(2) NOT NULL", CanBeNull=false)]
+		public string languageCode
+		{
+			get
+			{
+				return this._languageCode;
+			}
+			set
+			{
+				if ((this._languageCode != value))
+				{
+					this._languageCode = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GetDescriptionByLoincCodeResult
+	{
+		
+		private string _id;
+		
+		private string _long_common_name;
+		
+		private string _status;
+		
+		private string _consumer_name;
+		
+		public GetDescriptionByLoincCodeResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Char(10) NOT NULL", CanBeNull=false)]
+		public string id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_long_common_name", DbType="NVarChar(512)")]
+		public string long_common_name
+		{
+			get
+			{
+				return this._long_common_name;
+			}
+			set
+			{
+				if ((this._long_common_name != value))
+				{
+					this._long_common_name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="Char(20)")]
+		public string status
+		{
+			get
+			{
+				return this._status;
+			}
+			set
+			{
+				if ((this._status != value))
+				{
+					this._status = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_consumer_name", DbType="NVarChar(255)")]
+		public string consumer_name
+		{
+			get
+			{
+				return this._consumer_name;
+			}
+			set
+			{
+				if ((this._consumer_name != value))
+				{
+					this._consumer_name = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GetDescriptionByLoincPropertyResult
+	{
+		
+		private string _id;
+		
+		private string _long_common_name;
+		
+		private string _status;
+		
+		private string _consumer_name;
+		
+		public GetDescriptionByLoincPropertyResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Char(10) NOT NULL", CanBeNull=false)]
+		public string id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_long_common_name", DbType="NVarChar(512)")]
+		public string long_common_name
+		{
+			get
+			{
+				return this._long_common_name;
+			}
+			set
+			{
+				if ((this._long_common_name != value))
+				{
+					this._long_common_name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="Char(20)")]
+		public string status
+		{
+			get
+			{
+				return this._status;
+			}
+			set
+			{
+				if ((this._status != value))
+				{
+					this._status = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_consumer_name", DbType="NVarChar(255)")]
+		public string consumer_name
+		{
+			get
+			{
+				return this._consumer_name;
+			}
+			set
+			{
+				if ((this._consumer_name != value))
+				{
+					this._consumer_name = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GetDescriptionsByLoincTermResult
+	{
+		
+		private string _id;
+		
+		private string _long_common_name;
+		
+		private string _status;
+		
+		private string _consumer_name;
+		
+		public GetDescriptionsByLoincTermResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Char(10) NOT NULL", CanBeNull=false)]
+		public string id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_long_common_name", DbType="NVarChar(512)")]
+		public string long_common_name
+		{
+			get
+			{
+				return this._long_common_name;
+			}
+			set
+			{
+				if ((this._long_common_name != value))
+				{
+					this._long_common_name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="Char(20)")]
+		public string status
+		{
+			get
+			{
+				return this._status;
+			}
+			set
+			{
+				if ((this._status != value))
+				{
+					this._status = value;
 				}
 			}
 		}

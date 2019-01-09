@@ -52,21 +52,27 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Hl7.Fhir.R4.Core, Version=0.95.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\fhir-net-api-develop-r4-Sept2018\src\Hl7.Fhir.Core\bin\Debug\net45\Hl7.Fhir.R4.Core.dll</HintPath>
+    <Reference Include="Hl7.Fhir.ElementModel">
+      <HintPath>..\..\fhir-net-api-feature-upgrade-r4-with-stu3-changes\src\Hl7.Fhir.Core\bin\Debug\net45\Hl7.Fhir.ElementModel.dll</HintPath>
     </Reference>
-    <Reference Include="Hl7.Fhir.Support, Version=0.95.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Hl7.Fhir.R4.Core, Version=0.96.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\fhir-net-api-develop-r4-Sept2018\src\Hl7.Fhir.Core\bin\Debug\net45\Hl7.Fhir.Support.dll</HintPath>
+      <HintPath>..\..\fhir-net-api-feature-upgrade-r4-with-stu3-changes\src\Hl7.Fhir.Core\bin\Debug\net45\Hl7.Fhir.R4.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Hl7.FhirPath, Version=0.95.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Hl7.Fhir.Serialization">
+      <HintPath>..\..\fhir-net-api-feature-upgrade-r4-with-stu3-changes\src\Hl7.Fhir.Core\bin\Debug\net45\Hl7.Fhir.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="Hl7.Fhir.Support, Version=0.96.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\fhir-net-api-develop-r4-Sept2018\src\Hl7.Fhir.Core\bin\Debug\net45\Hl7.FhirPath.dll</HintPath>
+      <HintPath>..\..\fhir-net-api-feature-upgrade-r4-with-stu3-changes\src\Hl7.Fhir.Core\bin\Debug\net45\Hl7.Fhir.Support.dll</HintPath>
+    </Reference>
+    <Reference Include="Hl7.FhirPath, Version=0.96.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\fhir-net-api-feature-upgrade-r4-with-stu3-changes\src\Hl7.Fhir.Core\bin\Debug\net45\Hl7.FhirPath.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\fhir-net-api-develop-r4-Sept2018\src\Hl7.Fhir.Core\bin\Debug\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\fhir-net-api-feature-upgrade-r4-with-stu3-changes\src\Hl7.Fhir.Core\bin\Debug\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -77,9 +83,9 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceModel.Web" />
-    <Reference Include="System.ValueTuple, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.ValueTuple.4.3.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="System.ValueTuple, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\fhir-net-api-feature-upgrade-r4-with-stu3-changes\src\Hl7.Fhir.Core\bin\Debug\net45\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Web.ApplicationServices" />

@@ -17,11 +17,11 @@
                 Name = "Patients First Terminology Server (Terminz)",
                 Purpose = new Markdown("Exemplar of terminology services approach for New Zealand."),
                 Publisher = "Patients First Ltd",
-                Version = "3.5.0",
+                Version = "4.0.0",
                 Status = PublicationStatus.Draft,
                 Date = "2019-01-10",
                 Experimental = true,
-                Copyright = new Markdown("© 2018+ Patients First Ltd"),
+                Copyright = new Markdown("© 2019+ Patients First Ltd"),
                 LockedDate = false
             };
 

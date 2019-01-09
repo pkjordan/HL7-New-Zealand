@@ -367,6 +367,25 @@
             return codeVals;
         }
 
+        public static List<Coding> GetNzEnPatientFriendlyTerms()
+        {
+            List<Coding> codeVals = new List<Coding>();
+
+            List<GetNzEnPatientFriendlyTermsResult> concepts = new List<GetNzEnPatientFriendlyTermsResult>();
+
+            using (SnomedCtDataContext dc = new SnomedCtDataContext())
+            {
+                concepts = dc.GetNzEnPatientFriendlyTerms().ToList();
+            }
+
+            foreach (GetNzEnPatientFriendlyTermsResult result in concepts.OrderBy(xx => xx.term))
+            {
+                codeVals.Add(new Coding { Code = result.conceptId.Trim(), Display = result.term });
+            }
+
+            return codeVals;
+        }
+
         public static List<Coding> GetConceptsByTerm(string term)
         {
             string formattedTerm = term.Replace(" ", "*' AND '");

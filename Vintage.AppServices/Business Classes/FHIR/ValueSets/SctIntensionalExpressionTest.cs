@@ -27,7 +27,7 @@
         private void FillValues(TerminologyOperation termOp, string version, string code, string filter, int offsetNo, int countNo)
         {
 
-            filter = EclHandler.EclExpressionFormatter("<<73211009");
+            filter = EclHandler.EclExpressionFormatter("390802008|Goal achieved| OR << 390801001|Goal not achieved|");
 
             this.valueSet = new ValueSet();
 

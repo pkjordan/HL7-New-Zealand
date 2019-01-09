@@ -14,31 +14,6 @@
       <Column Name="Term" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.GetDescriptionByLoincCode" Method="GetDescriptionByLoincCode" IsComposable="true">
-    <Parameter Name="LoincCode" Parameter="loincCode" Type="System.String" DbType="Char(20)" />
-    <ElementType Name="GetDescriptionByLoincCodeResult">
-      <Column Name="id" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
-      <Column Name="long_common_name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="status" Type="System.String" DbType="Char(20)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.GetDescriptionsByLoincTerm" Method="GetDescriptionsByLoincTerm" IsComposable="true">
-    <Parameter Name="Term" Parameter="term" Type="System.String" DbType="VarChar(255)" />
-    <ElementType Name="GetDescriptionsByLoincTermResult">
-      <Column Name="id" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
-      <Column Name="long_common_name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="status" Type="System.String" DbType="Char(20)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.GetDescriptionByLoincProperty" Method="GetDescriptionByLoincProperty" IsComposable="true">
-    <Parameter Name="LoincProperty" Parameter="loincProperty" Type="System.String" DbType="Char(10)" />
-    <Parameter Name="LoincValue" Parameter="loincValue" Type="System.String" DbType="NVarChar(100)" />
-    <ElementType Name="GetDescriptionByLoincPropertyResult">
-      <Column Name="id" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
-      <Column Name="long_common_name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="status" Type="System.String" DbType="Char(20)" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.GetChildConcepts" Method="GetChildConcepts" IsComposable="true">
     <Parameter Name="ConceptCode" Parameter="conceptCode" Type="System.String" DbType="Char(20)" />
     <ElementType Name="GetChildConceptsResult">
@@ -303,6 +278,42 @@
       <Column Name="class" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Column Name="classtype" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="order_obs" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="consumer_name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetNzEnPatientFriendlyTerms" Method="GetNzEnPatientFriendlyTerms" IsComposable="true">
+    <ElementType Name="GetNzEnPatientFriendlyTermsResult">
+      <Column Name="conceptId" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
+      <Column Name="term" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="acceptabilityId" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
+      <Column Name="languageCode" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetDescriptionByLoincCode" Method="GetDescriptionByLoincCode" IsComposable="true">
+    <Parameter Name="LoincCode" Parameter="loincCode" Type="System.String" DbType="Char(20)" />
+    <ElementType Name="GetDescriptionByLoincCodeResult">
+      <Column Name="id" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="long_common_name" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="consumer_name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetDescriptionByLoincProperty" Method="GetDescriptionByLoincProperty" IsComposable="true">
+    <Parameter Name="LoincProperty" Parameter="loincProperty" Type="System.String" DbType="Char(10)" />
+    <Parameter Name="LoincValue" Parameter="loincValue" Type="System.String" DbType="NVarChar(100)" />
+    <ElementType Name="GetDescriptionByLoincPropertyResult">
+      <Column Name="id" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="long_common_name" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="consumer_name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetDescriptionsByLoincTerm" Method="GetDescriptionsByLoincTerm" IsComposable="true">
+    <Parameter Name="Term" Parameter="term" Type="System.String" DbType="VarChar(255)" />
+    <ElementType Name="GetDescriptionsByLoincTermResult">
+      <Column Name="id" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="long_common_name" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="Char(20)" CanBeNull="true" />
       <Column Name="consumer_name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
     </ElementType>
   </Function>

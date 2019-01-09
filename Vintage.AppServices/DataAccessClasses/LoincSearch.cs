@@ -20,7 +20,7 @@
 
             foreach (GetDescriptionByLoincPropertyResult result in concepts)
             {
-                codeVals.Add(new Coding { Code = result.id.Trim(), Display = result.long_common_name });
+                codeVals.Add(new Coding { Code = result.id.Trim(), Display = result.long_common_name, Version = result.consumer_name });
             }
 
 
@@ -40,7 +40,7 @@
 
             foreach (GetDescriptionByLoincCodeResult result in concepts)
             {
-                codeVals.Add(new Coding { Code = result.id.Trim(), Display = result.long_common_name });
+                codeVals.Add(new Coding { Code = result.id.Trim(), Display = result.long_common_name, Version = result.consumer_name });
             }
 
             return codeVals;
@@ -89,7 +89,7 @@
 
             foreach (GetDescriptionsByLoincTermResult result in concepts.OrderBy(xx => xx.long_common_name.Length))
             {
-                codeVals.Add(new Coding { Code = result.id.Trim(), Display = result.long_common_name});
+                codeVals.Add(new Coding { Code = result.id.Trim(), Display = result.long_common_name, Version = result.consumer_name });
             }
 
             return codeVals;

@@ -25,8 +25,8 @@
                 Name = "Patients First Terminology Server (Terminz)",
                 Publisher = "Patients First Ltd",
                 Date = "2019-01-10",
-                Version = "3.5.0",
-                FhirVersion = ModelInfo.Version, //"3.5.0",
+                Version = "4.0.0",
+                FhirVersion = FHIRVersion.N4_0_0,
                 //Language = "en-NZ",  // review with next version of library - this needs to be a coded element!
                 Status = PublicationStatus.Draft,
                 //capabilityStatement.AcceptUnknown = CapabilityStatement.UnknownContentCode.Both;

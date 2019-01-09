@@ -761,7 +761,7 @@
                     // element will always end with the SCTID
                     focusElements.Add(new EclElement
                     {
-                        UnaryOperator = (ecElement == focus ? EclUnaryOperator.SELF : uop1),
+                        UnaryOperator = (focus.StartsWith(ecElement) ? EclUnaryOperator.SELF : uop1),
                         UnaryOperator2 = uop2,
                         BinaryOperator = bop,
                         SCTID = ecElement,
