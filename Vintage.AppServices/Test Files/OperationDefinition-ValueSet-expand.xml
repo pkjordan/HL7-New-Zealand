@@ -4,7 +4,7 @@
   <name value="Value Set Expansion"/>
   <status value="draft"/>
   <kind value="operation"/>
-  <date value="2018-04-23"/>
+  <date value="2019-01-13"/>
   <publisher value="HL7 New Zealand"/>
   <contact>
     <telecom>
@@ -70,6 +70,24 @@
     <max value="1"/>
     <documentation value="Specifies the language to be used for description in the expansions i.e. the language to be used for ValueSet.expansion.contains.display. Overrides the value in the expansion profile if there is one"/>
     <type value="code"/>
+  </parameter>
+  <parameter>
+    <name value="includeDesignations"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Controls whether concept designations are to be included or excluded in value set expansions"/>
+    <type value="boolean"/>
+  </parameter>
+  <parameter>
+    <name value="designation"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="*"/>
+    <documentation value="A [token](search.html#token) that specifies a system+code that is either a use or a language.
+     Designations that match by language or use are included in the expansion. If no designation
+     is specified, it is at the server discretion which designations to return"/>
+    <type value="string"/>
   </parameter>
   <parameter>
     <name value="return"/>

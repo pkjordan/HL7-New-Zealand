@@ -141,7 +141,7 @@
 
             if (string.IsNullOrEmpty(nameFilter))  // Implict SCT VS - no searching by name
             {
-                ValueSet snomedImplicit = GetValueSet(TerminologyOperation.define_vs, string.Empty, string.Empty, FhirSnomed.URI, string.Empty, "[x]", -1, -1);
+                ValueSet snomedImplicit = GetValueSet(TerminologyOperation.define_vs, string.Empty, string.Empty, FhirSnomed.URI, string.Empty, "[x]", -1, -1, string.Empty);
                 try { GenerateCompositionNarrative(snomedImplicit); }
                 catch { }
                 csBundle.AddResourceEntry(snomedImplicit, ServerCapability.TERMINZ_CANONICAL + "/ValueSet/sct/[x]");
@@ -149,107 +149,107 @@
 
             if (string.IsNullOrEmpty(nameFilter) || nameFilter.StartsWith("SCT"))
             {             
-                ValueSet nzRefSet1 = GetValueSet(TerminologyOperation.define_vs, "SCT-REFSET-NZ-CARDIOLOGY", string.Empty, string.Empty, "91000210107", string.Empty, -1, -1);
+                ValueSet nzRefSet1 = GetValueSet(TerminologyOperation.define_vs, "SCT-REFSET-NZ-CARDIOLOGY", string.Empty, string.Empty, "91000210107", string.Empty, -1, -1, string.Empty);
                 try { GenerateCompositionNarrative(nzRefSet1); }
                 catch { }
                 csBundle.AddResourceEntry(nzRefSet1, ServerCapability.TERMINZ_CANONICAL + "/ValueSet/SCT-REFSET-NZ-CARDIOLOGY");
 
-                ValueSet nzRefSet2 = GetValueSet(TerminologyOperation.define_vs, "SCT-REFSET-NZ-DISABILITY", string.Empty, string.Empty, "261000210101", string.Empty, -1, -1);
+                ValueSet nzRefSet2 = GetValueSet(TerminologyOperation.define_vs, "SCT-REFSET-NZ-DISABILITY", string.Empty, string.Empty, "261000210101", string.Empty, -1, -1, string.Empty);
                 try { GenerateCompositionNarrative(nzRefSet2); }
                 catch { }
                 csBundle.AddResourceEntry(nzRefSet2, ServerCapability.TERMINZ_CANONICAL + "/ValueSet/SCT-REFSET-NZ-DISABILITY");
 
-                ValueSet nzRefSet3 = GetValueSet(TerminologyOperation.define_vs, "SCT-REFSET-NZ-EC-DIAGNOSIS", string.Empty, string.Empty, "61000210102", string.Empty, -1, -1); ;
+                ValueSet nzRefSet3 = GetValueSet(TerminologyOperation.define_vs, "SCT-REFSET-NZ-EC-DIAGNOSIS", string.Empty, string.Empty, "61000210102", string.Empty, -1, -1, string.Empty); ;
                 try { GenerateCompositionNarrative(nzRefSet3); }
                 catch { }
                 csBundle.AddResourceEntry(nzRefSet3, ServerCapability.TERMINZ_CANONICAL + "/ValueSet/SCT-REFSET-NZ-EC-DIAGNOSIS");
 
-                ValueSet nzRefSet4 = GetValueSet(TerminologyOperation.define_vs, "SCT-REFSET-NZ-EC-PRESENTING-COMPLAINT", string.Empty, string.Empty, "71000210108", string.Empty, -1, -1);
+                ValueSet nzRefSet4 = GetValueSet(TerminologyOperation.define_vs, "SCT-REFSET-NZ-EC-PRESENTING-COMPLAINT", string.Empty, string.Empty, "71000210108", string.Empty, -1, -1, string.Empty);
                 try { GenerateCompositionNarrative(nzRefSet4); }
                 catch { }
                 csBundle.AddResourceEntry(nzRefSet4, ServerCapability.TERMINZ_CANONICAL + "/ValueSet/SCT-REFSET-NZ-EC-PRESENTING-COMPLAINT");
 
-                ValueSet nzRefSet4a = GetValueSet(TerminologyOperation.define_vs, "SCT-REFSET-NZ-EC-PROCEDURE", string.Empty, string.Empty, "321000210102", string.Empty, -1, -1); ;
+                ValueSet nzRefSet4a = GetValueSet(TerminologyOperation.define_vs, "SCT-REFSET-NZ-EC-PROCEDURE", string.Empty, string.Empty, "321000210102", string.Empty, -1, -1, string.Empty); ;
                 try { GenerateCompositionNarrative(nzRefSet4a); }
                 catch { }
                 csBundle.AddResourceEntry(nzRefSet4a, ServerCapability.TERMINZ_CANONICAL + "/ValueSet/SCT-REFSET-NZ-EC-PROCEDURE");
 
-                ValueSet nzRefSet5 = GetValueSet(TerminologyOperation.define_vs, "SCT-REFSET-NZ-GATEWAY-CHILD-HEALTH", string.Empty, string.Empty, "241000210102", string.Empty, -1, -1);
+                ValueSet nzRefSet5 = GetValueSet(TerminologyOperation.define_vs, "SCT-REFSET-NZ-GATEWAY-CHILD-HEALTH", string.Empty, string.Empty, "241000210102", string.Empty, -1, -1, string.Empty);
                 try { GenerateCompositionNarrative(nzRefSet5); }
                 catch { }
                 csBundle.AddResourceEntry(nzRefSet5, ServerCapability.TERMINZ_CANONICAL + "/ValueSet/SCT-REFSET-NZ-GATEWAY-CHILD-HEALTH");
 
-                ValueSet nzRefSet6 = GetValueSet(TerminologyOperation.define_vs, "SCT-REFSET-NZ-GYNAECOLOGY", string.Empty, string.Empty, "101000210108", string.Empty, -1, -1);
+                ValueSet nzRefSet6 = GetValueSet(TerminologyOperation.define_vs, "SCT-REFSET-NZ-GYNAECOLOGY", string.Empty, string.Empty, "101000210108", string.Empty, -1, -1, string.Empty);
                 try { GenerateCompositionNarrative(nzRefSet6); }
                 catch { }
                 csBundle.AddResourceEntry(nzRefSet6, ServerCapability.TERMINZ_CANONICAL + "/ValueSet/SCT-REFSET-NZ-GYNAECOLOGY");
 
-                ValueSet nzRefSet7 = GetValueSet(TerminologyOperation.define_vs, "SCT-REFSET-NZ-ACC-TRANSLATION-TABLE", string.Empty, string.Empty, "81000210105", string.Empty, -1, -1);
+                ValueSet nzRefSet7 = GetValueSet(TerminologyOperation.define_vs, "SCT-REFSET-NZ-ACC-TRANSLATION-TABLE", string.Empty, string.Empty, "81000210105", string.Empty, -1, -1, string.Empty);
                 try { GenerateCompositionNarrative(nzRefSet7); }
                 catch { }
                 csBundle.AddResourceEntry(nzRefSet7, ServerCapability.TERMINZ_CANONICAL + "/ValueSet/SCT-REFSET-NZ-ACC-TRANSLATION-TABLE");
 
-                ValueSet nzRefSet8 = GetValueSet(TerminologyOperation.define_vs, "SCT-REFSET-NZ-NOTIFIABLE-DISEASE", string.Empty, string.Empty, "251000210104", string.Empty, -1, -1);
+                ValueSet nzRefSet8 = GetValueSet(TerminologyOperation.define_vs, "SCT-REFSET-NZ-NOTIFIABLE-DISEASE", string.Empty, string.Empty, "251000210104", string.Empty, -1, -1, string.Empty);
                 try { GenerateCompositionNarrative(nzRefSet8); }
                 catch { }
                 csBundle.AddResourceEntry(nzRefSet8, ServerCapability.TERMINZ_CANONICAL + "/ValueSet/SCT-REFSET-NZ-NOTIFIABLE-DISEASE");
 
-                ValueSet nzRefSet9 = GetValueSet(TerminologyOperation.define_vs, "SCT-REFSET-NZ-RHEUMATOLOGY", string.Empty, string.Empty, "121000210100", string.Empty, -1, -1);
+                ValueSet nzRefSet9 = GetValueSet(TerminologyOperation.define_vs, "SCT-REFSET-NZ-RHEUMATOLOGY", string.Empty, string.Empty, "121000210100", string.Empty, -1, -1, string.Empty);
                 try { GenerateCompositionNarrative(nzRefSet9); }
                 catch { }
                 csBundle.AddResourceEntry(nzRefSet9, ServerCapability.TERMINZ_CANONICAL + "/ValueSet/SCT-REFSET-NZ-RHEUMATOLOGY");
 
-                ValueSet nzRefSet10 = GetValueSet(TerminologyOperation.define_vs, "SCT-REFSET-NZ-SMOKING", string.Empty, string.Empty, "51000210100", string.Empty, -1, -1);
+                ValueSet nzRefSet10 = GetValueSet(TerminologyOperation.define_vs, "SCT-REFSET-NZ-SMOKING", string.Empty, string.Empty, "51000210100", string.Empty, -1, -1, string.Empty);
                 try { GenerateCompositionNarrative(nzRefSet10); }
                 catch { }
                 csBundle.AddResourceEntry(nzRefSet10, ServerCapability.TERMINZ_CANONICAL + "/ValueSet/SCT-REFSET-NZ-SMOKING");
                
-                ValueSet nzRefSet11 = GetValueSet(TerminologyOperation.define_vs, "SCT-REFSET-NZ-ADVERSE-REACTION-MANIFESTATION", string.Empty, string.Empty, "351000210106", string.Empty, -1, -1);
+                ValueSet nzRefSet11 = GetValueSet(TerminologyOperation.define_vs, "SCT-REFSET-NZ-ADVERSE-REACTION-MANIFESTATION", string.Empty, string.Empty, "351000210106", string.Empty, -1, -1, string.Empty);
                 try { GenerateCompositionNarrative(nzRefSet11); }
                 catch { }
                 csBundle.AddResourceEntry(nzRefSet11, ServerCapability.TERMINZ_CANONICAL + "/ValueSet/SCT-REFSET-NZ-ADVERSE-REACTION-MANIFESTATION");
 
-                ValueSet nzRefSet12 = GetValueSet(TerminologyOperation.define_vs, "SCT-REFSET-NZ-AMBULANCE-CLINICAL-IMPRESSION", string.Empty, string.Empty, "421000210109", string.Empty, -1, -1);
+                ValueSet nzRefSet12 = GetValueSet(TerminologyOperation.define_vs, "SCT-REFSET-NZ-AMBULANCE-CLINICAL-IMPRESSION", string.Empty, string.Empty, "421000210109", string.Empty, -1, -1, string.Empty);
                 try { GenerateCompositionNarrative(nzRefSet12); }
                 catch { }
                 csBundle.AddResourceEntry(nzRefSet12, ServerCapability.TERMINZ_CANONICAL + "/ValueSet/SCT-REFSET-NZ-AMBULANCE-CLINICAL-IMPRESSION");
 
-                ValueSet nzRefSet13 = GetValueSet(TerminologyOperation.define_vs, "SCT-REFSET-NZ-MICROORGANISM", string.Empty, string.Empty, "391000210104", string.Empty, -1, -1);
+                ValueSet nzRefSet13 = GetValueSet(TerminologyOperation.define_vs, "SCT-REFSET-NZ-MICROORGANISM", string.Empty, string.Empty, "391000210104", string.Empty, -1, -1, string.Empty);
                 try { GenerateCompositionNarrative(nzRefSet13); }
                 catch { }
                 csBundle.AddResourceEntry(nzRefSet13, ServerCapability.TERMINZ_CANONICAL + "/ValueSet/SCT-REFSET-NZ-MICROORGANISM");
 
-                ValueSet nzRefSet14 = GetValueSet(TerminologyOperation.define_vs, "SCT-REFSET-NZ-ENDOCRINOLOGY", string.Empty, string.Empty, "141000210106", string.Empty, -1, -1);
+                ValueSet nzRefSet14 = GetValueSet(TerminologyOperation.define_vs, "SCT-REFSET-NZ-ENDOCRINOLOGY", string.Empty, string.Empty, "141000210106", string.Empty, -1, -1, string.Empty);
                 try { GenerateCompositionNarrative(nzRefSet14); }
                 catch { }
                 csBundle.AddResourceEntry(nzRefSet14, ServerCapability.TERMINZ_CANONICAL + "/ValueSet/SCT-REFSET-NZ-ENDOCRINOLOGY");
 
-                ValueSet snomedVsBodyStructure = GetValueSet(TerminologyOperation.define_vs, "SCT-BODY-STRUCTURE", string.Empty, string.Empty, string.Empty, "[x]", -1, -1);
+                ValueSet snomedVsBodyStructure = GetValueSet(TerminologyOperation.define_vs, "SCT-BODY-STRUCTURE", string.Empty, string.Empty, string.Empty, "[x]", -1, -1, string.Empty);
                 try { GenerateCompositionNarrative(snomedVsBodyStructure); }
                 catch { }
                 csBundle.AddResourceEntry(snomedVsBodyStructure, ServerCapability.TERMINZ_CANONICAL + "/ValueSet/sct_body_structure/[x]");
             
-                ValueSet snomedVsClinicalFinding = GetValueSet(TerminologyOperation.define_vs, "SCT-CLINICAL-FINDING", string.Empty, string.Empty, string.Empty, "[x]", -1, -1);
+                ValueSet snomedVsClinicalFinding = GetValueSet(TerminologyOperation.define_vs, "SCT-CLINICAL-FINDING", string.Empty, string.Empty, string.Empty, "[x]", -1, -1, string.Empty);
                 try { GenerateCompositionNarrative(snomedVsClinicalFinding); }
                 catch { }
                 csBundle.AddResourceEntry(snomedVsClinicalFinding, ServerCapability.TERMINZ_CANONICAL + "/ValueSet/sct_clinical_finding/[x]");
             
-                ValueSet snomedVsObservableEntity = GetValueSet(TerminologyOperation.define_vs, "SCT-OBSERVABLE-ENTITY", string.Empty, string.Empty, string.Empty, "[x]", -1, -1);
+                ValueSet snomedVsObservableEntity = GetValueSet(TerminologyOperation.define_vs, "SCT-OBSERVABLE-ENTITY", string.Empty, string.Empty, string.Empty, "[x]", -1, -1, string.Empty);
                 try { GenerateCompositionNarrative(snomedVsObservableEntity); }
                 catch { }
                 csBundle.AddResourceEntry(snomedVsObservableEntity, ServerCapability.TERMINZ_CANONICAL + "/ValueSet/sct_observable_entity/[x]");
            
-                ValueSet snomedVsProduct = GetValueSet(TerminologyOperation.define_vs, "SCT-PHARMACEUTICAL", string.Empty, string.Empty, string.Empty, "[x]", -1, -1);
+                ValueSet snomedVsProduct = GetValueSet(TerminologyOperation.define_vs, "SCT-PHARMACEUTICAL", string.Empty, string.Empty, string.Empty, "[x]", -1, -1, string.Empty);
                 try { GenerateCompositionNarrative(snomedVsProduct); }
                 catch { }
                 csBundle.AddResourceEntry(snomedVsProduct, ServerCapability.TERMINZ_CANONICAL + "/ValueSet/sct_pharmaceutical/[x]");
             
-                ValueSet snomedVsProcedure = GetValueSet(TerminologyOperation.define_vs, "SCT-PROCEDURE", string.Empty, string.Empty, string.Empty, "[x]", -1, -1);
+                ValueSet snomedVsProcedure = GetValueSet(TerminologyOperation.define_vs, "SCT-PROCEDURE", string.Empty, string.Empty, string.Empty, "[x]", -1, -1, string.Empty);
                 try { GenerateCompositionNarrative(snomedVsProcedure); }
                 catch { }
                 csBundle.AddResourceEntry(snomedVsProcedure, ServerCapability.TERMINZ_CANONICAL + "/ValueSet/sct_procedure/[x]");
            
-                ValueSet snomedVsSubstance = GetValueSet(TerminologyOperation.define_vs, "SCT-SUBSTANCE", string.Empty, string.Empty, string.Empty, "[x]", -1, -1);
+                ValueSet snomedVsSubstance = GetValueSet(TerminologyOperation.define_vs, "SCT-SUBSTANCE", string.Empty, string.Empty, string.Empty, "[x]", -1, -1, string.Empty);
                 try { GenerateCompositionNarrative(snomedVsSubstance); }
                 catch { }
                 csBundle.AddResourceEntry(snomedVsSubstance, ServerCapability.TERMINZ_CANONICAL + "/ValueSet/sct_substance/[x]");
@@ -257,7 +257,7 @@
 
             if (string.IsNullOrEmpty(nameFilter)) // implicit LOINC VS - no searching by name
             {
-                ValueSet loincImplicit = GetValueSet(TerminologyOperation.define_vs, string.Empty, string.Empty, FhirLoinc.URI, string.Empty, "[x]", -1, -1);
+                ValueSet loincImplicit = GetValueSet(TerminologyOperation.define_vs, string.Empty, string.Empty, FhirLoinc.URI, string.Empty, "[x]", -1, -1, string.Empty);
                 try { GenerateCompositionNarrative(loincImplicit); }
                 catch { }
                 csBundle.AddResourceEntry(loincImplicit, ServerCapability.TERMINZ_CANONICAL + "/ValueSet/loinc/[x]");
@@ -330,7 +330,7 @@
             // _filter - implemented as a case-insensitive 'contains' operation on display text <TODO> check this - not referring to summary
             string filter = Utilities.GetQueryValue("_filter", queryParam);
 
-            ValueSet valSet = GetValueSet(TerminologyOperation.define_vs, identifier, codeVal, codeSystem, versionVal, filter, offsetNo, countNo);
+            ValueSet valSet = GetValueSet(TerminologyOperation.define_vs, identifier, codeVal, codeSystem, versionVal, filter, offsetNo, countNo, string.Empty);
 
             try
             {
@@ -353,10 +353,17 @@
             string count = Utilities.GetQueryValue("count", queryParam);
             string languageVal = Utilities.GetQueryValue("displayLanguage", queryParam);
             string vsVersionVal = Utilities.GetQueryValue("valueSetVersion", queryParam);
+            string includeDesignations = Utilities.GetQueryValue("includeDesignations", queryParam);
+            string useContext = string.Empty;
 
             if (!string.IsNullOrEmpty(languageVal) && languageVal != "en-NZ")
             {
                 throw new Exception(UNSUPPORTED_DISPLAY_LANGUAGE);
+            }
+
+            if (includeDesignations.ToUpper() == "TRUE")
+            {
+                useContext = Utilities.GetQueryValue("designation", queryParam);
             }
 
             if (!int.TryParse(count, out countNo))
@@ -370,7 +377,7 @@
             }
 
             //TerminologyOperation.expand
-            ValueSet valSet = GetValueSet(TerminologyOperation.expand, identifier, string.Empty, string.Empty, vsVersionVal, filter, offsetNo, countNo);
+            ValueSet valSet = GetValueSet(TerminologyOperation.expand, identifier, string.Empty, string.Empty, vsVersionVal, filter, offsetNo, countNo, useContext);
 
             try
             {
@@ -419,7 +426,7 @@
             }
 
             // get a value set for requested code or display
-            ValueSet valSet = GetValueSet(TerminologyOperation.validate_code, identifier, codeVal, systemVal, versionVal, displayVal, offsetNo, countNo);
+            ValueSet valSet = GetValueSet(TerminologyOperation.validate_code, identifier, codeVal, systemVal, versionVal, displayVal, offsetNo, countNo, string.Empty);
 
             FhirBoolean validCode = new FhirBoolean(false);
             FhirString validDisplay = new FhirString();
@@ -487,7 +494,7 @@
 
         }
 
-        private static ValueSet GetValueSet(TerminologyOperation termOp, string identifier, string code, string codeSystem, string valueSetVersion, string filter, int offsetNo, int countNo)
+        private static ValueSet GetValueSet(TerminologyOperation termOp, string identifier, string code, string codeSystem, string valueSetVersion, string filter, int offsetNo, int countNo, string useContext)
         {
             // <TODO> need a factory method here
             string requestedVersion = valueSetVersion;
@@ -556,19 +563,19 @@
                 if (termOp == TerminologyOperation.define_vs)
                 {
                     string descrip = Utilities.StripSemanticTag(filter);
-                    FhirSnomed vs = new FhirSnomed(termOp, "SCT-CLINICAL-FINDING", code, descrip, string.Empty, offsetNo, countNo);
+                    FhirSnomed vs = new FhirSnomed(termOp, "SCT-CLINICAL-FINDING", code, descrip, string.Empty, offsetNo, countNo, useContext);
                     valSet = vs.valueSet;
                 }
                 else if (termOp == TerminologyOperation.expand || termOp == TerminologyOperation.validate_code)
                 {
                     if (!string.IsNullOrEmpty(codeSystem) && codeSystem != FhirSnomed.URI)
                     {
-                        FhirSnomed vs = new FhirSnomed(termOp, "0.0", code, filter, string.Empty, offsetNo, countNo);
+                        FhirSnomed vs = new FhirSnomed(termOp, "0.0", code, filter, string.Empty, offsetNo, countNo, useContext);
                         valSet = vs.valueSet;
                     }
                     else if (!string.IsNullOrEmpty(filter) || !string.IsNullOrEmpty(code))
                     {
-                        FhirSnomed vs = new FhirSnomed(termOp, "SCT-CLINICAL-FINDING", code, filter, string.Empty, offsetNo, countNo);
+                        FhirSnomed vs = new FhirSnomed(termOp, "SCT-CLINICAL-FINDING", code, filter, string.Empty, offsetNo, countNo, useContext);
                         valSet = vs.valueSet;
                     }
                     else
@@ -591,13 +598,13 @@
             else if (identifier.Contains("SCT-REFSET-NZ"))
             {
                 identifier = identifier.Replace(ServerCapability.TERMINZ_CANONICAL + "/ValueSet/", "");
-                FhirSnomed vs = new FhirSnomed(termOp, identifier, code, filter, valueSetVersion, offsetNo, countNo);
+                FhirSnomed vs = new FhirSnomed(termOp, identifier, code, filter, valueSetVersion, offsetNo, countNo, useContext);
                 valSet = vs.valueSet;
                 requestedVersion = string.Empty;  // used to pass Reference Set here
             }
             else if (identifier.StartsWith("SCT-"))
             {
-                FhirSnomed vs = new FhirSnomed(termOp, identifier, code, filter, string.Empty, offsetNo, countNo);
+                FhirSnomed vs = new FhirSnomed(termOp, identifier, code, filter, string.Empty, offsetNo, countNo, useContext);
                 valSet = vs.valueSet;
             }
             else if (identifier.StartsWith(FhirSnomed.URI) || codeSystem.StartsWith(FhirSnomed.URI))
@@ -647,7 +654,7 @@
                     codeSystemVersion = identifier.Replace("?fhir_vs", "");
                 }
 
-                FhirSnomed vs = new FhirSnomed(termOp, codeSystemVersion, code, filter, refsetID, offsetNo, countNo);
+                FhirSnomed vs = new FhirSnomed(termOp, codeSystemVersion, code, filter, refsetID, offsetNo, countNo, useContext);
                 valSet = vs.valueSet;
             }
             else if (identifier.StartsWith("http://loinc.org/vs") || codeSystem == FhirLoinc.URI)
@@ -777,6 +784,7 @@
             }
             return es;
         }
+
         internal static ValueSet AddExpansion(ValueSet valSet, ValueSet.ExpansionComponent es, int offsetNo, int countNo)
         {
             // add expansion

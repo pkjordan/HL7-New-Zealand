@@ -34,12 +34,12 @@
 
         public FhirSnomed()
         {
-            this.FillValues(TerminologyOperation.define_vs, string.Empty, string.Empty, string.Empty, string.Empty, -1, -1);
+            this.FillValues(TerminologyOperation.define_vs, string.Empty, string.Empty, string.Empty, string.Empty, -1, -1, string.Empty);
         }
 
-        public FhirSnomed(TerminologyOperation termOp, string version, string code, string filter, string refsetId, int offsetNo, int countNo)
+        public FhirSnomed(TerminologyOperation termOp, string version, string code, string filter, string refsetId, int offsetNo, int countNo, string useContext)
         {
-            this.FillValues(termOp, version, code, filter, refsetId, offsetNo, countNo);
+            this.FillValues(termOp, version, code, filter, refsetId, offsetNo, countNo, useContext);
         }
 
         internal static string GetNormalFormDisplay(string codeVal, bool fullDisplay)
@@ -111,7 +111,7 @@
             return retValue;
         }
 
-        private void FillValues(TerminologyOperation termOp, string version, string code, string filter, string refsetId, int offsetNo, int countNo)
+        private void FillValues(TerminologyOperation termOp, string version, string code, string filter, string refsetId, int offsetNo, int countNo, string useContext)
         {
 
             bool refset = !string.IsNullOrEmpty(refsetId);
@@ -382,6 +382,18 @@
                     }
                 }
 
+                // NZ patient-friendly terms
+                if (useContext == "281000210109" && codeVals.Count > 0)
+                {
+                    List<Coding> pfterms = SnomedCtSearch.GetNzEnPatientFriendlyTerms();
+                    pfterms.RemoveAll(x => !codeVals.Select(y => y.Code).Contains(x.Code));
+                    if (pfterms.Count > 0)
+                    {
+                        codeVals.RemoveAll(x => pfterms.Select(y => y.Code).Contains(x.Code));
+                        codeVals.InsertRange(0, pfterms);
+                    }
+                }
+
                 // filtering performed at DB Layer, so add all returned concepts
                 foreach (Coding codeVal in codeVals)
                 {
@@ -493,6 +505,7 @@
             bool retVal = (sctUrl == URI || sctUrl == CURRENT_VERSION || sctUrl == SHORT_VERSION);
             return retVal;
         }
+
         internal static TerminologyCapabilities.CodeSystemComponent GetCapabilities()
         {
             TerminologyCapabilities.CodeSystemComponent csc = new TerminologyCapabilities.CodeSystemComponent();
@@ -531,7 +544,7 @@
             vc.PropertyElement.Add(new Code("sufficientlyDefined"));
             vc.PropertyElement.Add(new Code("moduleId"));
             vc.PropertyElement.Add(new Code("normalForm"));
-            //vc.PropertyElement.Add(new Code("normalFormTerse"));
+            vc.PropertyElement.Add(new Code("normalFormTerse"));
             vc.PropertyElement.Add(new Code(FhirSnomed.SCT_ATTRIBUTE_CONCEPT));
 
             csc.Version.Add(vc);
