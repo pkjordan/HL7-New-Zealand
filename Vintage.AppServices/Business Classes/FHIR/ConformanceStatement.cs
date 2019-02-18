@@ -24,7 +24,7 @@
                 Description = new Markdown(TERMINZ_DESCRIPTION),
                 Name = "Patients First Terminology Server (Terminz)",
                 Publisher = "Patients First Ltd",
-                Date = "2019-01-13",
+                Date = "2019-02-17",
                 Version = "4.0.0",
                 FhirVersion = FHIRVersion.N4_0_0,
                 //Language = "en-NZ",  // review with next version of library - this needs to be a coded element!
@@ -32,7 +32,7 @@
                 //capabilityStatement.AcceptUnknown = CapabilityStatement.UnknownContentCode.Both;
                 Experimental = true,
                 Format = new string[] { "json", "xml" },
-                Software = new CapabilityStatement.SoftwareComponent { Name = "Health Intelligence Platform", Version = "6.6.1.0", ReleaseDate = "2019-01-13" },
+                Software = new CapabilityStatement.SoftwareComponent { Name = "Health Intelligence Platform", Version = "6.7.1.0", ReleaseDate = "2019-02-17" },
                 Kind = CapabilityStatementKind.Instance,
                 Implementation = new CapabilityStatement.ImplementationComponent { Description = TERMINZ_DESCRIPTION, Url = TERMINZ_CANONICAL }
             };

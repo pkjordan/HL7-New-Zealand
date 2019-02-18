@@ -262,12 +262,6 @@ namespace Vintage.AppServices.DataAccessClasses
 			return this.CreateMethodCallQuery<GetDescriptionsByTermResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), term);
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetPropertiesByLoincCode", IsComposable=true)]
-		public IQueryable<GetPropertiesByLoincCodeResult> GetPropertiesByLoincCode([global::System.Data.Linq.Mapping.ParameterAttribute(Name="LoincCode", DbType="Char(20)")] string loincCode)
-		{
-			return this.CreateMethodCallQuery<GetPropertiesByLoincCodeResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), loincCode);
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetNzEnPatientFriendlyTerms", IsComposable=true)]
 		public IQueryable<GetNzEnPatientFriendlyTermsResult> GetNzEnPatientFriendlyTerms()
 		{
@@ -286,10 +280,22 @@ namespace Vintage.AppServices.DataAccessClasses
 			return this.CreateMethodCallQuery<GetDescriptionByLoincPropertyResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), loincProperty, loincValue);
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetPropertiesByLoincCode", IsComposable=true)]
+		public IQueryable<GetPropertiesByLoincCodeResult> GetPropertiesByLoincCode([global::System.Data.Linq.Mapping.ParameterAttribute(Name="LoincCode", DbType="Char(20)")] string loincCode)
+		{
+			return this.CreateMethodCallQuery<GetPropertiesByLoincCodeResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), loincCode);
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetDescriptionsByLoincTerm", IsComposable=true)]
-		public IQueryable<GetDescriptionsByLoincTermResult> GetDescriptionsByLoincTerm([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Term", DbType="VarChar(255)")] string term)
+		public IQueryable<GetDescriptionsByLoincTermResult> GetDescriptionsByLoincTerm([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Term", DbType="NVarChar(4000)")] string term)
 		{
 			return this.CreateMethodCallQuery<GetDescriptionsByLoincTermResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), term);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetDescriptionByLoincPartCode", IsComposable=true)]
+		public IQueryable<GetDescriptionByLoincPartCodeResult> GetDescriptionByLoincPartCode([global::System.Data.Linq.Mapping.ParameterAttribute(Name="LoincPartCode", DbType="Char(10)")] string loincPartCode)
+		{
+			return this.CreateMethodCallQuery<GetDescriptionByLoincPartCodeResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), loincPartCode);
 		}
 	}
 	
@@ -1675,230 +1681,6 @@ namespace Vintage.AppServices.DataAccessClasses
 		}
 	}
 	
-	public partial class GetPropertiesByLoincCodeResult
-	{
-		
-		private string _id;
-		
-		private string _status;
-		
-		private string _component;
-		
-		private string _property;
-		
-		private string _time_aspct;
-		
-		private string _system;
-		
-		private string _scale_typ;
-		
-		private string _method_typ;
-		
-		private string _class;
-		
-		private System.Nullable<int> _classtype;
-		
-		private string _order_obs;
-		
-		private string _consumer_name;
-		
-		public GetPropertiesByLoincCodeResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Char(10) NOT NULL", CanBeNull=false)]
-		public string id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this._id = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="Char(20)")]
-		public string status
-		{
-			get
-			{
-				return this._status;
-			}
-			set
-			{
-				if ((this._status != value))
-				{
-					this._status = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_component", DbType="NVarChar(255)")]
-		public string component
-		{
-			get
-			{
-				return this._component;
-			}
-			set
-			{
-				if ((this._component != value))
-				{
-					this._component = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_property", DbType="NVarChar(30)")]
-		public string property
-		{
-			get
-			{
-				return this._property;
-			}
-			set
-			{
-				if ((this._property != value))
-				{
-					this._property = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_time_aspct", DbType="NVarChar(15)")]
-		public string time_aspct
-		{
-			get
-			{
-				return this._time_aspct;
-			}
-			set
-			{
-				if ((this._time_aspct != value))
-				{
-					this._time_aspct = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_system", DbType="NVarChar(100)")]
-		public string system
-		{
-			get
-			{
-				return this._system;
-			}
-			set
-			{
-				if ((this._system != value))
-				{
-					this._system = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_scale_typ", DbType="NVarChar(30)")]
-		public string scale_typ
-		{
-			get
-			{
-				return this._scale_typ;
-			}
-			set
-			{
-				if ((this._scale_typ != value))
-				{
-					this._scale_typ = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_method_typ", DbType="NVarChar(50)")]
-		public string method_typ
-		{
-			get
-			{
-				return this._method_typ;
-			}
-			set
-			{
-				if ((this._method_typ != value))
-				{
-					this._method_typ = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="class", Storage="_class", DbType="NVarChar(20)")]
-		public string @class
-		{
-			get
-			{
-				return this._class;
-			}
-			set
-			{
-				if ((this._class != value))
-				{
-					this._class = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_classtype", DbType="Int")]
-		public System.Nullable<int> classtype
-		{
-			get
-			{
-				return this._classtype;
-			}
-			set
-			{
-				if ((this._classtype != value))
-				{
-					this._classtype = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_order_obs", DbType="NVarChar(15)")]
-		public string order_obs
-		{
-			get
-			{
-				return this._order_obs;
-			}
-			set
-			{
-				if ((this._order_obs != value))
-				{
-					this._order_obs = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_consumer_name", DbType="NVarChar(255)")]
-		public string consumer_name
-		{
-			get
-			{
-				return this._consumer_name;
-			}
-			set
-			{
-				if ((this._consumer_name != value))
-				{
-					this._consumer_name = value;
-				}
-			}
-		}
-	}
-	
 	public partial class GetNzEnPatientFriendlyTermsResult
 	{
 		
@@ -2139,6 +1921,230 @@ namespace Vintage.AppServices.DataAccessClasses
 		}
 	}
 	
+	public partial class GetPropertiesByLoincCodeResult
+	{
+		
+		private string _id;
+		
+		private string _status;
+		
+		private string _component;
+		
+		private string _property;
+		
+		private string _time_aspct;
+		
+		private string _system;
+		
+		private string _scale_typ;
+		
+		private string _method_typ;
+		
+		private string _class;
+		
+		private System.Nullable<int> _classtype;
+		
+		private string _order_obs;
+		
+		private string _consumer_name;
+		
+		public GetPropertiesByLoincCodeResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Char(10) NOT NULL", CanBeNull=false)]
+		public string id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="Char(20)")]
+		public string status
+		{
+			get
+			{
+				return this._status;
+			}
+			set
+			{
+				if ((this._status != value))
+				{
+					this._status = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_component", DbType="NVarChar(255)")]
+		public string component
+		{
+			get
+			{
+				return this._component;
+			}
+			set
+			{
+				if ((this._component != value))
+				{
+					this._component = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_property", DbType="NVarChar(30)")]
+		public string property
+		{
+			get
+			{
+				return this._property;
+			}
+			set
+			{
+				if ((this._property != value))
+				{
+					this._property = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_time_aspct", DbType="NVarChar(15)")]
+		public string time_aspct
+		{
+			get
+			{
+				return this._time_aspct;
+			}
+			set
+			{
+				if ((this._time_aspct != value))
+				{
+					this._time_aspct = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_system", DbType="NVarChar(100)")]
+		public string system
+		{
+			get
+			{
+				return this._system;
+			}
+			set
+			{
+				if ((this._system != value))
+				{
+					this._system = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_scale_typ", DbType="NVarChar(30)")]
+		public string scale_typ
+		{
+			get
+			{
+				return this._scale_typ;
+			}
+			set
+			{
+				if ((this._scale_typ != value))
+				{
+					this._scale_typ = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_method_typ", DbType="NVarChar(50)")]
+		public string method_typ
+		{
+			get
+			{
+				return this._method_typ;
+			}
+			set
+			{
+				if ((this._method_typ != value))
+				{
+					this._method_typ = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="class", Storage="_class", DbType="NVarChar(20)")]
+		public string @class
+		{
+			get
+			{
+				return this._class;
+			}
+			set
+			{
+				if ((this._class != value))
+				{
+					this._class = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_classtype", DbType="Int")]
+		public System.Nullable<int> classtype
+		{
+			get
+			{
+				return this._classtype;
+			}
+			set
+			{
+				if ((this._classtype != value))
+				{
+					this._classtype = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_order_obs", DbType="NVarChar(15)")]
+		public string order_obs
+		{
+			get
+			{
+				return this._order_obs;
+			}
+			set
+			{
+				if ((this._order_obs != value))
+				{
+					this._order_obs = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_consumer_name", DbType="NVarChar(255)")]
+		public string consumer_name
+		{
+			get
+			{
+				return this._consumer_name;
+			}
+			set
+			{
+				if ((this._consumer_name != value))
+				{
+					this._consumer_name = value;
+				}
+			}
+		}
+	}
+	
 	public partial class GetDescriptionsByLoincTermResult
 	{
 		
@@ -2214,6 +2220,104 @@ namespace Vintage.AppServices.DataAccessClasses
 				if ((this._consumer_name != value))
 				{
 					this._consumer_name = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GetDescriptionByLoincPartCodeResult
+	{
+		
+		private string _PartNumber;
+		
+		private string _PartTypeName;
+		
+		private string _PartName;
+		
+		private string _PartDisplayName;
+		
+		private string _Status;
+		
+		public GetDescriptionByLoincPartCodeResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartNumber", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string PartNumber
+		{
+			get
+			{
+				return this._PartNumber;
+			}
+			set
+			{
+				if ((this._PartNumber != value))
+				{
+					this._PartNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartTypeName", DbType="VarChar(50)")]
+		public string PartTypeName
+		{
+			get
+			{
+				return this._PartTypeName;
+			}
+			set
+			{
+				if ((this._PartTypeName != value))
+				{
+					this._PartTypeName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartName", DbType="NVarChar(1024)")]
+		public string PartName
+		{
+			get
+			{
+				return this._PartName;
+			}
+			set
+			{
+				if ((this._PartName != value))
+				{
+					this._PartName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartDisplayName", DbType="NVarChar(1024)")]
+		public string PartDisplayName
+		{
+			get
+			{
+				return this._PartDisplayName;
+			}
+			set
+			{
+				if ((this._PartDisplayName != value))
+				{
+					this._PartDisplayName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="VarChar(10)")]
+		public string Status
+		{
+			get
+			{
+				return this._Status;
+			}
+			set
+			{
+				if ((this._Status != value))
+				{
+					this._Status = value;
 				}
 			}
 		}

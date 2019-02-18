@@ -12,7 +12,7 @@
         validate_code,
         lookup,
         subsumes,
-        compose,
+        find_matches,
         translate,
         closure,
         define_vs,

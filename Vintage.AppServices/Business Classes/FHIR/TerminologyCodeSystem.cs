@@ -128,6 +128,10 @@
                 {
                     return OperationOutcome.ForMessage("No Exact Matches.", OperationOutcome.IssueType.BusinessRule, OperationOutcome.IssueSeverity.Error);
                 }
+                else if (ex.Message == FhirLoinc.UNSUPPORTED_ANSWER_CODE)
+                {
+                    return OperationOutcome.ForMessage("LOINC Answer Codes Not Supported.", OperationOutcome.IssueType.NotFound, OperationOutcome.IssueSeverity.Error);
+                }
                 throw;
             }
 
@@ -225,7 +229,7 @@
             }
             else if (identifier == "LOINC" || systemURL == FhirLoinc.URI)
             {
-                FhirLoinc loinc = new FhirLoinc(TerminologyOperation.define_cs, versionVal, codeVal, string.Empty, string.Empty, -1, -1);
+                FhirLoinc loinc = new FhirLoinc(TerminologyOperation.define_cs, versionVal, codeVal, string.Empty, string.Empty, -1, -1, string.Empty);
                 codeSys = loinc.codeSystem;
             }
             else if (identifier == "SNOMEDCT" || systemURL == FhirSnomed.URI)
@@ -315,7 +319,7 @@
             }
             else if (systemURL == FhirLoinc.URI)
             {
-                FhirLoinc loinc = new FhirLoinc(termOp, versionVal, codeVal, string.Empty, string.Empty, -1, -1);
+                FhirLoinc loinc = new FhirLoinc(termOp, versionVal, codeVal, string.Empty, string.Empty, -1, -1, string.Empty);
                 codeSys = loinc.codeSystem;
             }
             else if (FhirSnomed.IsValidURI(systemURL))
@@ -430,7 +434,7 @@
             {
                 if (!string.IsNullOrEmpty(propertyVal))
                 {
-                    loincPropertyVals = LoincSearch.GetPropertiesByCode(codeVal);
+                    loincPropertyVals = LoincSearch.GetPropertiesByCode(codeVal, propertyVal.ToUpper());
                 }
             }
 

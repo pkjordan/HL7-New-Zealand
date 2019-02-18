@@ -264,23 +264,6 @@
       <Column Name="Rank" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.GetPropertiesByLoincCode" Method="GetPropertiesByLoincCode" IsComposable="true">
-    <Parameter Name="LoincCode" Parameter="loincCode" Type="System.String" DbType="Char(20)" />
-    <ElementType Name="GetPropertiesByLoincCodeResult">
-      <Column Name="id" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
-      <Column Name="status" Type="System.String" DbType="Char(20)" CanBeNull="true" />
-      <Column Name="component" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="property" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="time_aspct" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
-      <Column Name="system" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="scale_typ" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="method_typ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="class" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="classtype" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="order_obs" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
-      <Column Name="consumer_name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.GetNzEnPatientFriendlyTerms" Method="GetNzEnPatientFriendlyTerms" IsComposable="true">
     <ElementType Name="GetNzEnPatientFriendlyTermsResult">
       <Column Name="conceptId" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
@@ -308,13 +291,40 @@
       <Column Name="consumer_name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.GetPropertiesByLoincCode" Method="GetPropertiesByLoincCode" IsComposable="true">
+    <Parameter Name="LoincCode" Parameter="loincCode" Type="System.String" DbType="Char(20)" />
+    <ElementType Name="GetPropertiesByLoincCodeResult">
+      <Column Name="id" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Column Name="component" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="property" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="time_aspct" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="system" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="scale_typ" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="method_typ" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="class" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="classtype" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="order_obs" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="consumer_name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
   <Function Name="dbo.GetDescriptionsByLoincTerm" Method="GetDescriptionsByLoincTerm" IsComposable="true">
-    <Parameter Name="Term" Parameter="term" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="Term" Parameter="term" Type="System.String" DbType="NVarChar(4000)" />
     <ElementType Name="GetDescriptionsByLoincTermResult">
       <Column Name="id" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
       <Column Name="long_common_name" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
       <Column Name="status" Type="System.String" DbType="Char(20)" CanBeNull="true" />
       <Column Name="consumer_name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetDescriptionByLoincPartCode" Method="GetDescriptionByLoincPartCode" IsComposable="true">
+    <Parameter Name="LoincPartCode" Parameter="loincPartCode" Type="System.String" DbType="Char(10)" />
+    <ElementType Name="GetDescriptionByLoincPartCodeResult">
+      <Column Name="PartNumber" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="PartTypeName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PartName" Type="System.String" DbType="NVarChar(1024)" CanBeNull="true" />
+      <Column Name="PartDisplayName" Type="System.String" DbType="NVarChar(1024)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

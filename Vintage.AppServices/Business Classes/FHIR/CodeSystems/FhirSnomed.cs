@@ -20,14 +20,15 @@
         public const string NAME = "SNOMED Clinical Terms: New Zealand Edition";
         public const string DESCRIPTION = "Systematized Nomenclature of Medicine -- Clinical Terms";
         public const string URI = "http://snomed.info/sct";
-        //"SNOMED CT NZ Beta Edition : Nov 01, 2018 Version"
-        public const string CURRENT_VERSION = "http://snomed.info/sct/21000210109/version/20181101";
-        public const string SHORT_VERSION = "http://snomed.info/sct/version/20181101";
-        //public const string CURRENT_VERSION = "http://snomed.info/sct/900000000000207008/version/20180131";
+        //"SNOMED CT NZ Beta Edition : Feb 01, 2019 Version"
+        public const string CURRENT_VERSION = "http://snomed.info/sct/21000210109/version/20190201";
+        public const string SHORT_VERSION = "http://snomed.info/sct/version/201990201";
+        //public const string CURRENT_VERSION = "http://snomed.info/sct/900000000000207008/version/20190131";
         public const string SCT_ROOT_CONCEPT = "138875005";
         public const string SCT_ROOT_DESCRIPTION = "SNOMED CT Concept (SNOMED RT+CTV3)";
         public const string SCT_ATTRIBUTE_CONCEPT = "246061005";
         public const string SCT_NZ_EDITION_REFSETS = "NZ_EDITION_ALL";
+        public const string NZ_PATIENT_FRIENDLY_TERMS = "281000210109";
 
         public CodeSystem codeSystem { get; set; }
         public ValueSet valueSet { get; set; }
@@ -383,7 +384,7 @@
                 }
 
                 // NZ patient-friendly terms
-                if (useContext == "281000210109" && codeVals.Count > 0)
+                if (useContext == NZ_PATIENT_FRIENDLY_TERMS && codeVals.Count > 0)
                 {
                     List<Coding> pfterms = SnomedCtSearch.GetNzEnPatientFriendlyTerms();
                     pfterms.RemoveAll(x => !codeVals.Select(y => y.Code).Contains(x.Code));
@@ -585,7 +586,19 @@
             else if (refSetName == "SCT-REFSET-NZ-MICROORGANISM") { refSetId = "391000210104"; }
 
             else if (refSetName == "SCT-REFSET-NZ-ENDOCRINOLOGY") { refSetId = "141000210106"; }
+            
+            else if (refSetName == "SCT-REFSET-NZ-CHILD-DEVELOPMENTAL-SERVCES") { refSetId = "191000210102"; }
 
+            else if (refSetName == "SCT-REFSET-NZ-CLINICAL-SPECIALTY") { refSetId = "471000210108"; }
+
+            else if (refSetName == "SCT-REFSET-NZ-GENERAL-PAEDIATRIC") { refSetId = "181000210104"; }
+
+            else if (refSetName == "SCT-REFSET-NZ-GENERAL-SURGERY") { refSetId = "131000210103"; }
+
+            else if (refSetName == "SCT-REFSET-NZ-HEALTH-OCCUPATION") { refSetId = "451000210100"; }
+
+            else if (refSetName == "SCT-REFSET-NZ-HEALTH-SERVICE") { refSetId = "461000210102"; }
+            
             return refSetId;
         }
     }

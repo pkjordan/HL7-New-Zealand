@@ -28,6 +28,7 @@
         internal const string UNSUPPORTED_FILTER = "UNSUPPORTED FILTER";
         internal const string UNSUPPORTED_DISPLAY_LANGUAGE = "UNSUPPORTED DISPLAY LANGUAGE_PARAMETER";
         internal const string UNSUPPORTED_VERSION = "UNSUPPORTED VERSION";
+        
 
         // entry method - handles all exceptions (converts to outcome operations)
         public static Resource PerformOperation(string id, string operation, NameValueCollection queryParam)
@@ -116,6 +117,10 @@
                 else if (ex.Message == UNSUPPORTED_FILTER)
                 {
                     return OperationOutcome.ForMessage("Property Filter Not Supported.", OperationOutcome.IssueType.NotFound, OperationOutcome.IssueSeverity.Error);
+                }
+                else if (ex.Message == FhirLoinc.UNSUPPORTED_ANSWER_CODE)
+                {
+                    return OperationOutcome.ForMessage("LOINC Answer Codes Not Supported.", OperationOutcome.IssueType.NotFound, OperationOutcome.IssueSeverity.Error);
                 }
                 else if (ex.Message == UNSUPPORTED_DISPLAY_LANGUAGE)
                 {
@@ -223,6 +228,36 @@
                 try { GenerateCompositionNarrative(nzRefSet14); }
                 catch { }
                 csBundle.AddResourceEntry(nzRefSet14, ServerCapability.TERMINZ_CANONICAL + "/ValueSet/SCT-REFSET-NZ-ENDOCRINOLOGY");
+
+                ValueSet nzRefSet15 = GetValueSet(TerminologyOperation.define_vs, "SCT-REFSET-NZ-CHILD-DEVELOPMENTAL-SERVCES", string.Empty, string.Empty, "191000210102", string.Empty, -1, -1, string.Empty);
+                try { GenerateCompositionNarrative(nzRefSet15); }
+                catch { }
+                csBundle.AddResourceEntry(nzRefSet15, ServerCapability.TERMINZ_CANONICAL + "/ValueSet/SCT-REFSET-NZ-CHILD-DEVELOPMENTAL-SERVCES");
+
+                ValueSet nzRefSet16 = GetValueSet(TerminologyOperation.define_vs, "SCT-REFSET-NZ-CLINICAL-SPECIALTY", string.Empty, string.Empty, "471000210108", string.Empty, -1, -1, string.Empty);
+                try { GenerateCompositionNarrative(nzRefSet16); }
+                catch { }
+                csBundle.AddResourceEntry(nzRefSet16, ServerCapability.TERMINZ_CANONICAL + "/ValueSet/SCT-REFSET-NZ-CLINICAL-SPECIALTY");
+
+                ValueSet nzRefSet17 = GetValueSet(TerminologyOperation.define_vs, "SCT-REFSET-NZ-GENERAL-PAEDIATRIC", string.Empty, string.Empty, "181000210104", string.Empty, -1, -1, string.Empty);
+                try { GenerateCompositionNarrative(nzRefSet17); }
+                catch { }
+                csBundle.AddResourceEntry(nzRefSet17, ServerCapability.TERMINZ_CANONICAL + "/ValueSet/SCT-REFSET-NZ-GENERAL-PAEDIATRIC");
+
+                ValueSet nzRefSet18 = GetValueSet(TerminologyOperation.define_vs, "SCT-REFSET-NZ-GENERAL-SURGERY", string.Empty, string.Empty, "131000210103", string.Empty, -1, -1, string.Empty);
+                try { GenerateCompositionNarrative(nzRefSet18); }
+                catch { }
+                csBundle.AddResourceEntry(nzRefSet18, ServerCapability.TERMINZ_CANONICAL + "/ValueSet/SCT-REFSET-NZ-GENERAL-SURGERY");
+
+                ValueSet nzRefSet19 = GetValueSet(TerminologyOperation.define_vs, "SCT-REFSET-NZ-HEALTH-OCCUPATION", string.Empty, string.Empty, "451000210100", string.Empty, -1, -1, string.Empty);
+                try { GenerateCompositionNarrative(nzRefSet19); }
+                catch { }
+                csBundle.AddResourceEntry(nzRefSet19, ServerCapability.TERMINZ_CANONICAL + "/ValueSet/SCT-REFSET-NZ-HEALTH-OCCUPATION");
+
+                ValueSet nzRefSet20 = GetValueSet(TerminologyOperation.define_vs, "SCT-REFSET-NZ-HEALTH-SERVICE", string.Empty, string.Empty, "461000210102", string.Empty, -1, -1, string.Empty);
+                try { GenerateCompositionNarrative(nzRefSet20); }
+                catch { }
+                csBundle.AddResourceEntry(nzRefSet20, ServerCapability.TERMINZ_CANONICAL + "/ValueSet/SCT-REFSET-NZ-HEALTH-SERVICE");
 
                 ValueSet snomedVsBodyStructure = GetValueSet(TerminologyOperation.define_vs, "SCT-BODY-STRUCTURE", string.Empty, string.Empty, string.Empty, "[x]", -1, -1, string.Empty);
                 try { GenerateCompositionNarrative(snomedVsBodyStructure); }
@@ -659,7 +694,7 @@
             }
             else if (identifier.StartsWith("http://loinc.org/vs") || codeSystem == FhirLoinc.URI)
             {
-                FhirLoinc vs = new FhirLoinc(termOp, valueSetVersion, code, filter, identifier, offsetNo, countNo);
+                FhirLoinc vs = new FhirLoinc(termOp, valueSetVersion, code, filter, identifier, offsetNo, countNo, useContext);
                 valSet = vs.valueSet;
             }
             else if (identifier == "NzEthnicityL1" || identifier == ServerCapability.TERMINZ_CANONICAL + "/ValueSet/NzEthnicityL1" || codeSystem == NzEthnicityL1.URI)

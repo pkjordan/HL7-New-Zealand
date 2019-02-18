@@ -17,22 +17,29 @@
         public const string DESCRIPTION = "Logical Observation Identifiers Names and Codes";
         public const string URI = "http://loinc.org";
         public const string CURRENT_VERSION = "2.65";
+        public const string UNSUPPORTED_ANSWER_CODE = "UNSUPPORTED ANSWER CODE";
 
         public CodeSystem codeSystem { get; set; }
         public ValueSet valueSet { get; set; }
 
         public FhirLoinc()
         {
-            this.FillValues(TerminologyOperation.define_vs, string.Empty, string.Empty, string.Empty, string.Empty, -1, -1);
+            this.FillValues(TerminologyOperation.define_vs, string.Empty, string.Empty, string.Empty, string.Empty, -1, -1, string.Empty);
         }
 
-        public FhirLoinc(TerminologyOperation termOp, string version, string code, string filter, string identifier, int offsetNo, int countNo)
+        public FhirLoinc(TerminologyOperation termOp, string version, string code, string filter, string identifier, int offsetNo, int countNo, string useContext)
         {
-            this.FillValues(termOp, version, code, filter, identifier, offsetNo, countNo);
+            this.FillValues(termOp, version, code, filter, identifier, offsetNo, countNo, useContext);
         }
 
-        private void FillValues(TerminologyOperation termOp, string version, string code, string filter, string identifier, int offsetNo, int countNo)
+        private void FillValues(TerminologyOperation termOp, string version, string code, string filter, string identifier, int offsetNo, int countNo, string useContext)
         {
+
+            //if(!string.IsNullOrEmpty(code) && char.IsLetter(code[0]))
+            if (!string.IsNullOrEmpty(code) && code.StartsWith("LA"))
+            {
+                throw new Exception(UNSUPPORTED_ANSWER_CODE);
+            }
 
             // determine if filter contains a LOINC property-related query
             string loincProperty = string.Empty;
@@ -195,9 +202,13 @@
                         //{
                         //    throw new Exception(TerminologyValueSet.INVALID_CODE);
                         //}
-                        if (termOp == TerminologyOperation.compose)
+                        if (termOp == TerminologyOperation.find_matches)
                         {
-                            codeVals = LoincSearch.GetPropertiesByCode(code);
+                            codeVals = LoincSearch.GetPropertiesByCode(code,"ALL");
+                        }
+                        else if (code.StartsWith("LP"))
+                        {
+                            codeVals = LoincSearch.GetConceptByPartCode(code);
                         }
                         else
                         {
@@ -226,6 +237,10 @@
                 // filtering performed at DB Layer, so add all returned concepts
                 foreach (Coding codeVal in codeVals)
                 {
+                    if (useContext == "CONSUMER_NAME" && !string.IsNullOrEmpty(codeVal.System))
+                    {
+                        codeVal.Display = codeVal.Version;
+                    }
                     cs.Concept.Add(new ValueSet.ConceptReferenceComponent { Code = codeVal.Code, Display = codeVal.Display });
                     es.Contains.Add(new ValueSet.ContainsComponent { Code = codeVal.Code, Display = codeVal.Display, System = cs.System });
                     this.codeSystem.Concept.Add(new CodeSystem.ConceptDefinitionComponent { Code = codeVal.Code, Display = codeVal.Display });
