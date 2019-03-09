@@ -19,7 +19,7 @@
                 Publisher = "Patients First Ltd",
                 Version = "4.0.0",
                 Status = PublicationStatus.Draft,
-                Date = "2019-02-17",
+                Date = "2019-03-10",
                 Experimental = true,
                 Copyright = new Markdown("© 2019+ Patients First Ltd"),
                 LockedDate = false
@@ -95,19 +95,19 @@
                     new XElement(ns + "th", "Version")
                     ),
                     new XElement(ns + "tr",
-                    new XElement(ns + "td", FhirSnomed.NAME),
+                    new XElement(ns + "td", FhirSnomed.TITLE),
                     new XElement(ns + "td", FhirSnomed.DESCRIPTION),
                     new XElement(ns + "td", FhirSnomed.URI),
                     new XElement(ns + "td", FhirSnomed.CURRENT_VERSION)
                     ),
                     new XElement(ns + "tr",
-                    new XElement(ns + "td", FhirLoinc.NAME),
+                    new XElement(ns + "td", FhirLoinc.TITLE),
                     new XElement(ns + "td", FhirLoinc.DESCRIPTION),
                     new XElement(ns + "td", FhirLoinc.URI),
                     new XElement(ns + "td", FhirLoinc.CURRENT_VERSION)
                     ),
                     new XElement(ns + "tr",
-                    new XElement(ns + "td", NzMt.NAME),
+                    new XElement(ns + "td", NzMt.TITLE),
                     new XElement(ns + "td", NzMt.DESCRIPTION),
                     new XElement(ns + "td", NzMt.URI),
                     new XElement(ns + "td", NzMt.CURRENT_VERSION)

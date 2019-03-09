@@ -13,11 +13,11 @@
     public class FhirLoinc
     {
 
-        public const string NAME = "LOINC";
+        public const string TITLE = "LOINC";
         public const string DESCRIPTION = "Logical Observation Identifiers Names and Codes";
         public const string URI = "http://loinc.org";
         public const string CURRENT_VERSION = "2.65";
-        public const string UNSUPPORTED_ANSWER_CODE = "UNSUPPORTED ANSWER CODE";
+        public const string UNSUPPORTED_ANSWER_LIST = "UNSUPPORTED ANSWER LIST";
 
         public CodeSystem codeSystem { get; set; }
         public ValueSet valueSet { get; set; }
@@ -36,9 +36,9 @@
         {
 
             //if(!string.IsNullOrEmpty(code) && char.IsLetter(code[0]))
-            if (!string.IsNullOrEmpty(code) && code.StartsWith("LA"))
+            if (!string.IsNullOrEmpty(code) && code.StartsWith("LL"))
             {
-                throw new Exception(UNSUPPORTED_ANSWER_CODE);
+                throw new Exception(UNSUPPORTED_ANSWER_LIST);
             }
 
             // determine if filter contains a LOINC property-related query
@@ -110,13 +110,13 @@
             //}
 
             string description = "All LOINC Codes Filtered By: " + filter;
-            string name = "LOINC";
+            string title = "LOINC";
             string idSuffix = filter.Replace(" ", "_");
 
             if (!string.IsNullOrEmpty(loincProperty) && !string.IsNullOrEmpty(loincValue))
             {
                 description = "LOINC codes where " + loincProperty + " = " + loincValue;
-                name = "LOINC Codes: " + loincProperty + "=" + loincValue;
+                title = "LOINC Codes: " + loincProperty + "=" + loincValue;
                 idSuffix = loincValue.Replace(" ", "_");
             }
 
@@ -144,9 +144,13 @@
             this.codeSystem.Url = FhirLoinc.URI;
 
             this.codeSystem.ValueSet = "http://loinc.org/vs";
-            
-            this.valueSet.Name = name;
-            this.codeSystem.Name = FhirLoinc.NAME;
+
+            this.valueSet.Title = title;
+            this.codeSystem.Title = FhirLoinc.TITLE;
+
+            this.valueSet.Name = this.valueSet.Id;
+            this.codeSystem.Name = this.codeSystem.Id;
+
 
             this.valueSet.Description = new Markdown(description);
             this.codeSystem.Description = new Markdown(FhirLoinc.DESCRIPTION);
@@ -209,6 +213,10 @@
                         else if (code.StartsWith("LP"))
                         {
                             codeVals = LoincSearch.GetConceptByPartCode(code);
+                        }
+                        else if (code.StartsWith("LA"))
+                        {
+                            codeVals = LoincSearch.GetConceptByAnswerStringId(code);
                         }
                         else
                         {

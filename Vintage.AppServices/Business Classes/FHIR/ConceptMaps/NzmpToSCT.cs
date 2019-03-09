@@ -32,8 +32,9 @@
 
             this.conceptMap.Id = "NZMP_SCT";
             this.conceptMap.Url = ServerCapability.TERMINZ_CANONICAL + "/ConceptMap/NzMp_Sct";
-          
-            this.conceptMap.Name = "NZMT medicinal product to SNOMED CT map";
+
+            this.conceptMap.Name = this.conceptMap.Id;
+            this.conceptMap.Title = "NZMT medicinal product to SNOMED CT map";
             this.conceptMap.Description = new Markdown("A mapping between NZMT Medicinal Products and SNOMED CT, published by NZMT in May 2018.");
             this.conceptMap.Version = "20180501";
             this.conceptMap.Status = PublicationStatus.Draft;

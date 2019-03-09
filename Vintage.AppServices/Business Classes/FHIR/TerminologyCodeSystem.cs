@@ -128,9 +128,9 @@
                 {
                     return OperationOutcome.ForMessage("No Exact Matches.", OperationOutcome.IssueType.BusinessRule, OperationOutcome.IssueSeverity.Error);
                 }
-                else if (ex.Message == FhirLoinc.UNSUPPORTED_ANSWER_CODE)
+                else if (ex.Message == FhirLoinc.UNSUPPORTED_ANSWER_LIST)
                 {
-                    return OperationOutcome.ForMessage("LOINC Answer Codes Not Supported.", OperationOutcome.IssueType.NotFound, OperationOutcome.IssueSeverity.Error);
+                    return OperationOutcome.ForMessage("LOINC Answer List IDs refer to Value Sets.", OperationOutcome.IssueType.NotSupported, OperationOutcome.IssueSeverity.Error);
                 }
                 throw;
             }
@@ -915,7 +915,7 @@
             XNamespace ns = "http://www.w3.org/1999/xhtml";
 
             var summary = new XElement(ns + "div",
-                new XElement(ns + "h2", codeSys.Name),
+                new XElement(ns + "h2", codeSys.Title),
                 new XElement(ns + "p", codeSys.Description),
                 new XElement(ns + "table",
                     new XElement(ns + "tr",
@@ -966,6 +966,9 @@
             codeSys.Text = new Narrative();
             codeSys.Text.Status = Narrative.NarrativeStatus.Generated;
             codeSys.Text.Div = summary.ToString();
+
+            // format Name property correctly
+            codeSys.Name = codeSys.Name.First().ToString().ToUpper() + codeSys.Name.Substring(1).Replace('-', '_');
 
             return codeSys;
         }

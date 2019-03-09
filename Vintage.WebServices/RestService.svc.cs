@@ -137,12 +137,11 @@
             else
             {
                 fhirResource = OperationOutcome.ForMessage("No module could be found to handle the request '" + fhirResource.ResourceType.ToString() + "'", OperationOutcome.IssueType.NotFound);
-            }
-
-            rv = SerializeResponse(fhirResource, responseType, SummaryType.False);
+            }       
 
             if (fhirResource.ResourceType == ResourceType.OperationOutcome)
             {
+                AddNarrativeToOperationOutcome(fhirResource);
                 OutgoingWebResponseContext response = WebOperationContext.Current.OutgoingResponse;
                 response.StatusCode = HttpStatusCode.BadRequest;
                 // if wish for more granular response codes, need Issue Type
@@ -151,6 +150,7 @@
             }
 
             // convert to stream to remove leading XML elements and json quotes
+            rv = SerializeResponse(fhirResource, responseType, SummaryType.False);
             return new System.IO.MemoryStream(UTF8Encoding.Default.GetBytes(rv));
 
         }
@@ -274,18 +274,17 @@
                 {
                     st = SummaryType.True;
                 }
-            }
-
-            rv = SerializeResponse(fhirResource, responseType, st);
+            }  
 
             if (fhirResource.ResourceType == ResourceType.OperationOutcome)
             {
+                AddNarrativeToOperationOutcome(fhirResource);
                 OutgoingWebResponseContext response = WebOperationContext.Current.OutgoingResponse;
                 response.StatusCode = HttpStatusCode.BadRequest;
             }
 
             // convert to stream to remove leading XML elements and json quotes
-
+            rv = SerializeResponse(fhirResource, responseType, st);
             return new System.IO.MemoryStream(UTF8Encoding.UTF8.GetBytes(rv));
         }
 
@@ -657,6 +656,25 @@
             catch { }
             
             return fhirVersion;
+        }
+
+        private Resource AddNarrativeToOperationOutcome(Resource fhirResource)
+        {
+            try
+            {
+                OperationOutcome opOutcome = (OperationOutcome)fhirResource;
+                XNamespace ns = "http://www.w3.org/1999/xhtml";
+                var narrative = new XElement(ns + "div", new XElement(ns + "p", opOutcome.Issue[0].DiagnosticsElement));
+                opOutcome.Text = new Narrative
+                {
+                    Status = Narrative.NarrativeStatus.Generated,
+                    Div = narrative.ToString()
+                };
+                fhirResource = opOutcome;
+            }
+            catch { }
+
+            return fhirResource;
         }
 
         private void SetQueryParameters(Parameters param)

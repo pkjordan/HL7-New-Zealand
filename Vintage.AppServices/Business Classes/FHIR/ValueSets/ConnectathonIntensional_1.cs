@@ -30,7 +30,8 @@
             this.valueSet.Id = "intensional-case-1";
             this.valueSet.Url = "http://www.healthintersections.com.au/fhir/ValueSet/intensional-case-1";
             this.valueSet.Identifier.Add(new Identifier { Value = this.valueSet.Id });
-            this.valueSet.Name = "Terminology Services FHIR Connectathon #20: Intensional case #1";
+            this.valueSet.Name = this.valueSet.Id;
+            this.valueSet.Title = "Terminology Services FHIR Connectathon #20: Intensional case #1";
             this.valueSet.Description = new Markdown("All loinc codes for system = Arterial system");
             this.valueSet.Version = "C20";
             this.valueSet.Status = PublicationStatus.Active;

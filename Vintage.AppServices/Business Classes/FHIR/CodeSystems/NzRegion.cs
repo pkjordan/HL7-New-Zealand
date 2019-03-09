@@ -45,8 +45,11 @@
 
             this.codeSystem.ValueSet = this.valueSet.Url;
 
-            this.valueSet.Name = "NZ Region";
-            this.codeSystem.Name = "NZ Region";
+            this.valueSet.Title = "NZ Region";
+            this.codeSystem.Title = "NZ Region";
+
+            this.valueSet.Name = this.valueSet.Id;
+            this.codeSystem.Name = this.codeSystem.Id;
 
             this.valueSet.Description = new Markdown("Value Set of all NZ DHB Regional Codes");
             this.codeSystem.Description = new Markdown("NZ DHB Regional Codes");

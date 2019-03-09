@@ -31,7 +31,8 @@
             this.conceptMap.Id = "NZ_ETHNICITY";
             this.conceptMap.Url = ServerCapability.TERMINZ_CANONICAL + "/ConceptMap/NzEthnicityLevels";
 
-            this.conceptMap.Name = "NZ Ethnicity Level (2-4) Mappings";
+            this.conceptMap.Name = this.conceptMap.Id;
+            this.conceptMap.Title = "NZ Ethnicity Level (2-4) Mappings";
             this.conceptMap.Description = new Markdown("Mappings between NZ Ethnicity Levels 2, 3 and 4.");
             this.conceptMap.Version = "20161209";
             this.conceptMap.Status = PublicationStatus.Draft;

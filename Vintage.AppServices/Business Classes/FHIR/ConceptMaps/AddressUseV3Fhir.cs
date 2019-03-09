@@ -31,7 +31,8 @@
             this.conceptMap.Url = "http://hl7.org/fhir/ConceptMap/101";
             this.conceptMap.Identifier = new Identifier { System = "urn:ietf:rfc:3986", Value = "urn:uuid:53cd62ee-033e-414c-9f58-3ca97b5ffc3b" };
 
-            this.conceptMap.Name = "FHIR/v3 Address Use Mapping";
+            this.conceptMap.Name = this.conceptMap.Id;
+            this.conceptMap.Title = "FHIR/v3 Address Use Mapping";
             this.conceptMap.Description = new Markdown("A mapping between the FHIR and HL7 v3 AddressUse Code systems");
             this.conceptMap.Version = "C20";
             this.conceptMap.Status = PublicationStatus.Draft;

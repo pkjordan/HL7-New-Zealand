@@ -118,9 +118,9 @@
                 {
                     return OperationOutcome.ForMessage("Property Filter Not Supported.", OperationOutcome.IssueType.NotFound, OperationOutcome.IssueSeverity.Error);
                 }
-                else if (ex.Message == FhirLoinc.UNSUPPORTED_ANSWER_CODE)
+                else if (ex.Message == FhirLoinc.UNSUPPORTED_ANSWER_LIST)
                 {
-                    return OperationOutcome.ForMessage("LOINC Answer Codes Not Supported.", OperationOutcome.IssueType.NotFound, OperationOutcome.IssueSeverity.Error);
+                    return OperationOutcome.ForMessage("LOINC Answer Lists Not Supported.", OperationOutcome.IssueType.NotSupported, OperationOutcome.IssueSeverity.Error);
                 }
                 else if (ex.Message == UNSUPPORTED_DISPLAY_LANGUAGE)
                 {
@@ -618,8 +618,9 @@
                         throw new Exception(TerminologyValueSet.MAX_VALUES_EXCEEDED);
                     }
                 }
-                valSet.Name = "Terminology Services Connectation #20 Intensional case #3";
+                valSet.Title = "Terminology Services Connectation #20 Intensional case #3";
                 valSet.Id = "intensional-case-3";
+                valSet.Name = valSet.Id;
                 valSet.Identifier.Add(new Identifier { Value = "intensional-case-3" });
                 valSet.Version = "C20";
                 valSet.Url = "http://www.healthintersections.com.au/fhir/ValueSet/intensional-case-3";
@@ -877,7 +878,7 @@
             XNamespace ns = "http://www.w3.org/1999/xhtml";
 
             var summary = new XElement(ns + "div",
-                new XElement(ns + "h2", valSet.Name),
+                new XElement(ns + "h2", valSet.Title),
                 new XElement(ns + "p", valSet.Description),
                 new XElement(ns + "table",
                     new XElement(ns + "tr",
@@ -940,6 +941,9 @@
             valSet.Text.Status = Narrative.NarrativeStatus.Generated;
             valSet.Text.Div = summary.ToString();
 
+            // format Name property correctly
+            valSet.Name = valSet.Name.First().ToString().ToUpper() + valSet.Name.Substring(1).Replace('-', '_');
+
             return valSet;
         }
 
@@ -986,7 +990,7 @@
             XNamespace ns = "http://www.w3.org/1999/xhtml";
 
             var summary = new XElement(ns + "div",
-                new XElement(ns + "h2", valSet.Name),
+                new XElement(ns + "h2", valSet.Title),
                 new XElement(ns + "p", valSet.Description),
                 new XElement(ns + "table",
                     new XElement(ns + "tr",
@@ -1036,6 +1040,9 @@
             valSet.Text = new Narrative();
             valSet.Text.Status = Narrative.NarrativeStatus.Generated;
             valSet.Text.Div = summary.ToString();
+
+            // format Name property correctly
+            valSet.Name = valSet.Name.First().ToString().ToUpper() + valSet.Name.Substring(1).Replace('-', '_');
 
             return valSet;
         }

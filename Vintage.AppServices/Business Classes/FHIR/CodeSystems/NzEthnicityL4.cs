@@ -45,8 +45,11 @@
 
             this.codeSystem.ValueSet = this.valueSet.Url;
 
-            this.valueSet.Name = "NZ Ethnicity Level 4";
-            this.codeSystem.Name = "NZ Ethnicity Level 4";
+            this.valueSet.Title = "NZ Ethnicity Level 4";
+            this.codeSystem.Title = "NZ Ethnicity Level 4";
+
+            this.valueSet.Name = this.valueSet.Id;
+            this.codeSystem.Name = this.codeSystem.Id;
 
             this.valueSet.Description = new Markdown("Value Set of all NZ Ethnicity Level 4 Codes");
             this.codeSystem.Description = new Markdown("NZ Ethnicity Level 4 Codes");

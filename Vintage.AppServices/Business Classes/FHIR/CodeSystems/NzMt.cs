@@ -12,16 +12,16 @@
     public class NzMt
     {
 
-        public const string NAME = "NZMT";
+        public const string TITLE = "NZMT";
         public const string DESCRIPTION = "New Zealand Medicines Terminology";
         public const string URI = "http://nzmt.org.nz";
-        public const string CURRENT_VERSION = "3.4.9.1";
+        public const string CURRENT_VERSION = "3.4.10.1";
 
         public CodeSystem codeSystem { get; set; }
         public ValueSet valueSet { get; set; }
 
         internal string vsId = string.Empty;
-        internal string vsName = string.Empty;
+        internal string vsTitle = string.Empty;
         internal string vsDescription = string.Empty;
         internal string vsURL = string.Empty;
 
@@ -61,8 +61,11 @@
             this.valueSet.Url = this.vsURL;
             this.codeSystem.Url = NzMt.URI;
 
-            this.valueSet.Name = this.vsName;
-            this.codeSystem.Name = NzMt.NAME;
+            this.valueSet.Title = this.vsTitle;
+            this.codeSystem.Title = NzMt.TITLE;
+
+            this.valueSet.Name = this.valueSet.Id;
+            this.codeSystem.Name = this.codeSystem.Id;
 
             this.valueSet.Description = new Markdown(this.vsDescription);
             this.codeSystem.Description = new Markdown(NzMt.DESCRIPTION);
@@ -194,70 +197,70 @@
             if (vsIdentifier == "NZULM_Containered_Trade_Product_Pack" || vsIdentifier == "http://itp.patientsfirst.org.nz/ValueSet/NzulmCtpp")
             {
                 this.vsId = "NZULM-CTPP";
-                this.vsName = "NZULM_Containered_Trade_Product_Pack";
+                this.vsTitle = "NZULM_Containered_Trade_Product_Pack";
                 this.vsDescription = "NZULM Containered Trade Product Pack";
                 this.vsURL = "http://itp.patientsfirst.org.nz/ValueSet/NzulmCtpp";
             }
             else if (vsIdentifier == "NZULM_Medicinal_Product" || vsIdentifier == "http://itp.patientsfirst.org.nz/ValueSet/NzulmMp")
             {
                 this.vsId = "NZULM-MP";
-                this.vsName = "NZULM_Medicinal_Product";
+                this.vsTitle = "NZULM_Medicinal_Product";
                 this.vsDescription = "NZULM Medicinal Product";
                 this.vsURL = "http://itp.patientsfirst.org.nz/ValueSet/NzulmMp";
             }
             else if (vsIdentifier == "NZULM_Medicinal_Product_Pack" || vsIdentifier == "http://itp.patientsfirst.org.nz/ValueSet/NzulmMpp")
             {
                 this.vsId = "NZULM-MPP";
-                this.vsName = "NZULM_Medicinal_Product_Pack";
+                this.vsTitle = "NZULM_Medicinal_Product_Pack";
                 this.vsDescription = "NZULM Medicinal Product Pack";
                 this.vsURL = "http://itp.patientsfirst.org.nz/ValueSet/NzulmMpp";
             }
             else if (vsIdentifier == "NZULM_Medicinal_Product_Unit_Of_Use" || vsIdentifier == "http://itp.patientsfirst.org.nz/ValueSet/NzulmMpuu")
             {
                 this.vsId = "NZULM-MPUU";
-                this.vsName = "NZULM_Medicinal_Product_Unit_Of_Use";
+                this.vsTitle = "NZULM_Medicinal_Product_Unit_Of_Use";
                 this.vsDescription = "NZULM Medicinal Product Unit Of Use";
                 this.vsURL = "http://itp.patientsfirst.org.nz/ValueSet/NzulmMpuu";
             }
             else if (vsIdentifier == "NZULM_Trade_Product" || vsIdentifier == "http://itp.patientsfirst.org.nz/ValueSet/NzulmTp")
             {
                 this.vsId = "NZULM-TP";
-                this.vsName = "NZULM_Trade_Product";
+                this.vsTitle = "NZULM_Trade_Product";
                 this.vsDescription = "NZULM Trade Product";
                 this.vsURL = "http://itp.patientsfirst.org.nz/ValueSet/NzulmTp";
             }
             else if (vsIdentifier == "NZULM_Trade_Product_Pack" || vsIdentifier == "http://itp.patientsfirst.org.nz/ValueSet/NzulmTpp")
             {
                 this.vsId = "NZULM-TPP";
-                this.vsName = "NZULM_Trade_Product_Pack";
+                this.vsTitle = "NZULM_Trade_Product_Pack";
                 this.vsDescription = "NZULM Trade Product Pack";
                 this.vsURL = "http://itp.patientsfirst.org.nz/ValueSet/NzulmTpp";
             }
             else if (vsIdentifier == "NZULM_Trade_Product_Unit_Of_Use" || vsIdentifier == "http://itp.patientsfirst.org.nz/ValueSet/NzulmTpuu")
             {
                 this.vsId = "NZULM-TPUU";
-                this.vsName = "NZULM_Trade_Product_Unit_Of_Use";
+                this.vsTitle = "NZULM_Trade_Product_Unit_Of_Use";
                 this.vsDescription = "NZULM Trade Product Unit Of Use";
                 this.vsURL = "http://itp.patientsfirst.org.nz/ValueSet/NzulmTpuu";
             }
             else if (vsIdentifier == "NZULM_Prescribing_Terms" || vsIdentifier == "http://itp.patientsfirst.org.nz/ValueSet/NzulmPrescribingTerms")
             {
                 this.vsId = "NZULM-PT-ALL";
-                this.vsName = "NZULM_Prescribing_Terms";
+                this.vsTitle = "NZULM_Prescribing_Terms";
                 this.vsDescription = "ALL Prescribing Terms from the NZ Universal List of Medicines";
                 this.vsURL = "http://itp.patientsfirst.org.nz/ValueSet/NzulmPrescribingTerms";
             }
             else if (vsIdentifier == "NZULM_Prescribing_Terms_Generic" || vsIdentifier == "http://itp.patientsfirst.org.nz/ValueSet/NzulmPrescribingTermsGeneric")
             {
                 this.vsId = "NZULM-PT-GENERIC";
-                this.vsName = "NZULM_Prescribing_Terms_Generic";
+                this.vsTitle = "NZULM_Prescribing_Terms_Generic";
                 this.vsDescription = "Generic Prescribing Terms from the NZ Universal List of Medicines";
                 this.vsURL = "http://itp.patientsfirst.org.nz/ValueSet/NzulmPrescribingTermsGeneric";
             }
             else if (vsIdentifier == "NZULM_Prescribing_Terms_Trade" || vsIdentifier == "http://itp.patientsfirst.org.nz/ValueSet/NzulmPrescribingTermsTrade")
             {
                 this.vsId = "NZULM-PT-TRADE";
-                this.vsName = "NZULM_Prescribing_Terms_Trade";
+                this.vsTitle = "NZULM_Prescribing_Terms_Trade";
                 this.vsDescription = "Trade Prescribing Terms from the NZ Universal List of Medicines";
                 this.vsURL = "http://itp.patientsfirst.org.nz/ValueSet/NzulmPrescribingTermsTrade";
             }

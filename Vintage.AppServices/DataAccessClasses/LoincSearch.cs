@@ -65,6 +65,25 @@
             return codeVals;
         }
 
+        public static List<Coding> GetConceptByAnswerStringId(string answerStringId)
+        {
+            List<Coding> codeVals = new List<Coding>();
+
+            List<GetDescriptionByLoincAnswerStringIdResult> concepts = new List<GetDescriptionByLoincAnswerStringIdResult>();
+
+            using (SnomedCtDataContext dc = new SnomedCtDataContext())
+            {
+                concepts = dc.GetDescriptionByLoincAnswerStringId(answerStringId).ToList();
+            }
+
+            foreach (GetDescriptionByLoincAnswerStringIdResult result in concepts)
+            {
+                codeVals.Add(new Coding { Code = result.AnswerStringId.Trim(), Display = result.DisplayText });
+            }
+
+            return codeVals;
+        }
+
         public static List<Coding> GetPropertiesByCode(string code, string properties)
         {
             List<Coding> codeVals = new List<Coding>();

@@ -297,6 +297,12 @@ namespace Vintage.AppServices.DataAccessClasses
 		{
 			return this.CreateMethodCallQuery<GetDescriptionByLoincPartCodeResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), loincPartCode);
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetDescriptionByLoincAnswerStringId", IsComposable=true)]
+		public IQueryable<GetDescriptionByLoincAnswerStringIdResult> GetDescriptionByLoincAnswerStringId([global::System.Data.Linq.Mapping.ParameterAttribute(Name="LoincAnswerStringId", DbType="Char(10)")] string loincAnswerStringId)
+		{
+			return this.CreateMethodCallQuery<GetDescriptionByLoincAnswerStringIdResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), loincAnswerStringId);
+		}
 	}
 	
 	public partial class GetAllSubsumedConceptsResult
@@ -2318,6 +2324,50 @@ namespace Vintage.AppServices.DataAccessClasses
 				if ((this._Status != value))
 				{
 					this._Status = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GetDescriptionByLoincAnswerStringIdResult
+	{
+		
+		private string _AnswerStringId;
+		
+		private string _DisplayText;
+		
+		public GetDescriptionByLoincAnswerStringIdResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AnswerStringId", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string AnswerStringId
+		{
+			get
+			{
+				return this._AnswerStringId;
+			}
+			set
+			{
+				if ((this._AnswerStringId != value))
+				{
+					this._AnswerStringId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DisplayText", DbType="NVarChar(1024)")]
+		public string DisplayText
+		{
+			get
+			{
+				return this._DisplayText;
+			}
+			set
+			{
+				if ((this._DisplayText != value))
+				{
+					this._DisplayText = value;
 				}
 			}
 		}

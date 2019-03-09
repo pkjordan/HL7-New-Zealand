@@ -493,14 +493,14 @@
         {
             // create display text for ConceptMap Resource
             string textString = string.Empty;
-            string nameTitle = conceptMap.Name.ToString() + (!string.IsNullOrEmpty(conceptMap.Title) ? " | " + conceptMap.Title : "");
+            //string nameTitle = conceptMap.Name.ToString() + (!string.IsNullOrEmpty(conceptMap.Title) ? " | " + conceptMap.Title : "");
             try
             {
 
                 XNamespace ns = "http://www.w3.org/1999/xhtml";
 
                 var summary = new XElement(ns + "div",
-                    new XElement(ns + "h2", nameTitle),
+                    new XElement(ns + "h2", conceptMap.Title),
                     new XElement(ns + "p", conceptMap.Description),
                     new XElement(ns + "table",
                         new XElement(ns + "tr",
@@ -545,6 +545,9 @@
             conceptMap.Text = new Narrative();
             conceptMap.Text.Status = Narrative.NarrativeStatus.Generated;
             conceptMap.Text.Div = textString;
+
+            // format Name property correctly
+            conceptMap.Name = conceptMap.Name.First().ToString().ToUpper() + conceptMap.Name.Substring(1).Replace('-', '_');
 
             return conceptMap;
         }

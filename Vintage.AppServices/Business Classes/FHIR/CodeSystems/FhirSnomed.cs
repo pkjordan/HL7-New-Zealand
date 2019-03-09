@@ -17,7 +17,7 @@
         // create dictionary of root concepts
         internal static Dictionary<string, string> rootConcepts = new Dictionary<string, string>();
 
-        public const string NAME = "SNOMED Clinical Terms: New Zealand Edition";
+        public const string TITLE = "SNOMED Clinical Terms: New Zealand Edition";
         public const string DESCRIPTION = "Systematized Nomenclature of Medicine -- Clinical Terms";
         public const string URI = "http://snomed.info/sct";
         //"SNOMED CT NZ Beta Edition : Feb 01, 2019 Version"
@@ -28,6 +28,7 @@
         public const string SCT_ROOT_DESCRIPTION = "SNOMED CT Concept (SNOMED RT+CTV3)";
         public const string SCT_ATTRIBUTE_CONCEPT = "246061005";
         public const string SCT_NZ_EDITION_REFSETS = "NZ_EDITION_ALL";
+        public const string SCT_NZ_REFSET_PREFIX = "SCT-REFSET-NZ-" ;
         public const string NZ_PATIENT_FRIENDLY_TERMS = "281000210109";
 
         public CodeSystem codeSystem { get; set; }
@@ -117,7 +118,7 @@
 
             bool refset = !string.IsNullOrEmpty(refsetId);
 
-            if (version.StartsWith("SCT-REFSET-NZ"))
+            if (version.StartsWith(SCT_NZ_REFSET_PREFIX))
             {
                 refset = true;
                 refsetId = GetNzRefSetId(version);
@@ -132,23 +133,23 @@
             bool subsumption = Utilities.IsDigitsOnly(filter) && !refset && !ecl;
 
             string description = "All SNOMED CT Codes Filtered By: " + filter;
-            string name = "SNOMED CT";
+            string title = "SNOMED CT";
 
             if (refset)
             {
                 description = "All SNOMED CT codes in the NZ Reference Set: " + refsetId;
-                name = "SNOMED CT NZ Reference Set: " + refsetId;
+                title = "SNOMED CT NZ Reference Set: " + refsetId;
             }
             else if (subsumption)
             {
                 description = "All SNOMED CT codes Subsumed By: " + filter;
-                name = "SNOMED CT Concepts Subsumed By: " + filter;
+                title = "SNOMED CT Concepts Subsumed By: " + filter;
             }
             else if (ecl)
             {
                 filter = filter.Replace("=ecl/", "");
                 description = "All SNOMED CT codes Filtered By Expression: " + filter;
-                name = "SNOMED CT Concepts Filtered By Expression: " + filter;
+                title = "SNOMED CT Concepts Filtered By Expression: " + filter;
             }
 
             // Version will contain ValueSet Identifier if a Value Set constrained to a Root Concept has been requested
@@ -166,7 +167,7 @@
                         superTypeCode = rc.Key;
                         subset = true;
                         description = "All SNOMED CT codes From " + version.Replace("SCT-", "") + " Content Hierarchy: filtered by " + filter;
-                        name = version;
+                        title = version;
                         break;
                     }
                 }
@@ -178,9 +179,10 @@
 
             if (refset)
             {
-                if (version.StartsWith("SCT-REFSET-NZ"))
+                if (version.StartsWith(SCT_NZ_REFSET_PREFIX))
                 {
                     this.valueSet.Id = version;
+                    title = "SNOMED CT NZ Reference Set: " + version.Replace(SCT_NZ_REFSET_PREFIX, "");
                 }
                 else
                 {
@@ -228,7 +230,7 @@
             this.codeSystem.Property.Add(new CodeSystem.PropertyComponent { Code = "normalFormTerse", Description = "Generated Normal form expression for the provided code or expression, conceptIds only", Type = CodeSystem.PropertyType.String });
             this.codeSystem.Property.Add(new CodeSystem.PropertyComponent { Code = FhirSnomed.SCT_ATTRIBUTE_CONCEPT, Description = "Any SNOMED CT relationships where the relationship type is subsumed by Attribute (246061005).", Type = CodeSystem.PropertyType.Code });
 
-            if (refset && version.StartsWith("SCT-REFSET-NZ"))
+            if (refset && version.StartsWith(SCT_NZ_REFSET_PREFIX))
             {
                 this.valueSet.Url = ServerCapability.TERMINZ_CANONICAL + "/ValueSet/" + version;
                 version = string.Empty;
@@ -242,8 +244,11 @@
 
             this.codeSystem.ValueSet = "http://snomed.info/sct?fhir_vs";
 
-            this.valueSet.Name = name ;
-            this.codeSystem.Name = FhirSnomed.NAME;
+            this.valueSet.Title = title;
+            this.codeSystem.Title = FhirSnomed.TITLE;
+
+            this.valueSet.Name = this.valueSet.Id;
+            this.codeSystem.Name = this.codeSystem.Id;
 
             this.valueSet.Description = new Markdown(description);
             this.codeSystem.Description = new Markdown(FhirSnomed.DESCRIPTION);
@@ -557,47 +562,47 @@
         {
             string refSetId = string.Empty;
 
-            if (refSetName == "SCT-REFSET-NZ-CARDIOLOGY") { refSetId = "91000210107"; }
+            if (refSetName == SCT_NZ_REFSET_PREFIX + "CARDIOLOGY") { refSetId = "91000210107"; }
 
-            else if (refSetName == "SCT-REFSET-NZ-DISABILITY") { refSetId = "261000210101"; }
+            else if (refSetName == SCT_NZ_REFSET_PREFIX + "DISABILITY") { refSetId = "261000210101"; }
 
-            else if (refSetName == "SCT-REFSET-NZ-EC-DIAGNOSIS") { refSetId = "61000210102"; }
+            else if (refSetName == SCT_NZ_REFSET_PREFIX + "EC-DIAGNOSIS") { refSetId = "61000210102"; }
 
-            else if (refSetName == "SCT-REFSET-NZ-EC-PRESENTING-COMPLAINT") { refSetId = "71000210108"; }
+            else if (refSetName == SCT_NZ_REFSET_PREFIX + "EC-PRESENTING-COMPLAINT") { refSetId = "71000210108"; }
 
-            else if (refSetName == "SCT-REFSET-NZ-EC-PROCEDURE") { refSetId = "321000210102"; }
+            else if (refSetName == SCT_NZ_REFSET_PREFIX + "EC-PROCEDURE") { refSetId = "321000210102"; }
 
-            else if (refSetName == "SCT-REFSET-NZ-GATEWAY-CHILD-HEALTH") { refSetId = "241000210102"; }
+            else if (refSetName == SCT_NZ_REFSET_PREFIX + "GATEWAY-CHILD-HEALTH") { refSetId = "241000210102"; }
 
-            else if (refSetName == "SCT-REFSET-NZ-GYNAECOLOGY") { refSetId = "101000210108"; }
+            else if (refSetName == SCT_NZ_REFSET_PREFIX + "GYNAECOLOGY") { refSetId = "101000210108"; }
 
-            else if (refSetName == "SCT-REFSET-NZ-ACC-TRANSLATION-TABLE") { refSetId = "81000210105"; }
+            else if (refSetName == SCT_NZ_REFSET_PREFIX + "ACC-TRANSLATION-TABLE") { refSetId = "81000210105"; }
 
-            else if (refSetName == "SCT-REFSET-NZ-NOTIFIABLE-DISEASE") { refSetId = "251000210104"; }
+            else if (refSetName == SCT_NZ_REFSET_PREFIX + "NOTIFIABLE-DISEASE") { refSetId = "251000210104"; }
 
-            else if (refSetName == "SCT-REFSET-NZ-RHEUMATOLOGY") { refSetId = "121000210100"; }
+            else if (refSetName == SCT_NZ_REFSET_PREFIX + "RHEUMATOLOGY") { refSetId = "121000210100"; }
 
-            else if (refSetName == "SCT-REFSET-NZ-SMOKING") { refSetId = "51000210100"; }
+            else if (refSetName == SCT_NZ_REFSET_PREFIX + "SMOKING") { refSetId = "51000210100"; }
 
-            else if (refSetName == "SCT-REFSET-NZ-ADVERSE-REACTION-MANIFESTATION") { refSetId = "351000210106"; }
+            else if (refSetName == SCT_NZ_REFSET_PREFIX + "ADVERSE-REACTION-MANIFESTATION") { refSetId = "351000210106"; }
 
-            else if (refSetName == "SCT-REFSET-NZ-AMBULANCE-CLINICAL-IMPRESSION") { refSetId = "421000210109"; }
+            else if (refSetName == SCT_NZ_REFSET_PREFIX + "AMBULANCE-CLINICAL-IMPRESSION") { refSetId = "421000210109"; }
 
-            else if (refSetName == "SCT-REFSET-NZ-MICROORGANISM") { refSetId = "391000210104"; }
+            else if (refSetName == SCT_NZ_REFSET_PREFIX + "MICROORGANISM") { refSetId = "391000210104"; }
 
-            else if (refSetName == "SCT-REFSET-NZ-ENDOCRINOLOGY") { refSetId = "141000210106"; }
+            else if (refSetName == SCT_NZ_REFSET_PREFIX + "ENDOCRINOLOGY") { refSetId = "141000210106"; }
             
-            else if (refSetName == "SCT-REFSET-NZ-CHILD-DEVELOPMENTAL-SERVCES") { refSetId = "191000210102"; }
+            else if (refSetName == SCT_NZ_REFSET_PREFIX + "CHILD-DEVELOPMENTAL-SERVCES") { refSetId = "191000210102"; }
 
-            else if (refSetName == "SCT-REFSET-NZ-CLINICAL-SPECIALTY") { refSetId = "471000210108"; }
+            else if (refSetName == SCT_NZ_REFSET_PREFIX + "CLINICAL-SPECIALTY") { refSetId = "471000210108"; }
 
-            else if (refSetName == "SCT-REFSET-NZ-GENERAL-PAEDIATRIC") { refSetId = "181000210104"; }
+            else if (refSetName == SCT_NZ_REFSET_PREFIX + "GENERAL-PAEDIATRIC") { refSetId = "181000210104"; }
 
-            else if (refSetName == "SCT-REFSET-NZ-GENERAL-SURGERY") { refSetId = "131000210103"; }
+            else if (refSetName == SCT_NZ_REFSET_PREFIX + "GENERAL-SURGERY") { refSetId = "131000210103"; }
 
-            else if (refSetName == "SCT-REFSET-NZ-HEALTH-OCCUPATION") { refSetId = "451000210100"; }
+            else if (refSetName == SCT_NZ_REFSET_PREFIX + "HEALTH-OCCUPATION") { refSetId = "451000210100"; }
 
-            else if (refSetName == "SCT-REFSET-NZ-HEALTH-SERVICE") { refSetId = "461000210102"; }
+            else if (refSetName == SCT_NZ_REFSET_PREFIX + "HEALTH-SERVICE") { refSetId = "461000210102"; }
             
             return refSetId;
         }

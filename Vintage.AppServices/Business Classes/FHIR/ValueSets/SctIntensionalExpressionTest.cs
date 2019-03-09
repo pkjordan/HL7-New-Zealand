@@ -34,7 +34,8 @@
             this.valueSet.Id = "SctIntensionalExpressionTest";
             this.valueSet.Url = ServerCapability.TERMINZ_CANONICAL + "ValueSet/SctIntensionalExpressionTest";
             this.valueSet.Identifier.Add(new Identifier { Value = this.valueSet.Id });
-            this.valueSet.Name = "SCT Intensional Expression Test";
+            this.valueSet.Name = this.valueSet.Id;
+            this.valueSet.Title = "SCT Intensional Expression Test";
             this.valueSet.Description = new Markdown("Test for creating Intensional Value Sets filtered by SCT Expression Constraints");
             this.valueSet.Version = "1.0.1";
             this.valueSet.Status = PublicationStatus.Draft;

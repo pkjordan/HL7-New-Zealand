@@ -24,7 +24,7 @@
                 Description = new Markdown(TERMINZ_DESCRIPTION),
                 Name = "Patients First Terminology Server (Terminz)",
                 Publisher = "Patients First Ltd",
-                Date = "2019-02-17",
+                Date = "2019-03-10",
                 Version = "4.0.0",
                 FhirVersion = FHIRVersion.N4_0_0,
                 //Language = "en-NZ",  // review with next version of library - this needs to be a coded element!
@@ -32,7 +32,7 @@
                 //capabilityStatement.AcceptUnknown = CapabilityStatement.UnknownContentCode.Both;
                 Experimental = true,
                 Format = new string[] { "json", "xml" },
-                Software = new CapabilityStatement.SoftwareComponent { Name = "Health Intelligence Platform", Version = "6.7.1.0", ReleaseDate = "2019-02-17" },
+                Software = new CapabilityStatement.SoftwareComponent { Name = "Health Intelligence Platform", Version = "6.8.1.0", ReleaseDate = "2019-03-10" },
                 Kind = CapabilityStatementKind.Instance,
                 Implementation = new CapabilityStatement.ImplementationComponent { Description = TERMINZ_DESCRIPTION, Url = TERMINZ_CANONICAL }
             };
@@ -465,7 +465,7 @@
             var opCom2 = new CapabilityStatement.OperationComponent { Name = "subsumes", Definition = TERMINZ_CANONICAL + "/OperationDefinition/CodeSystem-subsumes" };
             server.Operation.Add(opCom2);
 
-            var opCom3 = new CapabilityStatement.OperationComponent { Name = "compose", Definition = HL7_FHIR_CANONICAL + "/OperationDefinition/CodeSystem-compose" };
+            var opCom3 = new CapabilityStatement.OperationComponent { Name = "find-matches", Definition = HL7_FHIR_CANONICAL + "/OperationDefinition/CodeSystem-find-matches" };
             server.Operation.Add(opCom3);
 
             var opCom4 = new CapabilityStatement.OperationComponent { Name = "expand", Definition = TERMINZ_CANONICAL + "/OperationDefinition/ValueSet-expand" };
@@ -646,7 +646,7 @@
                         new XElement(ns + "td", "y")
                         ),
                         new XElement(ns + "tr",
-                        new XElement(ns + "td", "CodeSystem-compose"),
+                        new XElement(ns + "td", "CodeSystem-find-matches"),
                         new XElement(ns + "td", "y")
                         ),
                         new XElement(ns + "tr",

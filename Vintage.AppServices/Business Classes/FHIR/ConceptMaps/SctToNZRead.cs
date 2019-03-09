@@ -34,19 +34,21 @@
             this.conceptMap.Url = ServerCapability.TERMINZ_CANONICAL + "/ConceptMap/Sct_NzRead";
             //this.conceptMap.Identifier = new Identifier { System = "urn:ietf:rfc:3986", Value = "urn:uuid:53cd62ee-033e-414c-9f58-3ca97b5ffc3b" };
 
-            this.conceptMap.Name = "SNOMED CT to NZ Read Codes";
+            this.conceptMap.Name = this.conceptMap.Id;
+            this.conceptMap.Title = "SNOMED CT to NZ Read Codes";
 
+            string caveat = string.Empty;
             if (string.IsNullOrEmpty(sctid))
             {
-                this.conceptMap.Title = "Definition Only - Full Map too large to download (>100,000 elements).";
+                caveat = " Definition only - complete map too large to download (over 100k elements).";
             }
 
-            this.conceptMap.Description = new Markdown("A mapping between SNOMED CT and the NZ Read Codes, published by NHS Digital in Oct 2017 and augmented for use in NZ.");
-            this.conceptMap.Version = "20170801";
+            this.conceptMap.Description = new Markdown("A mapping between SNOMED CT and the NZ Read Codes, published by NHS Digital and augmented for use in NZ." + caveat);
+            this.conceptMap.Version = "20190201";
             this.conceptMap.Status = PublicationStatus.Draft;
             this.conceptMap.Experimental = true;
             this.conceptMap.Publisher = "Ministry of Health";
-            this.conceptMap.Date = new FhirDateTime(2017, 08, 01).Value;
+            this.conceptMap.Date = new FhirDateTime(2019, 02, 01).Value;
             this.conceptMap.Purpose = new Markdown("To help primary care facilities translate SCT concepts to legacy Read Codes");
             this.conceptMap.Copyright = new Markdown("© 2010+ New Zealand Crown Copyright");
 
