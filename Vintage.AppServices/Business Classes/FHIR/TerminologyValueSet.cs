@@ -298,6 +298,14 @@
                 csBundle.AddResourceEntry(loincImplicit, ServerCapability.TERMINZ_CANONICAL + "/ValueSet/loinc/[x]");
             }
 
+            if (string.IsNullOrEmpty(nameFilter)) // implicit RxNorm VS - no searching by name
+            {
+                ValueSet rxNormImplicit = GetValueSet(TerminologyOperation.define_vs, string.Empty, string.Empty, FhirRxNorm.URI, string.Empty, "[x]", -1, -1, string.Empty);
+                try { GenerateCompositionNarrative(rxNormImplicit); }
+                catch { }
+                csBundle.AddResourceEntry(rxNormImplicit, ServerCapability.TERMINZ_CANONICAL + "/ValueSet/rxnorm/[x]");
+            }
+
             if (string.IsNullOrEmpty(nameFilter) || nameFilter.StartsWith("UCUM"))
             {
                 csBundle.AddResourceEntry(GetRequest("UCUM-COMMON", queryParam), "http://hl7.org/fhir/ValueSet/ucum-common");
@@ -698,6 +706,11 @@
                 FhirLoinc vs = new FhirLoinc(termOp, valueSetVersion, code, filter, identifier, offsetNo, countNo, useContext);
                 valSet = vs.valueSet;
             }
+            else if (identifier.StartsWith("http://www.nlm.nih.gov/research/umls/rxnorm/vs") || codeSystem == FhirRxNorm.URI)
+            {
+                FhirRxNorm vs = new FhirRxNorm(termOp, valueSetVersion, code, filter, identifier, offsetNo, countNo);
+                valSet = vs.valueSet;
+            }
             else if (identifier == "NzEthnicityL1" || identifier == ServerCapability.TERMINZ_CANONICAL + "/ValueSet/NzEthnicityL1" || codeSystem == NzEthnicityL1.URI)
             {
                 NzEthnicityL1 vs = new NzEthnicityL1(termOp, valueSetVersion, code, filter, offsetNo, countNo);
@@ -770,7 +783,7 @@
 
             // get parameter values that might uniquely identify the ValueSet
 
-            if (string.IsNullOrEmpty(id))
+            if (string.IsNullOrEmpty(identifier))
             {
                 identifier = Utilities.GetQueryValue("_id", queryParam);
             }

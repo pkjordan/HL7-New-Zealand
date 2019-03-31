@@ -94,6 +94,7 @@
     <Compile Include="Business Classes\FHIR\CodeSystems\NzEthnicityL3.cs" />
     <Compile Include="Business Classes\FHIR\CodeSystems\NzEthnicityL4.cs" />
     <Compile Include="Business Classes\FHIR\CodeSystems\NzMt.cs" />
+    <Compile Include="Business Classes\FHIR\CodeSystems\FhirRxNorm.cs" />
     <Compile Include="Business Classes\FHIR\ConceptMaps\AddressUseV3Fhir.cs" />
     <Compile Include="Business Classes\FHIR\ConceptMaps\NZEthnicityLevels.cs" />
     <Compile Include="Business Classes\FHIR\ConceptMaps\NzmpToSCT.cs" />
@@ -157,6 +158,7 @@
     </Compile>
     <Compile Include="DataAccessClasses\PracticeSearch.cs" />
     <Compile Include="DataAccessClasses\PracticeUser.cs" />
+    <Compile Include="DataAccessClasses\RxNormSearch.cs" />
     <Compile Include="DataAccessClasses\SnomedCt.cs">
       <DependentUpon>SnomedCt.dbml</DependentUpon>
     </Compile>

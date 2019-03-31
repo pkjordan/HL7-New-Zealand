@@ -19,7 +19,7 @@
                 Publisher = "Patients First Ltd",
                 Version = "4.0.0",
                 Status = PublicationStatus.Draft,
-                Date = "2019-03-10",
+                Date = "2019-03-31",
                 Experimental = true,
                 Copyright = new Markdown("© 2019+ Patients First Ltd"),
                 LockedDate = false
@@ -36,6 +36,7 @@
             tsCapabilityStatement.CodeSystem.Add(FhirSnomed.GetCapabilities());
             tsCapabilityStatement.CodeSystem.Add(FhirLoinc.GetCapabilities());
             tsCapabilityStatement.CodeSystem.Add(NzMt.GetCapabilities());
+            tsCapabilityStatement.CodeSystem.Add(FhirRxNorm.GetCapabilities());
 
             tsCapabilityStatement.Expansion = new TerminologyCapabilities.ExpansionComponent
             {
@@ -111,6 +112,12 @@
                     new XElement(ns + "td", NzMt.DESCRIPTION),
                     new XElement(ns + "td", NzMt.URI),
                     new XElement(ns + "td", NzMt.CURRENT_VERSION)
+                    ),
+                    new XElement(ns + "tr",
+                    new XElement(ns + "td", FhirRxNorm.TITLE),
+                    new XElement(ns + "td", FhirRxNorm.DESCRIPTION),
+                    new XElement(ns + "td", FhirRxNorm.URI),
+                    new XElement(ns + "td", FhirRxNorm.CURRENT_VERSION)
                     )
                  )
               );

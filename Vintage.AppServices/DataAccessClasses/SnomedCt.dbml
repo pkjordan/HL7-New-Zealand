@@ -334,4 +334,18 @@
       <Column Name="DisplayText" Type="System.String" DbType="NVarChar(1024)" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.GetDescriptionByRxNormCode" Method="GetDescriptionByRxNormCode" IsComposable="true">
+    <Parameter Name="RxNormCode" Parameter="rxNormCode" Type="System.String" DbType="VarChar(8)" />
+    <ElementType Name="GetDescriptionByRxNormCodeResult">
+      <Column Name="RXCUI" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(3000) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetDescriptionsByRxNormTerm" Method="GetDescriptionsByRxNormTerm" IsComposable="true">
+    <Parameter Name="Term" Parameter="term" Type="System.String" DbType="VarChar(4000)" />
+    <ElementType Name="GetDescriptionsByRxNormTermResult">
+      <Column Name="RXCUI" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(3000) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
 </Database>

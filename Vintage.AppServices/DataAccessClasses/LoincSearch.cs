@@ -1,9 +1,8 @@
 ﻿namespace Vintage.AppServices.DataAccessClasses
 {
+    using Hl7.Fhir.Model;
     using System.Collections.Generic;
     using System.Linq;
-    using Vintage.AppServices.BusinessClasses;
-    using Hl7.Fhir.Model;
 
     public static class LoincSearch
     {

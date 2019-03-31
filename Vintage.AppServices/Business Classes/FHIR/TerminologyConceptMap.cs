@@ -593,7 +593,7 @@
 
             // get parameter values that might uniquely identify the Resource
 
-            if (string.IsNullOrEmpty(id))
+            if (string.IsNullOrEmpty(identifier))
             {
                 identifier = Utilities.GetQueryValue("_id", queryParam);
             }

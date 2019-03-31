@@ -160,6 +160,7 @@
                 csBundle.AddResourceEntry(GetRequest(string.Empty, FhirSnomed.URI, queryParam), FhirSnomed.URI);
                 csBundle.AddResourceEntry(GetRequest(string.Empty, FhirLoinc.URI, queryParam), FhirLoinc.URI);
                 csBundle.AddResourceEntry(GetRequest(string.Empty, NzMt.URI, queryParam), NzMt.URI);
+                csBundle.AddResourceEntry(GetRequest(string.Empty, FhirRxNorm.URI, queryParam), FhirRxNorm.URI);
             }
 
             if (string.IsNullOrEmpty(contentMode) || contentMode == "complete")
@@ -242,6 +243,11 @@
                 NzMt nzmt = new NzMt(TerminologyOperation.define_cs, versionVal, codeVal, string.Empty, string.Empty, -1, -1);
                 codeSys = nzmt.codeSystem;
             }
+            else if (identifier == "RXNORM" || systemURL == FhirRxNorm.URI)
+            {
+                FhirRxNorm rxnorm = new FhirRxNorm(TerminologyOperation.define_cs, versionVal, codeVal, string.Empty, string.Empty, -1, -1);
+                codeSys = rxnorm.codeSystem;
+            }
             else if (identifier == "bundle-type" || systemURL == "http://hl7.org/fhir/bundle-type")
                 {
                 FhirJsonParser jsp = new FhirJsonParser();
@@ -321,6 +327,11 @@
             {
                 FhirLoinc loinc = new FhirLoinc(termOp, versionVal, codeVal, string.Empty, string.Empty, -1, -1, string.Empty);
                 codeSys = loinc.codeSystem;
+            }
+            else if (systemURL == FhirRxNorm.URI)
+            {
+                FhirRxNorm rxnorm = new FhirRxNorm(termOp, versionVal, codeVal, string.Empty, string.Empty, -1, -1);
+                codeSys = rxnorm.codeSystem;
             }
             else if (FhirSnomed.IsValidURI(systemURL))
             {
@@ -838,9 +849,9 @@
         {
             string identifier = id;
 
-            // get parameter values that might uniquely identify the ValueSet
+            // get parameter values that might uniquely identify the Code System
 
-            if (string.IsNullOrEmpty(id))
+            if (string.IsNullOrEmpty(identifier))
             {
                 identifier = Utilities.GetQueryValue("_id", queryParam);
             }

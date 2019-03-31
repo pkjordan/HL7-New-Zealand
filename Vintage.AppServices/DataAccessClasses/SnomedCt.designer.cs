@@ -303,6 +303,18 @@ namespace Vintage.AppServices.DataAccessClasses
 		{
 			return this.CreateMethodCallQuery<GetDescriptionByLoincAnswerStringIdResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), loincAnswerStringId);
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetDescriptionByRxNormCode", IsComposable=true)]
+		public IQueryable<GetDescriptionByRxNormCodeResult> GetDescriptionByRxNormCode([global::System.Data.Linq.Mapping.ParameterAttribute(Name="RxNormCode", DbType="VarChar(8)")] string rxNormCode)
+		{
+			return this.CreateMethodCallQuery<GetDescriptionByRxNormCodeResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), rxNormCode);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetDescriptionsByRxNormTerm", IsComposable=true)]
+		public IQueryable<GetDescriptionsByRxNormTermResult> GetDescriptionsByRxNormTerm([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Term", DbType="VarChar(4000)")] string term)
+		{
+			return this.CreateMethodCallQuery<GetDescriptionsByRxNormTermResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), term);
+		}
 	}
 	
 	public partial class GetAllSubsumedConceptsResult
@@ -2368,6 +2380,94 @@ namespace Vintage.AppServices.DataAccessClasses
 				if ((this._DisplayText != value))
 				{
 					this._DisplayText = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GetDescriptionByRxNormCodeResult
+	{
+		
+		private string _RXCUI;
+		
+		private string _Description;
+		
+		public GetDescriptionByRxNormCodeResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RXCUI", DbType="VarChar(8) NOT NULL", CanBeNull=false)]
+		public string RXCUI
+		{
+			get
+			{
+				return this._RXCUI;
+			}
+			set
+			{
+				if ((this._RXCUI != value))
+				{
+					this._RXCUI = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="VarChar(3000) NOT NULL", CanBeNull=false)]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this._Description = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GetDescriptionsByRxNormTermResult
+	{
+		
+		private string _RXCUI;
+		
+		private string _Description;
+		
+		public GetDescriptionsByRxNormTermResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RXCUI", DbType="VarChar(8) NOT NULL", CanBeNull=false)]
+		public string RXCUI
+		{
+			get
+			{
+				return this._RXCUI;
+			}
+			set
+			{
+				if ((this._RXCUI != value))
+				{
+					this._RXCUI = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="VarChar(3000) NOT NULL", CanBeNull=false)]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this._Description = value;
 				}
 			}
 		}
