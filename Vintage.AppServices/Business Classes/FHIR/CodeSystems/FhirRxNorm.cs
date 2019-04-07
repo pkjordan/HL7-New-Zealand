@@ -155,6 +155,34 @@
             }
         }
 
+        internal static string GetTermType(string tty)
+        {
+            string termType = string.Empty;
+
+            if (tty=="IN") { termType = "Ingredient"; }
+            else if (tty == "PIN") { termType = "Precise Ingredient"; }
+            else if (tty == "MIN") { termType = "Multiple Ingredients"; }
+            else if (tty == "SCDC") { termType = "Semantic Clinical Drug Component"; }
+            else if (tty == "SCDF") { termType = "Semantic Clinical Drug Form"; }
+            else if (tty == "SCDG") { termType = "Semantic Clinical Dose Form Group"; }
+            else if (tty == "SCD") { termType = "Semantic Clinical Drug"; }
+            else if (tty == "GPCK") { termType = "Generic Pack"; }
+            else if (tty == "BN") { termType = "Brand Name"; }
+            else if (tty == "SBDC") { termType = "Semantic Branded Drug Component"; }
+            else if (tty == "SBDF") { termType = "Semantic Branded Drug Form"; }
+            else if (tty == "SBDG") { termType = "Semantic Branded Dose Form Group"; }
+            else if (tty == "SBD") { termType = "Semantic Branded Drug"; }
+            else if (tty == "BPCK") { termType = "Brand Name Pack"; }
+            else if (tty == "PSN") { termType = "Prescribable Name"; }
+            else if (tty == "SY") { termType = "Synonym"; }
+            else if (tty == "TMSY") { termType = "Tall Man Lettering Synonym"; }
+            else if (tty == "DF") { termType = "Dose Form"; }
+            else if (tty == "ET") { termType = "Dose Form Entry Term"; }
+            else if (tty == "DFG") { termType = "Dose Form Group"; }
+ 
+            return termType;
+        }
+
         internal static TerminologyCapabilities.CodeSystemComponent GetCapabilities()
         {
             TerminologyCapabilities.CodeSystemComponent csc = new TerminologyCapabilities.CodeSystemComponent
@@ -184,7 +212,7 @@
             vc.PropertyElement.Add(new Code("version"));
             vc.PropertyElement.Add(new Code("definition"));
             vc.PropertyElement.Add(new Code("designation"));
-            //vc.PropertyElement.Add(new Code("termType")); // is this the same as designation?, need VS of Term Types
+            vc.PropertyElement.Add(new Code("termType"));
 
             csc.Version.Add(vc);
 

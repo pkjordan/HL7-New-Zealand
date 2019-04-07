@@ -315,6 +315,12 @@ namespace Vintage.AppServices.DataAccessClasses
 		{
 			return this.CreateMethodCallQuery<GetDescriptionsByRxNormTermResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), term);
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetPropertiesByRxNormCode", IsComposable=true)]
+		public IQueryable<GetPropertiesByRxNormCodeResult> GetPropertiesByRxNormCode([global::System.Data.Linq.Mapping.ParameterAttribute(Name="RxNormCode", DbType="VarChar(8)")] string rxNormCode)
+		{
+			return this.CreateMethodCallQuery<GetPropertiesByRxNormCodeResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), rxNormCode);
+		}
 	}
 	
 	public partial class GetAllSubsumedConceptsResult
@@ -2468,6 +2474,68 @@ namespace Vintage.AppServices.DataAccessClasses
 				if ((this._Description != value))
 				{
 					this._Description = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GetPropertiesByRxNormCodeResult
+	{
+		
+		private string _RXCUI;
+		
+		private string _Description;
+		
+		private string _TTY;
+		
+		public GetPropertiesByRxNormCodeResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RXCUI", DbType="VarChar(8) NOT NULL", CanBeNull=false)]
+		public string RXCUI
+		{
+			get
+			{
+				return this._RXCUI;
+			}
+			set
+			{
+				if ((this._RXCUI != value))
+				{
+					this._RXCUI = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="VarChar(3000) NOT NULL", CanBeNull=false)]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this._Description = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TTY", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string TTY
+		{
+			get
+			{
+				return this._TTY;
+			}
+			set
+			{
+				if ((this._TTY != value))
+				{
+					this._TTY = value;
 				}
 			}
 		}

@@ -381,6 +381,7 @@
             bool displayNfTerse = false;
             bool displayAllAttributes = false;
             bool displaySingleAttribute = false;
+            bool displayTermType = false;
 
             // standard properties...defined for all Code Systems
             /*
@@ -408,6 +409,7 @@
                 displayParents = (pvl.Contains("parent"));
                 displayChildren = (pvl.Contains("child"));
                 displaySubstance = (pvl.Contains("substance"));
+                displayTermType = (pvl.Contains("termtype"));
                 displayInactive = (pvl.Contains("inactive"));
                 displaySufficientlyDefined = (pvl.Contains("sufficientlydefined"));
                 displayModuleId = (pvl.Contains("moduleid"));
@@ -427,6 +429,7 @@
             List<Coding> parentCodeVals = new List<Coding>();
             List<Coding> propertyCodeVals = new List<Coding>();
             List<Coding> attributeCodeVals = new List<Coding>();
+            List<Coding> termTypeVals = new List<Coding>();
             List<Coding> proximalPrimitiveCodeVals = new List<Coding>();
 
             // CodeSystem-specific actions
@@ -446,6 +449,14 @@
                 if (!string.IsNullOrEmpty(propertyVal))
                 {
                     loincPropertyVals = LoincSearch.GetPropertiesByCode(codeVal, propertyVal.ToUpper());
+                }
+            }
+
+            if (systemURL == FhirRxNorm.URI)
+            {
+                if (displayTermType)
+                {
+                    termTypeVals = RxNormSearch.GetPropertiesByCode(codeVal); 
                 }
             }
 
@@ -523,6 +534,17 @@
                         new Tuple<string, Base>("value", new FhirString(prop.Display))
                     };
                     param.Add("property", tuples);
+                }
+
+                foreach (Coding tty in termTypeVals)
+                {
+                    List<Tuple<string, Base>> tuples = new List<Tuple<string, Base>>
+                    {
+                        new Tuple<string, Base>("code", new FhirString(tty.Version)),
+                        new Tuple<string, Base>("value", new FhirString(FhirRxNorm.GetTermType(tty.Version))),
+                        new Tuple<string, Base>("description", new FhirString(tty.Display))
+                    };
+                    param.Add("termType", tuples);
                 }
 
                 foreach (Coding desig in designationCodeVals)

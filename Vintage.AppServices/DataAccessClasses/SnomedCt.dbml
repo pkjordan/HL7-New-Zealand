@@ -348,4 +348,12 @@
       <Column Name="Description" Type="System.String" DbType="VarChar(3000) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
+  <Function Name="dbo.GetPropertiesByRxNormCode" Method="GetPropertiesByRxNormCode" IsComposable="true">
+    <Parameter Name="RxNormCode" Parameter="rxNormCode" Type="System.String" DbType="VarChar(8)" />
+    <ElementType Name="GetPropertiesByRxNormCodeResult">
+      <Column Name="RXCUI" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(3000) NOT NULL" CanBeNull="false" />
+      <Column Name="TTY" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
 </Database>
