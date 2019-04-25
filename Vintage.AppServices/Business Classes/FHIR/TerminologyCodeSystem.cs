@@ -540,9 +540,11 @@
                 {
                     List<Tuple<string, Base>> tuples = new List<Tuple<string, Base>>
                     {
-                        new Tuple<string, Base>("code", new FhirString(tty.Version)),
-                        new Tuple<string, Base>("value", new FhirString(FhirRxNorm.GetTermType(tty.Version))),
-                        new Tuple<string, Base>("description", new FhirString(tty.Display))
+                        //new Tuple<string, Base>("code", new FhirString(tty.Version)),
+                        //new Tuple<string, Base>("value", new FhirString(FhirRxNorm.GetTermType(tty.Version))),
+                        //new Tuple<string, Base>("description", new FhirString(tty.Display))
+                         new Tuple<string, Base>("use", new Coding {Display = FhirRxNorm.GetTermType(tty.Version), System = FhirRxNorm.URI, Code = tty.Version }),
+                        new Tuple<string, Base>("value", new FhirString(tty.Display))
                     };
                     param.Add("termType", tuples);
                 }
