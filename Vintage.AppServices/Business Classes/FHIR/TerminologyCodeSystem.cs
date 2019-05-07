@@ -235,7 +235,7 @@
             }
             else if (identifier == "SNOMEDCT" || systemURL == FhirSnomed.URI)
             {
-                FhirSnomed snomed = new FhirSnomed(TerminologyOperation.define_cs, versionVal, codeVal, string.Empty, string.Empty, -1, -1, string.Empty);
+                FhirSnomed snomed = new FhirSnomed(TerminologyOperation.define_cs, versionVal, codeVal, string.Empty, string.Empty, -1, -1, string.Empty, string.Empty);
                 codeSys = snomed.codeSystem;
             }
             else if (identifier == "NZMT" || systemURL == NzMt.URI)
@@ -335,7 +335,7 @@
             }
             else if (FhirSnomed.IsValidURI(systemURL))
             {
-                FhirSnomed snomed = new FhirSnomed(termOp, versionVal, codeVal, string.Empty, string.Empty, -1, -1, string.Empty);
+                FhirSnomed snomed = new FhirSnomed(termOp, versionVal, codeVal, string.Empty, string.Empty, -1, -1, string.Empty, string.Empty);
                 codeSys = snomed.codeSystem;
             }
             else

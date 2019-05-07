@@ -44,11 +44,11 @@
             }
 
             this.conceptMap.Description = new Markdown("A mapping between the NZ Read Codes and SNOMED CT, published by NHS Digital and augmented for use in NZ." + caveat);
-            this.conceptMap.Version = "20190201";
+            this.conceptMap.Version = "20190501";
             this.conceptMap.Status = PublicationStatus.Draft;
             this.conceptMap.Experimental = true;
             this.conceptMap.Publisher = "Ministry of Health";
-            this.conceptMap.Date = new FhirDateTime(2019, 02, 01).Value;
+            this.conceptMap.Date = new FhirDateTime(2019, 05, 01).Value;
             this.conceptMap.Purpose = new Markdown("To help primary care facilities translate legacy Read Codes");
             this.conceptMap.Copyright = new Markdown("© 2010+ New Zealand Crown Copyright");
 

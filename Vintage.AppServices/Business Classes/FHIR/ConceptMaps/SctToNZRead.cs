@@ -12,7 +12,7 @@
     public class SctToNZRead
     {
 
-        public const string REFSET_ID = "41000210103";
+        public const string REFSET_ID = "411000210104";
 
         public ConceptMap conceptMap { get; set; }
 
@@ -44,12 +44,12 @@
             }
 
             this.conceptMap.Description = new Markdown("A mapping between SNOMED CT and the NZ Read Codes, published by NHS Digital and augmented for use in NZ." + caveat);
-            this.conceptMap.Version = "20190201";
+            this.conceptMap.Version = "20190501";
             this.conceptMap.Status = PublicationStatus.Draft;
             this.conceptMap.Experimental = true;
             this.conceptMap.Publisher = "Ministry of Health";
-            this.conceptMap.Date = new FhirDateTime(2019, 02, 01).Value;
-            this.conceptMap.Purpose = new Markdown("To help primary care facilities translate SCT concepts to legacy Read Codes");
+            this.conceptMap.Date = new FhirDateTime(2019, 05, 01).Value;
+            this.conceptMap.Purpose = new Markdown("Used by the NZ Ministry of Social Development to help process SNOMED - coded work capacity medical certificates.");
             this.conceptMap.Copyright = new Markdown("© 2010+ New Zealand Crown Copyright");
 
             ContactPoint cp = new ContactPoint { System = ContactPoint.ContactPointSystem.Email, Value = "peter.jordan@patientsfirst.org.nz" };

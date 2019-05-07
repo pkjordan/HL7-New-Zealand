@@ -20,9 +20,9 @@
         public const string TITLE = "SNOMED Clinical Terms: New Zealand Edition";
         public const string DESCRIPTION = "Systematized Nomenclature of Medicine -- Clinical Terms";
         public const string URI = "http://snomed.info/sct";
-        //"SNOMED CT NZ Beta Edition : Feb 01, 2019 Version"
-        public const string CURRENT_VERSION = "http://snomed.info/sct/21000210109/version/20190201";
-        public const string SHORT_VERSION = "http://snomed.info/sct/version/201990201";
+        //"SNOMED CT NZ Beta Edition : May 01, 2019 Version"
+        public const string CURRENT_VERSION = "http://snomed.info/sct/21000210109/version/20190501";
+        public const string SHORT_VERSION = "http://snomed.info/sct/version/20190501";
         //public const string CURRENT_VERSION = "http://snomed.info/sct/900000000000207008/version/20190131";
         public const string SCT_ROOT_CONCEPT = "138875005";
         public const string SCT_ROOT_DESCRIPTION = "SNOMED CT Concept (SNOMED RT+CTV3)";
@@ -36,12 +36,12 @@
 
         public FhirSnomed()
         {
-            this.FillValues(TerminologyOperation.define_vs, string.Empty, string.Empty, string.Empty, string.Empty, -1, -1, string.Empty);
+            this.FillValues(TerminologyOperation.define_vs, string.Empty, string.Empty, string.Empty, string.Empty, -1, -1, string.Empty, string.Empty);
         }
 
-        public FhirSnomed(TerminologyOperation termOp, string version, string code, string filter, string refsetId, int offsetNo, int countNo, string useContext)
+        public FhirSnomed(TerminologyOperation termOp, string version, string code, string queryFilter, string refsetId, int offsetNo, int countNo, string useContext, string textFilter)
         {
-            this.FillValues(termOp, version, code, filter, refsetId, offsetNo, countNo, useContext);
+            this.FillValues(termOp, version, code, queryFilter, refsetId, offsetNo, countNo, useContext, textFilter);
         }
 
         internal static string GetNormalFormDisplay(string codeVal, bool fullDisplay)
@@ -113,10 +113,11 @@
             return retValue;
         }
 
-        private void FillValues(TerminologyOperation termOp, string version, string code, string filter, string refsetId, int offsetNo, int countNo, string useContext)
+        private void FillValues(TerminologyOperation termOp, string version, string code, string queryFilter, string refsetId, int offsetNo, int countNo, string useContext, string textFilter)
         {
 
             bool refset = !string.IsNullOrEmpty(refsetId);
+            bool applyTextFilter = !string.IsNullOrEmpty(textFilter);
 
             if (version.StartsWith(SCT_NZ_REFSET_PREFIX))
             {
@@ -127,12 +128,12 @@
             SetRootConcepts();
 
             // detect ECL query from filter
-            bool ecl = filter.StartsWith("=ecl/");
+            bool ecl = queryFilter.StartsWith("=ecl/");
 
             // detect subsumption request from filter & refset indicator
-            bool subsumption = Utilities.IsDigitsOnly(filter) && !refset && !ecl;
+            bool subsumption = Utilities.IsDigitsOnly(queryFilter) && !refset && !ecl;
 
-            string description = "All SNOMED CT Codes Filtered By: " + filter;
+            string description = "All SNOMED CT Codes Filtered By: " + queryFilter;
             string title = "SNOMED CT";
 
             if (refset)
@@ -142,14 +143,14 @@
             }
             else if (subsumption)
             {
-                description = "All SNOMED CT codes Subsumed By: " + filter;
-                title = "SNOMED CT Concepts Subsumed By: " + filter;
+                description = "All SNOMED CT codes Subsumed By: " + queryFilter;
+                title = "SNOMED CT Concepts Subsumed By: " + queryFilter;
             }
             else if (ecl)
             {
-                filter = filter.Replace("=ecl/", "");
-                description = "All SNOMED CT codes Filtered By Expression: " + filter;
-                title = "SNOMED CT Concepts Filtered By Expression: " + filter;
+                queryFilter = queryFilter.Replace("=ecl/", "");
+                description = "All SNOMED CT codes Filtered By Expression: " + queryFilter;
+                title = "SNOMED CT Concepts Filtered By Expression: " + queryFilter;
             }
 
             // Version will contain ValueSet Identifier if a Value Set constrained to a Root Concept has been requested
@@ -166,7 +167,7 @@
                     {
                         superTypeCode = rc.Key;
                         subset = true;
-                        description = "All SNOMED CT codes From " + version.Replace("SCT-", "") + " Content Hierarchy: filtered by " + filter;
+                        description = "All SNOMED CT codes From " + version.Replace("SCT-", "") + " Content Hierarchy: filtered by " + queryFilter;
                         title = version;
                         break;
                     }
@@ -186,7 +187,7 @@
                 }
                 else
                 {
-                    this.valueSet.Id = "fhir_sct_vs_" + refsetId + (!string.IsNullOrEmpty(filter) ? "_" + filter.Replace(" ", "_") : "");
+                    this.valueSet.Id = "fhir_sct_vs_" + refsetId + (!string.IsNullOrEmpty(queryFilter) ? "_" + queryFilter.Replace(" ", "_") : "");
                 }
             }
             else if (ecl)
@@ -195,7 +196,7 @@
             }
             else
             {
-                this.valueSet.Id = "fhir_sct_vs_" + filter.Replace(" ", "_");
+                this.valueSet.Id = "fhir_sct_vs_" + queryFilter.Replace(" ", "_");
             }
 
             this.codeSystem.Id = "SNOMEDCT";
@@ -298,9 +299,10 @@
 
                 if (termOp != TerminologyOperation.define_vs)
                 {
-                    if (subset && !string.IsNullOrEmpty(filter))
+                    if (subset && !string.IsNullOrEmpty(textFilter))
                     {
-                        codeVals = SnomedCtSearch.GetConceptsFromHierarchyByTerm(superTypeCode, Utilities.StripSemanticTag(filter.Trim()));
+                        codeVals = SnomedCtSearch.GetConceptsFromHierarchyByTerm(superTypeCode, Utilities.StripSemanticTag(textFilter.Trim()));
+                        applyTextFilter = false;
                     }
                     else if (subset && !string.IsNullOrEmpty(code))
                     {
@@ -324,7 +326,8 @@
                         }
                         else
                         {
-                            codeVals = SnomedCtSearch.GetRefSet(refsetId, filter);
+                            codeVals = SnomedCtSearch.GetRefSet(refsetId, textFilter);
+                            applyTextFilter = false;
                             try
                             {
                                 valueSet.Name = SnomedCtSearch.GetConceptByCode(refsetId)[0].Display;
@@ -335,11 +338,11 @@
                     else if (subsumption)
                     {
                         // prevent subsumptions on root concepts...
-                        if (rootConcepts.ContainsKey(filter))
+                        if (rootConcepts.ContainsKey(queryFilter))
                         {
                             throw new Exception(TerminologyValueSet.MAX_VALUES_EXCEEDED);
                         }
-                        codeVals = SnomedCtSearch.GetSubsumedCodes(filter,true);
+                        codeVals = SnomedCtSearch.GetSubsumedCodes(queryFilter,true);
                     }
                     else if (!string.IsNullOrEmpty(code))
                     {
@@ -359,15 +362,23 @@
                     }
                     else if (ecl)
                     {
-                        codeVals = EclHandler.ExecuteEclQuery(filter);   
+                        codeVals = EclHandler.ExecuteEclQuery(queryFilter);   
                     }
-                    else if (!string.IsNullOrEmpty(filter))
+                    else if (!string.IsNullOrEmpty(textFilter))
                     {
-                        if (filter.Length < 3)
+                        if (textFilter.Length < 3)
                         {
                             throw new Exception(TerminologyValueSet.INVALID_FILTER);
                         }
-                        codeVals = SnomedCtSearch.GetConceptsByTerm(Utilities.StripSemanticTag(filter.Trim()));
+                        if (textFilter.Trim().All(char.IsNumber))
+                        {
+                            codeVals = SnomedCtSearch.GetConceptByCode(textFilter.Trim());
+                        }
+                        else
+                        {
+                            codeVals = SnomedCtSearch.GetConceptsByTerm(Utilities.StripSemanticTag(textFilter.Trim()));
+                        }
+                        applyTextFilter = false;
                     }
                     else if (countNo > 0)
                     {
@@ -398,6 +409,12 @@
                         codeVals.RemoveAll(x => pfterms.Select(y => y.Code).Contains(x.Code));
                         codeVals.InsertRange(0, pfterms);
                     }
+                }
+
+                if ( applyTextFilter && textFilter.Length > 2)
+                {
+                    codeVals.RemoveAll(x => !x.Display.Contains(textFilter));
+                    //codeVals.OrderBy(x => x.Display.Trim().Length);
                 }
 
                 // filtering performed at DB Layer, so add all returned concepts
@@ -576,7 +593,7 @@
 
             else if (refSetName == SCT_NZ_REFSET_PREFIX + "GYNAECOLOGY") { refSetId = "101000210108"; }
 
-            else if (refSetName == SCT_NZ_REFSET_PREFIX + "ACC-TRANSLATION-TABLE") { refSetId = "81000210105"; }
+            //else if (refSetName == SCT_NZ_REFSET_PREFIX + "ACC-TRANSLATION-TABLE") { refSetId = "81000210105"; }
 
             else if (refSetName == SCT_NZ_REFSET_PREFIX + "NOTIFIABLE-DISEASE") { refSetId = "251000210104"; }
 
@@ -603,7 +620,13 @@
             else if (refSetName == SCT_NZ_REFSET_PREFIX + "HEALTH-OCCUPATION") { refSetId = "451000210100"; }
 
             else if (refSetName == SCT_NZ_REFSET_PREFIX + "HEALTH-SERVICE") { refSetId = "461000210102"; }
-            
+
+            else if (refSetName == SCT_NZ_REFSET_PREFIX + "SURGICAL-COMPLICATIONS") { refSetId = "441000210103"; }
+
+            else if (refSetName == SCT_NZ_REFSET_PREFIX + "SITE-OF-CARE") { refSetId = "481000210105"; }
+
+            else if (refSetName == SCT_NZ_REFSET_PREFIX + "LABORATORY-PANEL-ORDER") { refSetId = "491000210107"; }
+
             return refSetId;
         }
     }

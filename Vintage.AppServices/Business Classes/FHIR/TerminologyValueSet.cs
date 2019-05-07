@@ -189,10 +189,10 @@
                 catch { }
                 csBundle.AddResourceEntry(nzRefSet6, ServerCapability.TERMINZ_CANONICAL + "/ValueSet/SCT-REFSET-NZ-GYNAECOLOGY");
 
-                ValueSet nzRefSet7 = GetValueSet(TerminologyOperation.define_vs, "SCT-REFSET-NZ-ACC-TRANSLATION-TABLE", string.Empty, string.Empty, "81000210105", string.Empty, -1, -1, string.Empty);
-                try { GenerateCompositionNarrative(nzRefSet7); }
-                catch { }
-                csBundle.AddResourceEntry(nzRefSet7, ServerCapability.TERMINZ_CANONICAL + "/ValueSet/SCT-REFSET-NZ-ACC-TRANSLATION-TABLE");
+                //ValueSet nzRefSet7 = GetValueSet(TerminologyOperation.define_vs, "SCT-REFSET-NZ-ACC-TRANSLATION-TABLE", string.Empty, string.Empty, "81000210105", string.Empty, -1, -1, string.Empty);
+                //try { GenerateCompositionNarrative(nzRefSet7); }
+                //catch { }
+                //csBundle.AddResourceEntry(nzRefSet7, ServerCapability.TERMINZ_CANONICAL + "/ValueSet/SCT-REFSET-NZ-ACC-TRANSLATION-TABLE");
 
                 ValueSet nzRefSet8 = GetValueSet(TerminologyOperation.define_vs, "SCT-REFSET-NZ-NOTIFIABLE-DISEASE", string.Empty, string.Empty, "251000210104", string.Empty, -1, -1, string.Empty);
                 try { GenerateCompositionNarrative(nzRefSet8); }
@@ -258,6 +258,21 @@
                 try { GenerateCompositionNarrative(nzRefSet20); }
                 catch { }
                 csBundle.AddResourceEntry(nzRefSet20, ServerCapability.TERMINZ_CANONICAL + "/ValueSet/SCT-REFSET-NZ-HEALTH-SERVICE");
+                
+                ValueSet nzRefSet21 = GetValueSet(TerminologyOperation.define_vs, "SCT-REFSET-NZ-SURGICAL-COMPLICATIONS", string.Empty, string.Empty, "441000210103", string.Empty, -1, -1, string.Empty);
+                try { GenerateCompositionNarrative(nzRefSet21); }
+                catch { }
+                csBundle.AddResourceEntry(nzRefSet21, ServerCapability.TERMINZ_CANONICAL + "/ValueSet/SCT-REFSET-NZ-SURGICAL-COMPLICATIONS");
+
+                ValueSet nzRefSet22 = GetValueSet(TerminologyOperation.define_vs, "SCT-REFSET-NZ-SITE-OF-CARE", string.Empty, string.Empty, "481000210105", string.Empty, -1, -1, string.Empty);
+                try { GenerateCompositionNarrative(nzRefSet22); }
+                catch { }
+                csBundle.AddResourceEntry(nzRefSet22, ServerCapability.TERMINZ_CANONICAL + "/ValueSet/SCT-REFSET-NZ-SITE-OF-CARE");
+
+                ValueSet nzRefSet23 = GetValueSet(TerminologyOperation.define_vs, "SCT-REFSET-NZ-LABORATORY-PANEL-ORDER", string.Empty, string.Empty, "491000210107", string.Empty, -1, -1, string.Empty);
+                try { GenerateCompositionNarrative(nzRefSet23); }
+                catch { }
+                csBundle.AddResourceEntry(nzRefSet23, ServerCapability.TERMINZ_CANONICAL + "/ValueSet/SCT-REFSET-NZ-LABORATORY-PANEL-ORDER");
 
                 ValueSet snomedVsBodyStructure = GetValueSet(TerminologyOperation.define_vs, "SCT-BODY-STRUCTURE", string.Empty, string.Empty, string.Empty, "[x]", -1, -1, string.Empty);
                 try { GenerateCompositionNarrative(snomedVsBodyStructure); }
@@ -391,7 +406,7 @@
             int countNo = -1;
 
             // filter - implemented as a case-insensitive 'contains' operation on display text
-            string filter = Utilities.GetQueryValue("filter", queryParam);
+            string textFilter = Utilities.GetQueryValue("filter", queryParam);
             string offset = Utilities.GetQueryValue("offset", queryParam);
             string count = Utilities.GetQueryValue("count", queryParam);
             string languageVal = Utilities.GetQueryValue("displayLanguage", queryParam);
@@ -420,7 +435,7 @@
             }
 
             //TerminologyOperation.expand
-            ValueSet valSet = GetValueSet(TerminologyOperation.expand, identifier, string.Empty, string.Empty, vsVersionVal, filter, offsetNo, countNo, useContext);
+            ValueSet valSet = GetValueSet(TerminologyOperation.expand, identifier, string.Empty, string.Empty, vsVersionVal, textFilter, offsetNo, countNo, useContext);
 
             try
             {
@@ -537,7 +552,7 @@
 
         }
 
-        private static ValueSet GetValueSet(TerminologyOperation termOp, string identifier, string code, string codeSystem, string valueSetVersion, string filter, int offsetNo, int countNo, string useContext)
+        private static ValueSet GetValueSet(TerminologyOperation termOp, string identifier, string code, string codeSystem, string valueSetVersion, string textFilter, int offsetNo, int countNo, string useContext)
         {
             // <TODO> need a factory method here
             string requestedVersion = valueSetVersion;
@@ -552,7 +567,7 @@
                 {
                     valueSetVersion = "0.0";
                 }
-                ConnectathonExtensional_1 vs = new ConnectathonExtensional_1(termOp, valueSetVersion, code, filter, offsetNo, countNo);
+                ConnectathonExtensional_1 vs = new ConnectathonExtensional_1(termOp, valueSetVersion, code, textFilter, offsetNo, countNo);
                 valSet = vs.valueSet;
             }
             else if (identifier == "extensional-case-2" || identifier == "http://www.healthintersections.com.au/fhir/ValueSet/extensional-case-2")
@@ -561,7 +576,7 @@
                 {
                     valueSetVersion = "0.0";
                 }
-                ConnectathonExtensional_2 vs = new ConnectathonExtensional_2(termOp, valueSetVersion, code, filter, offsetNo, countNo);
+                ConnectathonExtensional_2 vs = new ConnectathonExtensional_2(termOp, valueSetVersion, code, textFilter, offsetNo, countNo);
                 valSet = vs.valueSet;
             }
             else if (identifier == "extensional-case-3" || identifier == "http://www.healthintersections.com.au/fhir/ValueSet/extensional-case-3")
@@ -570,16 +585,16 @@
                 {
                     valueSetVersion = "0.0";
                 }
-                ConnectathonExtensional_3 vs = new ConnectathonExtensional_3(termOp, valueSetVersion, code, filter, offsetNo, countNo);
+                ConnectathonExtensional_3 vs = new ConnectathonExtensional_3(termOp, valueSetVersion, code, textFilter, offsetNo, countNo);
                 valSet = vs.valueSet;
             }
             else if (identifier == "extensional-case-4" || identifier == "http://www.healthintersections.com.au/fhir/ValueSet/extensional-case-4")
             {
-                if (!string.IsNullOrEmpty(codeSystem) && codeSystem != "http://hl7.org/fhir/administrative-gender" && codeSystem != "http://hl7.org/fhir/v2/0001")
+                if (!string.IsNullOrEmpty(codeSystem) && codeSystem != "http://hl7.org/fhir/administrative-gender" && codeSystem != "http://terminology.hl7.org/CodeSystem/v2-0001")
                 {
                     valueSetVersion = "0.0";
                 }
-                ConnectathonExtensional_4 vs = new ConnectathonExtensional_4(termOp, valueSetVersion, code, filter, offsetNo, countNo);
+                ConnectathonExtensional_4 vs = new ConnectathonExtensional_4(termOp, valueSetVersion, code, textFilter, offsetNo, countNo);
                 valSet = vs.valueSet;
             }
             else if (identifier == "intensional-case-1" || identifier == "http://www.healthintersections.com.au/fhir/ValueSet/intensional-case-1")
@@ -588,7 +603,7 @@
                 {
                     valueSetVersion = "0.0";
                 }
-                ConnectathonIntensional_1 vs = new ConnectathonIntensional_1(termOp, valueSetVersion, code, filter, offsetNo, countNo);
+                ConnectathonIntensional_1 vs = new ConnectathonIntensional_1(termOp, valueSetVersion, code, textFilter, offsetNo, countNo);
                 valSet = vs.valueSet;
             }
             else if (identifier == "intensional-case-2" || identifier == "http://www.healthintersections.com.au/fhir/ValueSet/intensional-case-2")
@@ -597,7 +612,7 @@
                 {
                     valueSetVersion = "0.0";
                 }
-                ConnectathonIntensional_2 vs = new ConnectathonIntensional_2(termOp, valueSetVersion, code, filter, offsetNo, countNo);
+                ConnectathonIntensional_2 vs = new ConnectathonIntensional_2(termOp, valueSetVersion, code, textFilter, offsetNo, countNo);
                 valSet = vs.valueSet;
             }
             else if (identifier == "intensional-case-3" || identifier == "http://www.healthintersections.com.au/fhir/ValueSet/intensional-case-3")
@@ -605,20 +620,20 @@
                 // All Snomed codes that are subsumed by 404684003 (Clinical Finding) - 
                 if (termOp == TerminologyOperation.define_vs)
                 {
-                    string descrip = Utilities.StripSemanticTag(filter);
-                    FhirSnomed vs = new FhirSnomed(termOp, "SCT-CLINICAL-FINDING", code, descrip, string.Empty, offsetNo, countNo, useContext);
+                    string descrip = Utilities.StripSemanticTag(textFilter);
+                    FhirSnomed vs = new FhirSnomed(termOp, "SCT-CLINICAL-FINDING", code, string.Empty, string.Empty, offsetNo, countNo, useContext, descrip);
                     valSet = vs.valueSet;
                 }
                 else if (termOp == TerminologyOperation.expand || termOp == TerminologyOperation.validate_code)
                 {
                     if (!string.IsNullOrEmpty(codeSystem) && codeSystem != FhirSnomed.URI)
                     {
-                        FhirSnomed vs = new FhirSnomed(termOp, "0.0", code, filter, string.Empty, offsetNo, countNo, useContext);
+                        FhirSnomed vs = new FhirSnomed(termOp, "0.0", code, string.Empty, string.Empty, offsetNo, countNo, useContext, textFilter);
                         valSet = vs.valueSet;
                     }
-                    else if (!string.IsNullOrEmpty(filter) || !string.IsNullOrEmpty(code))
+                    else if (!string.IsNullOrEmpty(textFilter) || !string.IsNullOrEmpty(code))
                     {
-                        FhirSnomed vs = new FhirSnomed(termOp, "SCT-CLINICAL-FINDING", code, filter, string.Empty, offsetNo, countNo, useContext);
+                        FhirSnomed vs = new FhirSnomed(termOp, "SCT-CLINICAL-FINDING", code, string.Empty, string.Empty, offsetNo, countNo, useContext, textFilter);
                         valSet = vs.valueSet;
                     }
                     else
@@ -626,41 +641,42 @@
                         throw new Exception(TerminologyValueSet.MAX_VALUES_EXCEEDED);
                     }
                 }
-                valSet.Title = "Terminology Services Connectation #20 Intensional case #3";
+                valSet.Title = "Terminology Services Test: Intensional case #3";
                 valSet.Id = "intensional-case-3";
                 valSet.Name = valSet.Id;
                 valSet.Identifier.Add(new Identifier { Value = "intensional-case-3" });
-                valSet.Version = "C20";
+                valSet.Version = "R4";
                 valSet.Url = "http://www.healthintersections.com.au/fhir/ValueSet/intensional-case-3";
                 valSet.Status = PublicationStatus.Active;
             }
             else if (identifier == "SctIntensionalExpressionTest")
             {
-                SctIntensionalExpressionTest vs = new SctIntensionalExpressionTest(termOp, valueSetVersion, code, filter, offsetNo, countNo);
+                SctIntensionalExpressionTest vs = new SctIntensionalExpressionTest(termOp, valueSetVersion, code, textFilter, offsetNo, countNo);
                 valSet = vs.valueSet;
             }
             else if (identifier.Contains("SCT-REFSET-NZ"))
             {
                 identifier = identifier.Replace(ServerCapability.TERMINZ_CANONICAL + "/ValueSet/", "");
-                FhirSnomed vs = new FhirSnomed(termOp, identifier, code, filter, valueSetVersion, offsetNo, countNo, useContext);
+                FhirSnomed vs = new FhirSnomed(termOp, identifier, code, string.Empty, valueSetVersion, offsetNo, countNo, useContext, textFilter);
                 valSet = vs.valueSet;
                 requestedVersion = string.Empty;  // used to pass Reference Set here
             }
             else if (identifier.StartsWith("SCT-"))
             {
-                FhirSnomed vs = new FhirSnomed(termOp, identifier, code, filter, string.Empty, offsetNo, countNo, useContext);
+                FhirSnomed vs = new FhirSnomed(termOp, identifier, code, string.Empty, string.Empty, offsetNo, countNo, useContext, textFilter);
                 valSet = vs.valueSet;
             }
             else if (identifier.StartsWith(FhirSnomed.URI) || codeSystem.StartsWith(FhirSnomed.URI))
             {
                 string refsetID = string.Empty;
+                string queryFilter = string.Empty;
 
                 // Look for subsumption test request and place superType code in filter e.g. =isa/2229800
                 int isa = identifier.IndexOf("=isa/");
 
                 if (isa > 0)
                 {
-                    filter = identifier.Substring(isa + 5);
+                    queryFilter = identifier.Substring(isa + 5);
                 }
 
                 // Look for Reference Set request and place code in filter e.g. =refset/450970008
@@ -684,7 +700,7 @@
                 int eclQuery = identifier.IndexOf("=ecl/");
                 if (eclQuery > 0)
                 {
-                    filter = identifier.Substring(eclQuery);
+                    queryFilter = identifier.Substring(eclQuery);
                 }
 
                 // SNOMED-CT version may be specified in the codeSystem URL or identifier - e.g. http://snomed.info/sct/[sctid]/version/[YYYYMMDD] 
@@ -698,47 +714,47 @@
                     codeSystemVersion = identifier.Replace("?fhir_vs", "");
                 }
 
-                FhirSnomed vs = new FhirSnomed(termOp, codeSystemVersion, code, filter, refsetID, offsetNo, countNo, useContext);
+                FhirSnomed vs = new FhirSnomed(termOp, codeSystemVersion, code, queryFilter, refsetID, offsetNo, countNo, useContext, textFilter);
                 valSet = vs.valueSet;
             }
             else if (identifier.StartsWith("http://loinc.org/vs") || codeSystem == FhirLoinc.URI)
             {
-                FhirLoinc vs = new FhirLoinc(termOp, valueSetVersion, code, filter, identifier, offsetNo, countNo, useContext);
+                FhirLoinc vs = new FhirLoinc(termOp, valueSetVersion, code, textFilter, identifier, offsetNo, countNo, useContext);
                 valSet = vs.valueSet;
             }
             else if (identifier.StartsWith("http://www.nlm.nih.gov/research/umls/rxnorm/vs") || codeSystem == FhirRxNorm.URI)
             {
-                FhirRxNorm vs = new FhirRxNorm(termOp, valueSetVersion, code, filter, identifier, offsetNo, countNo);
+                FhirRxNorm vs = new FhirRxNorm(termOp, valueSetVersion, code, textFilter, identifier, offsetNo, countNo);
                 valSet = vs.valueSet;
             }
             else if (identifier == "NzEthnicityL1" || identifier == ServerCapability.TERMINZ_CANONICAL + "/ValueSet/NzEthnicityL1" || codeSystem == NzEthnicityL1.URI)
             {
-                NzEthnicityL1 vs = new NzEthnicityL1(termOp, valueSetVersion, code, filter, offsetNo, countNo);
+                NzEthnicityL1 vs = new NzEthnicityL1(termOp, valueSetVersion, code, textFilter, offsetNo, countNo);
                 valSet = vs.valueSet;
             }
             else if (identifier == "NzEthnicityL2" || identifier == ServerCapability.TERMINZ_CANONICAL + "/ValueSet/NzEthnicityL2" || codeSystem == NzEthnicityL2.URI)
             {
-                NzEthnicityL2 vs = new NzEthnicityL2(termOp, valueSetVersion, code, filter, offsetNo, countNo);
+                NzEthnicityL2 vs = new NzEthnicityL2(termOp, valueSetVersion, code, textFilter, offsetNo, countNo);
                 valSet = vs.valueSet;
             }
             else if (identifier == "NzEthnicityL3" || identifier == ServerCapability.TERMINZ_CANONICAL + "/ValueSet/NzEthnicityL3" || codeSystem == NzEthnicityL3.URI)
             {
-                NzEthnicityL3 vs = new NzEthnicityL3(termOp, valueSetVersion, code, filter, offsetNo, countNo);
+                NzEthnicityL3 vs = new NzEthnicityL3(termOp, valueSetVersion, code, textFilter, offsetNo, countNo);
                 valSet = vs.valueSet;
             }
             else if (identifier == "NzEthnicityL4" || identifier == ServerCapability.TERMINZ_CANONICAL + "/ValueSet/NzEthnicityL4" || codeSystem == NzEthnicityL4.URI)
             {
-                NzEthnicityL4 vs = new NzEthnicityL4(termOp, valueSetVersion, code, filter, offsetNo, countNo);
+                NzEthnicityL4 vs = new NzEthnicityL4(termOp, valueSetVersion, code, textFilter, offsetNo, countNo);
                 valSet = vs.valueSet;
             }
             else if (identifier == "NzRegion" || identifier == ServerCapability.TERMINZ_CANONICAL + "/ValueSet/NzRegion" || codeSystem == NzRegion.URI)
             {
-                NzRegion vs = new NzRegion(termOp, valueSetVersion, code, filter, offsetNo, countNo);
+                NzRegion vs = new NzRegion(termOp, valueSetVersion, code, textFilter, offsetNo, countNo);
                 valSet = vs.valueSet;
             }
             else if (identifier.StartsWith("NZULM") || identifier.StartsWith(ServerCapability.TERMINZ_CANONICAL + "/ValueSet/Nzulm") || codeSystem == NzMt.URI)
             {
-                NzMt vs = new NzMt(termOp, valueSetVersion, code, filter, identifier, offsetNo, countNo);
+                NzMt vs = new NzMt(termOp, valueSetVersion, code, textFilter, identifier, offsetNo, countNo);
                 valSet = vs.valueSet;
             }
             else if (identifier.ToUpper() == "UCUM-COMMON" || identifier == ServerCapability.HL7_FHIR_CANONICAL + "/ValueSet/ucum-common")

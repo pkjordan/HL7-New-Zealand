@@ -34,7 +34,7 @@
             this.conceptMap.Name = this.conceptMap.Id;
             this.conceptMap.Title = "FHIR/v3 Address Use Mapping";
             this.conceptMap.Description = new Markdown("A mapping between the FHIR and HL7 v3 AddressUse Code systems");
-            this.conceptMap.Version = "C20";
+            this.conceptMap.Version = "R4";
             this.conceptMap.Status = PublicationStatus.Draft;
             this.conceptMap.Experimental = true;
             this.conceptMap.Publisher = "HL7, Inc";

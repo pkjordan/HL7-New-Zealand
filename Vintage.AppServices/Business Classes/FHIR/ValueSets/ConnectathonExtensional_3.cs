@@ -31,9 +31,9 @@
             this.valueSet.Url = "http://www.healthintersections.com.au/fhir/ValueSet/extensional-case-3";
             this.valueSet.Identifier.Add( new Identifier { Value = this.valueSet.Id });
             this.valueSet.Name = this.valueSet.Id;
-            this.valueSet.Title = "Terminology Services FHIR Connectathon #20: Extensional case #3";
+            this.valueSet.Title = "Terminology Services Test: Extensional case #3";
             this.valueSet.Description = new Markdown("an enumeration of codes defined by SNOMED CT");
-            this.valueSet.Version = "C20";
+            this.valueSet.Version = "R4";
             this.valueSet.Status = PublicationStatus.Active;
             this.valueSet.Experimental = true;
             this.valueSet.Date = Hl7.Fhir.Model.Date.Today().Value;
